@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <title></title>
+    <link rel="shortcut icon" href="lib/img/favicon.ico">
+    <script type="text/javascript" src="lib/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="lib/js/web2net-functionlib.js"></script>
+    <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="lib/material/js/material.min.js"></script>
+    <script type="text/javascript" src="lib/material/js/ripples.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css" />
+    <link type="text/css" rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="lib/bootstrap/css/bootstrap-social.css" />
+    <link type="text/css" rel="stylesheet" href="lib/material/css/bootstrap-material-design.min.css" />
+    <link type="text/css" rel="stylesheet" href="lib/material/css/ripples.min.css" />
+    <link type="text/css" rel="stylesheet" href="lib/css/default.css" />
+    <link type="text/css" rel="stylesheet" id="size-stylesheet" href="lib/css/xl.css">
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <script type="text/javascript">
+
+    var StyleMode = true;
+
+    $(document).ready(function()
+    {
+        $.material.init();
+        adjustStyle();
+        $(window).resize(function()
+        {
+            adjustStyle();
+        });
+    });
+
+    </script>
+</head>
+
+<body>
+    <form id="frmRoomTrading">
+
+        <section>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <fieldset>
+                            <legend>Legend</legend>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="inputEmail">Email</label>
+                                <div class="col-md-10">
+                                    <input class="form-control" id="inputEmail" type="email" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="inputPassword">Password</label>
+                                <div class="col-md-10">
+                                    <input class="form-control" id="inputPassword" type="password" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-top: 0;">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> Checkbox
+                                        </label>
+                                        <label>
+                                            <input disabled="" type="checkbox"> Disabled Checkbox
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <div class="togglebutton">
+                                        <label>
+                                            <input type="checkbox" checked=""> Toggle button
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="inputFile">File</label>
+                                <div class="col-md-10">
+                                    <input class="form-control" type="text" readonly="" placeholder="Browse...">
+                                    <input id="inputFile" type="file" multiple="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="textArea">Textarea</label>
+                                <div class="col-md-10">
+                                    <textarea class="form-control" id="textArea" rows="3"></textarea>
+                                    <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Radios</label>
+
+                                <div class="col-md-10">
+                                    <div class="radio radio-primary">
+                                        <label>
+                                            <input name="optionsRadios" id="optionsRadios1" type="radio" checked="" value="option1">
+                                            Option one is this
+                                        </label>
+                                    </div>
+                                    <div class="radio radio-primary">
+                                        <label>
+                                            <input name="optionsRadios" id="optionsRadios2" type="radio" value="option2">
+                                            Option two can be something else
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="select111">Select</label>
+                                <div class="col-md-10">
+                                    <select class="form-control" id="select111">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="select222">Select Multiple</label>
+
+                                <div class="col-md-10">
+                                    <select class="form-control" id="select222" multiple="">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-10 col-md-offset-2">
+                                    <button class="btn btn-default" type="button">Cancel</button>
+                                    <button class="btn btn-primary" type="submit">Submit</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+
+                        <div class="list-group">
+                            <div class="list-group-item">
+                                <div class="row-action-primary">
+                                    <i class="material-icons">folder</i>
+                                </div>
+                                <div class="row-content">
+                                    <div class="least-content">15m</div>
+                                    <h4 class="list-group-item-heading">Tile with a label</h4>
+
+                                    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus.</p>
+                                </div>
+                            </div>
+                            <div class="list-group-separator"></div>
+                            <div class="list-group-item">
+                                <div class="row-action-primary">
+                                    <i class="material-icons">folder</i>
+                                </div>
+                                <div class="row-content">
+                                    <div class="least-content">10m</div>
+                                    <h4 class="list-group-item-heading">Tile with a label</h4>
+
+                                    <p class="list-group-item-text">Maecenas sed diam eget risus varius blandit.</p>
+                                </div>
+                            </div>
+                            <div class="list-group-separator"></div>
+                            <div class="list-group-item">
+                                <div class="row-action-primary">
+                                    <i class="material-icons">folder</i>
+                                </div>
+                                <div class="row-content">
+                                    <div class="least-content">8m</div>
+                                    <h4 class="list-group-item-heading">Tile with a label</h4>
+
+                                    <p class="list-group-item-text">Maecenas sed diam eget risus varius blandit.</p>
+                                </div>
+                            </div>
+                            <div class="list-group-separator"></div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-6">
+
+                        <div class="list-group">
+                            <div class="list-group-item">
+                                <div class="row-picture">
+                                    <img class="circle" alt="icon" src="http://lorempixel.com/56/56/people/1">
+                                </div>
+                                <div class="row-content">
+                                    <h4 class="list-group-item-heading">Tile with avatar</h4>
+
+                                    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus</p>
+                                </div>
+                            </div>
+                            <div class="list-group-separator"></div>
+                            <div class="list-group-item">
+                                <div class="row-picture">
+                                    <img class="circle" alt="icon" src="http://lorempixel.com/56/56/people/6">
+                                </div>
+                                <div class="row-content">
+                                    <h4 class="list-group-item-heading">Tile with another avatar</h4>
+
+                                    <p class="list-group-item-text">Maecenas sed diam eget risus varius blandit.</p>
+                                </div>
+                            </div>
+                            <div class="list-group-separator"></div>
+                            <div class="list-group-item">
+                                <div class="row-action-primary checkbox">
+                                    <label><input type="checkbox"></label>
+                                </div>
+                                <div class="row-content">
+                                    <h4 class="list-group-item-heading">Tile with a checkbox in it</h4>
+
+                                    <p class="list-group-item-text">Donec id elit non mi risus varius blandit.</p>
+                                </div>
+                            </div>
+                            <div class="list-group-separator"></div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-sm-6">
+
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Panel primary</h3>
+                            </div>
+                            <div class="panel-body">
+                                Panel content
+                            </div>
+                        </div>
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Panel success</h3>
+                            </div>
+                            <div class="panel-body">
+                                Panel content
+                            </div>
+                        </div>
+                        <div class="panel panel-warning">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Panel warning</h3>
+                            </div>
+                            <div class="panel-body">
+                                Panel content
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-6">
+
+                        <div class="panel panel-danger">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Panel danger</h3>
+                            </div>
+                            <div class="panel-body">
+                                Panel content
+                            </div>
+                        </div>
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Panel info</h3>
+                            </div>
+                            <div class="panel-body">
+                                Panel content
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </form>
+
+</body>
+</html>
