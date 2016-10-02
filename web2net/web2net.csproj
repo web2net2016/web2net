@@ -72,6 +72,8 @@
     <Content Include="lib\bootstrap\js\bootstrap.js" />
     <Content Include="lib\bootstrap\js\bootstrap.min.js" />
     <Content Include="lib\css\default.css" />
+    <Content Include="lib\js\jquery-easing-min.js" />
+    <Content Include="template\cd-panels.css" />
     <Content Include="lib\css\xl.css" />
     <Content Include="lib\css\lg.css" />
     <Content Include="lib\css\md.css" />
@@ -79,82 +81,12 @@
     <Content Include="lib\css\xs.css" />
     <Content Include="lib\font-awesome\css\font-awesome.min.css" />
     <Content Include="lib\font-awesome\fonts\fontawesome-webfont.svg" />
-    <Content Include="lib\img\1.jpg" />
-    <Content Include="lib\img\favicon.ico" />
-    <Content Include="lib\img\logo1.png" />
-    <Content Include="lib\img\responsiv_web2net.jpg" />
-    <Content Include="lib\jquerymenu\addons\autoheight\jquery.mmenu.autoheight.css" />
-    <Content Include="lib\jquerymenu\addons\autoheight\jquery.mmenu.autoheight.min.js" />
-    <Content Include="lib\jquerymenu\addons\backbutton\jquery.mmenu.backbutton.min.js" />
-    <Content Include="lib\jquerymenu\addons\columns\jquery.mmenu.columns.css" />
-    <Content Include="lib\jquerymenu\addons\columns\jquery.mmenu.columns.min.js" />
-    <Content Include="lib\jquerymenu\addons\counters\jquery.mmenu.counters.css" />
-    <Content Include="lib\jquerymenu\addons\counters\jquery.mmenu.counters.min.js" />
-    <Content Include="lib\jquerymenu\addons\dividers\jquery.mmenu.dividers.css" />
-    <Content Include="lib\jquerymenu\addons\dividers\jquery.mmenu.dividers.min.js" />
-    <Content Include="lib\jquerymenu\addons\drag\jquery.mmenu.drag.css" />
-    <Content Include="lib\jquerymenu\addons\drag\jquery.mmenu.drag.min.js" />
-    <Content Include="lib\jquerymenu\addons\dropdown\jquery.mmenu.dropdown.css" />
-    <Content Include="lib\jquerymenu\addons\dropdown\jquery.mmenu.dropdown.min.js" />
-    <Content Include="lib\jquerymenu\addons\fixedelements\jquery.mmenu.fixedelements.min.js" />
-    <Content Include="lib\jquerymenu\addons\iconpanels\jquery.mmenu.iconpanels.css" />
-    <Content Include="lib\jquerymenu\addons\iconpanels\jquery.mmenu.iconpanels.min.js" />
-    <Content Include="lib\jquerymenu\addons\navbars\jquery.mmenu.navbars.css" />
-    <Content Include="lib\jquerymenu\addons\navbars\jquery.mmenu.navbars.min.js" />
-    <Content Include="lib\jquerymenu\addons\offcanvas\jquery.mmenu.offcanvas.css" />
-    <Content Include="lib\jquerymenu\addons\offcanvas\jquery.mmenu.offcanvas.min.js" />
-    <Content Include="lib\jquerymenu\addons\rtl\jquery.mmenu.rtl.css" />
-    <Content Include="lib\jquerymenu\addons\rtl\jquery.mmenu.rtl.min.js" />
-    <Content Include="lib\jquerymenu\addons\screenreader\jquery.mmenu.screenreader.css" />
-    <Content Include="lib\jquerymenu\addons\screenreader\jquery.mmenu.screenreader.min.js" />
-    <Content Include="lib\jquerymenu\addons\scrollbugfix\jquery.mmenu.scrollbugfix.min.js" />
-    <Content Include="lib\jquerymenu\addons\searchfield\jquery.mmenu.searchfield.css" />
-    <Content Include="lib\jquerymenu\addons\searchfield\jquery.mmenu.searchfield.min.js" />
-    <Content Include="lib\jquerymenu\addons\sectionindexer\jquery.mmenu.sectionindexer.css" />
-    <Content Include="lib\jquerymenu\addons\sectionindexer\jquery.mmenu.sectionindexer.min.js" />
-    <Content Include="lib\jquerymenu\addons\setselected\jquery.mmenu.setselected.css" />
-    <Content Include="lib\jquerymenu\addons\setselected\jquery.mmenu.setselected.min.js" />
-    <Content Include="lib\jquerymenu\addons\toggles\jquery.mmenu.toggles.css" />
-    <Content Include="lib\jquerymenu\addons\toggles\jquery.mmenu.toggles.min.js" />
-    <Content Include="lib\jquerymenu\css\jquery.mmenu.all.css" />
-    <Content Include="lib\jquerymenu\css\jquery.mmenu.css" />
-    <Content Include="lib\jquerymenu\css\jquery.mmenu.oncanvas.css" />
-    <Content Include="lib\jquerymenu\extensions\borderstyle\jquery.mmenu.borderstyle.css" />
-    <Content Include="lib\jquerymenu\extensions\effects\jquery.mmenu.effects.css" />
-    <Content Include="lib\jquerymenu\extensions\fullscreen\jquery.mmenu.fullscreen.css" />
-    <Content Include="lib\jquerymenu\extensions\iconbar\jquery.mmenu.iconbar.css" />
-    <Content Include="lib\jquerymenu\extensions\justifiedlistview\jquery.mmenu.justifiedlistview.css" />
-    <Content Include="lib\jquerymenu\extensions\multiline\jquery.mmenu.multiline.css" />
-    <Content Include="lib\jquerymenu\extensions\pagedim\jquery.mmenu.pagedim.css" />
-    <Content Include="lib\jquerymenu\extensions\popup\jquery.mmenu.popup.css" />
-    <Content Include="lib\jquerymenu\extensions\positioning\jquery.mmenu.positioning.css" />
-    <Content Include="lib\jquerymenu\extensions\shadows\jquery.mmenu.shadows.css" />
-    <Content Include="lib\jquerymenu\extensions\themes\jquery.mmenu.themes.css" />
-    <Content Include="lib\jquerymenu\extensions\tileview\jquery.mmenu.tileview.css" />
-    <Content Include="lib\jquerymenu\extensions\widescreen\jquery.mmenu.widescreen.css" />
-    <Content Include="lib\jquerymenu\js\jquery.mmenu.all.min.js" />
-    <Content Include="lib\jquerymenu\js\jquery.mmenu.all.min.umd.js" />
-    <Content Include="lib\jquerymenu\js\jquery.mmenu.min.js" />
-    <Content Include="lib\jquerymenu\js\jquery.mmenu.min.umd.js" />
-    <Content Include="lib\jquerymenu\js\jquery.mmenu.oncanvas.min.js" />
-    <Content Include="lib\jquerymenu\wrappers\angular\jquery.mmenu.angular.min.js" />
-    <Content Include="lib\jquerymenu\wrappers\bootstrap\jquery.mmenu.bootstrap.css" />
-    <Content Include="lib\jquerymenu\wrappers\bootstrap\jquery.mmenu.bootstrap.min.js" />
-    <Content Include="lib\jquerymenu\wrappers\jquerymobile\jquery.mmenu.jquerymobile.min.js" />
-    <Content Include="lib\jquerymenu\wrappers\magento\jquery.mmenu.magento.min.js" />
-    <Content Include="lib\jquerymenu\wrappers\olark\jquery.mmenu.olark.min.js" />
-    <Content Include="lib\jquerymenu\wrappers\turbolinks\jquery.mmenu.turbolinks.min.js" />
-    <Content Include="lib\jquerymenu\wrappers\wordpress\jquery.mmenu.wordpress.min.js" />
+    <Content Include="template\1.jpg" />
+    <Content Include="template\favicon.ico" />
+    <Content Include="template\cd-panels.js" />
+    <Content Include="template\responsiv_web2net.jpg" />
     <Content Include="lib\js\jquery-3.1.1.min.js" />
     <Content Include="lib\js\web2net-functionlib.js" />
-    <Content Include="lib\material\css\bootstrap-material-design.css" />
-    <Content Include="lib\material\css\bootstrap-material-design.min.css" />
-    <Content Include="lib\material\css\ripples.css" />
-    <Content Include="lib\material\css\ripples.min.css" />
-    <Content Include="lib\material\js\material.js" />
-    <Content Include="lib\material\js\material.min.js" />
-    <Content Include="lib\material\js\ripples.js" />
-    <Content Include="lib\material\js\ripples.min.js" />
     <Content Include="packages.config" />
     <Content Include="lib\bootstrap\css\bootstrap.css.map" />
     <Content Include="lib\bootstrap\css\bootstrap.min.css.map" />
@@ -163,12 +95,6 @@
     <Content Include="lib\font-awesome\fonts\fontawesome-webfont.woff" />
     <Content Include="lib\font-awesome\fonts\fontawesome-webfont.woff2" />
     <Content Include="lib\font-awesome\fonts\FontAwesome.otf" />
-    <Content Include="lib\material\css\bootstrap-material-design.css.map" />
-    <Content Include="lib\material\css\bootstrap-material-design.min.css.map" />
-    <Content Include="lib\material\css\ripples.css.map" />
-    <Content Include="lib\material\css\ripples.min.css.map" />
-    <Content Include="lib\material\js\material.min.js.map" />
-    <Content Include="lib\material\js\ripples.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -181,6 +107,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="lib\img\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

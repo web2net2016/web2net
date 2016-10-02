@@ -14,157 +14,221 @@
     <title></title>
     <link rel="shortcut icon" href="lib/img/favicon.ico">
     <script type="text/javascript" src="lib/js/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="/lib/jquerymenu/js/jquery.mmenu.all.min.js"></script>
     <script type="text/javascript" src="lib/js/web2net-functionlib.js"></script>
     <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
-    <!--<script type="text/javascript" src="lib/material/js/material.min.js"></script>
-    <script type="text/javascript" src="lib/material/js/ripples.min.js"></script>-->
-    <link type="text/css" rel="stylesheet" href="lib/jquerymenu/css/jquery.mmenu.all.css" />
+    <script type="text/javascript" src="lib/js/jquery-easing-min.js"></script>
     <link type="text/css" rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css" />
     <link type="text/css" rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" />
-    <!--<link type="text/css" rel="stylesheet" href="lib/bootstrap/css/bootstrap-social.css" />
-    <link type="text/css" rel="stylesheet" href="lib/material/css/bootstrap-material-design.min.css" />
-    <link type="text/css" rel="stylesheet" href="lib/material/css/ripples.min.css" />-->
     <link type="text/css" rel="stylesheet" href="lib/css/default.css" />
     <link type="text/css" rel="stylesheet" id="size-stylesheet" href="lib/css/xl.css">
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
-    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+    <script type="text/javascript" src="template/cd-panels.js"></script>
+    <link type="text/css" rel="stylesheet" href="template/cd-panels.css" />
     <script type="text/javascript">
 
-    var StyleMode = true;
-    var LeftMenu = "";
+    var StyleMode = false;
 
     $(document).ready(function()
     {
-        //$.material.init();
-        //adjustStyle();
-        //$(window).resize(function()
-        //{
-        //    adjustStyle();
-        //});
-
-
-        $.fn.setAnimationImage = function()
+        adjustStyle();
+        $(window).resize(function()
         {
-            console.log($(this).height())
-            $(this).slideUp(500).slideDown(500);
-        };
-
-
-        //$(".img-fluid").hover(function()
-        //{
-        //    $(".img-fluid").setAnimationImage();
-        //},
-        //function()
-        //{
-
-        //});
-
-        $("#div-slider-left").mmenu(
-        {
-            "slidingSubmenus": false
-        },
-        {
-            offCanvas:
-            {
-                pageSelector: "#page"
-            }
+            adjustStyle();
         });
-        LeftMenu = $("#div-slider-left").data("mmenu");
 
-        $("#cmdLeftNavbar").click(function() { if ($("#div-slider-left").is(":visible")) { LeftMenu.close(); } else { LeftMenu.open(); } });
-
-
+        $("section:even").css({ "background-color": "#FFFFFF" });
+        $("section:odd").css({ "background-color": "#EEEEEE" });
     });
 
     </script>
-
-    <style>
-    /*.section
-    {
-        position:relative;
-        z-index:1;
-        width:100%;
-        background-attachment:fixed;
-        background-size:100% 100%;
-        background-repeat:no-repeat;
-    }
-    .content
-    {
-        position:relative;
-        z-index:2;
-        height:50%;
-        }
-        .section#s1 {
-        background-image: url(http://farm4.staticflickr.com/3290/3090990005_1177611ccb_o.jpg);
-        }
-        .section#s2 {
-        background-image: url(http://farm5.staticflickr.com/4135/4820238049_8e830ec494_b.jpg);
-        }
-        .section#s3 {
-        background-image: url(http://farm5.staticflickr.com/4015/4589449172_eb046a7f2a_b.jpg);
-        }
-        .section#s4 {
-        background-image: url(http://farm9.staticflickr.com/8109/8623081923_9cffafc4a7_h.jpg);
-        }
-        .section#s5 {
-        background-image: url(http://farm4.staticflickr.com/3073/3090985991_8d4b559d29_o.jpg);
-    }*/
-    </style>
-
 </head>
 
 <body>
-    
-    <div id="page">
-        <form id="frmReg">
+    <form id="frmReg">
 
-            <button id="cmdLeftNavbar" class="btn-primary">Trykk her</button>
-
-            <!--<section class="web2net-all-border-solid-1px-#5bc0de">
-                <div class="container-fluid">
-
-                    <div class="row">
-                        <div class="col-xl-8 offset-xl-4">
-
-                            <img class="img-fluid" src="lib/img/responsiv_web2net.jpg" />
-
-
-
-
-                        </div>
+        <div class="cd-navbar cd-left">
+            <div class="cd-lines cd-btn"></div>
+            <div class="cd-panel from-left">
+                <div class="cd-panel-container">
+                    <div class="cd-panel-content">
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#section1">Hjem</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#section2">Om oss</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#section3">Referanser</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#section4">Ansatte</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#section5">Kontakt oss</a>
+                            </li>
+                        </ul>
                     </div>
-
                 </div>
-            </section>
+            </div>
+        </div>
+
+        <nav class="navbar web2net-xs-display-block web2net-xs-height-41px web2net-xs-backgroundColor-#666666 web2net-all-display-none"></nav>
+
+        <section id="section1">
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-sm-12">
 
 
-            <section class="web2net-all-border-solid-1px-#ff0000">
-                <div class="container-fluid">
-
-                    <div class="row">
-                        <div class="col-xl-8">
-
-                            <img class="img-fluid" src="lib/img/responsiv_web2net.jpg" />
-
-                        </div>
                     </div>
-
                 </div>
-            </section>-->
 
-            <nav id="div-slider-left">
-                <ul id="ul-slider-left">
-                    <li>Dette er en meny</li>
-                    <li>Det er dette også</li>
-                </ul>
-            </nav>
+            </div>
+        </section>
+
+        <section id="section2">
+            <div class="container-fluid">
+
+                <div class="row web2net-all-marginBottom-40px">
+                    <div class="col-sm-12 text-sm-center">
+                        <h1>Om oss</h1>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12">
 
 
+                    </div>
+                </div>
 
-        </form>
-    </div>
+            </div>
+        </section>
 
+        <section id="section3">
+            <div class="container-fluid">
+
+                <div class="row web2net-all-marginBottom-80px">
+                    <div class="col-sm-12 text-sm-center">
+                        <h1>Referanser</h1>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+
+                    </div>
+                    <div class="col-sm-8">
+                        <ul class="list-unstyled pull-right web2net-xs-fontSize-16px web2net-all-fontSize-20px">
+                            <li>
+                                Promidt har spesialkompetanse innen prosjektledelse og taksering
+                            </li>
+                            <li>
+                                Promidt har sentral godkjenning for SØK, overordnet ansvar PRO/UTF/Kontroll
+                            </li>
+                            <li>
+                                Promidt har gode samarbeidspartnere til å løse kompliserte oppdrag i fellesskap
+                            </li>
+                            <li>
+                                Promidt har lang erfaring og kompetanse for alle sine tjenester
+                            </li>
+                            <li>
+                                Promidt er etablert på Levanger med Midt-Norge som markedsområde
+                            </li>
+                            <li>
+                                Promidt er godkjent medlem av Rådgivende Ingeniørers Forening (RIF)
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="section4">
+            <div class="container-fluid">
+
+                <div class="row web2net-all-marginBottom-40px">
+                    <div class="col-sm-12 text-sm-center">
+                        <h1>Ansatte</h1>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-11 offset-md-1">
+
+                        <div class="card-deck-wrapper web2net-all-margin-0px">
+                            <div class="card-deck">
+
+                                <div class="card">
+                                    <img class="card-img-top" src="template/responsiv_web2net.jpg" />
+                                    <div class="card-block">
+                                        <h4 class="card-title">Card title</h4>
+                                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <img class="card-img-top" src="template/responsiv_web2net.jpg" />
+                                    <div class="card-block">
+                                        <h4 class="card-title">Card title</h4>
+                                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <img class="card-img-top" src="template/responsiv_web2net.jpg" />
+                                    <div class="card-block">
+                                        <h4 class="card-title">Card title</h4>
+                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+   
+            </div>
+        </section>
+
+        <section id="section5">
+            <div class="container-fluid">
+
+                <div class="row web2net-all-marginBottom-40px">
+                    <div class="col-sm-12 text-sm-center">
+                        <h1>Kontakt oss</h1>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12 text-sm-center">
+                        <span>Copyright &copy; promidt - 2016</span>
+                        <a href="http://web2net.no/" target="_blank">Powered by Web2net</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </form>
 </body>
 </html>
