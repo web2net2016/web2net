@@ -8,7 +8,7 @@ body
 	outline: none;
 	font-family: 'Roboto', sans-serif;
 	font-size: 14px;
-	background-color: #ff9800;
+	background-color: #f8f8f8;
 }
 
 /* Standard (a) linker ---*/
@@ -176,7 +176,7 @@ form
 	background-color: #A0A0A0;
 }
 
-/**
+*
 {
 	-webkit-border-radius: 0 !important;
 	-moz-border-radius: 0 !important;
@@ -238,7 +238,7 @@ form
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	box-shadow: none;
-}*/
+}
 
 .form-group
 {
