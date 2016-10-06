@@ -1,15 +1,5 @@
 
 
-
-
-
-
-
-
-
-
-
-
 /* web2net ---*/
 body
 {
@@ -18,7 +8,7 @@ body
 	outline: none;
 	font-family: 'Roboto', sans-serif;
 	font-size: 14px;
-	background-color: #f8f8f8;
+	background-color: #ff9800;
 }
 
 /* Standard (a) linker ---*/
@@ -113,8 +103,8 @@ footer
 
 img
 {
-	/*max-width: 100%;
-	height: auto;*/
+	max-width: 100%;
+	height: auto;
 	border: 0;
 	outline: none;
 }

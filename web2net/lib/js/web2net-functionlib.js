@@ -14,7 +14,6 @@ $(document).ready(function()
 
 function adjustStyle()
 {
-    setCSSInlineStyle();
     if (StyleMode == true)
     {
 	    if ($("#div-window-size").length == 0)
