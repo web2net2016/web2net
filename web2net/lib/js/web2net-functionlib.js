@@ -21,6 +21,8 @@ function adjustStyle()
 	        $("body").append("<div id=\"div-window-size\" style=\"position: fixed; z-index: 499999; top: 0; left: 0; width: 100%; height: 20px; text-align: center;\"></div>");
 		}
     }
+    
+    $("#section5-blockquote").addClass("blockquote-reverse");
     var _WindowWidth = parseInt($(window).width());
     if (_WindowWidth >= 1200)
     {
@@ -44,6 +46,7 @@ function adjustStyle()
     }
     else
     {
+        $("#section5-blockquote").removeClass("blockquote-reverse");
         $("#size-stylesheet").attr("href", "lib/css/xs.css");
         $("#div-window-size").css({ "background-color": "#d9534f" }).text("xs.css - < 543");
     }
@@ -158,4 +161,18 @@ function setCSSInlineStyle(SelectedArea)
             _Self.css($.extend(ObjSetStyle, ObjExistsStyle))
         });
     }
+}
+
+function swapElements(elm1, elm2)
+{
+    var parent1, next1,
+        parent2, next2;
+
+    parent1 = elm1.parentNode;
+    next1 = elm1.nextSibling;
+    parent2 = elm2.parentNode;
+    next2 = elm2.nextSibling;
+
+    parent1.insertBefore(elm2, next1);
+    parent2.insertBefore(elm1, next2);
 }

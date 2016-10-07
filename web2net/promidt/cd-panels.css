@@ -203,6 +203,12 @@ footer
 	}
 
 
+#logo
+{
+    z-index: 1030;
+    position: absolute;
+}
+
 @media only screen and (min-width: 544px)
 {
 	.cd-panel-container
@@ -231,6 +237,12 @@ footer
 	{
 		font-size: 32px;
 	}
+
+    #logo
+    {
+        left: 50%;
+        margin-left: -30%;
+    }
 }
 
 @media only screen and (min-width: 768px)
@@ -261,6 +273,12 @@ footer
 	{
 		font-size: 44px;
 	}
+
+    #logo
+    {
+        left: 50%;
+        margin-left: -30%;
+    }
 }
 
 @media only screen and (min-width: 992px)
@@ -291,6 +309,12 @@ footer
 	{
 		font-size: 44px;
 	}
+
+    #logo
+    {
+        left: 50%;
+        margin-left: -30%;
+    }
 }
 
 @media only screen and (min-width: 1200px)
@@ -320,5 +344,11 @@ footer
 	h1
 	{
 		font-size: 44px;
-	}    
+	}
+    
+    #logo
+    {
+        top: 35px;
+        left: -345px;
+    }        
 }
