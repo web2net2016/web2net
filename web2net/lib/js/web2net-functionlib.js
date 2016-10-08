@@ -1,28 +1,13 @@
 
-$(document).ready(function()
-{
-    $("a.nav-link").bind("click", function(event)
-    {
-        var $anchor = $(this);
-        $("html, body").stop().animate(
-        {
-            scrollTop: $($anchor.attr("href")).offset().top
-        }, 1500, "easeInOutExpo");
-        event.preventDefault();
-    });
-});
-
 function adjustStyle()
 {
     if (StyleMode == true)
     {
 	    if ($("#div-window-size").length == 0)
 	    {    
-	        $("body").append("<div id=\"div-window-size\" style=\"position: fixed; z-index: 499999; top: 0; left: 0; width: 100%; height: 20px; text-align: center;\"></div>");
+	        $("body").append("<div id=\"div-window-size\" style=\"position: fixed; z-index: 499999; bottom: 0; left: 0; width: 100%; height: 20px; text-align: center;\"></div>");
 		}
     }
-    
-    $("#section5-blockquote").addClass("blockquote-reverse");
     var _WindowWidth = parseInt($(window).width());
     if (_WindowWidth >= 1200)
     {
@@ -46,7 +31,6 @@ function adjustStyle()
     }
     else
     {
-        $("#section5-blockquote").removeClass("blockquote-reverse");
         $("#size-stylesheet").attr("href", "lib/css/xs.css");
         $("#div-window-size").css({ "background-color": "#d9534f" }).text("xs.css - < 543");
     }

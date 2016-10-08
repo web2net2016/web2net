@@ -1,4 +1,11 @@
 ﻿
+#wrapper
+{
+	max-width: 1280px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .cd-navbar
 {
 	position: fixed;
@@ -179,7 +186,7 @@ h1
 {
 	-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	-moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 footer
@@ -203,10 +210,14 @@ footer
 	}
 
 
-#logo
+#section1-logo
 {
-    z-index: 1030;
-    position: absolute;
+	display: block;
+	z-index: 1030;
+	position: absolute;
+	width: 50%;
+	top: 5%;
+	left: 50%;
 }
 
 @media only screen and (min-width: 544px)
@@ -238,11 +249,15 @@ footer
 		font-size: 32px;
 	}
 
-    #logo
-    {
-        left: 50%;
-        margin-left: -30%;
-    }
+	#section1-logo
+	{
+		display: block;
+		z-index: 1030;
+		position: absolute;
+		width: 50%;
+		top: 5%;
+		left: 50%;
+	}
 }
 
 @media only screen and (min-width: 768px)
@@ -274,11 +289,15 @@ footer
 		font-size: 44px;
 	}
 
-    #logo
-    {
-        left: 50%;
-        margin-left: -30%;
-    }
+	#section1-logo
+	{
+		display: block;
+		z-index: 1030;
+		position: absolute;
+		width: 50%;
+		top: 5%;
+		left: 50%;
+	}
 }
 
 @media only screen and (min-width: 992px)
@@ -310,11 +329,15 @@ footer
 		font-size: 44px;
 	}
 
-    #logo
-    {
-        left: 50%;
-        margin-left: -30%;
-    }
+	#section1-logo
+	{
+		display: block;
+		z-index: 1030;
+		position: absolute;
+		width: 60%;
+		top: 5%;
+		left: 50%;
+	}
 }
 
 @media only screen and (min-width: 1200px)
@@ -326,7 +349,7 @@ footer
 
 	.cd-navbar
 	{
-		top: 45%;
+		top: 40%;
 	}
 
 	.cd-btn
@@ -345,10 +368,14 @@ footer
 	{
 		font-size: 44px;
 	}
-    
-    #logo
-    {
-        top: 35px;
-        left: -345px;
-    }        
+
+	#section1-logo
+	{
+		display: block;
+		z-index: 1030;
+		position: absolute;
+		width: 80%;
+		top: 10%;
+		left: 80%;
+	}
 }
