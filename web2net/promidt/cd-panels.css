@@ -158,7 +158,6 @@
 
 	.cd-panel-content > .nav
 	{
-		margin-top: 100px;
 		margin-left: 30px;
 	}
 
@@ -186,7 +185,7 @@ h1
 {
 	-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	-moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 footer
@@ -244,6 +243,11 @@ footer
 		top: 16px;
 	}
 
+	.cd-panel-content > .nav
+	{
+		margin-top: 30%;
+	}
+
 	h1
 	{
 		font-size: 32px;
@@ -282,6 +286,11 @@ footer
 	{
 		right: 25px;
 		top: 28px;
+	}
+
+	.cd-panel-content > .nav
+	{
+		margin-top: 30%;
 	}
 
 	h1
@@ -324,6 +333,11 @@ footer
 		top: 34px;
 	}
 
+	.cd-panel-content > .nav
+	{
+		margin-top: 30%;
+	}
+
 	h1
 	{
 		font-size: 44px;
@@ -362,6 +376,11 @@ footer
 	{
 		right: 34px;
 		top: 34px;
+	}
+
+	.cd-panel-content > .nav
+	{
+		margin-top: 60%;
 	}
 
 	h1
