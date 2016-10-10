@@ -185,6 +185,11 @@
     text-shadow: none;
 }
 
+.blockquote
+{
+    border-color: #D5D1D0;
+}
+
 /* -------------------------------*/
 
 h1
