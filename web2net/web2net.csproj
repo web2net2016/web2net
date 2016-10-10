@@ -82,6 +82,8 @@
     <Content Include="promidt\favicon.ico" />
     <Content Include="promidt\glassbyggstein.jpg" />
     <Content Include="promidt\helge_h_skjaerpe.jpg" />
+    <Content Include="promidt\helsehus.jpg" />
+    <Content Include="promidt\lensmannsgaarden.jpg" />
     <Content Include="promidt\matrise.png" />
     <Content Include="promidt\promidt_logo.png" />
     <Content Include="promidt\stian_iversen.jpg" />

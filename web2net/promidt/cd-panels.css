@@ -1,400 +1,411 @@
 ﻿
 #wrapper
 {
-	max-width: 1280px;
-	margin-left: auto;
-	margin-right: auto;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .cd-navbar
 {
-	position: fixed;
-	top: 0;
-	z-index: 1040;
+    position: fixed;
+    top: 0;
+    z-index: 1040;
 }
 
 .cd-left
 {
-	left: 0;
+    left: 0;
 }
 
 .cd-right
 {
-	right: 0;
+    right: 0;
 }
 
 .cd-btn
 {
-	position: relative;
-	width: 80px;
-	height: 40px;
-	background-color: #D5D1D0;
-	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    position: relative;
+    width: 80px;
+    height: 40px;
+    background-color: #D5D1D0;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 .cd-lines:before
 {
-	right: 15px;
-	top: 5px;
-	width: 50px;
-	height: 28px;
-	position: absolute;
-	border-top: 6px solid #FFFFFF;
-	border-bottom: 17px double #FFFFFF;
-	content: "";
+    right: 15px;
+    top: 5px;
+    width: 50px;
+    height: 28px;
+    position: absolute;
+    border-top: 6px solid #FFFFFF;
+    border-bottom: 17px double #FFFFFF;
+    content: "";
 }
 
 .cd-lines-rotated
 {
-	-webkit-transition-duration: 0.8s;
-	-moz-transition-duration: 0.8s;
-	-o-transition-duration: 0.8s;
-	transition-duration: 0.8s;
-	-webkit-transition-property: -webkit-transform;
-	-moz-transition-property: -moz-transform;
-	-o-transition-property: -o-transform;
-	transition-property: transform;
-	-webkit-transform: rotate(360deg);
-	-moz-transform: rotate(360deg);
-	-ms-transform: rotate(360deg);
-	-o-transform: rotate(360deg);
-	transform: rotate(360deg);
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    -o-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
 }
 
 .cd-panel
 {
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	visibility: hidden;
-	-webkit-transition: visibility 0s 0.6s;
-	-moz-transition: visibility 0s 0.6s;
-	transition: visibility 0s 0.6s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    visibility: hidden;
+    -webkit-transition: visibility 0s 0.6s;
+    -moz-transition: visibility 0s 0.6s;
+    transition: visibility 0s 0.6s;
 }
 
-	.cd-panel:after
-	{
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-	}
+    .cd-panel:after
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 
-	.cd-panel.is-visible
-	{
-		visibility: visible;
-		-webkit-transition: visibility 0s 0s;
-		-moz-transition: visibility 0s 0s;
-		transition: visibility 0s 0s;
-	}
+    .cd-panel.is-visible
+    {
+        visibility: visible;
+        -webkit-transition: visibility 0s 0s;
+        -moz-transition: visibility 0s 0s;
+        transition: visibility 0s 0s;
+    }
 
 .cd-panel-container
 {
-	position: fixed;
-	width: 70%;
-	height: 100%;
-	top: 0;
-	background-color: #D5D1D0;
-	z-index: 1040;
-	-webkit-transition-property: -webkit-transform;
-	-moz-transition-property: -moz-transform;
-	transition-property: transform;
-	-webkit-transition-duration: 0.3s;
-	-moz-transition-duration: 0.3s;
-	transition-duration: 0.3s;
-	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    position: fixed;
+    width: 70%;
+    height: 100%;
+    top: 0;
+    background-color: #D5D1D0;
+    z-index: 1040;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 .from-right .cd-panel-container
 {
-	right: 0;
-	-webkit-transform: translate3d(100%, 0, 0);
-	-moz-transform: translate3d(100%, 0, 0);
-	-ms-transform: translate3d(100%, 0, 0);
-	-o-transform: translate3d(100%, 0, 0);
-	transform: translate3d(100%, 0, 0);
+    right: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    -moz-transform: translate3d(100%, 0, 0);
+    -ms-transform: translate3d(100%, 0, 0);
+    -o-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
 }
 
 .from-left .cd-panel-container
 {
-	left: 0;
-	-webkit-transform: translate3d(-100%, 0, 0);
-	-moz-transform: translate3d(-100%, 0, 0);
-	-ms-transform: translate3d(-100%, 0, 0);
-	-o-transform: translate3d(-100%, 0, 0);
-	transform: translate3d(-100%, 0, 0);
+    left: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    -moz-transform: translate3d(-100%, 0, 0);
+    -ms-transform: translate3d(-100%, 0, 0);
+    -o-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
 }
 
 .is-visible .cd-panel-container
 {
-	-webkit-transform: translate3d(0, 0, 0);
-	-moz-transform: translate3d(0, 0, 0);
-	-ms-transform: translate3d(0, 0, 0);
-	-o-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
-	-webkit-transition-delay: 0s;
-	-moz-transition-delay: 0s;
-	transition-delay: 0s;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition-delay: 0s;
+    -moz-transition-delay: 0s;
+    transition-delay: 0s;
 }
 
 .cd-panel-content
 {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	padding: 70px 5%;
-	overflow: auto;
-	-webkit-overflow-scrolling: touch;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 70px 5%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
-	.cd-panel-content > .nav
-	{
-		margin-left: 30px;
-	}
+    .cd-panel-content > .nav
+    {
+        margin-left: 30px;
+    }
 
-		.cd-panel-content > .nav > .nav-item
-		{
-			margin-bottom: 20px;
-		}
+        .cd-panel-content > .nav > .nav-item
+        {
+            margin-bottom: 20px;
+        }
 
-			.cd-panel-content > .nav > .nav-item > .nav-link
-			{
-				font-size: 18px;
-				font-weight: 300;
-				letter-spacing: 1.5px;
-			}
+            .cd-panel-content > .nav > .nav-item > .nav-link
+            {
+                font-size: 18px;
+                font-weight: 300;
+                letter-spacing: 1.5px;
+            }
 
+
+.carousel-caption
+{
+    position: relative;
+    left: auto;
+    right: auto;
+    color: #000000;
+    margin-top: 40px;
+    padding: 0;
+    text-shadow: none;
+}
 
 /* -------------------------------*/
 
 h1
 {
-	font-weight: 300;
+    font-weight: 300;
 }
 
 .card
 {
-	-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-	-moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 footer
 {
-	padding-top: 40px;
-	padding-bottom: 40px;
-	color: #333333;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: #333333;
 }
 
-	footer > div > div > div > span
-	{
-		display: block;
-		margin-top: 15px;
-		text-transform: uppercase;
-	}
+    footer > div > div > div > span
+    {
+        display: block;
+        margin-top: 15px;
+        text-transform: uppercase;
+    }
 
-	footer > div > div > div > a
-	{
-		margin-bottom: 10px;
-		color: #FFFFFF;
-	}
+    footer > div > div > div > a
+    {
+        margin-bottom: 10px;
+        color: #FFFFFF;
+    }
 
 
 #section1-logo
 {
-	display: block;
-	z-index: 1030;
-	position: absolute;
-	width: 50%;
-	top: 5%;
-	left: 50%;
+    display: block;
+    z-index: 1030;
+    position: absolute;
+    width: 50%;
+    top: 5%;
+    left: 50%;
 }
 
 @media only screen and (min-width: 544px)
 {
-	.cd-panel-container
-	{
-		width: 50%;
-	}
+    .cd-panel-container
+    {
+        width: 50%;
+    }
 
-	.cd-navbar
-	{
-		top: 25%;
-	}
+    .cd-navbar
+    {
+        top: 25%;
+    }
 
-	.cd-btn
-	{
-		width: 80px;
-		height: 60px;
-	}
+    .cd-btn
+    {
+        width: 80px;
+        height: 60px;
+    }
 
-	.cd-lines:before
-	{
-		right: 17px;
-		top: 16px;
-	}
+    .cd-lines:before
+    {
+        right: 17px;
+        top: 16px;
+    }
 
-	.cd-panel-content > .nav
-	{
-		margin-top: 30%;
-	}
+    .cd-panel-content > .nav
+    {
+        margin-top: 30%;
+    }
 
-	h1
-	{
-		font-size: 32px;
-	}
+    h1
+    {
+        font-size: 32px;
+    }
 
-	#section1-logo
-	{
-		display: block;
-		z-index: 1030;
-		position: absolute;
-		width: 50%;
-		top: 5%;
-		left: 50%;
-	}
+    #section1-logo
+    {
+        display: block;
+        z-index: 1030;
+        position: absolute;
+        width: 50%;
+        top: 5%;
+        left: 50%;
+    }
 }
 
 @media only screen and (min-width: 768px)
 {
-	.cd-panel-container
-	{
-		width: 40%;
-	}
+    .cd-panel-container
+    {
+        width: 40%;
+    }
 
-	.cd-navbar
-	{
-		top: 25%;
-	}
+    .cd-navbar
+    {
+        top: 25%;
+    }
 
-	.cd-btn
-	{
-		width: 100px;
-		height: 80px;
-	}
+    .cd-btn
+    {
+        width: 100px;
+        height: 80px;
+    }
 
-	.cd-lines:before
-	{
-		right: 25px;
-		top: 28px;
-	}
+    .cd-lines:before
+    {
+        right: 25px;
+        top: 28px;
+    }
 
-	.cd-panel-content > .nav
-	{
-		margin-top: 30%;
-	}
+    .cd-panel-content > .nav
+    {
+        margin-top: 30%;
+    }
 
-	h1
-	{
-		font-size: 44px;
-	}
+    h1
+    {
+        font-size: 44px;
+    }
 
-	#section1-logo
-	{
-		display: block;
-		z-index: 1030;
-		position: absolute;
-		width: 50%;
-		top: 5%;
-		left: 50%;
-	}
+    #section1-logo
+    {
+        display: block;
+        z-index: 1030;
+        position: absolute;
+        width: 50%;
+        top: 5%;
+        left: 50%;
+    }
 }
 
 @media only screen and (min-width: 992px)
 {
-	.cd-panel-container
-	{
-		width: 30%;
-	}
+    .cd-panel-container
+    {
+        width: 30%;
+    }
 
-	.cd-navbar
-	{
-		top: 25%;
-	}
+    .cd-navbar
+    {
+        top: 25%;
+    }
 
-	.cd-btn
-	{
-		width: 120px;
-		height: 100px;
-	}
+    .cd-btn
+    {
+        width: 120px;
+        height: 100px;
+    }
 
-	.cd-lines:before
-	{
-		right: 34px;
-		top: 34px;
-	}
+    .cd-lines:before
+    {
+        right: 34px;
+        top: 34px;
+    }
 
-	.cd-panel-content > .nav
-	{
-		margin-top: 30%;
-	}
+    .cd-panel-content > .nav
+    {
+        margin-top: 30%;
+    }
 
-	h1
-	{
-		font-size: 44px;
-	}
+    h1
+    {
+        font-size: 44px;
+    }
 
-	#section1-logo
-	{
-		display: block;
-		z-index: 1030;
-		position: absolute;
-		width: 60%;
-		top: 5%;
-		left: 50%;
-	}
+    #section1-logo
+    {
+        display: block;
+        z-index: 1030;
+        position: absolute;
+        width: 60%;
+        top: 5%;
+        left: 50%;
+    }
 }
 
 @media only screen and (min-width: 1200px)
 {
-	.cd-panel-container
-	{
-		width: 20%;
-	}
+    .cd-panel-container
+    {
+        width: 20%;
+    }
 
-	.cd-navbar
-	{
-		top: 40%;
-	}
+    .cd-navbar
+    {
+        top: 40%;
+    }
 
-	.cd-btn
-	{
-		width: 120px;
-		height: 100px;
-	}
+    .cd-btn
+    {
+        width: 120px;
+        height: 100px;
+    }
 
-	.cd-lines:before
-	{
-		right: 34px;
-		top: 34px;
-	}
+    .cd-lines:before
+    {
+        right: 34px;
+        top: 34px;
+    }
 
-	.cd-panel-content > .nav
-	{
-		margin-top: 60%;
-	}
+    .cd-panel-content > .nav
+    {
+        margin-top: 60%;
+    }
 
-	h1
-	{
-		font-size: 44px;
-	}
+    h1
+    {
+        font-size: 44px;
+    }
 
-	#section1-logo
-	{
-		display: block;
-		z-index: 1030;
-		position: absolute;
-		width: 80%;
-		top: 10%;
-		left: 80%;
-	}
+    #section1-logo
+    {
+        display: block;
+        z-index: 1030;
+        position: absolute;
+        width: 80%;
+        top: 10%;
+        left: 80%;
+    }
 }
