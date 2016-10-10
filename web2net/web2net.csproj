@@ -113,6 +113,7 @@
     <Content Include="lib\font-awesome\fonts\fontawesome-webfont.woff" />
     <Content Include="lib\font-awesome\fonts\fontawesome-webfont.woff2" />
     <Content Include="lib\font-awesome\fonts\FontAwesome.otf" />
+    <None Include="Properties\PublishProfiles\Web2net.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
