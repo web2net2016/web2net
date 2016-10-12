@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <title>Promidt AS</title>
+    <link rel="shortcut icon" href="lib/img/favicon.ico">
+    <script type="text/javascript" src="lib/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="lib/js/web2net-functionlib.js"></script>
+    <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="lib/js/jquery-easing-min.js"></script>
+    <link type="text/css" rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css" />
+    <link type="text/css" rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="lib/css/default.css" />
+    <link type="text/css" rel="stylesheet" id="size-stylesheet" href="lib/css/xl.css">
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+
+    <script type="text/javascript" src="promidt/cd-panels.js"></script>
+    <link type="text/css" rel="stylesheet" href="promidt/cd-panels.css" />
+    <script type="text/javascript">
+
+        var StyleMode = false;
+
+        $(document).ready(function()
+        {
+            adjustStyle();
+            adjustWidth();
+            setCSSInlineStyle();
+            $(window).resize(function()
+            {
+                adjustStyle();
+                adjustWidth();
+            });
+            $("section:odd").css({ "background-color": "#FFFFFF" });
+            $("section:even").css({ "background-color": "#EEEEEE" });
+        });
+
+    </script>
+</head>
+
+<body>
+    <form id="frmReg">
+        <div id="wrapper">
+
+            <div class="cd-navbar cd-left">
+                <div class="cd-lines cd-btn"></div>
+                <div class="cd-panel from-left">
+                    <div class="cd-panel-container">
+                        <div class="cd-panel-content">
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html#section1">Hjem</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html#section2">Om oss</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html#section3">Tjenester</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html#section4">Referanser</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html#section6">Ansatte</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+
+            <section id="section5">
+                <div class="container-fluid">
+
+                    <div class="row web2net-xs-marginBottom-20px web2net-all-marginBottom-40px">
+                        <div class="col-sm-12 text-sm-center">
+                            <h1>Priser - Takst</h1>
+                            <h4>01.03.2016 – 31.12.2016</h4>
+                            <h5>Alle priser er inkludert merverdiavgift.</h5>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+
+                            <ol class="web2net-xs-fontSize-16px web2net-all-fontSize-18px">
+                                <li>BSR2 for boliger (inntil 300 m2) inkl. arealberegning <strong class="web2net-all-fontSize-20px">10900,-</strong></li>
+                                <li>BSR2 for leiligheter inkl. arealberegning, ekskl. fellesareal <strong class="web2net-all-fontSize-20px">7100,-</strong></li>
+                                <li>Våtromstest inkl. arealmåling og energimerking <strong class="web2net-all-fontSize-20px">4600,-</strong></li>
+                                <li>Verditakst for bolig og leilighet <strong class="web2net-all-fontSize-20px">5700,-</strong></li>
+                                <li>Tilstandsrapport bolig (inkl. arealmåling og energimerking) <strong class="web2net-all-fontSize-20px">9500,-</strong></li>
+                            </ol>
+
+                        </div>
+                        <div class="col-sm-12 col-md-5 offset-md-1">
+
+                            <ol class="web2net-xs-fontSize-16px web2net-all-fontSize-18px">
+                                <li>Verdivurdering for BSR2 <strong class="web2net-all-fontSize-20px">1100,-</strong></li>
+                                <li>Tillegg for ekstra boenhet <strong class="web2net-all-fontSize-20px">1500,-</strong></li>
+                                <li>Enkel planskisse <strong class="web2net-all-fontSize-20px">500,-</strong></li>
+                                <li>Hulltaking under terreng og våtrom, pr. stk. <strong class="web2net-all-fontSize-20px">350,-</strong></li>
+                                <li>Forenklet vurdering av elektrisk anlegg <strong class="web2net-all-fontSize-20px">1100,-</strong></li>
+                                <li>Forenklet vurdering av branntekniske forhold <strong class="web2net-all-fontSize-20px">1100,-</strong></li>
+                                <li>Energiattest enkel <strong class="web2net-all-fontSize-20px">350,-</strong></li>
+                            </ol>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+
+                            <ul class="web2net-xs-fontSize-16px web2net-all-fontSize-18px">
+                                <li>Ingen tillegg for krypkjellere og spesialrom for bolig.</li>
+                                <li>Bestilling av meglerpakker gir ingen påslag.</li>
+                                <li>Større boliger og hytter/fritidsbolig etter avtale.</li>
+                                <li>Øvrig bistand honoreres etter medgått tid.</li>
+                                <li>Timepris: <strong class="web2net-all-fontSize-20px">1100,-</strong></li>
+                                <li>Oppdrag innen 10 km fra vårt kontor er inkl. Øvrige oppdrag faktureres med 5,- pr. km og kjøretid etter oppgitt timepris.</li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                </div>
+            </section>            
+
+            <section id="section7" class="web2net-all-paddingBottom-50px">
+                <div class="container-fluid">
+
+                    <div class="row web2net-xs-marginBottom-20px web2net-all-marginBottom-40px">
+                        <div class="col-sm-12 text-sm-center">
+                            <h1>Kontakt oss</h1>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+
+                            <blockquote id="section7-blockquote" class="blockquote">
+                                <p><i class="fa fa-map-marker fa-fw fa-lg"></i> Moafjæra 14, 7606 Levanger</p>
+                                <p>Takstoppdrag</p>
+                                <p><i class="fa fa-envelope-o fa-fw fa-lg"></i> takst@promidt.no</p>
+                                <p>Øvrige henvendelser</p>
+                                <p><i class="fa fa-envelope-o fa-fw fa-lg"></i> post@promidt.no</p>
+                            </blockquote>
+
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+
+                            <img class="img-shadow" src="promidt/engineering.jpg" />
+                            <br />
+                            <br />
+                            <div class="text-xs-center"><img src="promidt/promidt_logo.png" width="80%" /></div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <footer>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12 text-sm-center">
+                            <span>Copyright &copy; promidt - 2016</span>
+                            <a href="//web2net.no" target="_blank">Powered by web2net</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </form>
+</body>
+</html>

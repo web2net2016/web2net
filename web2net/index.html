@@ -11,7 +11,7 @@
     <meta name="apple-touch-fullscreen" content="yes" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="format-detection" content="email=no" />
-    <title></title>
+    <title>Promidt AS</title>
     <link rel="shortcut icon" href="lib/img/favicon.ico">
     <script type="text/javascript" src="lib/js/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="lib/js/web2net-functionlib.js"></script>
@@ -23,284 +23,163 @@
     <link type="text/css" rel="stylesheet" id="size-stylesheet" href="lib/css/xl.css">
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
 
-    <script type="text/javascript" src="template/cd-panels.js"></script>
-    <link type="text/css" rel="stylesheet" href="template/cd-panels.css" />
+    <script type="text/javascript" src="promidt/cd-panels.js"></script>
+    <link type="text/css" rel="stylesheet" href="promidt/cd-panels.css" />
     <script type="text/javascript">
 
-    var StyleMode = false;
+        var StyleMode = false;
 
-    $(document).ready(function()
-    {
-        adjustStyle();
-        setCSSInlineStyle();
-        $(window).resize(function()
+        $(document).ready(function()
         {
             adjustStyle();
-        });
-
-        $("section:even").css({ "background-color": "#FFFFFF" });
-        $("section:odd").css({ "background-color": "#EEEEEE" });
-
-
-
-        
-        $(".eff1").hover(function()
-        {
-            $(this).animate({
-                opacity: 0.25,
-                left: "+=50",
-                height: "toggle"
-            }, 5000, function()
+            adjustWidth();
+            setCSSInlineStyle();
+            $(window).resize(function()
             {
- 
-
+                adjustStyle();
+                adjustWidth();
             });
-            $(this).animate(
-                {
-                width: "70%",
-                opacity: 0.4,
-                marginLeft: "0.6in",
-                fontSize: "3em",
-                borderWidth: "10px"
-            }, 1500)
-
-        }, function()
-        {
-
-            $(this).animate({
-                width: "100",
-                opacity: 1.0,
-                marginLeft: "0in",
-                fontSize: "100%",
-                borderWidth: "1px"
-            }, 1500);
-
+            $("section:odd").css({ "background-color": "#FFFFFF" });
+            $("section:even").css({ "background-color": "#EEEEEE" });
         });
-
-        var menyScrollTop = 0;
-        menyScrollTop = $("#section3").offset();
-
-        $(window).scroll(function()
-        {
-            var docScrollTop = $(window).scrollTop();
-            if (docScrollTop > menyScrollTop.top)
-            {
-                //$("#navbar").addClass("navbar-fixed-top");
-                $("#section3").css({ "background-color": "#d9534f", "width": "50%" });
-
-
-            }
-            else
-            {
-                //$("#navbar").removeClass("navbar-fixed-top");
-                $("#section3").css({ "background-color": "#607d8b", "width": "100%" });
-
-            }
-        });
-
-
-
-        //$(window).resize(function()
-        //{
-        //    sidebarScrollTop = $(".hovedmeny_div").offset().top;
-        //});
-        //$(document).resize(function()
-        //{
-        //    sidebarScrollTop = $(".hovedmeny_div").offset().top;
-        //});
-
-
-    });
 
     </script>
-    <style>
-
-        #navbar
-        {
-            z-index: 1040;
-            width: 100%;
-            background-color: #607d8b;
-            color: #FFFFFF;
-        }
-
-    </style>
 </head>
 
 <body>
     <form id="frmReg">
+        <div id="wrapper">
 
-        <nav id="navbar" class="navbar">
-            <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
-                &#9776;
-            </button>
-            <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
-                <ul class="nav navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#section1">Hjem</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#section2">Om oss</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#section3">Referanser</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#section4">Ansatte</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#section5">Kontakt oss</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-        <div class="cd-navbar cd-left">
-            <div class="cd-lines cd-btn"></div>
-            <div class="cd-panel from-left">
-                <div class="cd-panel-container">
-                    <div class="cd-panel-content">
-                        <ul class="nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#section1">Hjem</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#section2">Om oss</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#section3">Referanser</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#section4">Ansatte</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#section5">Kontakt oss</a>
-                            </li>
-                        </ul>
+            <div class="cd-navbar cd-left">
+                <div class="cd-lines cd-btn"></div>
+                <div class="cd-panel from-left">
+                    <div class="cd-panel-container">
+                        <div class="cd-panel-content">
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#section1">Hjem</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#section2">Om oss</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#section3">Tjenester</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#section4">Referanser</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="priser.html">Priser</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#section6">Ansatte</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#section7">Kontakt oss</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!--<nav class="navbar web2net-xs-display-block web2net-xs-height-41px web2net-xs-backgroundColor-#666666 web2net-all-display-none"></nav>-->
+            <section id="section1">
+                <div class="container-fluid">
 
-        <section id="section1" class="web2net-all-height-150px">
-            <div class="container-fluid">
+                    <div class="row web2net-xs-marginTop-20px">
+                        <div id="section1-image" class="col-sm-12 col-md-12 col-lg-12 col-xl-6">
 
-                <div class="row">
-                    <div class="col-sm-12">
+                            <img id="section1-logo" src="promidt/promidt_logo.png" />
 
+                            <div id="section1-carousel" class="carousel slide web2net-all-marginBottom-20px" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#section1-carousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#section1-carousel" data-slide-to="1"></li>
+                                    <li data-target="#section1-carousel" data-slide-to="2"></li>
+                                    <li data-target="#section1-carousel" data-slide-to="3"></li>
+                                </ol>
+                                <div class="carousel-inner img-shadow" role="listbox">
+                                    <div class="carousel-item active">
+                                        <img src="promidt/be_moafjaera.jpg" />
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="promidt/bromstadenga.png" />
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="promidt/tiendeholmen.jpg" />
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="promidt/triangel_park.jpg" />
+                                    </div>
+                                </div>
+                                <a class="left carousel-control" href="#section1-carousel" role="button" data-slide="prev">
+                                    <span class="icon-prev"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#section1-carousel" role="button" data-slide="next">
+                                    <span class="icon-next"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
 
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6">
+
+                            <table id="section1-table">
+                                <tr>
+                                    <td valign="bottom">
+                                        <p class="web2net-xs-fontSize-14px web2net-all-fontSize-18px">
+                                            Promidt er et rådgiverfirma som utfører tjenester innen prosjektadministrasjon, taksering, verdivurdering,
+                                            prosjekt- og byggeledelse, rådgivende ingeniørtjenester og annen konsulentbistand.
+                                            Promidt sikrer byggherrens rettigheter og gir trygghet i byggeprosessen.
+                                            Promidt koordinerer alle faser i byggeprosessen.
+                                            <div class="web2net-xs-fontSize-14px web2net-all-fontSize-22px">Promidt står for <span class="web2net-all-color-#FF0000">DEN RØDE TRÅDEN</span> i ditt prosjekt.</div>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
                     </div>
+
                 </div>
-
-            </div>
-        </section>
-
-
-
+            </section>
 
             <section id="section2">
                 <div class="container-fluid">
 
-                    <div class="row web2net-all-marginBottom-40px">
+                    <div class="row web2net-xs-marginBottom-20px web2net-all-marginBottom-40px">
                         <div class="col-sm-12 text-sm-center">
                             <h1>Om oss</h1>
                         </div>
                     </div>
 
-                    <!--<div class="row">
-                    <div class="col-sm-4 text-sm-center"><img class="eff1" src="template/responsiv_web2net.jpg" width="350" height="350" /></div>
-                    <div class="col-sm-4 text-sm-center"><img src="template/responsiv_web2net.jpg" width="350" height="350" /></div>
-                    <div class="col-sm-4 text-sm-center"><img src="template/responsiv_web2net.jpg" width="350" height="350" /></div>
-                </div>-->
-
-                </div>
-            </section>
-
-
-
-            <section id="section3">
-                <div class="container-fluid">
-
-                    <div class="row web2net-all-marginBottom-80px">
-                        <div class="col-sm-12 text-sm-center">
-                            <h1>Referanser</h1>
-                        </div>
-                    </div>
-
                     <div class="row">
-                        <div class="col-sm-4">
+                        <div class="hidden-md-down col-md-12 col-lg-3 col-xl-3 offset-lg-2 offset-xl-2">
+
+                            <img src="promidt/matrise.png" />
 
                         </div>
-                        <div class="col-sm-8">
-                            <ul class="list-unstyled pull-right web2net-xs-fontSize-16px web2net-all-fontSize-20px">
-                                <li>
-                                    Promidt har spesialkompetanse innen prosjektledelse og taksering
-                                </li>
-                                <li>
-                                    Promidt har sentral godkjenning for SØK, overordnet ansvar PRO/UTF/Kontroll
-                                </li>
-                                <li>
-                                    Promidt har gode samarbeidspartnere til å løse kompliserte oppdrag i fellesskap
-                                </li>
-                                <li>
-                                    Promidt har lang erfaring og kompetanse for alle sine tjenester
-                                </li>
-                                <li>
-                                    Promidt er etablert på Levanger med Midt-Norge som markedsområde
-                                </li>
-                                <li>
-                                    Promidt er godkjent medlem av Rådgivende Ingeniørers Forening (RIF)
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                        <div class="col-sm-12 col-md-12 col-lg-7 col-xl-7">
 
-                </div>
-            </section>
+                            <div class="row web2net-all-marginBottom-40px">
+                                <div class="col-xs-12">
+   
+                                    <ul class="web2net-xs-fontSize-14px web2net-all-fontSize-18px">
+                                        <li>Promidt har spesialkompetanse innen prosjektledelse og taksering.</li>
+                                        <li>Promidt har sentral godkjenning for SØK, overordnet ansvar PRO/UTF/Kontroll.</li>
+                                        <li>Promidt har gode samarbeidspartnere til å løse kompliserte oppdrag i fellesskap.</li>
+                                        <li>Promidt har lang erfaring og kompetanse for alle sine tjenester.</li>
+                                        <li>Promidt er etablert på Levanger med Midt-Norge som markedsområde.</li>
+                                        <li>Promidt er godkjent medlem av Rådgivende Ingeniørers Forening (RIF).</li>
+                                    </ul>
 
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="hidden-sm-down col-sm-12">
 
-            <section id="section4">
-                <div class="container-fluid">
-
-                    <div class="row web2net-all-marginBottom-40px">
-                        <div class="col-sm-12 text-sm-center">
-                            <h1>Ansatte</h1>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-12 col-md-11 offset-md-1">
-
-                            <div class="card-deck-wrapper web2net-all-margin-0px">
-                                <div class="card-deck">
-
-                                    <div class="card">
-                                        <img class="card-img-top img-fluid" src="template/responsiv_web2net.jpg" />
-                                        <div class="card-block">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                        </div>
-                                    </div>
-
-                                    <div class="card">
-                                        <img class="card-img-top img-fluid" src="template/responsiv_web2net.jpg" />
-                                        <div class="card-block">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                        </div>
-                                    </div>
-
-                                    <div class="card">
-                                        <img class="card-img-top img-fluid" src="template/responsiv_web2net.jpg" />
-                                        <div class="card-block">
-                                            <h4 class="card-title">Card title</h4>
-                                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                        </div>
-                                    </div>
+                                    <div class="text-lg-center"><img class="img-shadow" src="promidt/glassbyggstein.jpg" width="80%" /></div>
 
                                 </div>
                             </div>
@@ -311,18 +190,280 @@
                 </div>
             </section>
 
-            <section id="section5">
+            <section id="section3">
                 <div class="container-fluid">
 
-                    <div class="row web2net-all-marginBottom-40px">
+                    <div class="row web2net-xs-marginBottom-20px web2net-all-marginBottom-40px">
                         <div class="col-sm-12 text-sm-center">
-                            <h1>Kontakt oss</h1>
+                            <h1>Tjenester</h1>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12 col-md-5 offset-md-1">
+
+                            <h4 class="web2net-all-marginBottom-20px">Prosjektadministrasjon</h4>
+
+                            <ul class="web2net-xs-fontSize-14px web2net-all-fontSize-18px">
+                                <li>Prosjektledelse</li>
+                                <li>Prosjekteringsledelse</li>
+                                <li>Byggeledelse</li>
+                                <li>Byggherreombud</li>
+                                <li>Utviklings- og idefase</li>
+                                <li>Ansvarlig søker</li>
+                                <li>SHA/HMS arbeid</li>
+                                <li>Bistand Byggherresforskriften</li>
+                                <li>Bistand Offentlig anskaffelser</li>
+                                <li>Koordinatorrolle PRO/UTF</li>
+                                <li>Byggelånskontroll</li>
+                                <li>Fremdriftskontroll</li>
+                                <li>Overtakelser</li>
+                                <li>Kvalitetssikring</li>
+                                <li>Generell rådgivning</li>
+                                <li>Fagkurs</li>
+                            </ul>
+
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+
+                            <h4 class="web2net-all-marginBottom-20px">Taksering</h4>
+
+                            <ul class="web2net-xs-fontSize-14px web2net-all-fontSize-18px">
+                                <li>Boligsalgsrapporter</li>
+                                <li>Skadetakst</li>
+                                <li>Næringstakst</li>
+                                <li>Naturskadetakst</li>
+                                <li>Verditakst av bolig, fritid, tomt og næring</li>
+                                <li>Skjønn</li>
+                                <li>Tilstandsanalyser og rapporter</li>
+                                <li>Løsøretakst</li>
+                                <li>Energimerking av leiligheter og boliger</li>
+                                <li>Uavhengig kontroll våtrom og lufttetthet</li>
+                                <li>Byggelånskontroll / fremdriftskontroll</li>
+                                <li>Overtakelser / ferdigbefaringer</li>
+                                <li>Fagkyndig ved tvist/rettssaker</li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="section4">
+                <div class="container-fluid">
+
+                    <div class="row web2net-xs-marginBottom-20px web2net-all-marginBottom-40px">
+                        <div class="col-sm-12 text-sm-center">
+                            <h1>Referanser</h1>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-sm-12">
 
+                            <div id="section4-carousel" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner img-shadow" role="listbox">
+                                    <div class="carousel-item active">
+                                        <img src="promidt/be_moafjaera.jpg" />
+                                        <div class="carousel-caption">
+                                            <h4 class="web2net-xs-fontSize-16px web2net-all-fontSize-20px web2net-all-fontWeight-bold">Funksjon: Prosjektledelse, SHA ansvar</h4>
+                                            <h5 class="web2net-xs-fontSize-14px web2net-all-fontSize-16px web2net-all-fontStyle-italic">2014 - 2015: BE Moafjæra 8, Levanger. Nærings- og leilighetsbygg.</h5>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="promidt/bromstadenga.png" />
+                                        <div class="carousel-caption">
+                                            <h4 class="web2net-xs-fontSize-16px web2net-all-fontSize-20px web2net-all-fontWeight-bold">Funksjon: Prosjektledelse, SHA ansvar</h4>
+                                            <h5 class="web2net-xs-fontSize-14px web2net-all-fontSize-16px web2net-all-fontStyle-italic">2015 - 2018: Bromstadenga. Flere leilighetsbygg med p-kjellere.</h5>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="promidt/tiendeholmen.jpg" />
+                                        <div class="carousel-caption">
+                                            <h4 class="web2net-xs-fontSize-16px web2net-all-fontSize-20px web2net-all-fontWeight-bold">Funksjon: Byggelånskontroll</h4>
+                                            <h5 class="web2net-xs-fontSize-14px web2net-all-fontSize-16px web2net-all-fontStyle-italic">2015 - 2016: Tiendeholmen, Namsos. Leiligheter.</h5>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="promidt/triangel_park.jpg" />
+                                        <div class="carousel-caption">
+                                            <h4 class="web2net-xs-fontSize-16px web2net-all-fontSize-20px web2net-all-fontWeight-bold">Funksjon: Byggherreombud/Prosjektledelse, SHA ansvar</h4>
+                                            <h5 class="web2net-xs-fontSize-14px web2net-all-fontSize-16px web2net-all-fontStyle-italic">2015 - 2016: Triangel Park, Stjørdal. Nærings- og leilighetsbygg.</h5>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="promidt/helsehus.jpg" />
+                                        <div class="carousel-caption">
+                                            <h4 class="web2net-xs-fontSize-16px web2net-all-fontSize-20px web2net-all-fontWeight-bold">Funksjon: Prosjektledelse, prosjekteringsledelse, byggeledelse, ansvarlig søker, SHA ansvar</h4>
+                                            <h5 class="web2net-xs-fontSize-14px web2net-all-fontSize-16px web2net-all-fontStyle-italic">2014 - 2015: Innherred Helsehus. Levanger.</h5>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="promidt/lensmannsgaarden.jpg" />
+                                        <div class="carousel-caption">
+                                            <h4 class="web2net-xs-fontSize-16px web2net-all-fontSize-20px web2net-all-fontWeight-bold">Funksjon: Byggelånskontroll</h4>
+                                            <h5 class="web2net-xs-fontSize-14px web2net-all-fontSize-16px web2net-all-fontStyle-italic">2016: Lensmannsgården, Levanger. Nærings- og leilighetsbygg.</h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <img src="promidt/alstadjordet.jpg" />
+                                        <div class="carousel-caption">
+                                            <h4 class="web2net-xs-fontSize-16px web2net-all-fontSize-20px web2net-all-fontWeight-bold">Funksjon: Byggeledelse, SØK, SHA ansvar</h4>
+                                            <h5 class="web2net-xs-fontSize-14px web2net-all-fontSize-16px web2net-all-fontStyle-italic">2015: Alstadjordet, Frosta. Nærings- og leilighetsbygg.</h5>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="promidt/arial-nigh-logo.jpg" />
+                                        <div class="carousel-caption">
+                                            <h4 class="web2net-xs-fontSize-16px web2net-all-fontSize-20px web2net-all-fontWeight-bold">Funksjon: Prosjektledelse</h4>
+                                            <h5 class="web2net-xs-fontSize-14px web2net-all-fontSize-16px web2net-all-fontStyle-italic">2015: Mulighetsstudie Stjørdal sentrum.</h5>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="promidt/be-moafjaera.jpg" />
+                                        <div class="carousel-caption">
+                                            <h4 class="web2net-xs-fontSize-16px web2net-all-fontSize-20px web2net-all-fontWeight-bold">Funksjon: Prosjektledelse, SHA ansvar</h4>
+                                            <h5 class="web2net-xs-fontSize-14px web2net-all-fontSize-16px web2net-all-fontStyle-italic">2016 - 2017: BE Moafjæra 6 Levanger. Nærings- og leilighetsbygg.</h5>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="promidt/bio-skogn.jpg" />
+                                        <div class="carousel-caption">
+                                            <h4 class="web2net-xs-fontSize-16px web2net-all-fontSize-20px web2net-all-fontWeight-bold">Funksjon: Prosjektledelse, SØK, SHA ansvar</h4>
+                                            <h5 class="web2net-xs-fontSize-14px web2net-all-fontSize-16px web2net-all-fontStyle-italic">2016 - 2017: Biokraft Skogn. Nytt Biokraftanlegg.</h5>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="promidt/moellegata.jpg" />
+                                        <div class="carousel-caption">
+                                            <h4 class="web2net-xs-fontSize-16px web2net-all-fontSize-20px web2net-all-fontWeight-bold">Funksjon: Byggelånskontroll</h4>
+                                            <h5 class="web2net-xs-fontSize-14px web2net-all-fontSize-16px web2net-all-fontStyle-italic">2015 - 2016: Møllegata Verdal. Leiligheter.</h5>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="promidt/reinsholm.jpg" />
+                                        <div class="carousel-caption">
+                                            <h4 class="web2net-xs-fontSize-16px web2net-all-fontSize-20px web2net-all-fontWeight-bold">Funksjon: Byggelånskontroll</h4>
+                                            <h5 class="web2net-xs-fontSize-14px web2net-all-fontSize-16px web2net-all-fontStyle-italic">2014 - 2016: Reinsholm Vest Verdal. Leiligheter.</h5>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="promidt/sjoesiden.jpg" />
+                                        <div class="carousel-caption">
+                                            <h4 class="web2net-xs-fontSize-16px web2net-all-fontSize-20px web2net-all-fontWeight-bold">Funksjon: Byggelånskontroll, SØK</h4>
+                                            <h5 class="web2net-xs-fontSize-14px web2net-all-fontSize-16px web2net-all-fontStyle-italic">2014 - 2016: Sjøsiden Levanger. Boliger.</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="left carousel-control" href="#section4-carousel" role="button" data-slide="prev">
+                                    <span class="icon-prev"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#section4-carousel" role="button" data-slide="next">
+                                    <span class="icon-next"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="section6">
+                <div class="container-fluid">
+
+                    <div class="row web2net-xs-marginBottom-20px web2net-all-marginBottom-40px">
+                        <div class="col-sm-12 text-sm-center">
+                            <h1>Ansatte</h1>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                            <div class="card">
+                                <img class="card-img-top" src="promidt/helge_h_skjaerpe.jpg" />
+                                <div class="card-block">
+                                    <h4 class="card-title">Daglig leder</h4>
+                                    <h5 class="card-title">Helge H Skjærpe</h5>
+                                    <p class="card-text"><i class="fa fa-phone fa-fw fa-lg"></i> 907 98 755</p>
+                                    <p class="card-text"><i class="fa fa-envelope-o fa-fw fa-lg"></i> helge@promidt.no</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                            <div class="card">
+                                <img class="card-img-top" src="promidt/tor_skrove.jpg" />
+                                <div class="card-block">
+                                    <h4 class="card-title">Takstingeniør</h4>
+                                    <h5 class="card-title">Tor Skrove</h5>
+                                    <p class="card-text"><i class="fa fa-phone fa-fw fa-lg"></i> 900 19 192</p>
+                                    <p class="card-text"><i class="fa fa-envelope-o fa-fw fa-lg"></i> tor@promidt.no</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                            <div class="card">
+                                <img class="card-img-top" src="promidt/stian_iversen.jpg" />
+                                <div class="card-block">
+                                    <h4 class="card-title">Takstingeniør</h4>
+                                    <h5 class="card-title">Stian Iversen</h5>
+                                    <p class="card-text"><i class="fa fa-phone fa-fw fa-lg"></i> 473 74 562</p>
+                                    <p class="card-text"><i class="fa fa-envelope-o fa-fw fa-lg"></i> stian@promidt.no</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                            <div class="card">
+                                <img class="card-img-top" src="promidt/torbjorn_haddal.jpg" />
+                                <div class="card-block">
+                                    <h4 class="card-title">Takstingeniør</h4>
+                                    <h5 class="card-title">Torbjørn Haddal</h5>
+                                    <p class="card-text"><i class="fa fa-phone fa-fw fa-lg"></i> 907 34 290</p>
+                                    <p class="card-text"><i class="fa fa-envelope-o fa-fw fa-lg"></i> torbjorn@promidt.no</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="section7" class="web2net-all-paddingBottom-50px">
+                <div class="container-fluid">
+
+                    <div class="row web2net-xs-marginBottom-20px web2net-all-marginBottom-40px">
+                        <div class="col-sm-12 text-sm-center">
+                            <h1>Kontakt oss</h1>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+
+                            <blockquote id="section7-blockquote" class="blockquote">
+                                <p><i class="fa fa-map-marker fa-fw fa-lg"></i> Moafjæra 14, 7606 Levanger</p>
+                                <p>Takstoppdrag</p>
+                                <p><i class="fa fa-envelope-o fa-fw fa-lg"></i> takst@promidt.no</p>
+                                <p>Øvrige henvendelser</p>
+                                <p><i class="fa fa-envelope-o fa-fw fa-lg"></i> post@promidt.no</p>
+                            </blockquote>
+
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+
+                            <img class="img-shadow" src="promidt/engineering.jpg" />
+                            <br />
+                            <br />
+                            <div class="text-xs-center"><img src="promidt/promidt_logo.png" width="80%" /></div>
 
                         </div>
                     </div>
@@ -335,12 +476,13 @@
                     <div class="row">
                         <div class="col-sm-12 text-sm-center">
                             <span>Copyright &copy; promidt - 2016</span>
-                            <a href="http://web2net.no/" target="_blank">Powered by Web2net</a>
+                            <a href="//web2net.no" target="_blank">Powered by web2net</a>
                         </div>
                     </div>
                 </div>
             </footer>
 
+        </div>
     </form>
 </body>
 </html>

@@ -66,15 +66,20 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="promidt.html" />
+    <Content Include="priser.html" />
     <Content Include="index.html" />
+    <Content Include="old-index.html" />
     <Content Include="lib\bootstrap\css\bootstrap.css" />
     <Content Include="lib\bootstrap\css\bootstrap.min.css" />
     <Content Include="lib\bootstrap\js\bootstrap.js" />
     <Content Include="lib\bootstrap\js\bootstrap.min.js" />
     <Content Include="lib\css\default.css" />
     <Content Include="lib\js\jquery-easing-min.js" />
+    <Content Include="promidt\alstadjordet.jpg" />
+    <Content Include="promidt\arial-nigh-logo.jpg" />
+    <Content Include="promidt\be-moafjaera.jpg" />
     <Content Include="promidt\be_moafjaera.jpg" />
+    <Content Include="promidt\bio-skogn.jpg" />
     <Content Include="promidt\bromstadenga.png" />
     <Content Include="promidt\cd-panels.css" />
     <Content Include="promidt\cd-panels.js" />
@@ -85,7 +90,10 @@
     <Content Include="promidt\helsehus.jpg" />
     <Content Include="promidt\lensmannsgaarden.jpg" />
     <Content Include="promidt\matrise.png" />
+    <Content Include="promidt\moellegata.jpg" />
     <Content Include="promidt\promidt_logo.png" />
+    <Content Include="promidt\reinsholm.jpg" />
+    <Content Include="promidt\sjoesiden.jpg" />
     <Content Include="promidt\stian_iversen.jpg" />
     <Content Include="promidt\tiendeholmen.jpg" />
     <Content Include="promidt\torbjorn_haddal.jpg" />
