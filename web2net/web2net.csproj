@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -66,61 +67,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="priser.html" />
-    <Content Include="index.html" />
-    <Content Include="old-index.html" />
-    <Content Include="lib\bootstrap\css\bootstrap.css" />
-    <Content Include="lib\bootstrap\css\bootstrap.min.css" />
-    <Content Include="lib\bootstrap\js\bootstrap.js" />
-    <Content Include="lib\bootstrap\js\bootstrap.min.js" />
-    <Content Include="lib\css\default.css" />
-    <Content Include="lib\js\jquery-easing-min.js" />
-    <Content Include="promidt\alstadjordet.jpg" />
-    <Content Include="promidt\arial-nigh-logo.jpg" />
-    <Content Include="promidt\be-moafjaera.jpg" />
-    <Content Include="promidt\be_moafjaera.jpg" />
-    <Content Include="promidt\bio-skogn.jpg" />
-    <Content Include="promidt\bromstadenga.png" />
-    <Content Include="promidt\cd-panels.css" />
-    <Content Include="promidt\cd-panels.js" />
-    <Content Include="promidt\engineering.jpg" />
-    <Content Include="promidt\favicon.ico" />
-    <Content Include="promidt\glassbyggstein.jpg" />
-    <Content Include="promidt\helge_h_skjaerpe.jpg" />
-    <Content Include="promidt\helsehus.jpg" />
-    <Content Include="promidt\lensmannsgaarden.jpg" />
-    <Content Include="promidt\matrise.png" />
-    <Content Include="promidt\moellegata.jpg" />
-    <Content Include="promidt\promidt_logo.png" />
-    <Content Include="promidt\reinsholm.jpg" />
-    <Content Include="promidt\sjoesiden.jpg" />
-    <Content Include="promidt\stian_iversen.jpg" />
-    <Content Include="promidt\tiendeholmen.jpg" />
-    <Content Include="promidt\torbjorn_haddal.jpg" />
-    <Content Include="promidt\tor_skrove.jpg" />
-    <Content Include="promidt\triangel_park.jpg" />
-    <Content Include="template\cd-panels.css" />
-    <Content Include="lib\css\xl.css" />
-    <Content Include="lib\css\lg.css" />
-    <Content Include="lib\css\md.css" />
-    <Content Include="lib\css\sm.css" />
-    <Content Include="lib\css\xs.css" />
-    <Content Include="lib\font-awesome\css\font-awesome.min.css" />
-    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.svg" />
-    <Content Include="template\1.jpg" />
-    <Content Include="template\favicon.ico" />
-    <Content Include="template\cd-panels.js" />
-    <Content Include="template\responsiv_web2net.jpg" />
-    <Content Include="lib\js\jquery-3.1.1.min.js" />
-    <Content Include="lib\js\web2net-functionlib.js" />
     <Content Include="packages.config" />
-    <Content Include="lib\bootstrap\css\bootstrap.css.map" />
-    <Content Include="lib\bootstrap\css\bootstrap.min.css.map" />
-    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.eot" />
-    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.ttf" />
-    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.woff" />
-    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.woff2" />
-    <Content Include="lib\font-awesome\fonts\FontAwesome.otf" />
     <None Include="Properties\PublishProfiles\Web2net.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -135,9 +82,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="lib\img\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
