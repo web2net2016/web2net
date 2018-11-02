@@ -67,6 +67,17 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="favicon.ico" />
+    <Content Include="index.html" />
+    <Content Include="lib\functionlib.js" />
+    <Content Include="lib\images\gi-bilservice-380.png" />
+    <Content Include="lib\images\gi-bilservice-46.png" />
+    <Content Include="lib\images\img1.png" />
+    <Content Include="lib\images\img2.png" />
+    <Content Include="lib\images\img3.png" />
+    <Content Include="lib\images\verksted1.png" />
+    <Content Include="lib\standard - Copy.css" />
+    <Content Include="lib\standard.css" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Web2net.pubxml" />
     <None Include="Web.Debug.config">

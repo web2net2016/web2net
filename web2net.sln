@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "web2net", "web2net\web2net.csproj", "{570F5C22-F61E-4E74-991D-0339EA591CD8}"
 EndProject
@@ -12,11 +12,13 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{570F5C22-F61E-4E74-991D-0339EA591CD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{570F5C22-F61E-4E74-991D-0339EA591CD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{570F5C22-F61E-4E74-991D-0339EA591CD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{570F5C22-F61E-4E74-991D-0339EA591CD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3EB5AF8C-476D-4F78-A616-B4217548121B}
 	EndGlobalSection
 EndGlobal
