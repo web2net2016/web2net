@@ -76,7 +76,6 @@
     <Content Include="lib\images\img2.png" />
     <Content Include="lib\images\img3.png" />
     <Content Include="lib\images\verksted1.png" />
-    <Content Include="lib\standard - Copy.css" />
     <Content Include="lib\standard.css" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Web2net.pubxml" />
