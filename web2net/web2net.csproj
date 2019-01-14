@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <Content Include="biler.html" />
     <Content Include="index.html" />
     <Content Include="lib\functionlib.js" />
     <Content Include="lib\images\gi-bilservice-380.png" />

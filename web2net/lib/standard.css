@@ -711,7 +711,6 @@ h6
 {
     position: absolute;
     z-index: 1;
-    height: 100%;
 }
 
 .az-navbar > .az-navbar-top-content
@@ -720,7 +719,6 @@ h6
     z-index: 1;
     left: 0;
     top: 73px;
-    height: 100%;
 }
 
     .az-navbar > .az-navbar-top-content > .az-navbar-button
