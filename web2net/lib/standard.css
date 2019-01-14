@@ -562,6 +562,34 @@ h6
 
 /* Navbar --------*/
 /* Navbar Top*/
+.az-navbar.az-sticky
+{
+    position: fixed !important;
+}
+
+    .az-navbar.az-sticky > .az-navbar-top-content
+    {
+        top: 0 !important;
+    }
+
+        .az-navbar.az-sticky > .az-navbar-top-content > .az-navbar-logo.desktop-only
+        {
+            display: none !important;
+        }
+
+        .az-navbar.az-sticky > .az-navbar-top-content > .az-navbar-branding.mobile-only
+        {
+            position: absolute !important;
+            z-index: 1 !important;
+            display: block !important;
+        }
+
+        .az-navbar.az-sticky > .az-navbar-top-content > .az-navbar-menu-wrapper
+        {
+            z-index: 0 !important;
+            top: 0 !important;
+        }
+
 .az-navbar.az-navbar-top
 {
     position: absolute;

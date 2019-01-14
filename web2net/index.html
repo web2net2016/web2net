@@ -24,7 +24,22 @@
 
         $(document).ready(function ()
         {
-            initializePage({}, function ()
+            $.subscribe("functionlib/windowScroll", function (e, data)
+            {
+                if (window.innerWidth > 576)
+                {
+                    if (data >= 400)
+                    {
+                        $(".az-navbar").addClass("az-sticky");
+                    }
+                    else
+                    {
+                        $(".az-navbar").removeClass("az-sticky");
+                    }
+                }
+            });
+
+            initializePage({ setWindowScrollTop: true}, function ()
             {
                 initializeSlideshow();
                 hideCoverSpin();
