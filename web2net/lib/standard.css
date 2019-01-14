@@ -1,4 +1,121 @@
-﻿
+﻿#section-1
+{
+    padding-top: 60px;
+}
+
+#section-4
+{
+    background-color: #000000;
+}
+
+#container-2
+{
+    padding: 75px 0 75px 0;
+}
+
+#container-3
+{
+    padding: 75px 0 75px 0;
+}
+
+#container-4
+{
+    padding: 75px 0 75px 0;
+}
+
+@media (min-width: 576px) /*SM*/
+{
+    #section-1
+    {
+        padding-top: 60px;
+    }
+
+    #container-2
+    {
+        padding: 160px 0 75px 0;
+    }
+
+    #container-3
+    {
+        padding: 75px 0 75px 0;
+    }
+
+    #container-4
+    {
+        padding: 75px 0 75px 0;
+    }
+}
+
+@media (min-width: 768px) /*MD*/
+{
+    #section-1
+    {
+        padding-top: 0;
+    }
+
+    #container-2
+    {
+        padding: 160px 0 75px 0;
+    }
+
+    #container-3
+    {
+        padding: 75px 0 75px 0;
+    }
+
+    #container-4
+    {
+        padding: 75px 0 75px 0;
+    }
+}
+
+@media (min-width: 992px) /*LG*/
+{
+    #section-1
+    {
+        padding-top: 0;
+    }
+
+    #container-2
+    {
+        padding: 160px 0 75px 0;
+    }
+
+    #container-3
+    {
+        padding: 75px 0 75px 0;
+    }
+
+    #container-4
+    {
+        padding: 75px 0 75px 0;
+    }
+}
+
+@media (min-width: 1200px) /*XL*/
+{
+    #section-1
+    {
+        padding-top: 0;
+    }
+
+    #container-2
+    {
+        padding: 160px 0 75px 0;
+    }
+
+    #container-3
+    {
+        padding: 75px 0 75px 0;
+    }
+
+    #container-4
+    {
+        padding: 75px 0 75px 0;
+    }
+}
+
+
 /* Size ALL --------*/
 html, body
 {
