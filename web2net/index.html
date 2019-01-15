@@ -1,10 +1,10 @@
 ﻿
 <!DOCTYPE html>
 <html lang="no">
-<head>
+<head runat="server">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-touch-fullscreen" content="yes" />
     <meta name="format-detection" content="telephone=no" />
@@ -13,9 +13,7 @@
     <meta name="format-detection" content="email=no" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-    <title>Hjem | Følling Bil</title>
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <title>e-sulation</title>
     <link rel="stylesheet" href="//cdn.web2net.no/lib-1.0.0/css/az-1.0.0.min.css" />
     <script src="//cdn.web2net.no/lib-1.0.0/js/az-1.0.0.min.js"></script>
     <link rel="stylesheet" href="/lib/standard.css" />
@@ -24,30 +22,29 @@
 
         $(document).ready(function ()
         {
-            //$.subscribe("functionlib/windowScroll", function (e, data)
-            //{
-            //    if (window.innerWidth > 576)
-            //    {
-            //        if (data > 400)
-            //        {
-            //            $(".az-navbar").addClass("az-sticky");
-            //        }
-            //        else
-            //        {
-            //            $(".az-navbar").removeClass("az-sticky");
-            //        }
-            //    }
-            //});
-
-            initializePage({ setWindowScrollTop: true }, function ()
+            initializePage({}, function ()
             {
+                $("#home-col1-p").show(3500);
+                $('#home-col1-table, #home-col2-table').matchHeight();
+                $('#technology-col1-table, #technology-col2-table').matchHeight();
+                $('#products-col1-table, #products-col2-table').matchHeight();
+                $(document).scroll(function ()
+                {
+                    if (parseInt(window.innerWidth) > 576)
+                    {
+                        var _$ScrollTop = $(this).scrollTop();
+                        var _$Navbar = $(".az-navbar-top");
+                        var _$Body = $("body");
+                        _$Navbar.toggleClass('scrolled', _$ScrollTop > _$Navbar.height() + 300);
+                    }
+                });
                 hideCoverSpin();
             });
         });
 
     </script>
 </head>
-<body>
+<body id="body">
 
     <form id="frmReg">
 
@@ -55,27 +52,117 @@
             <div class="az-navbar-top-content">
 
                 <button type="button" class="az-navbar-button">&#9776;</button>
-                <!--<img class="az-navbar-branding mobile-only" alt="" src="/lib/images/gi-bilservice-46.png" />
-                <img class="az-navbar-logo desktop-only" alt="" src="/lib/images/gi-bilservice-380.png" />-->
+                <img class="az-navbar-branding mobile-only" alt="" src="/lib/images/esulation_logo.png" />
 
-                <div class="az-navbar-menu-wrapper">
-                    <ul class="az-navbar-menu az-left"></ul>
+                <ul class="az-navbar-menu az-left">
+                    <li><img class="az-image az-width-50 az-padding-l-56" alt="" src="/lib/images/esulation_logo.png" /></li>
+                </ul>
 
-                    <ul class="az-navbar-menu az-right">
-                        <li><a href="#section-1">Hjem</a></li>
-                        <li><a href="#section-2">Om Oss</a></li>
-                        <li><a href="biler.html">Våre biler</a></li>
-                        <li><a href="#section-4">Kontakt Oss</a></li>
-                    </ul>
+                <ul class="az-navbar-menu az-right">
+                    <li><a href="#frmReg">HOME</a></li>
+                    <li><a href="#technology">TECHNOLOGY</a></li>
+                    <li><a href="#products">PRODUCTS</a></li>
+                    <li><a href="#partners">PARTNERS</a></li>
+                    <li><a href="#team">TEAM</a></li>
+                    <li><a href="#strategi">STRATEGI</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div id="home" class="az-section">
+            <div class="az-container">
+                <div class="az-row">
+                    <div class="az-col xs-12 lg-5" style="background-color: #4CB74D;">
+                        <table id="home-col1-table" style="width: 100%;">
+                            <tr>
+                                <td>
+                                    <img class="az-image az-center az-xs-hidden az-sm-visible" alt="" src="/lib/images/esulation_logo.png" />
+                                    <p class="az-padding-28 az-xs-text-large az-md-text-xlarge az-lg-text-xxlarge az-white">Protecting your environment from undesired heat, cold, noise and smell.<br /><br />The Problem is:</p>
+                                    <p id="home-col1-p" style="display: none;" class="az-padding-28 az-xs-text-large az-md-text-xlarge az-lg-text-xxlarge az-white">Text, text, text, text, text, text, text, text.</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="az-col xs-12 lg-7">
+                        <table id="home-col2-table" style="width: 100%;">
+                            <tr>
+                                <td><img class="az-image az-xs-margin-t-0 az-xs-margin-b-0 az-lg-margin-t-56 az-lg-margin-b-56" alt="" src="/lib/images/environment.jpg" /></td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div id="section-1" class="az-section">
-            <div id="container-1" class="az-container-fluid">
+        <div id="technology" class="az-section">
+            <div class="az-container">
 
-                <div class="az-row">
-                    <div class="az-col xz-12">
+                <div class="az-row az-xs-margin-l-7 az-xs-margin-r-7 az-sm-margin-l-0 az-sm-margin-r-0">
+                    <div class="az-col xs-12 lg-6 xl-5">
+                        <table id="technology-col1-table" style="width: 100%;">
+                            <tr>
+                                <td>
+                                    <h1 class="az-xs-text-xxxlarge az-sm-text-xxxxlarge az-lg-text-jumbo az-text-uppercase">Technology</h1>
+                                    <p class="az-xs-text-medium az-sm-text-large az-lg-text-xxlarge">We will apply:
+                                        <ul class="az-xs-text-medium az-sm-text-large az-lg-text-xxlarge">
+                                            <li>Resirculated and decomposed plastisc and other sustainable feedstocks </li>
+                                            <li>Highly non-bearing gases, and</li>
+                                            <li> Addtive manufacturing methodes</li>
+                                        </ul>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="az-col xs-12 lg-6 xl-7">
+                        <table id="technology-col2-table" style="width: 100%; min-height: 200px;">
+                            <tr>
+                                <td style="background-image: url('/lib/images/environment.jpg'); background-repeat: no-repeat; background-position: left -300px;"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="products" class="az-section">
+            <div class="az-container">
+
+                <div class="az-row az-xs-margin-l-7 az-xs-margin-r-7 az-sm-margin-l-0 az-sm-margin-r-0">
+                    <div class="az-col xs-12 lg-6 xl-5">
+                        <table id="products-col1-table" style="width: 100%;">
+                            <tr>
+                                <td>
+                                    <h1 class="az-xs-text-xxxlarge az-sm-text-xxxxlarge az-lg-text-jumbo az-text-uppercase">Products</h1>
+                                    <p class="az-xs-text-medium az-sm-text-large az-lg-text-xxlarge">High performance, ultra thin, isolated structures, for a wide range of applications, included mass volumes and masscustomized.</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="az-col xs-12 lg-6 xl-7">
+                        <table id="products-col2-table" style="width: 100%; min-height: 200px;">
+                            <tr>
+                                <td style="background-image: url('/lib/images/environment.jpg'); background-repeat: no-repeat; background-position: -300px;"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="partners" class="az-section">
+            <div class="az-container">
+
+                <div class="az-row az-xs-margin-l-7 az-xs-margin-r-7 az-sm-margin-l-0 az-sm-margin-r-0">
+                    <div class="az-col xs-12 lg-5">
+                        <h1 class="az-xs-text-xxxlarge az-sm-text-xxxxlarge az-lg-text-jumbo az-text-uppercase">Partners</h1>
+                        <p class="az-xs-text-medium az-sm-text-large az-lg-text-xxlarge">Klosser AS</p>
+                    </div>
+                    <div class="az-col xs-12 lg-7">
 
                     </div>
                 </div>
@@ -83,68 +170,123 @@
             </div>
         </div>
 
-        <div id="section-2" class="az-section az-xs-margin-7 az-sm-margin-0">
-            <div id="container-2" class="az-container">
+        <div id="team" class="az-section">
+            <div class="az-container">
 
-                <div class="az-row">
-                    <div class="az-col xz-12">
-
+                <div class="az-row az-xs-margin-l-7 az-xs-margin-r-7 az-sm-margin-l-0 az-sm-margin-r-0">
+                    <div class="az-col xs-12">
+                        <h1 class="az-xs-text-xxxlarge az-sm-text-xxxxlarge az-lg-text-jumbo az-text-uppercase">Team</h1>
                     </div>
                 </div>
 
-            </div>
-        </div>
-
-        <div id="section-3" class="az-section az-xs-margin-7 az-sm-margin-0">
-            <div id="container-3" class="az-container">
-
                 <div class="az-row">
-                    <div class="az-col xz-12">
+                    <div class="az-col xs-12 sm-6 lg-3 az-xs-margin-b-14 az-lg-margin-b-0">
 
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div id="section-4" class="az-section">
-            <div id="container-4" class="az-container">
-
-                <div class="az-row">
-                    <div class="az-col xs-12 sm-7">
-
-                        <div class="az-xs-margin-l-56 az-sm-margin-l-0">
-                            <table class="az-table az-xs-left az-sm-center">
-                                <tr>
-                                    <td class="az-white az-text-medium">Følling Bil AS</td>
-                                </tr>
-                                <tr>
-                                    <td class="az-white az-text-small">Ølvegata 24</td>
-                                </tr>
-                                <tr>
-                                    <td class="az-white az-text-small">7715 Steinkjer</td>
-                                </tr>
-                            </table>
+                        <div class="az-card adjust">
+                            <img class="az-image az-width-100" src="https://www.w3schools.com/w3css/img_avatar3.png" />
+                            <article>
+                                <name><i class="fas fa-user fa-fw"></i>Rolf Bruknapp</name>
+                                <phone><i class="fas fa-phone fa-fw"></i>+47 913 26 360</phone>
+                                <email><i class="fas fa-envelope fa-fw"></i>E-mail: <a href="mailto:rolf@e-sulation.no">rolf@e-sulation.no </a></email>
+                                <p>Has over 20 years experience from hydro-electric & solar power industry in Norway, Nordics, Italy and Turkey. Founder of Nordic Blue Crude AS, and numerous power co’s. Master of Business and Economics.</p>
+                            </article>
                         </div>
 
                     </div>
-                    <div class="az-col xs-12 sm-5">
+                    <div class="az-col xs-12 sm-6 lg-3 az-xs-margin-b-14 az-lg-margin-b-0">
 
-                        <div class="az-xs-margin-l-56 az-sm-margin-l-0 az-xs-margin-t-14 az-sm-margin-t-0">
-                            <table class="az-table az-xs-left az-sm-center">
-                                <tr>
-                                    <td><i class="fas fa-envelope-square fa-3x az-white"></i></td>
-                                    <td>&nbsp;</td>
-                                    <td><a class="az-white az-text-small az-border-bottom-hover-1-white az-email" href="javascript:void(0)" data-content="paal(at)follingbil.no">paal(at)follingbil.no</a></td>
-                                </tr>
-                                <tr>
-                                    <td><i class="fas fa-phone-square fa-3x az-white"></i></td>
-                                    <td>&nbsp;</td>
-                                    <td class="az-white az-text-small">904 19 000</td>
-                                </tr>
-                            </table>
+                        <div class="az-card adjust">
+                            <img class="az-image az-width-100" src="https://www.w3schools.com/w3css/img_avatar3.png" />
+                            <article>
+                                <name><i class="fas fa-user fa-fw"></i>Lars G D-Hansen</name>
+                                <phone><i class="fas fa-phone fa-fw"></i>+47 123 45 678</phone>
+                                <email><i class="fas fa-envelope fa-fw"></i>E-mail: <a href="mailto:lars@e-sulation.no">lars@e-sulation.no</a></email>
+                                <p>Founder of several solar power co’s, Norsk Solkraft AS, Aega ASA, and Switchr AS. Business educated.</p>
+                            </article>
                         </div>
 
+                    </div>
+                    <div class="az-col xs-12 sm-6 lg-3 az-xs-margin-b-14 az-sm-margin-b-0">
+
+                        <div class="az-card adjust">
+                            <img class="az-image az-width-100" src="https://www.w3schools.com/w3css/img_avatar3.png" />
+                            <article>
+                                <name><i class="fas fa-user fa-fw"></i>Petter Bruknapp</name>
+                                <phone><i class="fas fa-phone fa-fw"></i>+47 123 45 678</phone>
+                                <email><i class="fas fa-envelope fa-fw"></i>E-mail: <a href="mailto:petter@e-sulation.no">petter@e-sulation.no</a></email>
+                                <p>Business & technical education.</p>
+                            </article>
+                        </div>
+
+                    </div>
+                    <div class="az-col xs-12 sm-6 lg-3">
+
+                        <div class="az-card adjust">
+                            <img class="az-image az-width-100" <img src="lib/images/logo_klosser.png"/>
+                            <article>
+                                <name><i class="fas fa-user fa-fw"></i>Klosser Innovasjon AS</name>
+                                <phone><i class="fas fa-phone fa-fw"></i>+47 123 45 678</phone>
+                                <email><i class="fas fa-envelope fa-fw"></i>john.doe@web2net.no</email>
+                                <p>Formal partnership with Klosser Innovasjon AS giving access to large industrial cluster. Linking up with regional sponsors and public grants.</p>
+                            </article>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="strategi" class="az-section">
+            <div class="az-container">
+
+                <div class="az-row az-xs-margin-l-7 az-xs-margin-r-7 az-sm-margin-l-0 az-sm-margin-r-0">
+                    <div class="az-col xs-12 lg-5">
+                        <h1 class="az-xs-text-xxxlarge az-sm-text-xxxxlarge az-lg-text-jumbo az-text-uppercase">Strategi</h1>
+                        <p class="az-xs-text-medium az-sm-text-large az-lg-text-xxlarge">E-sulation shall develop, manufacture and whole sell, high performance, customized and mass volume innovative isolation structures, for multiple applications, acting highly sustainable.</p>
+                    </div>
+                    <div class="az-col xs-12 lg-7">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="contact" class="az-section">
+
+            <div class="az-row az-margin-b-28">
+                <div class="az-col xs-12" style="border-top: 1px solid #C94748;"></div>
+            </div>
+
+            <div class="az-container">
+
+                <div class="az-row">
+                    <div class="az-col xs-12 lg-6 az-xs-margin-b-28 az-lg-margin-b-0 az-xs-margin-t-0 az-lg-margin-t-28">
+                        <img class="az-image az-center az-xs-width-50 az-sm-width-40 az-md-width-35 az-lg-width-60 az-xl-width-50" src="/lib/images/esulation_logo.png" />
+                    </div>
+                    <div class="az-col xs-12 lg-6">
+                        <p class="az-text-small az-text-center">E-Sulation AS</p>
+                        <p class="az-text-small az-text-center">Markensvegen 1B</p>
+                        <p class="az-text-small az-text-center">2212 KONGSVINGER</p>
+                        <p class="az-text-small az-text-center">Tlf: +47 913 26 360</p>
+                        <p class="az-text-small az-text-center">E-mail: <a href="mailto:rolf@e-sulation.no">rolf@e-sulation.no</a>
+                        <p class="az-text-small az-text-center">Org.nr: 921 215 274</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="section-footer" class="az-section" style="background-color: #C94748;">
+            <div class="az-container">
+
+                <div class="az-row">
+                    <div class="az-col xs-12 sm-6">
+                        <p class="az-white az-text-small az-text-center az-padding-7">Copyright &copy; e-sulation 2018</p>
+                    </div>
+                    <div class="az-col xs-12 sm-6">
+                        <p class="az-white az-text-small az-text-center az-padding-7">Powered by <a class="az-white" href="//web2net.no" target="_blank">web2net</a></p>
                     </div>
                 </div>
 

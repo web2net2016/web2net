@@ -1,9 +1,5 @@
-﻿$(document).ready(function ()
-{
-    $('.az-email').click(function (e)
-    {
-        var _Href = $(this).data("content").toLowerCase().replace('(at)', '@');
-        window.location.href = "mailto:" + _Href;
-        e.preventDefault();
-    });
-});
+﻿
+// Site info
+var AppName = "e-sulation";
+var AppVersion = "1.0.0";
+var ApiVersion = "_1";
