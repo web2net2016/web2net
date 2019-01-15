@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html class="az-bg-white" lang="no">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="date=no" />
+    <meta name="format-detection" content="address=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="description" content="Kontakt oss." />
+    <meta name="keywords" content="web2net, kontakt" />
+    <title>Kontakt | web2net</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/lib/standard.css" />
+    <script src="/lib/functionlib.js"></script>
+    <link rel="stylesheet" href="//cdn.web2net.no/lib-1.0.0/css/az-1.0.0.min.css" />
+    <script src="//cdn.web2net.no/lib-1.0.0/js/az-1.0.0.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+
+        LanguagePage = "/lib/contact-form-lang.json";
+        ValidationPage = "/lib/contact-form-val.json";
+        ThisLanguage = "nb-NO";
+
+        $(document).ready(function ()
+        {
+            initializePage(
+            {
+                getLanguage: true,
+                getValidation: true
+            }, function ()
+            {
+                setContentInfo();
+            });
+        });
+
+        function setContentInfo()
+        {
+            formdirty = false;
+            hideCoverSpin();
+            $("#" + ThisFormId).show();
+        }
+
+        function validateDirty()
+        {
+            formdirty = true;
+            $("#cmdSubmit").prop("disabled", false);
+        }
+
+        function verifyCancel()
+        {
+            window.top.closeModalDialog();
+        }
+
+        function verifySubmit()
+        {
+            var _ObjForm = serializeForm("#" + ThisFormId);
+            if (isEmpty(_ObjForm) == false)
+            {
+                var _ObjValidation = {};
+                _ObjValidation.Token = grecaptcha.getResponse();
+                if (_ObjValidation.Token == "")
+                {
+                    changeModalTitlebar(
+                    {
+                        titlebarText: SingleElements.errorGoogleRecaptcha
+                    });
+                    return false;
+                }
+
+                showCoverSpin()
+                var _ObjSendMail = {};
+                var _HTML = "";
+                _HTML = '<p>Firma: ' + _ObjForm.CustomerName + '</p>';
+                _HTML += '<p>Kontaktperson: ' + _ObjForm.Contact + '</p>';
+                _HTML += '<p>Hva henvendelsen gjelder: ' + $("#RequestReasonId option:selected").text() + '</p>';
+                _HTML += '<p>Kommentar: ' + _ObjForm.Comment + '</p><br />';
+                _ObjSendMail.To = ["post@web2net.no"];
+                _ObjSendMail.From = decodeURIComponent(_ObjForm.Email);
+                _ObjSendMail.Subject = "Kontakt Oss - web2net.no";
+                _ObjSendMail.Body = _HTML;
+
+                var _HTML2 = "";
+                _HTML2 = '<p>Takk for din henvendelse!</p>';
+                _HTML2 += '<p>Vi har mottatt følgende informasjon fra deg:</p><br />';
+                _HTML2 += _HTML;
+                _HTML2 += '<p>Vi tar kontakt med deg så rask som mulig.</p>';
+                _HTML2 += '<p>Med vennlig hilsen oss i web2net AS</p><br />';
+                _ObjSendMail.CopyToSender = true;
+                _ObjSendMail.CopyToSenderSubject = "Takk for din henvendelse - web2net AS";
+                _ObjSendMail.CopyToSenderBody = _HTML2;
+
+                var _ContactTransferClass = {};
+                _ContactTransferClass.TransferType = "sendmail";
+                _ContactTransferClass.ValidationType = "googlerecaptcha";
+                _ContactTransferClass.ObjValidation = _ObjValidation
+                _ContactTransferClass.ObjSendMail = _ObjSendMail;
+
+                var _Options =
+                {
+                    url: "//api.web2net.no/api/sendmail/sendmail" + ApiVersion,
+                    headers:
+                    {
+                        "Authorization": "Basic 7931AD57F8204D27B68067B228AA24487E90F6A30633881A66E71C24A01F093F892254AFBB5BDC5DBB98853A9B3455E06014C6868FA2C497E64A213B89511CAF"
+                    },
+                    exceptionErrorText: "SendMail"
+                };
+                initializeAjax(_Options, _ContactTransferClass).done(function (data, textStatus, jqXHR)
+                {
+                    if (data.Transfer == "200")
+                    {
+                        initializeAZWindow(
+                        {
+                            dialogTitle: "Takk for din henvendelse",
+                            dialogText: "Vi har mottatt din henvendelse og vil kontakte deg så rask som mulig.",
+                            dialogButton1: "Avslutt",
+                            dialogClose: function () { parent.closeModalDialog(); }
+                        });
+                    }
+                    else
+                    {
+                        hideCoverSpin();
+                        throwException("dialog", "", ThisPage, "verifySubmit:entityedit:Transfer:" + JSON.stringify(data.Transfer), "SendMail");
+                    }
+                });
+            }
+        }
+
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-27385410-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</head>
+<body class="az-bg-white">
+
+    <form class="disabled-enter" id="frmContact" style="display: none;">
+        <div class="az-container-fluid">
+
+            <div class="az-row az-padding-t-14">
+                <div class="az-col xs-12 sm-6">
+                    <div class="az-form-group">
+                        <label class="az-label" for="CustomerName" id="labelCustomerName"></label>
+                        <input type="text" class="az-input" id="CustomerName" />
+                    </div>
+                </div>
+                <div class="az-col xs-12 sm-6">
+                    <div class="az-form-group">
+                        <label class="az-label" for="Contact" id="labelContact"></label>
+                        <input type="text" class="az-input" id="Contact" />
+                    </div>
+                </div>
+            </div>
+            <div class="az-row">
+                <div class="az-col xs-12 sm-6">
+                    <div class="az-form-group">
+                        <label class="az-label" for="Email" id="labelEmail"></label>
+                        <input type="text" class="az-input" id="Email" />
+                    </div>
+                </div>
+                <div class="az-col xs-12 sm-6">
+                    <div class="az-form-group">
+                        <label class="az-label" for="RequestReasonId" id="labelRequestReasonId"></label>
+                        <select class="az-select" id="RequestReasonId">
+                            <option value="1">Nettsider - WordPress</option>
+                            <option value="2">Nettsider - Statiske</option>
+                            <option value="3">Nettbutikk</option>
+                            <option value="4">Serviceavtale</option>
+                            <option value="5">Design</option>
+                            <option value="6">SEO</option>
+                            <option value="7">Google Analytics</option>
+                            <option value="8">Sosiale medier</option>
+                            <option value="9">Annet</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="az-row">
+                <div class="az-col xs-12">
+                    <div class="az-form-group">
+                        <label class="az-label" for="Comment" id="labelComment"></label>
+                        <textarea class="az-textarea" id="Comment"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="az-row">
+                <div class="az-col xs-12">
+                    <div class="az-form-group">
+                        <div class="g-recaptcha" data-sitekey="6LfhH3MUAAAAALZDTgRa5F5xU3DwpxQTP3pkks7C"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="az-row az-margin-t-14 az-margin-b-14">
+                <div class="az-col xs-12 sm-6">
+                    <div class="az-form-group">
+                        <button type="button" class="az-button az-button-block primary az-shadow-1 az-shadow-hover-2 submit" id="cmdSubmit"></button>
+                    </div>
+                </div>
+                <div class="az-col xs-12 sm-6">
+                    <div class="az-form-group">
+                        <button type="button" class="az-button az-button-block info az-shadow-1 az-shadow-hover-2 cancel" id="cmdClose"></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+
+</body>
+</html>
