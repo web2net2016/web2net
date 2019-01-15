@@ -24,28 +24,139 @@
 
         $(document).ready(function ()
         {
-            //$.subscribe("functionlib/windowScroll", function (e, data)
-            //{
-            //    if (window.innerWidth > 576)
-            //    {
-            //        if (data > 400)
-            //        {
-            //            $(".az-navbar").addClass("az-sticky");
-            //        }
-            //        else
-            //        {
-            //            $(".az-navbar").removeClass("az-sticky");
-            //        }
-            //    }
-            //});
+            var _IFrameOptions = {};
+            $.subscribe("functionlib/windowResize", function (e, data)
+            {
+                _IFrameOptions.width = data.windowProperties[0] > 1400 ? 1400 : (data.windowProperties[0] - (data.windowProperties[0] < 576 ? 20 : 100));
+                _IFrameOptions.height = (data.windowProperties[1] - 100);
+                $("#az-iframe-finn").css(_IFrameOptions);
+            });
 
-            initializePage({ setWindowScrollTop: true }, function ()
+            initializePage({}, function ()
             {
                 hideCoverSpin();
             });
         });
 
     </script>
+    <style>
+        #section-1
+        {
+            padding-top: 60px;
+        }
+
+        #section-4
+        {
+            background-color: #000000;
+        }
+
+        #container-2
+        {
+            padding: 75px 0 75px 0;
+        }
+
+        #container-3
+        {
+            padding: 75px 0 75px 0;
+        }
+
+        #container-4
+        {
+            padding: 775px 0 75px 0;
+        }
+
+        @media (min-width: 576px) /*SM*/
+        {
+            #section-1
+            {
+                padding-top: 60px;
+            }
+
+            #container-2
+            {
+                padding: 160px 0 75px 0;
+            }
+
+            #container-3
+            {
+                padding: 75px 0 75px 0;
+            }
+
+            #container-4
+            {
+                padding: 75px 0 75px 0;
+            }
+        }
+
+        @media (min-width: 768px) /*MD*/
+        {
+            #section-1
+            {
+                padding-top: 0;
+            }
+
+            #container-2
+            {
+                padding: 160px 0 75px 0;
+            }
+
+            #container-3
+            {
+                padding: 75px 0 75px 0;
+            }
+
+            #container-4
+            {
+                padding: 75px 0 75px 0;
+            }
+        }
+
+        @media (min-width: 992px) /*LG*/
+        {
+            #section-1
+            {
+                padding-top: 0;
+            }
+
+            #container-2
+            {
+                padding: 160px 0 75px 0;
+            }
+
+            #container-3
+            {
+                padding: 75px 0 75px 0;
+            }
+
+            #container-4
+            {
+                padding: 75px 0 75px 0;
+            }
+        }
+
+        @media (min-width: 1200px) /*XL*/
+        {
+            #section-1
+            {
+                padding-top: 0;
+            }
+
+            #container-2
+            {
+                padding: 160px 0 75px 0;
+            }
+
+            #container-3
+            {
+                padding: 75px 0 75px 0;
+            }
+
+            #container-4
+            {
+                padding: 75px 0 75px 0;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -56,12 +167,10 @@
 
                 <button type="button" class="az-navbar-button">&#9776;</button>
                 <!--<img class="az-navbar-branding mobile-only" alt="" src="/lib/images/gi-bilservice-46.png" />
-                <img class="az-navbar-logo desktop-only" alt="" src="/lib/images/gi-bilservice-380.png" />-->
+            <img class="az-navbar-logo desktop-only" alt="" src="/lib/images/gi-bilservice-380.png" />-->
 
                 <div class="az-navbar-menu-wrapper">
-                    <ul class="az-navbar-menu az-left"></ul>
-
-                    <ul class="az-navbar-menu az-right">
+                    <ul class="az-navbar-menu az-left">
                         <li><a href="index.html">Hjem</a></li>
                     </ul>
                 </div>
@@ -74,6 +183,18 @@
                 <div class="az-row">
                     <div class="az-col xz-12">
 
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="section-2" class="az-section">
+            <div id="container-2" class="az-container-fluid">
+
+                <div class="az-row">
+                    <div class="az-col xs-12 az-text-center">
+                        <iframe id="az-iframe-finn" src="https://www.finn.no/pw/search/car-norway?orgId=2499307" frameborder="0" />
                     </div>
                 </div>
 

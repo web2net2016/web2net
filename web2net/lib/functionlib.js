@@ -2,8 +2,8 @@
 {
     $('.az-email').click(function (e)
     {
-        var _Href = $(this).data("content").toLowerCase().replace('(at)', '@');
-        window.location.href = "mailto:" + _Href;
+        var _HREF = $(this).data("content").toLowerCase().replace('(at)', '@');
+        window.location.href = "mailto:" + _HREF;
         e.preventDefault();
     });
 });

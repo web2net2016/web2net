@@ -24,28 +24,131 @@
 
         $(document).ready(function ()
         {
-            //$.subscribe("functionlib/windowScroll", function (e, data)
-            //{
-            //    if (window.innerWidth > 576)
-            //    {
-            //        if (data > 400)
-            //        {
-            //            $(".az-navbar").addClass("az-sticky");
-            //        }
-            //        else
-            //        {
-            //            $(".az-navbar").removeClass("az-sticky");
-            //        }
-            //    }
-            //});
-
-            initializePage({ setWindowScrollTop: true }, function ()
+            initializePage({}, function ()
             {
                 hideCoverSpin();
             });
         });
 
     </script>
+    <style>
+        #section-1
+        {
+            padding-top: 60px;
+        }
+
+        #section-4
+        {
+            background-color: #000000;
+        }
+
+        #container-2
+        {
+            padding: 75px 0 75px 0;
+        }
+
+        #container-3
+        {
+            padding: 75px 0 75px 0;
+        }
+
+        #container-4
+        {
+            padding: 75px 0 75px 0;
+        }
+
+        @media (min-width: 576px) /*SM*/
+        {
+            #section-1
+            {
+                padding-top: 60px;
+            }
+
+            #container-2
+            {
+                padding: 160px 0 75px 0;
+            }
+
+            #container-3
+            {
+                padding: 75px 0 75px 0;
+            }
+
+            #container-4
+            {
+                padding: 75px 0 75px 0;
+            }
+        }
+
+        @media (min-width: 768px) /*MD*/
+        {
+            #section-1
+            {
+                padding-top: 0;
+            }
+
+            #container-2
+            {
+                padding: 160px 0 75px 0;
+            }
+
+            #container-3
+            {
+                padding: 75px 0 75px 0;
+            }
+
+            #container-4
+            {
+                padding: 75px 0 75px 0;
+            }
+        }
+
+        @media (min-width: 992px) /*LG*/
+        {
+            #section-1
+            {
+                padding-top: 0;
+            }
+
+            #container-2
+            {
+                padding: 160px 0 75px 0;
+            }
+
+            #container-3
+            {
+                padding: 75px 0 75px 0;
+            }
+
+            #container-4
+            {
+                padding: 75px 0 75px 0;
+            }
+        }
+
+        @media (min-width: 1200px) /*XL*/
+        {
+            #section-1
+            {
+                padding-top: 0;
+            }
+
+            #container-2
+            {
+                padding: 160px 0 75px 0;
+            }
+
+            #container-3
+            {
+                padding: 75px 0 75px 0;
+            }
+
+            #container-4
+            {
+                padding: 75px 0 75px 0;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -59,9 +162,7 @@
                 <img class="az-navbar-logo desktop-only" alt="" src="/lib/images/gi-bilservice-380.png" />-->
 
                 <div class="az-navbar-menu-wrapper">
-                    <ul class="az-navbar-menu az-left"></ul>
-
-                    <ul class="az-navbar-menu az-right">
+                    <ul class="az-navbar-menu az-left">
                         <li><a href="#section-1">Hjem</a></li>
                         <li><a href="#section-2">Om Oss</a></li>
                         <li><a href="biler.html">Våre biler</a></li>
