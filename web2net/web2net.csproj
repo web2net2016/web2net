@@ -104,6 +104,7 @@
     <Content Include="lib\index.css" />
     <Content Include="lib\produkter.css" />
     <Content Include="lib\prosessen.css" />
+    <Content Include="lib\status.css" />
     <Content Include="lib\referanser.css" />
     <Content Include="lib\standard.css" />
     <Content Include="packages.config" />
@@ -120,6 +121,7 @@
   <ItemGroup>
     <Content Include="produkter.html" />
     <Content Include="prosessen.html" />
+    <Content Include="status.html" />
     <Content Include="referanser.html" />
     <Content Include="sitemap.xml" />
     <Content Include="Web.config" />

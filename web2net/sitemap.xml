@@ -21,4 +21,8 @@
   <loc>http://web2net.no/referanser.html</loc>
   <priority>0.80</priority>
 </url>
+  <url>
+    <loc>http://web2net.no/status.html</loc>
+    <priority>0.80</priority>
+  </url>
 </urlset>
