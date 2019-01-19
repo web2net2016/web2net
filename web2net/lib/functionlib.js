@@ -12,7 +12,7 @@ function openContactForm()
         dialogNoParentScroll: true,
         dialogDraggable: false,
         dialogTitle: "Kontakt oss",
-        dialogWidth: 600,
+        dialogWidth: 650,
         dialogHeight: 450,
         dialogiFrameURL: "kontakt.html"
     });
@@ -55,7 +55,7 @@ function openSocialMedia(SelectedId)
         dialogDraggable: false,
         dialogTitle: SelectedId,
         dialogWidth: 450,
-        dialogHeight: 200,
+        dialogHeight: 250,
         dialogText: $("#" + SelectedId).html()
     });
 }
