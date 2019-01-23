@@ -67,9 +67,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="favicon.ico" />
     <Content Include="index.html" />
     <Content Include="lib\functionlib.js" />
+    <Content Include="lib\images\logo1.png" />
+    <Content Include="lib\images\logo2.png" />
     <Content Include="lib\images\vindmolledemo.mp4" />
     <Content Include="lib\standard.css" />
     <Content Include="packages.config" />
@@ -82,6 +83,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="sitemap.xml" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

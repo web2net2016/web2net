@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+  <url>
+    <loc><![CDATA[https://www.milestep.no]]></loc>
+    <video:video>
+      <video:title><![CDATA[3D visualisering og animasjon]]></video:title>
+      <video:description><![CDATA[Vi lever i en tid hvor det visuelle inntrykk har stor påvirkningskraft. Flotte fremstillinger appellere, gir stoppeffekt, og skaper oppmerksomhet. 3D visualisering og animasjon får fokus på detaljer, effekter og virkemekanisme som skaper engasjement og interesse. MileStep lager visualiseringer som løfter frem det unike med ditt produkt, din idé, ditt forskningsresultat.]]></video:description>
+      <video:content_loc><![CDATA[https://www.milestep.no/lib/images/vindmolledemo.mp4]]></video:content_loc>
+      <video:duration><![CDATA[49]]></video:duration>
+    </video:video>
+  </url>
+
+  <url>
+    <loc><![CDATA[https://www.milestep.no?sec=15]]></loc>
+    <video:video>
+      <video:title><![CDATA[3D visualisering gjør dine planer forståelig for flere]]></video:title>
+      <video:description><![CDATA[En 3D visualiseringer bruker film for vise dine planer og prosjektet i en tidsakse, fra ulike vinkler, gjennomskåret og med detaljer fremhevet. Det gjør prosjektet selvforklarende på sekunder, og får alle deltagerne med fra første visning. Slik sparer du tid på forklaringer, og gir alle like forutsetninger for å delta i realiseringen. Det gir økt engasjement og bedre beslutninger. MileStep lager visualiseringer som løfter frem det unike med din plan, din idé, ditt prosjekt.]]></video:description>
+      <video:content_loc><![CDATA[https://www.milestep.no/lib/images/vindmolledemo.mp4]]></video:content_loc>
+      <video:duration><![CDATA[15]]></video:duration>
+    </video:video>
+  </url>
+
+  <url>
+    <loc><![CDATA[https://www.milestep.no?sec=30]]></loc>
+    <video:video>
+      <video:title><![CDATA[3D visning synliggjør din plan og hvordan du tenker]]></video:title>
+      <video:description><![CDATA[De færreste av oss forstår tegninger. Det skaper lett misforståelser, og gjør at beslutninger kan tas på feil grunnlag. En 3D visualisering av planene, gir alle et felles grunnlag for forstå og evaluere planene. Sluttkunden blir mer fornøyd og du sparer tid og penger. MileStep tar oppdrag med å visualisere dine planer i 3D.]]></video:description>
+      <video:content_loc><![CDATA[https://www.milestep.no/lib/images/vindmolledemo.mp4]]></video:content_loc>
+      <video:duration><![CDATA[19]]></video:duration>
+    </video:video>
+  </url>
+
+</urlset>
