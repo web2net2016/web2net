@@ -22,239 +22,260 @@
     <script src="/lib/functionlib.js"></script>
     <script>
 
+        var _Vid1 = "";
+        var _ObjURL = "";
+
         $(document).ready(function ()
         {
             initializePage({}, function ()
             {
                 hideCoverSpin();
+
+                 _Vid1 = document.getElementById("vid1");
+                _ObjURL = getURLParameters(window.location.href);
+
+                if (isEmpty(_ObjURL) === false)
+                {
+                    if (_ObjURL.sec !== undefined)
+                    {
+                        _Vid1.currentTime = _ObjURL.sec;
+                    }
+                }
             });
+
+            $("#section-2_vid1").off().on("click", function (e) { _Vid1.currentTime = 0; });
+            $("#section-3_vid1").off().on("click", function (e) { _Vid1.currentTime = 15; });            $("#section-4_vid1").off().on("click", function (e) { _Vid1.currentTime = 30; });
         });
 
     </script>
     <style>
-        #section-1
+
+        #container-1
         {
-            padding-top: 60px;
+            height: 500px;
+        }
+
+            #container-1 video
+            {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                width: auto;
+                height: auto;
+                min-width: 100%;
+                min-height: 100%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+
+        #section-3
+        {
+            margin: 150px 0 25px 0;
+            background-color: rgba(0,0,0,0.6)
         }
 
         #section-4
         {
-            background-color: #000000;
+            margin: 25px 0 150px 0;
+            background-color: rgba(0,0,0,0.6)
         }
 
         #container-2
         {
-            padding: 75px 0 75px 0;
+            padding: 30px 0 30px 0;
         }
 
-        #container-3
-        {
-            padding: 75px 0 75px 0;
-        }
-
+        #container-3,
         #container-4
         {
-            padding: 75px 0 75px 0;
+            padding: 10px 0 10px 0;
         }
 
-        @media (min-width: 576px) /*SM*/
+        #container-address
         {
-            #section-1
-            {
-                padding-top: 60px;
-            }
-
-            #container-2
-            {
-                padding: 160px 0 75px 0;
-            }
-
-            #container-3
-            {
-                padding: 75px 0 75px 0;
-            }
-
-            #container-4
-            {
-                padding: 75px 0 75px 0;
-            }
+            padding: 70px 0 70px 0;
         }
 
-        @media (min-width: 768px) /*MD*/
+        .fa-play-circle
         {
-            #section-1
-            {
-                padding-top: 0;
-            }
-
-            #container-2
-            {
-                padding: 160px 0 75px 0;
-            }
-
-            #container-3
-            {
-                padding: 75px 0 75px 0;
-            }
-
-            #container-4
-            {
-                padding: 75px 0 75px 0;
-            }
+            float: left;
+            margin: 20px 20px 0 0;
+            cursor: pointer;
         }
 
-        @media (min-width: 992px) /*LG*/
-        {
-            #section-1
-            {
-                padding-top: 0;
-            }
-
-            #container-2
-            {
-                padding: 160px 0 75px 0;
-            }
-
-            #container-3
-            {
-                padding: 75px 0 75px 0;
-            }
-
-            #container-4
-            {
-                padding: 75px 0 75px 0;
-            }
-        }
-
-        @media (min-width: 1200px) /*XL*/
-        {
-            #section-1
-            {
-                padding-top: 0;
-            }
-
-            #container-2
-            {
-                padding: 160px 0 75px 0;
-            }
-
-            #container-3
-            {
-                padding: 75px 0 75px 0;
-            }
-
-            #container-4
-            {
-                padding: 75px 0 75px 0;
-            }
-        }
     </style>
 </head>
 <body>
 
     <form id="frmReg">
 
-        <div class="az-navbar az-navbar-top">
-            <div class="az-navbar-top-content">
+        <!--<div class="az-navbar az-navbar-top">
+        <div class="az-navbar-top-content">
 
-                <button type="button" class="az-navbar-button">&#9776;</button>
-                <!--<img class="az-navbar-branding mobile-only" alt="" src="/lib/images/gi-bilservice-46.png" />
-                <img class="az-navbar-logo desktop-only" alt="" src="/lib/images/gi-bilservice-380.png" />-->
+            <button type="button" class="az-navbar-button">&#9776;</button>
+            <img class="az-navbar-branding mobile-only" alt="" src="/lib/images/gi-bilservice-46.png" />
+            <img class="az-navbar-logo desktop-only" alt="" src="/lib/images/gi-bilservice-380.png" />
 
-                <div class="az-navbar-menu-wrapper">
-                    <ul class="az-navbar-menu az-left">
-                        <li><a href="#section-1">Hjem</a></li>
-                        <li><a href="#section-2">Om Oss</a></li>
-                        <li><a href="biler.html">Våre biler</a></li>
-                        <li><a href="#section-4">Kontakt Oss</a></li>
-                    </ul>
-                </div>
+            <div class="az-navbar-menu-wrapper">
+                <ul class="az-navbar-menu az-left">
+                    <li><a href="#section-1">Hjem</a></li>
+                    <li><a href="#section-2">Om Oss</a></li>
+                    <li><a href="biler.html">Våre biler</a></li>
+                    <li><a href="#section-4">Kontakt Oss</a></li>
+                </ul>
             </div>
         </div>
+    </div>-->
 
         <div id="section-1" class="az-section">
             <div id="container-1" class="az-container-fluid">
-
                 <div class="az-row">
                     <div class="az-col xz-12">
-                        <video autoplay muted loop>
+                        <video id="vid1" autoplay muted loop controls>
                             <source src="/lib/images/vindmolledemo.mp4" type="video/mp4">
                         </video>
                     </div>
                 </div>
-
             </div>
         </div>
 
-        <div id="section-2" class="az-section az-xs-margin-7 az-sm-margin-0">
+        <div id="section-2" class="az-section az-bg-teal">
             <div id="container-2" class="az-container">
-
                 <div class="az-row">
                     <div class="az-col xz-12">
 
+                        <div id="section-2_vid1" class="az-margin-14 az-white">
+                            <h1 class="az-xs-text-xxlarge az-sm-text-xxxlarge az-md-text-xxxxlarge az-xl-text-xxxxxlarge az-text-uppercase">3D visualisering og animasjon</h1>
+                            <p class="az-margin-t-14 az-xs-text-small">Vi lever i en tid hvor det visuelle inntrykk har stor påvirkningskraft. Flotte fremstillinger appellere, gir stoppeffekt, og skaper oppmerksomhet. 3D visualisering og animasjon får fokus på detaljer, effekter og virkemekanisme som skaper engasjement og interesse. MileStep lager visualiseringer som løfter frem det unike med ditt produkt, din idé, ditt forskningsresultat.</p>
+                        </div>
+
                     </div>
                 </div>
-
             </div>
         </div>
 
-        <div id="section-3" class="az-section az-xs-margin-7 az-sm-margin-0">
+        <div id="section-3" class="az-section">
             <div id="container-3" class="az-container">
-
                 <div class="az-row">
                     <div class="az-col xz-12">
 
+                        <div class="az-margin-14 az-white">
+                            <h1 class="az-text-uppercase az-xs-text-xlarge">3D visualisering gjør dine planer forståelig for flere</h1>
+                            <i id="section-3_vid1" class="far fa-play-circle fa-5x"></i><p class="az-margin-t-14 az-xs-text-small">En 3D visualiseringer bruker film for vise dine planer og prosjektet i en tidsakse, fra ulike vinkler, gjennomskåret og med detaljer fremhevet. Det gjør prosjektet selvforklarende på sekunder, og får alle deltagerne med fra første visning. Slik sparer du tid på forklaringer, og gir alle like forutsetninger for å delta i realiseringen. Det gir økt engasjement og bedre beslutninger. MileStep lager visualiseringer som løfter frem det unike med din plan, din idé, ditt prosjekt.</p>
+                        </div>
+
                     </div>
                 </div>
-
             </div>
         </div>
 
-        <!--<div id="section-4" class="az-section">
+        <div id="section-4" class="az-section">
             <div id="container-4" class="az-container">
-
                 <div class="az-row">
-                    <div class="az-col xs-12 sm-7">
+                    <div class="az-col xz-12">
 
-                        <div class="az-xs-margin-l-56 az-sm-margin-l-0">
-                            <table class="az-table az-xs-left az-sm-center">
-                                <tr>
-                                    <td class="az-white az-text-medium">Følling Bil AS</td>
-                                </tr>
-                                <tr>
-                                    <td class="az-white az-text-small">Ølvegata 24</td>
-                                </tr>
-                                <tr>
-                                    <td class="az-white az-text-small">7715 Steinkjer</td>
-                                </tr>
-                            </table>
-                        </div>
-
-                    </div>
-                    <div class="az-col xs-12 sm-5">
-
-                        <div class="az-xs-margin-l-56 az-sm-margin-l-0 az-xs-margin-t-14 az-sm-margin-t-0">
-                            <table class="az-table az-xs-left az-sm-center">
-                                <tr>
-                                    <td><i class="fas fa-envelope-square fa-3x az-white"></i></td>
-                                    <td>&nbsp;</td>
-                                    <td><a class="az-white az-text-small az-border-bottom-hover-1-white az-email" href="javascript:void(0)" data-content="paal(at)follingbil.no">paal(at)follingbil.no</a></td>
-                                </tr>
-                                <tr>
-                                    <td><i class="fas fa-phone-square fa-3x az-white"></i></td>
-                                    <td>&nbsp;</td>
-                                    <td class="az-white az-text-small">904 19 000</td>
-                                </tr>
-                            </table>
+                        <div class="az-margin-14 az-white">
+                            <h1 class="az-text-uppercase az-xs-text-xlarge">3D visning synliggjør din plan og hvordan du tenker</h1>
+                            <i id="section-4_vid1" class="far fa-play-circle fa-5x"></i><p class="az-margin-t-14 az-xs-text-small">De færreste av oss forstår tegninger. Det skaper lett misforståelser, og gjør at beslutninger kan tas på feil grunnlag. En 3D visualisering av planene, gir alle et felles grunnlag for forstå og evaluere planene. Sluttkunden blir mer fornøyd og du sparer tid og penger. MileStep tar oppdrag med å visualisere dine planer i 3D.</p>
                         </div>
 
                     </div>
                 </div>
-
             </div>
-        </div>-->
+        </div>
+
+        <div id="section-address" class="az-section az-bg-black">
+        <div id="container-address" class="az-container">
+
+            <div class="az-row">
+                <div class="az-col xs-12 sm-7">
+
+                    <div class="az-xs-margin-l-56 az-sm-margin-l-0">
+                        <table class="az-table az-xs-left az-sm-center">
+                            <tr>
+                                <td class="az-white az-text-medium">Milestep AS</td>
+                            </tr>
+                            <tr>
+                                <td class="az-white az-text-small">Lundsengvegen 9</td>
+                            </tr>
+                            <tr>
+                                <td class="az-white az-text-small">7725 Steinkjer</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="az-col xs-12 sm-5">
+
+                    <div class="az-xs-margin-l-56 az-sm-margin-l-0 az-xs-margin-t-14 az-sm-margin-t-0">
+                        <table class="az-table az-xs-left az-sm-center">
+                            <tr>
+                                <td><i class="fas fa-envelope-square fa-3x az-white"></i></td>
+                                <td>&nbsp;</td>
+                                <td><a class="az-white az-text-small az-border-bottom-hover-1-white az-email" href="javascript:void(0)" data-content="post(at)milestep.no">post(at)milestep.no</a></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-phone-square fa-3x az-white"></i></td>
+                                <td>&nbsp;</td>
+                                <td class="az-white az-text-small">900 45 373</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
 
     </form>
 
 </body>
 </html>
+
+
+
+
+<!--
+    
+
+3.      3D visualisering av virkemekanismen
+Det å forklare funksjon og nytte til et produkt er ikke alltid like enkelt. Det å få kundens interesse og oppmerksomhet kan være det vanskeligste. MileStep har lang erfaring med å lage visualiseringer som trigger interesse. Det gjør at du på sekunder får frem det viktigste der du tidligere brukte trengte minutter på forklaringer.
+
+4.      3D animasjoner som styrker ditt varemerke
+Vi husker bilde av menneskets første fotavtrykket på månen, med jorden som bakgrunn. En 3D animasjon og visualisering gir unik mulighet for å gi kunden nye visuelle inntrykk. MileStep har visualisert idéer og nyskapninger hvor målgruppen får nye visuelle knagger å henge ditt varemerke på. Slik skaper du et nytt visuelt fotavtrykk.
+
+5.      3D er vår tids nye måte å kommunisere på.
+Vi lever i en tid hvor det visuelle inntrykk har stor påvirkningskraft. Flotte fremstillinger appellere, gir stoppeffekt, og skaper oppmerksomhet. 3D visualiseringer og animasjoner fremhever detaljer, effekter og virkemekanisme som engasjerer og vekker ny interesse. MileStep lager visualiseringer som løfter frem det unike med ditt prosjekt, din idé, ditt forskningsresultat.
+
+6.      3D visualisering gjør idéen konkret og forståelig
+En 3D er som en film med mange virkemidler i samspill. Fremføringene krydres med visuelle effekter, musikk og unike kulisser. MileStep har laget en rekke visualiseringer hvor 3D visning på sekunder formidler kjernen i budskapet. Du slipper å bruke mange ord, visningen taler for seg selv. Befriende og effektiv kommunikasjon, enten mottakeren er kunde, investor eller en offentlig myndighet.
+
+7.      3D animasjoner fokuserer det unike
+En 3D animasjon eller en visualisering får fokus på det unike som skal fortelles. Før ting er laget kan du vise resultatet, planen omsatt i handling, produktet vist i bruk. Konkret og levende, som om det hele var virkelig. Vi i MileStep gjenskaper i 3D det univers som løfter frem det unike du skal kommunisere, enten mottakeren er kunde, investor eller en offentlig myndighet.
+
+8.      3D i markedsføring og presentasjoner
+En god 3D presentasjon har fokus på de fordeler og egenskaper som avgjør salg. De første sekunder avgjør interesse. Er det riktig interessant prioriterer kunden mer tid på ditt tilbud. Da har du fast fisk på kroken. MileStep liker å lage visualiseringer og animasjoner som skaper handling og engasjement.
+
+9.      3D visualisering krever målrettet og effektivt planlegging
+3D visualisering og animasjon er verktøy i tiden, enten det gjelder salg eller formidling av kunnskap. Men skal verktøyet være  effektfullt, og spennende må fokus være å skape oppmerksomhet og engasjement. MileStep har en lang pedagogisk innsikt som kombinert med 3D gjør at visualiseringene blir spennende og enkel å forstå.
+
+10.  3D animasjon kombinert med pedagogisk erfaring
+MileStep har et nært samarbeid med opplæringsbransjen. Vi står bak en rekke opplæringsvideo hvor 3D visualisering og animasjon har skapt ny forståelse og innsikt. Slik har vi erfart at 3D visualisering og animasjoner er effektive pedagogisk verktøy.
+
+11.  3D verktøy i pedagogisk formidling
+De fleste foretrekker å se instruksjonsvideo fremfor skriftlige brukerveiledninger. Selv enkle animasjoner og visualiseringer overgår skriftlige fremstillinger, og gjør at flere forstår raskere og uten å ringe deg som produsent. MileStep har lang erfaring fra å lage animasjonsvideo for opplæring av brukerne.
+
+12.  3D animasjoner i produktsalg gir økt tillit og troverdig.
+Dagens kunder har liten tid. En forklarende video gjør brukerterskelen mindre og får kunden raskere i gang. De fleste brukerne forstå lettere ved å følge forklaringer, noe som reduserer behov for veiledning. MileStep lager veiledninger i 3D som gjør at dine kunder føler seg bedre ivaretatt.
+
+13.  3D animasjon som får frem det unike med produktet
+En kunde er opptatt av nytteverdien, hva betyr produktet for meg! Formidler du det klart og forståelig har du kundens interesse og oppmerksomhet. Det gir deg det beste grunnlaget for å få salg. MileStep sine 3D visualiseringer fremhever nytten for kundene som gir mersalg.
+
+14.   3D skaper troverdighet og økt lojalitet.
+Tekst og bilder oppleves av mange kunder som litt lett i markedsføringen. Vi vil gjerne se og oppleve produktet i bruk og få nytten visuelt fremstilt. En 3D visualisering og animasjon er utrolig effektive i slik formidling. MileStep har spesialisert seg på å lage animasjon og 3D visualisering for bruk i markedsføring og opplæring.
+
+15.  3D visualisering innen forskning og nyskapning.
+Forskning og nyskapning utfordrer oss ved å sprenge grensen for det kjente. Nye oppdagelser drar oss inn i ukjent farvann. En forskning som visualiserer den praktiske nytten for oss eller samfunnet, blir lettere forstått og vekker større interesse. MileStep har jobbet nært med forskningsmiljø i visualisering av ny viten og nye forskning.
+
+16.  3D visualisering blir forskernes nye informasjonsverktøy
+Innen forskningen blir tekst og bilder ofte for lite forklarende å bruke i formidling. 3D visualisering gir mulighet for å fremheve det unike i forskningen og male samfunnsperspektivet klarere frem. MileStep jobbet nært med noen av landets fremste eksperter i å lage informasjonsfilmer om det siste innen forskning.-->
