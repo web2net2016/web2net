@@ -18,9 +18,11 @@
     <meta name="format-detection" content="date=no" />
     <meta name="format-detection" content="address=no" />
     <meta name="format-detection" content="email=no" />
-    <meta name="description" content="" />
+    <meta name="description" content="Vi lever i en tid hvor det visuelle inntrykk har stor påvirkningskraft. Flotte fremstillinger appellere, gir stoppeffekt, og skaper oppmerksomhet. 3D visualisering og animasjon får fokus på detaljer, effekter og virkemekanisme som skaper engasjement og interesse. MileStep lager visualiseringer som løfter frem det unike med ditt produkt, din idé, ditt forskningsresultat." />
     <meta name="keywords" content="" />
     <title>Hjem | MileStep AS</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="//cdn.web2net.no/lib-1.0.0/css/az-1.0.0.min.css" />
     <script src="//cdn.web2net.no/lib-1.0.0/js/az-1.0.0.min.js"></script>
     <link rel="stylesheet" href="/lib/standard.css" />
@@ -80,27 +82,17 @@
             height: 500px;
         }
 
-        #logo
-        {
-            position: absolute;
-            z-index: 1;
-            top: 25px;
-            left: auto;
-            right: 30px;
-            width: 230px;
-        }
-
-        #container-1 video
-        {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            width: auto;
-            height: auto;
-            min-width: 100%;
-            min-height: 100%;
-            transform: translateX(-50%) translateY(-50%);
-        }
+            #container-1 video
+            {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                width: auto;
+                height: auto;
+                min-width: 100%;
+                min-height: 100%;
+                transform: translateX(-50%) translateY(-50%);
+            }
 
         #section-3
         {
@@ -136,17 +128,35 @@
             margin: 20px 20px 0 0;
             cursor: pointer;
         }
+
+            .fa-play-circle:hover
+            {
+                color: #D83B01;
+            }
     </style>
 </head>
 <body>
 
     <form id="frmReg">
 
+        <div class="az-navbar az-navbar-top az-navbar-sticky">
+            <div class="az-navbar-top-content">
+                <button type="button" class="az-navbar-button">&#9776;</button>
+                <img class="az-navbar-branding mobile-only" alt="MileStep AS" src="/lib/images/logo2.png" style="height: 46px;" />
+                <img class="az-navbar-logo desktop-only az-right" alt="MileStep AS" src="/lib/images/logo2.png" style="height: 46px;" />
+                <div class="az-navbar-menu-wrapper">
+                    <ul class="az-navbar-menu az-left">
+                        <li><a href="javascript:void(0);">Hjem</a></li>
+                        <li><a href="respirasjon.html">Respirasjon</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
         <div id="section-1" class="az-section">
             <div id="container-1" class="az-container-fluid">
                 <div class="az-row">
                     <div class="az-col xs-12">
-                        <img id="logo" alt="MileStep AS" src="/lib/images/logo2.png" />
                         <video id="vid1" autoplay muted loop controls>
                             <source src="/lib/images/vindmolledemo.mp4" type="video/mp4">
                         </video>
@@ -160,8 +170,8 @@
                 <div class="az-row">
                     <div class="az-col xs-12">
                         <div id="section-2_vid1" class="az-margin-14 az-white">
-                            <h1 class="az-xs-text-xxlarge az-sm-text-xxxlarge az-md-text-xxxxlarge az-xl-text-xxxxxlarge az-text-uppercase">3D visualisering og animasjon</h1>
-                            <p class="az-margin-t-14 az-xs-text-small">Vi lever i en tid hvor det visuelle inntrykk har stor påvirkningskraft. Flotte fremstillinger appellere, gir stoppeffekt, og skaper oppmerksomhet. 3D visualisering og animasjon får fokus på detaljer, effekter og virkemekanisme som skaper engasjement og interesse. MileStep lager visualiseringer som løfter frem det unike med ditt produkt, din idé, ditt forskningsresultat.</p>
+                            <h1 class="az-text-uppercase az-xs-text-medium az-md-text-xlarge">3D visualisering og animasjon</h1>
+                            <p class="az-margin-t-14">Vi lever i en tid hvor det visuelle inntrykk har stor påvirkningskraft. Flotte fremstillinger appellere, gir stoppeffekt, og skaper oppmerksomhet. 3D visualisering og animasjon får fokus på detaljer, effekter og virkemekanisme som skaper engasjement og interesse. MileStep lager visualiseringer som løfter frem det unike med ditt produkt, din idé, ditt forskningsresultat.</p>
                         </div>
                     </div>
                 </div>
@@ -173,8 +183,8 @@
                 <div class="az-row">
                     <div class="az-col xs-12">
                         <div class="az-margin-14 az-white">
-                            <h1 class="az-text-uppercase az-xs-text-xlarge">3D visualisering gjør dine planer forståelig for flere</h1>
-                            <i id="section-3_vid1" class="far fa-play-circle fa-5x"></i><p class="az-margin-t-14 az-xs-text-small">En 3D visualiseringer bruker film for vise dine planer og prosjektet i en tidsakse, fra ulike vinkler, gjennomskåret og med detaljer fremhevet. Det gjør prosjektet selvforklarende på sekunder, og får alle deltagerne med fra første visning. Slik sparer du tid på forklaringer, og gir alle like forutsetninger for å delta i realiseringen. Det gir økt engasjement og bedre beslutninger. MileStep lager visualiseringer som løfter frem det unike med din plan, din idé, ditt prosjekt.</p>
+                            <h1 class="az-text-uppercase az-xs-text-medium az-md-text-xlarge">3D visualisering gjør dine planer forståelig for flere</h1>
+                            <i id="section-3_vid1" class="far fa-play-circle fa-5x"></i><p class="az-margin-t-14">En 3D visualiseringer bruker film for vise dine planer og prosjektet i en tidsakse, fra ulike vinkler, gjennomskåret og med detaljer fremhevet. Det gjør prosjektet selvforklarende på sekunder, og får alle deltagerne med fra første visning. Slik sparer du tid på forklaringer, og gir alle like forutsetninger for å delta i realiseringen. Det gir økt engasjement og bedre beslutninger. MileStep lager visualiseringer som løfter frem det unike med din plan, din idé, ditt prosjekt.</p>
                         </div>
                     </div>
                 </div>
@@ -186,8 +196,8 @@
                 <div class="az-row">
                     <div class="az-col xs-12">
                         <div class="az-margin-14 az-white">
-                            <h1 class="az-text-uppercase az-xs-text-xlarge">3D visning synliggjør din plan og hvordan du tenker</h1>
-                            <i id="section-4_vid1" class="far fa-play-circle fa-5x"></i><p class="az-margin-t-14 az-xs-text-small">De færreste av oss forstår tegninger. Det skaper lett misforståelser, og gjør at beslutninger kan tas på feil grunnlag. En 3D visualisering av planene, gir alle et felles grunnlag for forstå og evaluere planene. Sluttkunden blir mer fornøyd og du sparer tid og penger. MileStep tar oppdrag med å visualisere dine planer i 3D.</p>
+                            <h1 class="az-text-uppercase az-xs-text-medium az-md-text-xlarge">3D visning synliggjør din plan og hvordan du tenker</h1>
+                            <i id="section-4_vid1" class="far fa-play-circle fa-5x"></i><p class="az-margin-t-14">De færreste av oss forstår tegninger. Det skaper lett misforståelser, og gjør at beslutninger kan tas på feil grunnlag. En 3D visualisering av planene, gir alle et felles grunnlag for forstå og evaluere planene. Sluttkunden blir mer fornøyd og du sparer tid og penger. MileStep tar oppdrag med å visualisere dine planer i 3D.</p>
                         </div>
                     </div>
                 </div>

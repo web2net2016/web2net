@@ -67,6 +67,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="favicon.ico" />
+    <Content Include="lib\images\respirasjon.mp4" />
+    <Content Include="respirasjon.html" />
     <Content Include="index.html" />
     <Content Include="lib\functionlib.js" />
     <Content Include="lib\images\logo1.png" />
