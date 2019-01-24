@@ -29,13 +29,13 @@
         $(document).ready(function ()
         {
             initializePage(
-                {
-                    getLanguage: true,
-                    getValidation: true
-                }, function ()
-                {
-                    setContentInfo();
-                });
+            {
+                getLanguage: true,
+                getValidation: true
+            }, function ()
+            {
+                setContentInfo();
+            });
         });
 
         function setContentInfo()
@@ -66,9 +66,9 @@
                 if (_ObjValidation.Token == "")
                 {
                     changeModalTitlebar(
-                        {
-                            titlebarText: SingleElements.errorGoogleRecaptcha
-                        });
+                    {
+                        titlebarText: SingleElements.errorGoogleRecaptcha
+                    });
                     return false;
                 }
 
@@ -102,10 +102,10 @@
 
                 var _Options =
                 {
-                    url: "//api.web2net.no/api/sendmail/sendmail" + ApiVersion,
+                    url: "https://api.web2net.no/api/sendmail/sendmail" + ApiVersion,
                     headers:
                     {
-                        "Authorization": "Basic 7931AD57F8204D27B68067B228AA24487E90F6A30633881A66E71C24A01F093F892254AFBB5BDC5DBB98853A9B3455E06014C6868FA2C497E64A213B89511CAF"
+                        "Authorization": "Bearer 7931AD57F8204D27B68067B228AA24487E90F6A30633881A66E71C24A01F093F892254AFBB5BDC5DBB98853A9B3455E06014C6868FA2C497E64A213B89511CAF"
                     },
                     exceptionErrorText: "SendMail"
                 };
@@ -114,12 +114,12 @@
                     if (data.Transfer == "200")
                     {
                         initializeAZWindow(
-                            {
-                                dialogTitle: "Takk for din henvendelse",
-                                dialogText: "Vi har mottatt din henvendelse og vil kontakte deg så rask som mulig.",
-                                dialogButton1: "Avslutt",
-                                dialogClose: function () { parent.closeModalDialog(); }
-                            });
+                        {
+                            dialogTitle: "Takk for din henvendelse",
+                            dialogText: "Vi har mottatt din henvendelse og vil kontakte deg så rask som mulig.",
+                            dialogButton1: "Avslutt",
+                            dialogClose: function () { parent.closeModalDialog(); }
+                        });
                     }
                     else
                     {
