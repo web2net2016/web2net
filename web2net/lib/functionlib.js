@@ -1,8 +1,18 @@
 ﻿
 // Site info
 var AppName = "web2net";
-var AppVersion = "1.0.0";
+var AppVersion = "1.0.1";
 var ApiVersion = "_1";
+
+$(document).ready(function ()
+{
+    $('.az-email').click(function (e)
+    {
+        var _HREF = $(this).data("content").toLowerCase().replace('(at)', '@');
+        window.location.href = "mailto:" + _HREF;
+        e.preventDefault();
+    });
+});
 
 // All Pages
 function openContactForm()
