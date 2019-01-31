@@ -1,21 +1,4 @@
-﻿
-.az-portfolio-content li > .az-portfolio-card:before
-{
-    content: "\f06e";
-    font-family: "Font Awesome 5 Free";
-    font-style: normal;
-    font-variant-caps: normal;
-    font-variant-ligatures: normal;
-    font-weight: 900;
-    color: #E81123;
-    font-size: 26px;
-    position: absolute;
-    z-index: 1;
-    top: 5px;
-    right: 15px;
-}
-
-#container-1
+﻿#container-1
 {
     padding: 60px 0 30px 0;
 }
