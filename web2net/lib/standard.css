@@ -37,8 +37,8 @@ h6
 
     .az-accordion-card > header
     {
-        background-color: #009688;
-        color: #FFFFFF;
+        background-color: #FFFFFF;
+        color: #000000;
     }
 
         .az-accordion-card > header:before
@@ -53,9 +53,7 @@ h6
 
     .az-accordion-card > article
     {
-        margin-left: 4px;
         color: #000000;
-        border-left: 4px solid #009688;
     }
 
         .az-accordion-card > article > h1
@@ -65,7 +63,8 @@ h6
 
     .az-accordion-card > header.accordion-active
     {
-        border: 0;
+        background-color: #D83B01;
+        color: #FFFFFF;
     }
 
 
