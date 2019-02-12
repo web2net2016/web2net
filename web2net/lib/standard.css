@@ -668,7 +668,7 @@ h6
                 font-size: 13px;
             }
 
-@media (max-width: 576px)
+@media (max-width: 767px)
 {
     /* Navbar Top*/
     .az-navbar.az-navbar-top
@@ -717,12 +717,68 @@ h6
 @media (max-width: 767px)
 {
     /* Navbar Top*/
-    .az-navbar.az-navbar-top
+    .az-navbar > .az-navbar-top-content > .az-navbar-button
     {
-        top: 0 !important;
+        display: block;
+    }
+
+    .az-navbar > .az-navbar-top-content > .az-navbar-branding.mobile-only
+    {
+        display: block;
+    }
+
+    .az-navbar > .az-navbar-top-content > .az-navbar-logo.desktop-only
+    {
+        display: none;
+    }
+
+    .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu
+    {
+        display: none;
+    }
+
+    .az-navbar > .az-navbar-top-content.mobile > .az-navbar-menu-wrapper > .az-navbar-menu.az-left.mobile-only
+    {
+        display: block;
+    }
+
+    .az-navbar > .az-navbar-top-content.mobile > .az-navbar-menu-wrapper > .az-navbar-menu.az-right.mobile-only
+    {
+        display: block;
+    }
+
+    .az-navbar > .az-navbar-top-content.mobile > .az-navbar-menu-wrapper > .az-navbar-menu.az-left.desktop-only
+    {
+        display: none;
+    }
+
+    .az-navbar > .az-navbar-top-content.mobile > .az-navbar-menu-wrapper > .az-navbar-menu.az-right.desktop-only
+    {
+        display: none;
+    }
+
+    .az-navbar > .az-navbar-top-content.mobile > .az-navbar-menu-wrapper > .az-navbar-menu
+    {
+        display: block;
+        width: 100%;
+    }
+
+        .az-navbar > .az-navbar-top-content.mobile > .az-navbar-menu-wrapper > .az-navbar-menu > li
+        {
+            width: 100%;
+        }
+
+    /* Navbar Bottom*/
+    .az-navbar.az-navbar-bottom.mobile-only
+    {
+        display: block;
+    }
+
+    .az-navbar.az-navbar-bottom.desktop-only
+    {
+        display: none;
     }
 }
-
 
 /* Portfolio  ---------*/
 .az-portfolio-menu
