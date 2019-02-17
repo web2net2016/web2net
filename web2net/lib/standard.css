@@ -1,4 +1,61 @@
-﻿#section-1
+﻿.az-slideshow
+{
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+    .az-slideshow slide img
+    {
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .az-slideshow .az-arrows
+    {
+        font-size: 50px;
+        color: #FFFFFF;
+        cursor: pointer;
+    }
+
+        .az-slideshow .az-arrows:hover
+        {
+            font-size: 60px;
+        }
+
+    .az-slideshow .az-arrow-left
+    {
+    }
+
+    .az-slideshow .az-arrow-right
+    {
+        margin-right: 7px;
+    }
+
+@media (max-width: 576px)
+{
+    .az-slideshow .az-arrows
+    {
+        font-size: 30px;
+    }
+
+        .az-slideshow .az-arrows:hover
+        {
+            font-size: 35px;
+        }
+}
+
+
+
+#section-2
+{
+    display: flex;
+} 
+
+
+
+#section-1
 {
     padding-top: 60px;
 }
@@ -710,17 +767,15 @@ h6
 .az-navbar.az-navbar-top
 {
     position: absolute;
-    z-index: 1;
-    height: 100%;
+    z-index: 2;
 }
 
 .az-navbar > .az-navbar-top-content
 {
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     left: 0;
     top: 73px;
-    height: 100%;
 }
 
     .az-navbar > .az-navbar-top-content > .az-navbar-button
