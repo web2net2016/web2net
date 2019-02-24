@@ -29,8 +29,27 @@
 
         $(document).ready(function ()
         {
+            $.subscribe("functionlib/windowScroll", function (e, data)
+            {
+                if (window.innerWidth > 992)
+                {
+                    if (data > 350)
+                    {
+                        $(".az-navbar").addClass("az-sticky");
+                    }
+                    else
+                    {
+                        $(".az-navbar").removeClass("az-sticky");
+                    }
+                }
+                else
+                {
+                    $(".az-navbar").removeClass("az-sticky");
+                }
+            });
             initializePage(
             {
+                setWindowScrollTop: true,
                 getLanguage: true,
                 getValidation: true
             }, function ()
@@ -244,9 +263,6 @@
                             </slide>
                             <slide>
                                 <img src="/lib/images/ebf_b10.jpg">
-                            </slide>
-                            <slide>
-                                <img src="/lib/images/ebf_b11.jpg">
                             </slide>
                         </div>
                     </div>

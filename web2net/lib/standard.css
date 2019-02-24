@@ -566,6 +566,25 @@ h6
 
 
 /* Navbar --------*/
+/* Navbar Sticky*/
+.az-navbar.az-sticky > .az-navbar-top-content
+{
+    margin-top: 0 !important;
+    height: 106px !important;
+}
+
+    .az-navbar.az-sticky > .az-navbar-top-content > .az-navbar-logo
+    {
+        top: 6px !important;
+        left: 6px !important;
+    }
+
+    .az-navbar.az-sticky > .az-navbar-top-content > .az-navbar-menu-wrapper
+    {
+        opacity: unset !important;
+        background-color: #B4CD95 !important;
+    }
+
 /* Navbar Top*/
 .az-navbar.az-navbar-top
 {
@@ -574,7 +593,6 @@ h6
 .az-navbar > .az-navbar-top-content
 {
     margin-top: 100px;
-    margin-bottom: 20px;
 }
 
     .az-navbar > .az-navbar-top-content > .az-navbar-button
