@@ -1,17 +1,12 @@
-﻿#az-cover-spin
-{
-    z-index: 5000;
-}
-
-
+﻿
 /* Size ALL --------*/
 html, body
 {
-    font-family: Verdana, sans-serif;
+    font-family: 'Titillium Web', sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
     color: #000000;
-    background-color: #DEDEDE;
+    background-color: #e4e5e7;
 }
 
 h1,
@@ -21,8 +16,7 @@ h4,
 h5,
 h6
 {
-    font-family: "Segoe UI", Arial, sans-serif;
-    font-weight: 400;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 
@@ -579,26 +573,42 @@ h6
 
 .az-navbar > .az-navbar-top-content
 {
-    background-color: #000000;
+    margin-top: 100px;
+    margin-bottom: 20px;
 }
 
     .az-navbar > .az-navbar-top-content > .az-navbar-button
     {
-        margin: 8px 7px 8px 0;
+        margin: 5px 8px 0 0;
         padding: 11px 15px;
         border: 1px solid #FFFFFF;
-        background-color: transparent;
+        background-color: #000000;
         color: #FFFFFF;
     }
 
     .az-navbar > .az-navbar-top-content > .az-navbar-branding
     {
         float: left;
-        margin: 3px 3px 0 3px;
+        margin: 3px 0 0 6px;
+    }
+
+    .az-navbar > .az-navbar-top-content > .az-navbar-logo
+    {
+        position: absolute;
+        z-index: 2;
+        top: 50px;
+        left: 130px;
+        display: block;
+        max-width: 100%;
+        height: auto;
+        width: 100px;
     }
 
     .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper
     {
+        height: 50px;
+        background-color: #e7e7e7;
+        opacity: 0.8;
     }
 
         .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-left
@@ -607,9 +617,6 @@ h6
 
             .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-left > li > a
             {
-                padding: 16px;
-                font-size: 16px;
-                color: #FFFFFF;
             }
 
                 .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-left > li > a > i
@@ -622,9 +629,10 @@ h6
 
             .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-right > li > a
             {
-                padding: 5px;
-                font-size: 31px;
-                color: #FFFFFF;
+                padding: 17px;
+                font-size: 14px;
+                font-weight: 700;
+                color: #000000;
             }
 
                 .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-right > li > a > i
@@ -636,39 +644,31 @@ h6
         .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu > li > a > i:hover,
         .az-navbar > .az-navbar-bottom-content > .az-navbar-menu > li > a:hover
         {
-            background-color: #FFFFFF;
-            color: #000000;
+            color: #FFFFFF;
         }
 
 /* Navbar Bottom*/
 .az-navbar > .az-navbar-bottom-content
 {
-    background-color: #000000;
 }
 
     .az-navbar > .az-navbar-bottom-content > .az-navbar-menu > li
     {
-        width: 25%;
-        text-align: center;
     }
 
         .az-navbar > .az-navbar-bottom-content > .az-navbar-menu > li > a
         {
-            padding: 7px;
-            color: #FFFFFF;
         }
 
             .az-navbar > .az-navbar-bottom-content > .az-navbar-menu > li > a > i
             {
-                font-size: 18px;
             }
 
             .az-navbar > .az-navbar-bottom-content > .az-navbar-menu > li > a > p
             {
-                font-size: 13px;
             }
 
-@media (max-width: 767px)
+@media (max-width: 992px)
 {
     /* Navbar Top*/
     .az-navbar.az-navbar-top
@@ -676,21 +676,26 @@ h6
         top: 0 !important;
         left: 0 !important;
         height: auto !important;
-        background-color: transparent !important;
     }
 
     .az-navbar > .az-navbar-top-content
     {
+        margin: 0;
+        background-color: #B4CD95;
     }
+
+        .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper
+        {
+            opacity: unset !important;
+            background-color: transparent !important;
+        }
 
         .az-navbar > .az-navbar-top-content.mobile > .az-navbar-menu-wrapper > .az-navbar-menu.az-left
         {
-            border-top: 1px solid #BBBBBB;
         }
 
             .az-navbar > .az-navbar-top-content.mobile > .az-navbar-menu-wrapper > .az-navbar-menu.az-left > li > a
             {
-                padding: 8px;
             }
 
                 .az-navbar > .az-navbar-top-content.mobile > .az-navbar-menu-wrapper > .az-navbar-menu.az-left > li > a > i
@@ -699,22 +704,20 @@ h6
 
         .az-navbar > .az-navbar-top-content.mobile > .az-navbar-menu-wrapper > .az-navbar-menu.az-right
         {
-            display: none;
+            border-top: 1px solid #BBBBBB;
         }
 
             .az-navbar > .az-navbar-top-content.mobile > .az-navbar-menu-wrapper > .az-navbar-menu.az-right > li > a
             {
-                padding: 0;
-                line-height: 38px;
+                padding: 8px;
             }
 
                 .az-navbar > .az-navbar-top-content.mobile > .az-navbar-menu-wrapper > .az-navbar-menu.az-right > li > a > i
                 {
-                    padding: 6px;
                 }
 }
 
-@media (max-width: 767px)
+@media (max-width: 992px)
 {
     /* Navbar Top*/
     .az-navbar > .az-navbar-top-content > .az-navbar-button
@@ -779,6 +782,7 @@ h6
         display: none;
     }
 }
+
 
 /* Portfolio  ---------*/
 .az-portfolio-menu

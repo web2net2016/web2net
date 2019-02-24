@@ -10,9 +10,9 @@
     <meta name="format-detection" content="date=no" />
     <meta name="format-detection" content="address=no" />
     <meta name="format-detection" content="email=no" />
-    <meta name="description" content="Moderne og effektive nettsider. Fungerer på alle plattformer. Med over 70 mill nettsteder verden over er WordPress det desidert mest utbredte publiseringsverktøyet. Med statiske sider står man fritt i forhold til design og innhold. Statiske sider gir stor frihet." />
-    <meta name="keywords" content="web2net, hjemmesider, produkter, wordpress, statiske sider, statiske, sider, woocommerce, klarna, vipps, e-handel, netthandel, checkout, hurtigkasse, mobil, mobilvennlig, søkevennlig, rimelig, rimelige løsninger, webmaster tools, google analytics, sosiale medier, alt er inkludert, serviceavtale" />
-    <title>Hjem | web2net</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <title>Hjem | Eiker Båtforening</title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="//cdn.web2net.no/lib-1.0.0/css/az-1.0.0.min.css" />
@@ -20,59 +20,123 @@
     <link rel="stylesheet" href="/lib/standard.css" />
     <link rel="stylesheet" href="/lib/index.css" />
     <script src="/lib/functionlib.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
+
+        LanguagePage = "/lib/contact-form-lang.json";
+        ValidationPage = "/lib/contact-form-val.json";
+        ThisLanguage = "nb-NO";
 
         $(document).ready(function ()
         {
-            initializePage({}, function ()
+            initializePage(
             {
-                $("#section-container-3-col-1, #section-container-3-col-2, #section-container-3-col-3").matchHeight();
-                $("#cmdWordPress").off("click").on("click", function ()
-                {
-                    navigateTo("produkter.html?ScrollTo=container-2");
-                });
-                $("#cmdStatiskWeb").off("click").on("click", function ()
-                {
-                    navigateTo("produkter.html?ScrollTo=container-4");
-                });
-                $("#cmdWooCommerce").off("click").on("click", function ()
-                {
-                    navigateTo("produkter.html?ScrollTo=container-woocommerce");
-                });
-                $("#cmdWebmasterTools").off("click").on("click", function ()
-                {
-                    navigateTo("produkter.html?ScrollTo=accordion-3&Accordion=3");
-                });
-                $("#cmdGoogleAnalytics").off("click").on("click", function ()
-                {
-                    navigateTo("produkter.html?ScrollTo=accordion-4&Accordion=4");
-                });
-                $("#cmdSosialeMedier").off("click").on("click", function ()
-                {
-                    navigateTo("produkter.html?ScrollTo=accordion-5&Accordion=5");
-                });
-                $("#cmdAltInkludert").off("click").on("click", function ()
-                {
-                    navigateTo("produkter.html?ScrollTo=accordion-0&Accordion=0");
-                });
-                $("#cmdServiceavtale").off("click").on("click", function ()
-                {
-                    navigateTo("produkter.html?ScrollTo=accordion-1&Accordion=1");
-                });
-                hideCoverSpin();
+                getLanguage: true,
+                getValidation: true
+            }, function ()
+            {
+                setContentInfo();
             });
         });
 
-        (function (i, s, o, g, r, a, m)
+        function setContentInfo()
         {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function ()
+            var azSlideshow1 = new initSlideshow(
             {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-        ga('create', 'UA-27385410-1', 'auto');
-        ga('send', 'pageview');
+                azSlideshowId: "az-slideshow-1",
+                azSlideshowTimer: 5000
+            });
+            var azSlideshow2 = new initSlideshow(
+            {
+                azSlideshowId: "az-slideshow-2",
+                azSlideshowTimer: 2000
+            });
+            formdirty = false;
+            hideCoverSpin();
+        }
+
+        function validateDirty()
+        {
+            formdirty = true;
+        }
+
+        function verifySubmit()
+        {
+            var _ObjForm = serializeForm("#" + ThisFormId);
+            if (isEmpty(_ObjForm) == false)
+            {
+                var _ObjValidation = {};
+                _ObjValidation.Token = grecaptcha.getResponse();
+                if (_ObjValidation.Token == "")
+                {
+                    $("#contactInfo").text(SingleElements.errorGoogleRecaptcha).removeClass('az-alert-danger').addClass('az-alert-info').show();
+                    return false;
+                }
+
+                showCoverSpin()
+                var _ObjSendMail = {};
+                var _HTML = "";
+                _HTML = '<p>Navn: ' + _ObjForm.navn + '</p>';
+                _HTML += '<p>E-post: ' + _ObjForm.epost + '</p>';
+                _HTML += '<p>Adresse: ' + _ObjForm.adresse + '</p>';
+                _HTML += '<p>Postnummer: ' + _ObjForm.postnummer + '</p>';
+                _HTML += '<p>Sted: ' + _ObjForm.sted + '</p>';
+                _HTML += '<p>Telefon: ' + _ObjForm.telefon + '</p>';
+                _HTML += '<p>Båttype: ' + _ObjForm.baattype + '</p>';
+                _HTML += '<p>Båtnavn: ' + _ObjForm.baatnavn + '</p>';
+                _HTML += '<p>Regnr: ' + _ObjForm.regnr + '</p>';
+                _HTML += '<p>Ønsker vintoeropplag: ' + $('input[name=opplag]:checked').val() + '</p>';
+                _HTML += '<p>Kommentar: ' + _ObjForm.melding + '</p><br />';
+                _ObjSendMail.To = ["frankudnes@gmail.com"];
+                //_ObjSendMail.To = ["protm@online.no, janasto@online.no"];
+                _ObjSendMail.From = decodeURIComponent(_ObjForm.epost);
+                _ObjSendMail.Subject = "Søknad om bryggeplass";
+                _ObjSendMail.Body = _HTML;
+
+                var _HTML2 = "";
+                _HTML2 = '<p>Takk for din henvendelse!</p>';
+                _HTML2 += '<p>Vi har mottatt din søknad om bryggeplass med følgende informasjon:</p><br />';
+                _HTML2 += _HTML;
+                _HTML2 += '<p>Med vennlig hilsen Eiker Båtforening</p><br />';
+                _ObjSendMail.CopyToSender = true;
+                _ObjSendMail.CopyToSenderSubject = "Takk for din henvendelse - Eiker Båtforening";
+                _ObjSendMail.CopyToSenderBody = _HTML2;
+
+                var _ContactTransferClass = {};
+                _ContactTransferClass.TransferType = "sendmail";
+                _ContactTransferClass.ValidationType = "googlerecaptcha";
+                _ContactTransferClass.ObjValidation = _ObjValidation
+                _ContactTransferClass.ObjSendMail = _ObjSendMail;
+
+                var _Options =
+                {
+                    url: "https://api.web2net.no/api/sendmail/sendmail" + ApiVersion,
+                    headers:
+                    {
+                        "Authorization": "Bearer 7931AD57F8204D27B68067B228AA24487E90F6A30633881A66E71C24A01F093F892254AFBB5BDC5DBB98853A9B3455E06014C6868FA2C497E64A213B89511CAF"
+                    },
+                    exceptionErrorText: "SendMail"
+                };
+                initializeAjax(_Options, _ContactTransferClass).done(function (data, textStatus, jqXHR)
+                {
+                    if (data.Transfer == "200")
+                    {
+                        initializeAZWindow(
+                        {
+                            dialogTitle: "Takk for din henvendelse",
+                            dialogText: "Vi har mottatt din henvendelse og vil kontakte deg så rask som mulig.",
+                            dialogButton1: "Avslutt",
+                            dialogClose: function () { parent.closeModalDialog(); }
+                        });
+                    }
+                    else
+                    {
+                        hideCoverSpin();
+                        throwException("dialog", "", ThisPage, "verifySubmit:entityedit:Transfer:" + JSON.stringify(data.Transfer), "SendMail");
+                    }
+                });
+            }
+        }
 
     </script>
 </head>
@@ -84,20 +148,18 @@
             <div class="az-navbar-top-content">
 
                 <button type="button" class="az-navbar-button">&#9776;</button>
-                <img class="az-navbar-branding mobile-only" alt="web2net" src="/lib/images/web2net_logo_white.png" style="height: 46px;" />
+                <img class="az-navbar-branding mobile-only" alt="ebf" src="/lib/images/ebf_logo.png" style="height: 46px;" />
+                <img class="az-navbar-logo desktop-only" alt="ebf" src="/lib/images/ebf_logo.png" />
 
                 <div class="az-navbar-menu-wrapper">
-                    <ul class="az-navbar-menu az-left">
-                        <li><a href="javascript:void(0);">Hjem</a></li>
-                        <li><a href="prosessen.html">Prosessen</a></li>
-                        <li><a href="produkter.html">Produkter</a></li>
-                        <li><a href="referanser.html">Referanser</a></li>
-                        <li><a href="kundesider.html">Kundesider</a></li>
-                        <li><a href="javascript:void(0);" onclick="openContactForm();">Kontakt oss</a></li>
-                    </ul>
-
                     <ul class="az-navbar-menu az-right">
-                        <li><a href="https://www.facebook.com/web2net" target="_blank" style="padding: 5px 20px 5px 20px;"><i class="fab fa-facebook-square"></i></a></li>
+                        <li><a href="#section-2">Om oss</a></li>
+                        <li><a href="#section-3">Dugnader</a></li>
+                        <li><a href="#section-4">Bryggeplass</a></li>
+                        <li><a href="#section-5">Kontaktpersoner</a></li>
+                        <li><a href="#section-6">Linker</a></li>
+                        <li><a href="#section-7">Aktuelle saker</a></li>
+                        <li><a href="#container-address">Kontakt</a></li>
                     </ul>
                 </div>
             </div>
@@ -105,250 +167,511 @@
 
         <div id="section-1" class="az-section">
             <div id="container-1" class="az-container-fluid">
-
-                <img class="content-1" alt="web2net" src="/lib/images/web2net_logo_white.png" />
-                <h1 class="content-2 az-xs-text-xlarge az-sm-text-xxlarge az-md-text-xxxlarge az-lg-text-xxxxlarge az-xl-text-xxxxxlarge az-text-uppercase">Moderne og effektive nettsider</h1>
-                <h1 class="content-3 az-xs-text-xlarge az-sm-text-xxlarge az-md-text-xxxlarge az-lg-text-xxxxlarge az-xl-text-xxxxxlarge az-text-uppercase">Fungerer på alle plattformer</h1>
-
-                <video autoplay muted loop>
-                    <source src="/lib/images/648991523.mp4" type="video/mp4">
-                </video>
-
-            </div>
-        </div>
-
-        <div id="section-2" class="az-section az-bg-teal">
-            <div id="container-2" class="az-container">
-
                 <div class="az-row">
-                    <div class="az-col xs-12 lg-6">
-
-                        <div class="az-margin-14 az-white">
-                            <h1 class="az-xs-text-xxlarge az-sm-text-xxxlarge az-md-text-xxxxlarge az-xl-text-xxxxxlarge az-text-uppercase">Wordpress <span class="az-badge az-bg-blue az-text-xlarge" style="padding: 6px 6px;">WP</span></h1>
-                            <h1 class="az-xs-text-large az-padding-b-7">En profesjonell nettside som gjenspeiler bedriftens personlighet.</h1>
-                            <p class="az-padding-b-14">Med over 70 mill nettsteder verden over er WordPress det desidert mest utbredte publiseringsverktøyet.</p>
-                            <p class="az-padding-b-7">- Enkel administrasjon</p>
-                            <p class="az-padding-b-7">- Mobilvennlig</p>
-                            <p class="az-padding-b-28">- Søkevennlig</p>
-                            <span class="az-xs-text-large az-sm-text-xlarge">249,-/mnd</span>
-                            <div class="az-form-group az-text-center">
-                                <button type="button" id="cmdWordPress" class="az-button az-shadow-1 az-shadow-hover-2 az-white" style="background-color: #F06649;">Les mer</button>
-                            </div>
+                    <div class="az-col xs-12">
+                        <div id="az-slideshow-1" class="az-slideshow">
+                            <slide>
+                                <img src="/lib/images/ebf_bg8.jpg">
+                                <div>
+                                    <h1>Søknad om bryggeplass</h1>
+                                    <a href="#section-4">Ta kontakt <i class="fa fa-angle-right"></i></a>
+                                </div>
+                            </slide>
+                            <slide>
+                                <img src="/lib/images/ebf_bg6.jpg">
+                                <div>
+                                    <h1>Søknad om bryggeplass</h1>
+                                    <a href="#section-4">Ta kontakt <i class="fa fa-angle-right"></i></a>
+                                </div>
+                            </slide>
+                            <slide>
+                                <img src="/lib/images/ebf_1.jpg">
+                                <div>
+                                    <h1>Søknad om bryggeplass</h1>
+                                    <a href="#section-4">Ta kontakt <i class="fa fa-angle-right"></i></a>
+                                </div>
+                            </slide>
                         </div>
-
-                    </div>
-                    <div class="az-col xs-12 lg-6">
-
-                        <div class="az-margin-14 az-white">
-                            <h1 class="az-xs-text-xxlarge az-sm-text-xxxlarge az-md-text-xxxxlarge az-xl-text-xxxxxlarge az-text-uppercase">Statiske sider <span class="az-badge az-bg-selective-yellow az-text-xlarge" style="padding: 6px 18px;">S</span></h1>
-                            <h1 class="az-xs-text-large az-padding-b-7">Moderne og effektive nettsider som fungerer på alle plattformer.</h1>
-                            <p class="az-padding-b-14">Med statiske sider står man fritt i forhold til design og innhold. Statiske sider gir stor frihet</p>
-                            <p class="az-padding-b-7">- Rimelige løsninger</p>
-                            <p class="az-padding-b-7">- Mobilvennlig</p>
-                            <p class="az-padding-b-14">- Søkevennlig</p>
-                            <span class="az-xs-text-large az-sm-text-xlarge">149,-/mnd</span>
-                            <div class="az-form-group az-text-center">
-                                <button type="button" id="cmdStatiskWeb" class="az-button az-shadow-1 az-shadow-hover-2 az-white" style="background-color: #F06649;">Les mer</button>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
-
             </div>
         </div>
 
-        <div id="section-woocommerce" class="az-section">
-            <div id="container-woocommerce" class="az-container">
-
-                <div class="az-row" style="background-color: rgba(0,0,0,0.7);">
-                    <div class="az-col xs-12 lg-7">
-
-                        <div class="az-text-center az-padding-14">
-                            <img class="az-xs-width-100" alt="WooCommerse" src="/lib/images/woo-wp-klarna-vipps.png" />
-                        </div>
-
-                    </div>
-                    <div class="az-col xs-12 lg-5">
-
-                        <div class="az-white">
-                            <h1 class="az-xs-text-xlarge az-sm-text-xxlarge az-text-uppercase az-text-center az-padding-7">WooCommerce <span class="az-badge az-bg-purple az-text-xlarge" style="padding: 6px 14px;">W</span></h1>
-                            <p class="az-center az-padding-14">WooCommerce er nå den mest populære e-handelsplattformen på nettet, slik at du kan være trygg på at du er i godt selskap. WooCommerce er bygget for å integrere sømløst med WordPress, som er det desidert mest utbredte publiseringsverktøyet i verden.</p>
-                            <div class="az-form-group az-text-center">
-                                <button type="button" id="cmdWooCommerce" class="az-button az-shadow-1 az-shadow-hover-2 az-margin-b-14 az-white" style="background-color: #F06649;">Les mer</button>
-                            </div>
-                        </div>
-
+        <div id="section-2" class="az-section">
+            <div id="container-2" class="az-container">
+                <div class="az-row az-padding-t-56 az-padding-b-56">
+                    <div class="az-col xs-12">
+                        <h1 class="section-2-h1">Om Eiker Båtforening</h1>
                     </div>
                 </div>
-
+                <div class="az-row az-padding-b-56">
+                    <div class="az-col xs-12 md-6">
+                        <p class="section-2-p">
+                            Eiker Båtforening er lokalisert i Vestfossen og innsjøen som blir benyttet til båtluftslivet strekker seg over en lengde på nesten to mil fra
+                            Vestfossen sentrum til Eidsfoss i Hof. Mellom Fiskumvannet og Eikern ligger Sundhaugen, en kjær badeplass og hvor det også er mulighet for servering i sommerhalvåret.
+                            Eikern blir benyttet som drikkevann, så vi seiler i eksklusiv væske. Midtveis i Eikern ligger Holtøya, med Hakavik kraftstasjon like på innsiden. Tvers over ligger to
+                            store campingplasser, ved Thorrud.
+                            På Hesthammerøya tror de lokale (vennligsinnede) innfødte at det var kloster i middelalderen, men beviser finnes ikke.
+                            Eidsfoss er endestasjonen og vel verdt et besøk. Her det kunstnere, museum, kro, kunstutstilling på Hovedgården mm.
+                        </p>
+                    </div>
+                    <div class="az-col xs-12 md-1">&nbsp;</div>
+                    <div class="az-col xs-12 md-5">
+                        <div id="az-slideshow-2" class="az-slideshow">
+                            <slide>
+                                <img src="/lib/images/ebf_b1.jpg">
+                            </slide>
+                            <slide>
+                                <img src="/lib/images/ebf_b2.jpg">
+                            </slide>
+                            <slide>
+                                <img src="/lib/images/ebf_b3.jpg">
+                            </slide>
+                            <slide>
+                                <img src="/lib/images/ebf_b4.jpg">
+                            </slide>
+                            <slide>
+                                <img src="/lib/images/ebf_b5.jpg">
+                            </slide>
+                            <slide>
+                                <img src="/lib/images/ebf_b6.jpg">
+                            </slide>
+                            <slide>
+                                <img src="/lib/images/ebf_b7.jpg">
+                            </slide>
+                            <slide>
+                                <img src="/lib/images/ebf_b8.jpg">
+                            </slide>
+                            <slide>
+                                <img src="/lib/images/ebf_b10.jpg">
+                            </slide>
+                            <slide>
+                                <img src="/lib/images/ebf_b11.jpg">
+                            </slide>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div id="section-3" class="az-section">
             <div id="container-3" class="az-container">
-
-                <div class="az-row">
-                    <div class="az-col xs-12 lg-4">
-
-                        <div id="section-container-3-col-1" class="az-xs-margin-0 az-lg-margin-r-14 az-white" style="background-color: rgba(0,0,0,0.7);">
-                            <h1 class="az-xs-text-xlarge az-sm-text-xxlarge az-text-uppercase az-text-center az-padding-7">Webmaster tools</h1>
-                            <p class="az-text-center"><img alt="Webmaster tools" class="az-xs-width-40 az-sm-width-30 az-lg-width-40" src="/lib/images/webmastertools.png" /></p>
-                            <p class="az-center az-padding-14">Webmaster Tools - Google Search Console, er et verktøy Google har laget for å gi deg en generell oversikt over helsestatusen til dine nettsider. Dette er et kraftig verktøy som oppdateres jevnlig med ny funksjonalitet for å gi deg en bedre oversikt.</p>
-                            <div class="az-form-group az-text-center">
-                                <button type="button" id="cmdWebmasterTools" class="az-button az-shadow-1 az-shadow-hover-2 az-margin-b-14 az-white" style="background-color: #F06649;">Les mer</button>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="az-col xs-12 lg-4">
-
-                        <div id="section-container-3-col-2" class="az-xs-margin-0 az-lg-margin-r-14 az-white" style="background-color: rgba(0,0,0,0.7);">
-                            <h1 class="az-xs-text-xlarge az-sm-text-xxlarge az-text-uppercase az-text-center az-padding-7">Google analytics</h1>
-                            <p class="az-text-center"><img alt="Google analytics" class="az-xs-width-40 az-sm-width-30 az-lg-width-40" src="/lib/images/analytics.png" /></p>
-                            <p class="az-center az-padding-14">Google Analytics utfører flere typer analyser av dine nettsider og gir deg statistikk og grunnleggende informasjon for markedsføring og søkemotoroptimalisering (SEO).</p>
-                            <div class="az-form-group az-text-center">
-                                <button type="button" id="cmdGoogleAnalytics" class="az-button az-shadow-1 az-shadow-hover-2 az-margin-b-14 az-white" style="background-color: #F06649;">Les mer</button>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="az-col xs-12 lg-4">
-
-                        <div id="section-container-3-col-3" class="az-white" style="background-color: rgba(0,0,0,0.7);">
-                            <h1 class="az-xs-text-xlarge az-sm-text-xxlarge az-text-uppercase az-text-center az-padding-7">Sosiale medier</h1>
-                            <p class="az-text-center"><img alt="Sosiale medier" class="az-xs-width-40 az-sm-width-30 az-lg-width-40" src="/lib/images/sosial-media-1.png" /></p>
-                            <p class="az-center az-padding-14">Sosiale medier er et verktøy for å nå ut til dine eksisterende og nye kunder. Med enkle grep kan vi gjøre dine nettsider langt mer tilpasset den sosiale verden enn de kanskje er i dag.</p>
-                            <div class="az-form-group az-text-center">
-                                <button type="button" id="cmdSosialeMedier" class="az-button az-shadow-1 az-shadow-hover-2 az-margin-b-14 az-white" style="background-color: #F06649;">Les mer</button>
-                            </div>
-                        </div>
-
+                <div class="az-row az-padding-t-56 az-padding-b-56">
+                    <div class="az-col xs-12">
+                        <h1 class="section-3-h1 az-padding-b-56">Dugnader</h1>
+                        <h4 class="section-3-h4">Alle dugnader starter kl 18.00 - Dugnadsansvarlig: Geir E. Lunde TLF 99719962</h4>
+                        <h4 class="section-3-h4">Vår 2018</h4>
                     </div>
                 </div>
-
+                <div class="az-row az-padding-b-56">
+                    <div class="az-col xs-12">
+                        <div class="section-3-div-table">
+                            <table class="section-3-table">
+                                <tr>
+                                    <td width="300px">Dato</td>
+                                    <td width="300px">Planer</td>
+                                    <td width="300px">Gjøremål</td>
+                                </tr>
+                                <tr>
+                                    <td>Tirsdag, 24. april 2018</td>
+                                    <td>Dugnad, styremøte</td>
+                                    <td>Sette ut uteriggere, rydding</td>
+                                </tr>
+                                <tr>
+                                    <td>Tirsdag, 8. mai 2018</td>
+                                    <td>Dugnad, styremøte</td>
+                                    <td>Sjekke bøyer, rydding, olje brygger</td>
+                                </tr>
+                                <tr>
+                                    <td>Tirsdag, 15. mai 2018</td>
+                                    <td>Dugnad</td>
+                                    <td>Rydding, plenklipp</td>
+                                </tr>
+                                <tr>
+                                    <td>Tirsdag, 22. mai 2018</td>
+                                    <td>Dugnad</td>
+                                    <td>Rydde, plenklipp</td>
+                                </tr>
+                                <tr>
+                                    <td>Tirsdag, 29. mai 2018</td>
+                                    <td>Dugnad, styremøte</td>
+                                    <td>Rydde, plenklipp</td>
+                                </tr>
+                                <tr>
+                                    <td>Tirsdag, 12. juni 2018</td>
+                                    <td>Dugnad</td>
+                                    <td>Rydde, plenklipp</td>
+                                </tr>
+                            </table>
+                        </div>                        
+                    </div>
+                </div>
+                <div class="az-row az-padding-t-56 az-padding-b-56">
+                    <div class="az-col xs-12">
+                        <h4 class="section-3-h4">Sommerferie: fint hvis noen klipper plenen</h4>
+                        <h4 class="section-3-h4">Høst 2018</h4>
+                    </div>
+                </div>
+                <div class="az-row az-padding-b-56">
+                    <div class="az-col xs-12">
+                        <div class="section-3-div-table">
+                            <table class="section-3-table">
+                                <tr>
+                                    <td width="300px">Dato</td>
+                                    <td width="300px">Planer</td>
+                                    <td width="300px">Gjøremål</td>
+                                </tr>
+                                <tr>
+                                    <td>Tirsdag, 7. august 2018</td>
+                                    <td>Dugnad</td>
+                                    <td>plenklipp</td>
+                                </tr>
+                                <tr>
+                                    <td>Tirsdag, 14. august 2018</td>
+                                    <td>Dugnad</td>
+                                    <td>Plenklipp</td>
+                                </tr>
+                                <tr>
+                                    <td>Tirsdag, 21. august 2018</td>
+                                    <td>Dugnad</td>
+                                    <td>Plenklipp, ta opp badebøyer</td>
+                                </tr>
+                                <tr>
+                                    <td>Tirsdag, 4. september 2018</td>
+                                    <td>Dugnad</td>
+                                    <td>Plenklipp, organisere opptak</td>
+                                </tr>
+                                <tr>
+                                    <td>Tirsdag, 18. september 2018</td>
+                                    <td>Dugnad</td>
+                                    <td>Ta opp bøyer</td>
+                                </tr>
+                                <tr>
+                                    <td>Tirsdag, 16. oktober 2018</td>
+                                    <td>Vinterlukke</td>
+                                    <td>Ta opp uteriggere</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div id="section-4" class="az-section az-bg-white">
+        <div id="section-4" class="az-section">
             <div id="container-4" class="az-container">
-
-                <div class="az-row">
-                    <div class="az-col xs-12 lg-6">
-
-                        <div class="az-margin-14">
-                            <h1 class="az-xs-text-xlarge az-sm-text-xxlarge az-text-uppercase az-text-center az-padding-7 az-teal">Alt er inkludert</h1>
-                            <p class="az-center az-padding-b-14">
-                                Alle våre pakkeløsninger bygger på et abonnementssystem hvor du abonnerer på bruken av et dynamisk publiseringsverktøy, (WordPress) eller en statisk løsning, men eier selv helt og holdent retten til bruken av domenet, e-post og selvsagt det publiserte innholdet.<br /><br />
-                                Pakkene inkluderer opprettelse eller flytting av domene, årlige avgifter til registrar (domeneavgift), e-post med webmail og spamfilter, web hotell med enten et dynamisk publiseringsverktøy, (WordPress) eller en statisk løsning.
-                            </p>
-                            <div class="az-form-group az-text-center">
-                                <button type="button" id="cmdAltInkludert" class="az-button az-shadow-1 az-shadow-hover-2 az-white" style="background-color: #F06649;">Les mer</button>
-                            </div>
+                <div class="az-row az-padding-t-56 az-padding-b-56">
+                    <div class="az-col xs-12">
+                        <h1 class="section-4-h1">Søknad om bryggeplass</h1>
+                    </div>
+                </div>
+                <div class="az-row az-padding-b-56">
+                    <div class="az-col xs-12 md-6">
+                        <h4 class="section-4-h4 az-padding-b-28">Du kan fylle ut dette skjema hvis du ønsker bryggeplass i Eiker Båtforening.</h4>
+                        <p class="section-4-p az-padding-b-14">
+                            Medlemskap: kr. 200,-
+                            Bryggeplass kr. 500,-
+                            Opplag kr. 400,-
+                        </p>
+                        <div class="az-form-group">
+                            <p class="az-alert az-alert-info" role="alert" id="contactInfo"></p>
+                        </div>
+                        <div class="az-form-group">
+                            <input type="text" class="az-input" placeholder="Navn: *" id="navn">
+                        </div>
+                        <div class="az-form-group">
+                            <input type="email" class="az-input" placeholder="E-mail adresse: *" id="epost">
+                        </div>
+                        <div class="az-form-group">
+                            <input type="tel" class="az-input" placeholder="Adresse:" id="adresse">
+                        </div>
+                        <div class="az-form-group">
+                            <input type="tel" class="az-input" placeholder="Postnummer: *" id="postnummer">
+                        </div>
+                        <div class="az-form-group">
+                            <input type="tel" class="az-input" placeholder="Poststed: *" id="sted">
+                        </div>
+                        <div class="az-form-group">
+                            <input type="tel" class="az-input" placeholder="Telefonnummer: *" id="telefon">
+                        </div>
+                        <div class="az-form-group">
+                            <input type="tel" class="az-input" placeholder="Båttype: *" id="baattype">
+                        </div>
+                        <div class="az-form-group">
+                            <input type="tel" class="az-input" placeholder="Båtnavn: *" id="baatnavn">
+                        </div>
+                        <div class="az-form-group">
+                            <input type="tel" class="az-input" placeholder="Reg.nr.:" id="regnr">
+                        </div>
+                        <div class="az-form-group">
+                            <label class="az-label section-4-p">Ønsker vintoeropplag på Jockomsløkka:</label>
+                            <input class="az-radio" type="radio" name="opplag" value="ja" checked>
+                            <label class="az-label section-4-p">Ja</label>
+                            <input class="az-radio" type="radio" name="opplag" value="nei">
+                            <label class="az-label section-4-p">Nei</label>
+                        </div>
+                        <div class="az-form-group">
+                            <textarea class="az-textarea" placeholder="Annet:" id="melding"></textarea>
+                        </div>
+                        <div class="az-form-group">
+                            <div class="g-recaptcha" data-sitekey="6Lc9kpMUAAAAALd-8zstGNPlCKv-esZZotj6O_0C"></div>
+                        </div>
+                        <div class="az-form-group">
+                            <button type="button" class="az-button az-button-block info az-shadow-1 az-shadow-hover-2" onclick="verifySubmit();">Send søknad</button>
                         </div>
                     </div>
-                    <div class="az-col xs-12 lg-6">
+                    <div class="az-col xs-12 md-6">
+                        <h4 class="section-4-h4 az-xs-padding-t-28 az-sm-padding-t-0 az-padding-b-28">Reglement for Eiker Båtforenings båthavn. Bryggeplassene er kun for foreningens medlemmer.</h4>
+                        <ul class="section-4-ul">
+                            <li>Byggeplassene blir tildelt av bryggekomiteen i samarbeide med styret.</li>
+                            <li>Fremleie eller utlån av bryggeplass er ikke tillatt.</li>
+                            <li>Bryggeleien skal være innbetalt før bryggeplass tas i bruk.</li>
+                            <li>Bryggeplassinnehaveren må rette seg etter pålegg fra bryggekomiteen.</li>
+                            <li>I båt havna skal det herske alminnelig orden. Løse fortøyningstau og avfall skal fjernes omgående. Alt fortøyningsutstyr fjernes fra bryggeplass ved sesongslutt.	</li>
+                            <li>Justering av bryggeplass skal kun skje i samarbeide med bryggekomiteen.</li>
+                            <li>Nøkler. En nøkkel utleveres pr.bryggeplass mot depositum på kr. 200,-. Må tilbakeleveres ved opphør av medlemskap.</li>
+                            <li>Brudd på dette reglement kan etter vedtak i styret medføre fradømming av bryggeplass. Innbetalt bryggeleie vil ikke bli refundert.</li>
+                            <li>Eiker Båtforening fraskriver seg ethvert ansvar for skader som måtte oppstå grunnet feil eller mangler ved bryggeanlegget.</li>
+                            <li>Det kreves deltakelse på minst 3 dugnader i løpet av hver sesong, og en av deltakelsene skal være på høsten.</li>
+                        </ul>
+                        <p class="section-4-p az-padding-l-28 az-padding-t-28">Styret 23.06.2006</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                        <div class="az-margin-14">
-                            <h1 class="az-xs-text-xlarge az-sm-text-xxlarge az-text-uppercase az-text-center az-padding-7 az-teal">Serviceavtale</h1>
-                            <p class="az-center az-padding-b-14">
-                                Alle kunder, uavhengig av våre pakkeløsninger, kan opprette en serviceavtale med oss slik at det er vi som ivaretar dine nettsiders innhold som tekst, bilder, m.m.<br /><br />
-                                Avtalen omfatter at vi webtilpasser dine bilder, sørger for at teksten du senders oss alltid holder den utformingen du har valgt, (størrelse/skrifttype), gjør at viktige ord og overskrifter blir optimalisert i forhold til søkemotorer og ellers at innholdet holder seg innenfor de rammer du har bestemt i forhold til størrelser, farger, m.m.
-                            </p>
-                            <div class="az-form-group az-text-center">
-                                <button type="button" id="cmdServiceavtale" class="az-button az-shadow-1 az-shadow-hover-2 az-white" style="background-color: #F06649;">Les mer</button>
-                            </div>
+        <div id="section-5" class="az-section">
+            <div id="container-5" class="az-container">
+                <div class="az-row az-padding-t-56 az-padding-b-56">
+                    <div class="az-col xs-12">
+                        <h1 class="section-5-h1 az-padding-b-56">Kontakt personer</h1>
+                        <h4 class="section-5-h4">Styret - Eiker Båtforening</h4>
+                    </div>
+                </div>
+                <div class="az-row az-padding-b-56">
+                    <div class="az-col xs-12">
+                        <div class="section-5-div-table">
+                            <table class="section-5-table">
+                                <tr>
+                                    <td width="200px">Verv</td>
+                                    <td width="300px">Navn</td>
+                                    <td width="180px">Telefon</td>
+                                    <td width="250px">E-mail</td>
+                                </tr>
+                                <tr>
+                                    <td>Formann</td>
+                                    <td>Erik Steen</td>
+                                    <td>911 38 308</td>
+                                    <td>protm@online.no</td>
+                                </tr>
+                                <tr>
+                                    <td>Nestleder</td>
+                                    <td>Jan Åge Størseth</td>
+                                    <td>926 89 322</td>
+                                    <td>janasto@online.no</td>
+                                </tr>
+                                <tr>
+                                    <td>Sekretær</td>
+                                    <td>Henning Elvekrok</td>
+                                    <td>958 85 191</td>
+                                    <td>krok73@online.no</td>
+                                </tr>
+                                <tr>
+                                    <td>Kasserer</td>
+                                    <td>Øystein Torp</td>
+                                    <td>924 66 132</td>
+                                    <td>oystorp@broadpark.no</td>
+                                </tr>
+                                <tr>
+                                    <td>Styremedlem</td>
+                                    <td>Tor Ingar Sønsterud</td>
+                                    <td>413 26 612</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Styremedlem</td>
+                                    <td>Jan Erik Skjolshorne</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Styremedlem</td>
+                                    <td>Gro Firing</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Varamedlem</td>
+                                    <td>Helge Røkeberg</td>
+                                    <td>32 75 27 69</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Varamedlem</td>
+                                    <td>Inger Mytting</td>
+                                    <td>920 68 990</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Varamedlem</td>
+                                    <td>Tore Holden</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Dugnadsgruppe</td>
+                                    <td>Geir E. Lunde</td>
+                                    <td>997 19 962</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Bryggeransvarlig</td>
+                                    <td>Jan Åge Størseth</td>
+                                    <td>926 89 322</td>
+                                    <td>janasto@online.no</td>
+                                </tr>
+                                <tr>
+                                    <td>Nøkler</td>
+                                    <td>Bjørn Åge Nilsen</td>
+                                    <td>906 03 060</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Revisor</td>
+                                    <td>Cato Jacobsen</td>
+                                    <td>906 03 060</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Revisor</td>
+                                    <td>Dag Erik Sommerud</td>
+                                    <td>32 75 74 48<br />932 58 301</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Valg / Festkomite</td>
+                                    <td>Erik Juelsen</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Valg / Festkomite</td>
+                                    <td>John M S Kipsgaard</td>
+                                    <td>920 16 830</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Valg / Festkomite</td>
+                                    <td>Trond Hansen</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
+        <div id="section-6" class="az-section">
+            <div id="container-6" class="az-container-fluid">
+                <div class="az-row az-padding-t-56 az-padding-b-56">
+                    <div class="az-col xs-12">
+                        <h1 class="section-6-h1">Nyttige linker</h1>
+                    </div>
+                </div>
+                <div class="az-row az-padding-b-56">
+                    <div class="az-col xs-12 md-6">
+                        <p class="section-6-p"><a href="/lib/images/Dybder_Eikern_1976.pdf" target="_blank"><img src="/lib/images/dybder_eikern_1976.jpg" class="az-image az-xs-width-90 az-mb-width-70 az-lg-width-60"></a></p>
+                    </div>
+                    <div class="az-col xs-12 md-6">                        
+                        <ul class="section-6-ul az-xs-padding-t-28 az-md-padding-t-0">
+                            <li><a href="http://www.batborsen.no" target="_blank">Båtbørsen</a></li>
+                            <li><a href="http://www.batmagasinet.no" target="_blank">Båtmagasinet</a></li>
+                            <li><a href="https://www.folkeuniversitetet.no" target="_blank">Båtførerprøven</a></li>
+                            <li><a href="http://m.finn.no/boat/browse.html?ov=m" target="_blank">Finn.no (Båt, Motor&amp;utstyr)</a></li>
+                            <li><a href="http://www.eikern.no" target="_blank">Eikernvassdragets Interessentlag BA</a></li>
+                            <li><a href="/lib/images/Dybder_Eikern_1976.pdf" target="_blank">Dybder Eikern</a></li>
+                            <li><a href="/lib/images/Dybder_Fiskumvannet.pdf" target="_blank">Dybder Fiskumvannet</a></li>
+                            <li><a href="http://www.mseikern.no" target="_blank">M/S Eikern</a></li>
+                            <li><a href="http://www.ssb.no/sok?sok=%C3%B8vre+eiker" target="_blank">Tall om Øvre Eiker</a></li>
+                            <li><a href="http://www.ovre-eiker.kommune.no" target="_blank">Øvre Eiker Kommune</a></li>
+                            <li><a href="http://www.nettbuss.no" target="_blank">Bussruter m.kart</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="section-7" class="az-section">
+            <div id="container-7" class="az-container-fluid">
+                <div class="az-row az-padding-t-56 az-padding-b-56">
+                    <div class="az-col xs-12">
+                        <h1 class="section-7-h1">Aktuelle saker</h1>
+                    </div>
+                </div>
+                <div class="az-row az-padding-b-56">
+                    <div class="az-col xs-hidden sm-2">&nbsp;</div>
+                    <div class="az-col xs-12 sm-8">
+                        <p class="section-7-p az-text-center">
+                            Styret i EBF fikk innbydelse til et informasjonsmøte fra Vestfossen Elvepark AS ved Preben Ellingsen.
+                            Her ble det utvekslet informasjon om hva som har blitt gjort fra deres side og at de inviterte til et samarbeid ang. å utvikle området langs elva i sentrumsområdet.
+                            Et eventuelt samarbeid diskuteres på kommende Årsmøte i EBF.
+                        </p>
+                    </div>
+                    <div class="az-col xs-hidden sm-2">&nbsp;</div>
+                </div>
             </div>
         </div>
 
         <div id="container-address" class="az-container-fluid">
             <div class="az-row">
-                <div class="az-col xs-12 sm-4 az-xs-margin-b-28 az-sm-margin-b-0">
-
+                <div class="az-col xs-12 sm-6 az-xs-margin-b-28 az-sm-margin-b-0">
                     <div class="az-xs-margin-l-56 az-sm-margin-l-0">
                         <table class="az-table az-xs-left az-sm-center">
                             <tr>
-                                <td class="az-white az-text-large">Steinkjer</td>
+                                <td class="az-white az-text-large">Eiker Båtforening</td>
                             </tr>
                             <tr>
-                                <td class="az-white az-text-small">Jakob Weidemannsgate 9</td>
+                                <td>&nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="az-white az-text-small">7713 Steinkjer</td>
-                            </tr>
-                            <tr>
-                                <td class="az-white az-text-large">Vestfossen</td>
-                            </tr>
-                            <tr>
-                                <td class="az-white az-text-small">Tveveien 6</td>
-                            </tr>
-                            <tr>
-                                <td class="az-white az-text-small">3320 Vestfossen</td>
+                                <td class="az-white az-text-small">3321 Vestfossen</td>
                             </tr>
                         </table>
                     </div>
-
                 </div>
-                <div class="az-col xs-12 sm-4">
-
+                <div class="az-col xs-12 sm-6">
                     <div class="az-xs-margin-l-56 az-sm-margin-l-0">
                         <table class="az-table az-xs-left az-sm-center">
                             <tr>
                                 <td><i class="fas fa-envelope-square fa-3x fa-fw az-white"></i></td>
                                 <td>&nbsp;</td>
-                                <td><a class="az-white az-text-small az-border-bottom-hover-1-white az-email" href="javascript:void(0)" data-content="post(at)web2net.no">post(at)web2net.no</a></td>
+                                <td><a class="az-white az-text-small az-border-bottom-hover-1-white az-email" href="javascript:void(0)" data-content="post(at)ebf.no">post(at)ebf.no</a></td>
                             </tr>
                             <tr>
                                 <td><i class="fas fa-phone-square fa-3x fa-fw az-white"></i></td>
                                 <td>&nbsp;</td>
-                                <td class="az-white az-text-small">920 37 695</td>
+                                <td class="az-white az-text-small">911 38 308</td>
                             </tr>
                             <tr>
-                                <td><i class="fas fa-phone-square fa-3x fa-fw az-white"></i></td>
+                                <td><i class="fas fa-university fa-3x fa-fw az-white"></i></td>
                                 <td>&nbsp;</td>
-                                <td class="az-white az-text-small">412 53 455</td>
+                                <td class="az-white az-text-small">0530 50 75932</td>
                             </tr>
                         </table>
                     </div>
-
-                </div>
-                <div class="az-col xs-12 sm-4">
-
-                    <div class="az-xs-margin-l-56 az-sm-margin-l-0">
-                        <table class="az-table az-xs-left az-sm-center">
-                            <tr>
-                                <td><a onclick="openContactForm();" href="javascript:void(0);"><i class="fas fa-envelope-square fa-3x fa-fw az-white" style="margin-right: 10px;"></i></a></td>
-                                <td><a onclick="openContactForm();" href="javascript:void(0);" class="az-white az-text-small az-border-bottom-hover-1-white">Kontakt oss</a></td>
-                            </tr>
-                            <tr>
-                                <td><a href="https://www.facebook.com/web2net" target="_blank"><i class="fab fa-facebook-square fa-3x fa-fw az-white" style="margin-right: 10px;"></i></a></td>
-                                <td><a href="https://www.facebook.com/web2net" target="_blank" class="az-white az-text-small az-border-bottom-hover-1-white">Facebook</a></td>
-                            </tr>
-                            <tr>
-                                <td><a href="status.html"><i class="fas fa-cog fa-3x fa-fw az-white" style="margin-right: 10px;"></i></a></td>
-                                <td><a href="status.html" class="az-white az-text-small az-border-bottom-hover-1-white">Status</a></td>
-                            </tr>
-                        </table>
-                    </div>
-
                 </div>
             </div>
         </div>
 
-        <div id="container-footer" class="az-container-fluid az-bg-black">
+        <div id="container-footer" class="az-container-fluid">
             <div class="az-row">
-                <div class="az-col xs-12 lg-6 xl-3">
-                    <p class="az-text-center"><img alt="web2net" class="az-xs-width-40 az-sm-width-25 az-lg-width-45 az-xl-width-50" src="/lib/images/ms-azure.png" /></p>
+                <div class="az-col xs-12 sm-6">
+                    <p class="az-white az-text-small az-margin-t-14 az-text-center">Copyright &copy; Eiker Båtforening</p>
                 </div>
-                <div class="az-col xs-12 lg-6 xl-3 az-xs-margin-t-7 az-sm-margin-t-0">
-                    <p class="az-text-center"><img alt="web2net" class="az-xs-width-45 az-sm-width-25 az-lg-width-45 az-xl-width-50" src="/lib/images/ms-office-365.png" /></p>
-                </div>
-                <div class="az-col xs-12 xl-6 az-lg-margin-t-14 az-xl-margin-t-0" style="height: 56px;">
-                    <p class="az-white az-text-small az-text-center" style="margin-top: 17px;">Copyright &copy; web2net AS 1994 - 2019</p>
+                <div class="az-col xs-12 sm-6">
+                    <a class="az-display-block az-white az-text-small az-sm-margin-t-14 az-text-center" href="https://web2net.no" target="_blank">Powered by web2net</a>
                 </div>
             </div>
         </div>

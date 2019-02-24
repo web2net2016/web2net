@@ -1,6 +1,5 @@
-﻿
-// Site info
-var AppName = "web2net";
+﻿// Site info
+var AppName = "ebf";
 var AppVersion = "1.0.1";
 var ApiVersion = "_1";
 
@@ -14,58 +13,44 @@ $(document).ready(function ()
     });
 });
 
-// All Pages
-function openContactForm()
+// AZ Slideshow
+function initSlideshow(Options)
 {
-    initializeModalDialog(
+    var main = this;
+    var _Defaults =
     {
-        dialogNoParentScroll: true,
-        dialogDraggable: false,
-        dialogTitle: "Kontakt oss",
-        dialogWidth: 650,
-        dialogHeight: 450,
-        dialogiFrameURL: "kontakt.html"
-    });
-}
+        azSlideshowId: "",
+        azSlideshowArrows: false,
+        azSlideshowTimer: 3000,
+        azSlideshowFadeIn: 1000,
+        azSlideshowFadeOut: 1000
+    };
+    main.Options = $.extend({}, _Defaults, Options || {});
 
-// produkter.html
-function openStaticInfo()
-{
-    initializeModalDialog(
+    if (main.Options.azSlideshowId != "")
     {
-        dialogModal: false,
-        dialogNoParentScroll: true,
-        dialogDraggable: false,
-        dialogTitle: "Sider og seksjoner",
-        dialogWidth: 800,
-        dialogHeight: 650,
-        dialogText: $("#StaticInfo").html()
-    });
-}
+        main.$Slideshow = $("#" + main.Options.azSlideshowId);
+        main.$Slides = main.$Slideshow.children("slide");
+        main._SlideIndex = 0;
+        main._SlideShowTimer = 0;
 
-function openDesign()
-{
-    $('html, body').stop().animate(
-    {
-        scrollTop: $("#accordion-2").offset().top
-    },
-    {
-        easing: 'easeInOutExpo',
-        duration: 1500
-    });
-    setAccordion(2);
-}
+        $.subscribe("functionlib/windowResize", function (e, data)
+        {
+            main.$Slideshow.height(main.$Slides.eq(0).height());
+        });
 
-function openSocialMedia(SelectedId)
-{
-    initializeModalDialog(
-    {
-        dialogModal: false,
-        dialogNoParentScroll: true,
-        dialogDraggable: false,
-        dialogTitle: SelectedId,
-        dialogWidth: 450,
-        dialogHeight: 250,
-        dialogText: $("#" + SelectedId).html()
-    });
+        main.$Slides.not(":first").hide();
+        main.$Slideshow.height(main.$Slides.eq(0).height());
+        runSlides();
+
+        function runSlides()
+        {
+            main.$Slides.eq(main._SlideIndex).fadeOut(main.Options.azSlideshowFadeOut);
+            main._SlideIndex = (main._SlideIndex != main.$Slides.length - 1) ? main._SlideIndex + 1 : 0;
+            main.$Slides.eq(main._SlideIndex).fadeIn(main.Options.azSlideshowFadeIn, function ()
+            {
+                main._SlideShowTimer = window.setTimeout(runSlides, main.Options.azSlideshowTimer)
+            });
+        }
+    }
 }

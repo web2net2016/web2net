@@ -69,48 +69,42 @@
   <ItemGroup>
     <Content Include="favicon.ico" />
     <Content Include="index.html" />
-    <Content Include="kontakt.html" />
     <Content Include="lib\functionlib.js" />
-    <Content Include="lib\images\648991523.mp4" />
-    <Content Include="lib\images\analytics.png" />
-    <Content Include="lib\images\bakoy.jpg" />
-    <Content Include="lib\images\billeas.jpg" />
-    <Content Include="lib\images\ebf.jpg" />
-    <Content Include="lib\images\havfruene.jpg" />
-    <Content Include="lib\images\meiningen.jpg" />
-    <Content Include="lib\images\ms-azure.png" />
-    <Content Include="lib\images\ms-office-365.png" />
-    <Content Include="lib\images\nordicbluecrude.jpg" />
-    <Content Include="lib\images\office365.png" />
-    <Content Include="lib\images\promidt.jpg" />
-    <Content Include="lib\images\rana.jpg" />
-    <Content Include="lib\images\ringom.jpg" />
-    <Content Include="lib\images\side-seksjoner.jpg" />
-    <Content Include="lib\images\sisselribe.jpg" />
-    <Content Include="lib\images\slideshow1.jpg" />
-    <Content Include="lib\images\slideshow2.jpg" />
-    <Content Include="lib\images\slideshow3.jpg" />
-    <Content Include="lib\images\sosial-media-1.png" />
-    <Content Include="lib\images\sparbuteaterlag.jpg" />
-    <Content Include="lib\images\static.png" />
-    <Content Include="lib\images\totaltakst.jpg" />
-    <Content Include="lib\images\web2net_logo_black.png" />
-    <Content Include="lib\images\web2net_logo_white.png" />
-    <Content Include="lib\images\webmastertools.png" />
-    <Content Include="lib\images\woo-wp-klarna-vipps.png" />
-    <Content Include="lib\images\woo-wp.png" />
-    <Content Include="lib\images\wordpress.png" />
-    <Content Include="lib\images\ysk1.jpg" />
+    <Content Include="lib\images\bunn_blaa_ebf.jpg" />
+    <Content Include="lib\images\bunn_ebf.jpg" />
+    <Content Include="lib\images\bunn_eikern.png" />
+    <Content Include="lib\images\bunn_green_ebf.jpg" />
+    <Content Include="lib\images\bunn_svaner_ebf.jpg" />
+    <Content Include="lib\images\dybder_eikern_1976.jpg" />
+    <Content Include="lib\images\ebf_1.jpg" />
+    <Content Include="lib\images\ebf_13.jpg" />
+    <Content Include="lib\images\ebf_b1.jpg" />
+    <Content Include="lib\images\ebf_b10.jpg" />
+    <Content Include="lib\images\ebf_b2.jpg" />
+    <Content Include="lib\images\ebf_b3.jpg" />
+    <Content Include="lib\images\ebf_b4.jpg" />
+    <Content Include="lib\images\ebf_b5.jpg" />
+    <Content Include="lib\images\ebf_b6.jpg" />
+    <Content Include="lib\images\ebf_b7.jpg" />
+    <Content Include="lib\images\ebf_b8.jpg" />
+    <Content Include="lib\images\ebf_b9.jpg" />
+    <Content Include="lib\images\ebf_bg11.jpg" />
+    <Content Include="lib\images\ebf_bg6.jpg" />
+    <Content Include="lib\images\ebf_bg8.jpg" />
+    <Content Include="lib\images\ebf_logo.png" />
+    <Content Include="lib\images\ebf_om_oss.jpg" />
+    <Content Include="lib\images\edf_logo_1.png" />
+    <Content Include="lib\images\edf_logo_2.png" />
+    <Content Include="lib\images\facebook.png" />
+    <Content Include="lib\images\logo_ebf.png" />
+    <Content Include="lib\images\vann.jpg" />
     <Content Include="lib\index.css" />
-    <Content Include="lib\produkter.css" />
-    <Content Include="lib\prosessen.css" />
-    <Content Include="lib\kundesider.css" />
-    <Content Include="lib\status.css" />
-    <Content Include="lib\referanser.css" />
     <Content Include="lib\standard.css" />
     <Content Include="packages.config" />
-    <Content Include="lib\contact-form-lang.json" />
     <Content Include="lib\contact-form-val.json" />
+    <Content Include="lib\images\Dybder_Eikern_1976.pdf" />
+    <Content Include="lib\images\Dybder_Fiskumvannet.pdf" />
+    <Content Include="lib\contact-form-lang.json" />
     <None Include="Properties\PublishProfiles\Web2net.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -120,12 +114,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="produkter.html" />
-    <Content Include="prosessen.html" />
-    <Content Include="kundesider.html" />
-    <Content Include="status.html" />
-    <Content Include="referanser.html" />
-    <Content Include="sitemap.xml" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

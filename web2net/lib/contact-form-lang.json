@@ -1,37 +1,22 @@
 ﻿{
   "ObjElements": {
-    "en-US": [
-      { "labelCustomerName": [ "id", "text", "Customer name:" ] },
-      { "labelContact": [ "id", "text", "Contact:" ] },
-      { "labelEmail": [ "id", "text", "Email:" ] },
-      { "labelRequestReasonId": [ "id", "text", "What is the request about?" ] },
-      { "labelComment": [ "id", "text", "Comment:" ] },
-      { "cmdSubmit": [ "id", "text", "Send" ] },
-      { "cmdSubmit": [ "id", "title", "Click to send" ] }
-    ],
     "nb-NO": [
-      { "labelCustomerName": [ "id", "text", "Firma:" ] },
-      { "labelContact": [ "id", "text", "Kontaktperson:" ] },
-      { "labelEmail": [ "id", "text", "E-post:" ] },
-      { "labelRequestReasonId": [ "id", "text", "Hva gjelder henvendelsen?" ] },
-      { "labelComment": [ "id", "text", "Kommentar:" ] },
-      { "cmdSubmit": [ "id", "text", "Send" ] },
-      { "cmdSubmit": [ "id", "title", "Klikk for å sende" ] }
+      { "contactInfo": [ "id", "text", "Skriv inn dine opplysninger." ] }
     ]
   },
   "SingleElements": {
-    "en-US": {
-      "CustomerNameSubmitError": "Customer name contains invalid characters.",
-      "ContactSubmitError": "Contact is empty or contains invalid characters.",
-      "EmailSubmitError": "Email is empty or contains invalid characters.",
-      "CommentSubmitError": "Comment contains invalid characters.",
-      "errorGoogleRecaptcha": "Please check that you are not a robot."
-    },
     "nb-NO": {
-      "CustomerNameSubmitError": "Firma inneholder ugyldige tegn.",
-      "ContactSubmitError": "Kontaktperson er tomt eller inneholder ugyldige tegn.",
-      "EmailSubmitError": "E-post er tomt eller inneholder ugyldige tegn.",
-      "CommentSubmitError": "Kommentar inneholder ugyldige tegn.",
+      "contactInfoDefaultMessage": "Skriv inn dine opplysninger.",
+      "navnSubmitError": "Navn er tomt eller inneholder ugyldige tegn.",
+      "epostSubmitError": "E-post er tomt eller inneholder ugyldige tegn.",
+      "adresseSubmitError": "Adresse inneholder ugyldige tegn.",
+      "postnummerSubmitError": "Postnummer er tomt eller inneholder ugyldige tegn.",
+      "stedSubmitError": "Sted er tomt eller inneholder ugyldige tegn.",
+      "telefonSubmitError": "Telefon er tomt eller inneholder ugyldige tegn.",
+      "baattypeSubmitError": "Båttype er tomt eller inneholder ugyldige tegn.",
+      "baatnavnSubmitError": "Båtnavn er tomt eller inneholder ugyldige tegn.",
+      "regnrSubmitError": "Regnr inneholder ugyldige tegn.",
+      "meldingSubmitError": "Kommentar inneholder ugyldige tegn.",
       "errorGoogleRecaptcha": "Vennligst hak av for at du ikke er en robot."
     }
   }
