@@ -29,17 +29,17 @@ function openContactForm()
 }
 
 // produkter.html
-function openStaticInfo()
+function openContentInfo()
 {
     initializeModalDialog(
     {
         dialogModal: false,
         dialogNoParentScroll: true,
         dialogDraggable: false,
-        dialogTitle: "Sider og seksjoner",
-        dialogWidth: 800,
-        dialogHeight: 650,
-        dialogText: $("#StaticInfo").html()
+        dialogTitle: "Seksjoner",
+        dialogWidth: 700,
+        dialogHeight: 750,
+        dialogText: $("#ContentInfo").html()
     });
 }
 
