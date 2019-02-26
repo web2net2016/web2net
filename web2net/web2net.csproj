@@ -76,7 +76,6 @@
     <Content Include="lib\images\bakoy.jpg" />
     <Content Include="lib\images\billeas.jpg" />
     <Content Include="lib\images\ebf.jpg" />
-    <Content Include="lib\images\havfruene.jpg" />
     <Content Include="lib\images\meiningen.jpg" />
     <Content Include="lib\images\ms-azure.png" />
     <Content Include="lib\images\ms-office-365.png" />
