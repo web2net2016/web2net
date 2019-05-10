@@ -65,7 +65,7 @@ function openSocialMedia(SelectedId)
         dialogDraggable: false,
         dialogTitle: SelectedId,
         dialogWidth: 450,
-        dialogHeight: 250,
+        dialogHeight: 280,
         dialogText: $("#" + SelectedId).html()
     });
 }
