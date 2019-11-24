@@ -28,7 +28,89 @@
             {
                 hideCoverSpin();
             });
+
+            _WPProducts = $(".wp-products");            
+            _WPProducts.off().on("change", "select", function (e)
+            {
+                var _Element = e.target || e.srcElement;
+                var _EmailPrice = 0;
+                var _StoragePrice = 0;
+                if ($(_Element).hasClass("email"))
+                {
+                    _EmailPrice = EmailPrice(Number($(_Element).val()));
+                    _StoragePrice = StoragePrice(Number($(_Element).parents("article").children("h1").eq(10).children("select").val()));
+                }
+                if ($(_Element).hasClass("storage"))
+                {
+                    _EmailPrice = EmailPrice(Number($(_Element).parents("article").children("h1").eq(9).children("select").val()));
+                    _StoragePrice = StoragePrice(Number($(_Element).val()));
+                }
+                $(_Element).parents("article").children("h1").eq(0).text((325 + _EmailPrice + _StoragePrice) + ",-/mnd");
+            });
+
+            _SProducts = $(".s-products");
+            _SProducts.off().on("change", "select", function (e)
+            {
+                var _Element = e.target || e.srcElement;
+                var _EmailPrice = 0;
+                var _StoragePrice = 0;
+                if ($(_Element).hasClass("email"))
+                {
+                    _EmailPrice = EmailPrice(Number($(_Element).val()));
+                    _StoragePrice = StoragePrice(Number($(_Element).parents("article").children("h1").eq(10).children("select").val()));
+                }
+                if ($(_Element).hasClass("storage"))
+                {
+                    _EmailPrice = EmailPrice(Number($(_Element).parents("article").children("h1").eq(9).children("select").val()));
+                    _StoragePrice = StoragePrice(Number($(_Element).val()));
+                }
+                $(_Element).parents("article").children("h1").eq(0).text((175 + _EmailPrice + _StoragePrice) + ",-/mnd");
+            });
         });
+
+        function EmailPrice(Value)
+        {
+            var _Price = 0;
+            if (Value === 1)
+            {
+                _Price = 12;
+            }
+            if (Value === 2)
+            {
+                _Price = 30;
+            }
+            if (Value === 3)
+            {
+                _Price = 60;
+            }
+            if (Value === 4)
+            {
+                _Price = 80;
+            }
+            return _Price;
+        }
+
+        function StoragePrice(Value)
+        {
+            var _Price = 0;
+            if (Value === 1)
+            {
+                _Price = 12;
+            }
+            if (Value === 2)
+            {
+                _Price = 30;
+            }
+            if (Value === 3)
+            {
+                _Price = 60;
+            }
+            if (Value === 4)
+            {
+                _Price = 80;
+            }
+            return _Price;
+        }
 
         (function (i, s, o, g, r, a, m)
         {
@@ -118,7 +200,7 @@
                         <header>
                             <h1 class="az-xs-text-medium az-sm-text-large">Gjør det selv</h1>
                         </header>
-                        <article>
+                        <article class="wp-products" id="wp1">
                             <h1 class="az-padding-7 az-bg-gray az-xs-text-medium az-sm-text-large">349,-/mnd</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Oppstart fra <span class="az-xs-text-medium az-sm-text-large">1.490,-</span></h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver"><a href="http://frank.linux.web2net.no" target="_blank" class="az-harley-davidson-orange az-border-bottom-hover-1-teal">GeneratePress Theme</a><span class="az-harley-davidson-orange"> 1)</span></h1>
@@ -128,8 +210,22 @@
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Responsivt design</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">1 domene</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Årlige domeneavgifter</h1>
-                            <h1 class="az-padding-7 az-border-bottom-1-silver">20 e-post kontoer</h1>
-                            <h1 class="az-padding-7 az-border-bottom-1-silver">1 GB lagring</h1>
+                            <h1 class="az-padding-7 az-border-bottom-1-silver az-form-group">
+                                <select class="az-select xs email">
+                                    <option value="1">20 e-post kontoer</option>
+                                    <option value="2">50 e-post kontoer</option>
+                                    <option value="3">100 e-post kontoer</option>
+                                    <option value="4">200 e-post kontoer</option>
+                                </select>
+                            </h1>
+                            <h1 class="az-padding-7 az-border-bottom-1-silver az-form-group">
+                                <select class="az-select xs storage">
+                                    <option value="1">1 GB lagring</option>
+                                    <option value="2">5 GB lagring</option>
+                                    <option value="3">20 GB lagring</option>
+                                    <option value="4">100 GB lagring</option>
+                                </select>
+                            </h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">SSL-sertifikat</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver"><a onclick="openSocialMedia('Backup');" href="javascript:void(0);" class="az-harley-davidson-orange az-border-bottom-hover-1-teal">Backup av data <i class="fas fa-cog az-orange"></i></a></h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Ubegrenset båndbredde</h1>
@@ -144,7 +240,7 @@
                         <header>
                             <h1 class="az-xs-text-medium az-sm-text-large">Small</h1>
                         </header>
-                        <article>
+                        <article class="wp-products" id="wp2">
                             <h1 class="az-padding-7 az-bg-gray az-xs-text-medium az-sm-text-large">349,-/mnd</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Oppstart fra <span class="az-xs-text-medium az-sm-text-large">5.990,-</span></h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver"><a href="http://frank.linux.web2net.no" target="_blank" class="az-harley-davidson-orange az-border-bottom-hover-1-teal">GeneratePress Theme</a><span class="az-harley-davidson-orange"> 1)</span></h1>
@@ -154,8 +250,22 @@
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Responsivt design</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">1 domene</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Årlige domeneavgifter</h1>
-                            <h1 class="az-padding-7 az-border-bottom-1-silver">20 e-post kontoer</h1>
-                            <h1 class="az-padding-7 az-border-bottom-1-silver">1 GB lagring</h1>
+                            <h1 class="az-padding-7 az-border-bottom-1-silver az-form-group">
+                                <select class="az-select xs email">
+                                    <option value="1">20 e-post kontoer</option>
+                                    <option value="2">50 e-post kontoer</option>
+                                    <option value="3">100 e-post kontoer</option>
+                                    <option value="4">200 e-post kontoer</option>
+                                </select>
+                            </h1>
+                            <h1 class="az-padding-7 az-border-bottom-1-silver az-form-group">
+                                <select class="az-select xs storage">
+                                    <option value="1">1 GB lagring</option>
+                                    <option value="2">5 GB lagring</option>
+                                    <option value="3">20 GB lagring</option>
+                                    <option value="4">100 GB lagring</option>
+                                </select>
+                            </h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">SSL-sertifikat</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver"><a onclick="openSocialMedia('Backup');" href="javascript:void(0);" class="az-harley-davidson-orange az-border-bottom-hover-1-teal">Backup av data <i class="fas fa-cog az-orange"></i></a></h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Ubegrenset båndbredde</h1>
@@ -170,7 +280,7 @@
                         <header>
                             <h1 class="az-xs-text-medium az-sm-text-large">Medium</h1>
                         </header>
-                        <article>
+                        <article class="wp-products" id="wp3">
                             <h1 class="az-padding-7 az-bg-gray az-xs-text-medium az-sm-text-large">349,-/mnd</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Oppstart fra <span class="az-xs-text-medium az-sm-text-large">7.990,-</span></h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver"><a href="http://frank.linux.web2net.no" target="_blank" class="az-harley-davidson-orange az-border-bottom-hover-1-teal">GeneratePress Theme</a><span class="az-harley-davidson-orange"> 1)</span></h1>
@@ -180,8 +290,22 @@
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Responsivt design</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">1 domene</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Årlige domeneavgifter</h1>
-                            <h1 class="az-padding-7 az-border-bottom-1-silver">20 e-post kontoer</h1>
-                            <h1 class="az-padding-7 az-border-bottom-1-silver">1 GB lagring</h1>
+                            <h1 class="az-padding-7 az-border-bottom-1-silver az-form-group">
+                                <select class="az-select xs email">
+                                    <option value="1">20 e-post kontoer</option>
+                                    <option value="2">50 e-post kontoer</option>
+                                    <option value="3">100 e-post kontoer</option>
+                                    <option value="4">200 e-post kontoer</option>
+                                </select>
+                            </h1>
+                            <h1 class="az-padding-7 az-border-bottom-1-silver az-form-group">
+                                <select class="az-select xs storage">
+                                    <option value="1">1 GB lagring</option>
+                                    <option value="2">5 GB lagring</option>
+                                    <option value="3">20 GB lagring</option>
+                                    <option value="4">100 GB lagring</option>
+                                </select>
+                            </h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">SSL-sertifikat</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver"><a onclick="openSocialMedia('Backup');" href="javascript:void(0);" class="az-harley-davidson-orange az-border-bottom-hover-1-teal">Backup av data <i class="fas fa-cog az-orange"></i></a></h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Ubegrenset båndbredde</h1>
@@ -196,7 +320,7 @@
                         <header>
                             <h1 class="az-xs-text-medium az-sm-text-large">Large</h1>
                         </header>
-                        <article>
+                        <article class="wp-products" id="wp4">
                             <h1 class="az-padding-7 az-bg-gray az-xs-text-medium az-sm-text-large">349,-/mnd</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Oppstart fra <span class="az-xs-text-medium az-sm-text-large">9.990,-</span></h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver"><a href="http://frank.linux.web2net.no" target="_blank" class="az-harley-davidson-orange az-border-bottom-hover-1-teal">GeneratePress Theme</a><span class="az-harley-davidson-orange"> 1)</span></h1>
@@ -206,8 +330,22 @@
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Responsivt design</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">1 domene</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Årlige domeneavgifter</h1>
-                            <h1 class="az-padding-7 az-border-bottom-1-silver">20 e-post kontoer</h1>
-                            <h1 class="az-padding-7 az-border-bottom-1-silver">1 GB lagring</h1>
+                            <h1 class="az-padding-7 az-border-bottom-1-silver az-form-group">
+                                <select class="az-select xs email">
+                                    <option value="1">20 e-post kontoer</option>
+                                    <option value="2">50 e-post kontoer</option>
+                                    <option value="3">100 e-post kontoer</option>
+                                    <option value="4">200 e-post kontoer</option>
+                                </select>
+                            </h1>
+                            <h1 class="az-padding-7 az-border-bottom-1-silver az-form-group">
+                                <select class="az-select xs storage">
+                                    <option value="1">1 GB lagring</option>
+                                    <option value="2">5 GB lagring</option>
+                                    <option value="3">20 GB lagring</option>
+                                    <option value="4">100 GB lagring</option>
+                                </select>
+                            </h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">SSL-sertifikat</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver"><a onclick="openSocialMedia('Backup');" href="javascript:void(0);" class="az-harley-davidson-orange az-border-bottom-hover-1-teal">Backup av data <i class="fas fa-cog az-orange"></i></a></h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Ubegrenset båndbredde</h1>
@@ -260,7 +398,7 @@
                         <header>
                             <h1 class="az-xs-text-medium az-sm-text-large">Small</h1>
                         </header>
-                        <article>
+                        <article class="s-products" id="s1">
                             <h1 class="az-padding-7 az-bg-gray az-xs-text-medium az-sm-text-large">199,-/mnd</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Oppstart fra <span class="az-xs-text-medium az-sm-text-large">5.990,-</span></h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver"><a href="https://cdn.web2net.no/lib-1.0.0/aztemplate.html" target="_blank" class="az-harley-davidson-orange az-border-bottom-hover-1-teal">AZ Theme</a><span class="az-harley-davidson-orange"> 1)</span></h1>
@@ -270,8 +408,22 @@
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Responsivt design</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">1 domene</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Årlige domeneavgifter</h1>
-                            <h1 class="az-padding-7 az-border-bottom-1-silver">20 e-post kontoer</h1>
-                            <h1 class="az-padding-7 az-border-bottom-1-silver">1 GB lagring</h1>
+                            <h1 class="az-padding-7 az-border-bottom-1-silver az-form-group">
+                                <select class="az-select xs email">
+                                    <option value="1">20 e-post kontoer</option>
+                                    <option value="2">50 e-post kontoer</option>
+                                    <option value="3">100 e-post kontoer</option>
+                                    <option value="4">200 e-post kontoer</option>
+                                </select>
+                            </h1>
+                            <h1 class="az-padding-7 az-border-bottom-1-silver az-form-group">
+                                <select class="az-select xs storage">
+                                    <option value="1">1 GB lagring</option>
+                                    <option value="2">5 GB lagring</option>
+                                    <option value="3">20 GB lagring</option>
+                                    <option value="4">100 GB lagring</option>
+                                </select>
+                            </h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">SSL-sertifikat</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver"><a onclick="openSocialMedia('Backup');" href="javascript:void(0);" class="az-harley-davidson-orange az-border-bottom-hover-1-teal">Backup av data <i class="fas fa-cog az-orange"></i></a></h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Ubegrenset båndbredde</h1>
@@ -286,7 +438,7 @@
                         <header>
                             <h1 class="az-xs-text-medium az-sm-text-large">Medium</h1>
                         </header>
-                        <article>
+                        <article class="s-products" id="s2">
                             <h1 class="az-padding-7 az-bg-gray az-xs-text-medium az-sm-text-large">199,-/mnd</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Oppstart fra <span class="az-xs-text-medium az-sm-text-large">7.990,-</span></h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver"><a href="https://cdn.web2net.no/lib-1.0.0/aztemplate.html" target="_blank" class="az-harley-davidson-orange az-border-bottom-hover-1-teal">AZ Theme</a><span class="az-harley-davidson-orange"> 1)</span></h1>
@@ -296,8 +448,22 @@
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Responsivt design</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">1 domene</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Årlige domeneavgifter</h1>
-                            <h1 class="az-padding-7 az-border-bottom-1-silver">20 e-post kontoer</h1>
-                            <h1 class="az-padding-7 az-border-bottom-1-silver">1 GB lagring</h1>
+                            <h1 class="az-padding-7 az-border-bottom-1-silver az-form-group">
+                                <select class="az-select xs email">
+                                    <option value="1">20 e-post kontoer</option>
+                                    <option value="2">50 e-post kontoer</option>
+                                    <option value="3">100 e-post kontoer</option>
+                                    <option value="4">200 e-post kontoer</option>
+                                </select>
+                            </h1>
+                            <h1 class="az-padding-7 az-border-bottom-1-silver az-form-group">
+                                <select class="az-select xs storage">
+                                    <option value="1">1 GB lagring</option>
+                                    <option value="2">5 GB lagring</option>
+                                    <option value="3">20 GB lagring</option>
+                                    <option value="4">100 GB lagring</option>
+                                </select>
+                            </h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">SSL-sertifikat</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver"><a onclick="openSocialMedia('Backup');" href="javascript:void(0);" class="az-harley-davidson-orange az-border-bottom-hover-1-teal">Backup av data <i class="fas fa-cog az-orange"></i></a></h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Ubegrenset båndbredde</h1>
@@ -312,7 +478,7 @@
                         <header>
                             <h1 class="az-xs-text-medium az-sm-text-large">Large</h1>
                         </header>
-                        <article>
+                        <article class="s-products" id="s3">
                             <h1 class="az-padding-7 az-bg-gray az-xs-text-medium az-sm-text-large">199,-/mnd</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Oppstart fra <span class="az-xs-text-medium az-sm-text-large">9.990,-</span></h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver"><a href="https://cdn.web2net.no/lib-1.0.0/aztemplate.html" target="_blank" class="az-harley-davidson-orange az-border-bottom-hover-1-teal">AZ Theme</a><span class="az-harley-davidson-orange"> 1)</span></h1>
@@ -322,8 +488,22 @@
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Responsivt design</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">1 domene</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Årlige domeneavgifter</h1>
-                            <h1 class="az-padding-7 az-border-bottom-1-silver">20 e-post kontoer</h1>
-                            <h1 class="az-padding-7 az-border-bottom-1-silver">1 GB lagring</h1>
+                            <h1 class="az-padding-7 az-border-bottom-1-silver az-form-group">
+                                <select class="az-select xs email">
+                                    <option value="1">20 e-post kontoer</option>
+                                    <option value="2">50 e-post kontoer</option>
+                                    <option value="3">100 e-post kontoer</option>
+                                    <option value="4">200 e-post kontoer</option>
+                                </select>
+                            </h1>
+                            <h1 class="az-padding-7 az-border-bottom-1-silver az-form-group">
+                                <select class="az-select xs storage">
+                                    <option value="1">1 GB lagring</option>
+                                    <option value="2">5 GB lagring</option>
+                                    <option value="3">20 GB lagring</option>
+                                    <option value="4">100 GB lagring</option>
+                                </select>
+                            </h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">SSL-sertifikat</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver"><a onclick="openSocialMedia('Backup');" href="javascript:void(0);" class="az-harley-davidson-orange az-border-bottom-hover-1-teal">Backup av data <i class="fas fa-cog az-orange"></i></a></h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Ubegrenset båndbredde</h1>
@@ -338,7 +518,7 @@
                         <header>
                             <h1 class="az-xs-text-medium az-sm-text-large">XLarge</h1>
                         </header>
-                        <article>
+                        <article class="s-products" id="s4">
                             <h1 class="az-padding-7 az-bg-gray az-xs-text-medium az-sm-text-large">199,-/mnd</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Oppstart fra <span class="az-xs-text-medium az-sm-text-large">13.490,-</span></h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver"><a href="https://cdn.web2net.no/lib-1.0.0/aztemplate.html" target="_blank" class="az-harley-davidson-orange az-border-bottom-hover-1-teal">AZ Theme</a><span class="az-harley-davidson-orange"> 1)</span></h1>
@@ -348,8 +528,22 @@
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Responsivt design</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">1 domene</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Årlige domeneavgifter</h1>
-                            <h1 class="az-padding-7 az-border-bottom-1-silver">20 e-post kontoer</h1>
-                            <h1 class="az-padding-7 az-border-bottom-1-silver">1 GB lagring</h1>
+                            <h1 class="az-padding-7 az-border-bottom-1-silver az-form-group">
+                                <select class="az-select xs email">
+                                    <option value="1">20 e-post kontoer</option>
+                                    <option value="2">50 e-post kontoer</option>
+                                    <option value="3">100 e-post kontoer</option>
+                                    <option value="4">200 e-post kontoer</option>
+                                </select>
+                            </h1>
+                            <h1 class="az-padding-7 az-border-bottom-1-silver az-form-group">
+                                <select class="az-select xs storage">
+                                    <option value="1">1 GB lagring</option>
+                                    <option value="2">5 GB lagring</option>
+                                    <option value="3">20 GB lagring</option>
+                                    <option value="4">100 GB lagring</option>
+                                </select>
+                            </h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">SSL-sertifikat</h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver"><a onclick="openSocialMedia('Backup');" href="javascript:void(0);" class="az-harley-davidson-orange az-border-bottom-hover-1-teal">Backup av data <i class="fas fa-cog az-orange"></i></a></h1>
                             <h1 class="az-padding-7 az-border-bottom-1-silver">Ubegrenset båndbredde</h1>
