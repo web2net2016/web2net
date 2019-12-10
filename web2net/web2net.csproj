@@ -74,6 +74,7 @@
     <Content Include="lib\images\648991523.mp4" />
     <Content Include="lib\images\aamnes_camping.jpg" />
     <Content Include="lib\images\analytics.png" />
+    <Content Include="lib\images\backup.jpeg" />
     <Content Include="lib\images\bakoy.jpg" />
     <Content Include="lib\images\billeas.jpg" />
     <Content Include="lib\images\bjerkem.jpg" />
@@ -97,6 +98,8 @@
     <Content Include="lib\images\ringom.jpg" />
     <Content Include="lib\images\side-seksjoner.jpg" />
     <Content Include="lib\images\sisselribe.jpg" />
+    <Content Include="lib\images\slider1.jpeg" />
+    <Content Include="lib\images\slider2.jpeg" />
     <Content Include="lib\images\slideshow1.jpg" />
     <Content Include="lib\images\slideshow2.jpg" />
     <Content Include="lib\images\slideshow3.jpg" />
@@ -104,12 +107,16 @@
     <Content Include="lib\images\sosial-media-1.png" />
     <Content Include="lib\images\sparbuteaterlag.jpg" />
     <Content Include="lib\images\spesialrekvisita.jpg" />
+    <Content Include="lib\images\ssl.jpeg" />
+    <Content Include="lib\images\ssl2.jpeg" />
     <Content Include="lib\images\ssl_icon.png" />
     <Content Include="lib\images\static.png" />
     <Content Include="lib\images\steinkjer_seniorforum.jpg" />
     <Content Include="lib\images\totaltakst.jpg" />
     <Content Include="lib\images\vestfossen_fysikalske.jpg" />
     <Content Include="lib\images\visma_white_logo.png" />
+    <Content Include="lib\images\web1.jpeg" />
+    <Content Include="lib\images\web2.jpeg" />
     <Content Include="lib\images\web2net_logo_black.png" />
     <Content Include="lib\images\web2net_logo_white.png" />
     <Content Include="lib\images\webmastertools.png" />

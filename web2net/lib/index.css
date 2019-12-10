@@ -15,63 +15,29 @@
     display: none;
 }
 
+.az-slideshow slide > div
+{
+    background-color: #000000;
+    opacity: 0.7;
+    text-align: center;
+}
+
+    .az-slideshow slide > div > h1
+    {
+        padding: 14px;
+        text-transform: none;
+        color: #FFFFFF;
+    }
+
+
+#section-slider
+{
+    display: none;
+}
+
 #section-cms, #section-allincluded
 {
     background-color: #DEDEDE;
-}
-
-#container-video
-{
-    height: 300px;
-}
-
-    #container-video video
-    {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        width: auto;
-        height: auto;
-        min-width: 100%;
-        min-height: 100%;
-        transform: translateX(-50%) translateY(-50%);
-    }
-
-    #container-video > .content-1
-    {
-        display: none;
-    }
-
-    #container-video > .content-2,
-    #container-video > .content-3
-    {
-        color: #000000;
-    }
-
-    #container-video > .content-1,
-    #container-video > .content-2,
-    #container-video > .content-3
-    {
-        position: absolute;
-        z-index: 1;
-    }
-
-    #container-video > .content-2
-    {
-        top: 35%;
-        left: 5%;
-    }
-
-    #container-video > .content-3
-    {
-        top: 60%;
-        left: 5%;
-    }
-
-#section-intro
-{
-    margin-bottom: 30px;
 }
 
 #section-allincluded
@@ -84,7 +50,12 @@
     padding: 4px 0 30px 0;
 }
 
-#container-intro, #container-cms, #container-allincluded
+#container-cms
+{
+    padding: 60px 0 30px 0;
+}
+
+#container-ssl-backup, #container-allincluded
 {
     padding: 30px 0 30px 0;
 }
@@ -122,48 +93,9 @@
         display: block;
     }
 
-    #container-video
+    #section-slider
     {
-        height: 300px;
-    }
-
-        #container-video video
-        {
-            display: block;
-        }
-
-        #container-video > .content-2,
-        #container-video > .content-3
-        {
-            color: #FFFFFF;
-        }
-
-        #container-video > .content-1
-        {
-            display: block;
-            top: 25%;
-            left: auto;
-            right: 5%;
-            width: 160px;
-        }
-
-        #container-video > .content-2
-        {
-            top: 60%;
-            left: auto;
-            right: 5%;
-        }
-
-        #container-video > .content-3
-        {
-            top: 75%;
-            left: auto;
-            right: 5%;
-        }
-
-    #section-intro
-    {
-        margin-bottom: 30px;
+        display: block;
     }
 
     #section-allincluded
@@ -171,7 +103,7 @@
         margin-bottom: 30px;
     }
 
-    #container-intro, #container-cms, #container-tools, #container-allincluded
+    #container-cms, #container-tools, #container-ssl-backup, #container-allincluded
     {
         padding: 30px 0 30px 0;
     }
@@ -189,48 +121,9 @@
 
 @media (min-width: 768px) /*MD*/
 {
-    #container-video
+    #section-slider
     {
-        height: 350px;
-    }
-
-        #container-video video
-        {
-            display: block;
-        }
-
-        #container-video > .content-2,
-        #container-video > .content-3
-        {
-            color: #FFFFFF;
-        }
-
-        #container-video > .content-1
-        {
-            display: block;
-            top: 25%;
-            left: auto;
-            right: 5%;
-            width: 190px;
-        }
-
-        #container-video > .content-2
-        {
-            top: 60%;
-            left: auto;
-            right: 5%;
-        }
-
-        #container-video > .content-3
-        {
-            top: 75%;
-            left: auto;
-            right: 5%;
-        }
-
-    #section-intro
-    {
-        margin-bottom: 30px;
+        display: block;
     }
 
     #section-allincluded
@@ -238,7 +131,7 @@
         margin-bottom: 30px;
     }
 
-    #container-intro, #container-cms, #container-tools, #container-allincluded
+    #container-cms, #container-tools, #container-ssl-backup, #container-allincluded
     {
         padding: 30px 0 30px 0;
     }
@@ -256,48 +149,9 @@
 
 @media (min-width: 992px) /*LG*/
 {
-    #container-video
+    #section-slider
     {
-        height: 400px;
-    }
-
-        #container-video video
-        {
-            display: block;
-        }
-
-        #container-video > .content-2,
-        #container-video > .content-3
-        {
-            color: #FFFFFF;
-        }
-
-        #container-video > .content-1
-        {
-            display: block;
-            top: 21%;
-            left: auto;
-            right: 5%;
-            width: 260px;
-        }
-
-        #container-video > .content-2
-        {
-            top: 60%;
-            left: auto;
-            right: 5%;
-        }
-
-        #container-video > .content-3
-        {
-            top: 75%;
-            left: auto;
-            right: 5%;
-        }
-
-    #section-intro
-    {
-        margin-bottom: 30px;
+        display: block;
     }
 
     #section-allincluded
@@ -305,7 +159,7 @@
         margin-bottom: 30px;
     }
 
-    #container-intro, #container-cms, #container-tools, #container-allincluded
+    #container-cms, #container-tools, #container-ssl-backup, #container-allincluded
     {
         padding: 30px 0 30px 0;
     }
@@ -323,48 +177,9 @@
 
 @media (min-width: 1200px) /*XL*/
 {
-    #container-video
+    #section-slider
     {
-        height: 500px;
-    }
-
-        #container-video video
-        {
-            display: block;
-        }
-
-        #container-video > .content-2,
-        #container-video > .content-3
-        {
-            color: #FFFFFF;
-        }
-
-        #container-video > .content-1
-        {
-            display: block;
-            top: 21%;
-            left: auto;
-            right: 5%;
-            width: 330px;
-        }
-
-        #container-1 > .content-2
-        {
-            top: 60%;
-            left: auto;
-            right: 5%;
-        }
-
-        #container-1 > .content-3
-        {
-            top: 75%;
-            left: auto;
-            right: 5%;
-        }
-
-    #section-intro
-    {
-        margin-bottom: 60px;
+        display: block;
     }
 
     #section-allincluded
@@ -372,7 +187,7 @@
         margin-bottom: 60px;
     }
 
-    #container-intro, #container-cms, #container-tools, #container-allincluded
+    #container-cms, #container-tools, #container-ssl-backup, #container-allincluded
     {
         padding: 60px 0 60px 0;
     }

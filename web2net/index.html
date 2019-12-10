@@ -26,6 +26,11 @@
         {
             initializePage({}, function ()
             {
+                new initSlideshow(
+                    {
+                        azSlideshowId: "az-slideshow-1"
+                    });
+
                 $("#section-container-3-col-1, #section-container-3-col-2, #section-container-3-col-3").matchHeight();
                 $("#cmdWordPress").off("click").on("click", function ()
                 {
@@ -103,46 +108,49 @@
             </div>
         </div>
 
-        <div id="section-video" class="az-section">
-            <div id="container-video" class="az-container-fluid">
-                <img class="content-1" alt="web2net" src="/lib/images/web2net_logo_white.png" />
-                <h1 class="content-2 az-xs-text-xlarge az-sm-text-xxlarge az-md-text-xxxlarge az-lg-text-xxxxlarge az-xl-text-xxxxxlarge az-text-uppercase">Vi tar sikkerheten din på alvor</h1>
-                <h1 class="content-3 az-xs-text-xlarge az-sm-text-xxlarge az-md-text-xxxlarge az-lg-text-xxxxlarge az-xl-text-xxxxxlarge az-text-uppercase">SSL Sertifikat og Daglig Backup</h1>
-                <video autoplay muted loop>
-                    <source src="/lib/images/648991523.mp4" type="video/mp4">
-                </video>
+        <div id="section-slider" class="az-section az-padding-t-56">
+            <div id="container-slider" class="az-container-fluid">
+                <div class="az-row">
+                    <div class="az-col xs-12">
+
+                        <div id="az-slideshow-1" class="az-slideshow">
+                            <slide>
+                                <img src="/lib/images/slider1.jpeg" style="max-height: 500px;">
+                                <div style="margin-left: 8px;">
+                                    <h1>WORDPRESS - har alle typer nettsider</h1>
+                                </div>
+                            </slide>
+                            <slide>
+                                <img src="/lib/images/slider2.jpeg" style="max-height: 500px;">
+                                <div class="az-display-bottomright" style="margin-right: 8px;">
+                                    <h1>STATISKE SIDER - gir stor frihet</h1>
+                                </div>
+                            </slide>
+                            <slide>
+                                <img src="/lib/images/ssl2.jpeg" style="max-height: 500px;">
+                                <div style="margin-left: 8px;">
+                                    <h1>SSL - gir økt sikkerhet</h1>
+                                </div>
+                            </slide>
+                            <slide>
+                                <img src="/lib/images/backup.jpeg" style="max-height: 500px;">
+                                <div class="az-display-bottomright" style="margin-right: 8px;">
+                                    <h1>BACKUP - vi trygger dine data</h1>
+                                </div>
+                            </slide>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div id="section-intro" class="az-section az-bg-teal">
-            <div id="container-intro" class="az-container">
-                <div class="az-row">
-                    <div class="az-col xs-12">
-                        <div class="az-margin-14">
-                            <img alt="web2net" class="az-left az-xs-width-15 az-xl-width-10 az-xs-none az-sm-block az-md-margin-b-56 az-lg-margin-b-0 az-xs-margin-r-0 az-sm-margin-r-28" src="/lib/images/ssl_icon.png" />
-                            <h1 class="az-xs-text-xxlarge az-padding-b-7">Har du fortsatt ikke SSL på nettstedet ditt?</h1>
-                            <p>Vil tilbyr <strong>gratis</strong> SSL sertifikat til alle våre kunder SSL står for Secure Sockets Layer og krypterer dataene som sendes mellom dine besøkende og nettstedet ditt.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="az-row">
-                    <div class="az-col xs-12">
-                        <div class="az-margin-14">
-                            <img alt="web2net" class="az-left az-xs-width-15 az-xl-width-10 az-xs-none az-sm-block az-md-margin-b-56 az-lg-margin-b-0 az-xs-margin-r-0 az-sm-margin-r-28" src="/lib/images/cloud_backup.png" />
-                            <h1 class="az-xs-text-xxlarge az-padding-b-7">Daglig backup av ditt nettsted!</h1>
-                            <p>For på best mulig måte å ivareta våre kunders data, kopieres daglig hele nettstedet ditt ut i Microsoft Azures skybaserte løsning. Her fordeles informasjonen på 3 forskjellige dataservere lokalisert i Nord Irland.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="section-cms" class="az-section">
+        <div id="section-cms" class="az-section az-bg-teal">
             <div id="container-cms" class="az-container">
                 <div class="az-row">
                     <div class="az-col xs-12 lg-6">
                         <div class="az-margin-14">
-                            <h1 class="az-xs-text-xxlarge az-sm-text-xxxlarge az-md-text-xxxxlarge az-xl-text-xxxxxlarge az-text-uppercase az-teal">Wordpress <span class="az-badge az-bg-blue az-text-xlarge" style="border-radius: 50%; padding: 8px 6px;">WP</span></h1>
+                            <h1 class="az-xs-text-xxlarge az-sm-text-xxxlarge az-md-text-xxxxlarge az-xl-text-xxxxxlarge az-text-uppercase">Wordpress <span class="az-badge az-bg-blue az-text-xlarge" style="border-radius: 50%; padding: 8px 6px;">WP</span></h1>
                             <h1 class="az-xs-text-large az-padding-b-7">En profesjonell nettside som gjenspeiler bedriftens personlighet.</h1>
                             <p class="az-padding-b-14">Med over 70 mill nettsteder verden over er WordPress det desidert mest utbredte publiseringsverktøyet.</p>
                             <p class="az-padding-b-7">- Enkel administrasjon</p>
@@ -156,7 +164,7 @@
                     </div>
                     <div class="az-col xs-12 lg-6">
                         <div class="az-margin-14 az-xs-margin-t-28 az-lg-margin-t-14">
-                            <h1 class="az-xs-text-xxlarge az-sm-text-xxxlarge az-md-text-xxxxlarge az-xl-text-xxxxxlarge az-text-uppercase az-teal">Statiske sider <span class="az-badge az-bg-selective-yellow az-text-xlarge" style="border-radius: 50%; padding: 8px 19px;">S</span></h1>
+                            <h1 class="az-xs-text-xxlarge az-sm-text-xxxlarge az-md-text-xxxxlarge az-xl-text-xxxxxlarge az-text-uppercase">Statiske sider <span class="az-badge az-bg-selective-yellow az-text-xlarge" style="border-radius: 50%; padding: 8px 19px;">S</span></h1>
                             <h1 class="az-xs-text-large az-padding-b-7">Moderne og effektive nettsider som fungerer på alle plattformer.</h1>
                             <p class="az-padding-b-14">Med statiske sider står man fritt i forhold til design og innhold. Statiske sider gir stor frihet</p>
                             <p class="az-padding-b-7">- Rimelige løsninger</p>
@@ -224,6 +232,29 @@
                             <div class="az-form-group az-text-center">
                                 <button type="button" id="cmdSosialeMedier" class="az-button az-shadow-1 az-shadow-hover-2 az-margin-b-14 az-white" style="background-color: #F06649;">Les mer</button>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="section-ssl-backup" class="az-section az-bg-teal">
+            <div id="container-ssl-backup" class="az-container">
+                <div class="az-row">
+                    <div class="az-col xs-12">
+                        <div class="az-margin-14">
+                            <img alt="web2net" class="az-left az-xs-width-15 az-xl-width-10 az-xs-none az-sm-block az-md-margin-b-56 az-lg-margin-b-0 az-xs-margin-r-0 az-sm-margin-r-28" src="/lib/images/ssl_icon.png" />
+                            <h1 class="az-xs-text-xxlarge az-padding-b-7">Har du fortsatt ikke SSL på nettstedet ditt?</h1>
+                            <p>Vil tilbyr <strong>gratis</strong> SSL sertifikat til alle våre kunder SSL står for Secure Sockets Layer og krypterer dataene som sendes mellom dine besøkende og nettstedet ditt.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="az-row">
+                    <div class="az-col xs-12">
+                        <div class="az-margin-14">
+                            <img alt="web2net" class="az-left az-xs-width-15 az-xl-width-10 az-xs-none az-sm-block az-md-margin-b-56 az-lg-margin-b-0 az-xs-margin-r-0 az-sm-margin-r-28" src="/lib/images/cloud_backup.png" />
+                            <h1 class="az-xs-text-xxlarge az-padding-b-7">Daglig backup av ditt nettsted!</h1>
+                            <p>For på best mulig måte å ivareta våre kunders data, kopieres daglig hele nettstedet ditt ut i Microsoft Azures skybaserte løsning. Her fordeles informasjonen på 3 forskjellige dataservere lokalisert i Nord Irland.</p>
                         </div>
                     </div>
                 </div>
