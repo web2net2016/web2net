@@ -6,27 +6,27 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
-  <loc>http://web2net.no/</loc>
+  <loc>https://web2net.no/</loc>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>http://web2net.no/prosessen.html</loc>
+  <loc>https://web2net.no/prosessen.html</loc>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://web2net.no/produkter.html</loc>
+  <loc>https://web2net.no/produkter.html</loc>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://web2net.no/referanser.html</loc>
+  <loc>https://web2net.no/referanser.html</loc>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://web2net.no/kundesider.html</loc>
+  <loc>https://web2net.no/kundesider.html</loc>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://web2net.no/status.html</loc>
+  <loc>https://web2net.no/status.html</loc>
   <priority>0.80</priority>
 </url>
 </urlset>

@@ -73,7 +73,6 @@
     <Content Include="lib\functionlib.js" />
     <Content Include="lib\images\referanser\aamnes_camping.jpg" />
     <Content Include="lib\images\analytics.png" />
-    <Content Include="lib\images\backup.jpeg" />
     <Content Include="lib\images\referanser\bakoy.jpg" />
     <Content Include="lib\images\referanser\billeas.jpg" />
     <Content Include="lib\images\referanser\bjerkem.jpg" />
@@ -97,13 +96,14 @@
     <Content Include="lib\images\referanser\ringom.jpg" />
     <Content Include="lib\images\side-seksjoner.jpg" />
     <Content Include="lib\images\referanser\sisselribe.jpg" />
-    <Content Include="lib\images\wordpress.jpeg" />
-    <Content Include="lib\images\static.jpeg" />
     <Content Include="lib\images\referanser\smartgridservices.jpg" />
+    <Content Include="lib\images\slider1.jpg" />
+    <Content Include="lib\images\slider2.jpg" />
+    <Content Include="lib\images\slider3.jpg" />
+    <Content Include="lib\images\slider4.jpg" />
     <Content Include="lib\images\sosial-media-1.png" />
     <Content Include="lib\images\referanser\sparbuteaterlag.jpg" />
     <Content Include="lib\images\referanser\spesialrekvisita.jpg" />
-    <Content Include="lib\images\ssl.jpeg" />
     <Content Include="lib\images\ssl_icon.png" />
     <Content Include="lib\images\static.png" />
     <Content Include="lib\images\referanser\steinkjer_seniorforum.jpg" />

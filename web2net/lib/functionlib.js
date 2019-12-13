@@ -6,6 +6,17 @@ var ApiVersion = "_1";
 
 $(document).ready(function ()
 {
+    var _azLastScrollTop = 0;
+    $(window).scroll(function ()
+    {
+        $.publish("functionlib/azWindowScroll",
+            {
+                azWindowScrollTop: parseInt($(window).scrollTop()),
+                azWindowScrollDir: ($(window).scrollTop() > _azLastScrollTop) ? "down" : "up"
+            });
+        _azLastScrollTop = $(this).scrollTop();
+    });
+
     $('.az-email').click(function (e)
     {
         var _HREF = $(this).data("content").toLowerCase().replace('(at)', '@');

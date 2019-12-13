@@ -575,26 +575,24 @@ h6
 /* Navbar Top*/
 .az-navbar.az-navbar-top
 {
+    background-color: #FFFFFF;
 }
 
 .az-navbar > .az-navbar-top-content
 {
-    background-color: #000000;
+    height: 100px;
+    background-color: #FFFFFF;
 }
 
     .az-navbar > .az-navbar-top-content > .az-navbar-button
     {
-        margin: 8px 7px 8px 0;
-        padding: 11px 15px;
-        border: 1px solid #FFFFFF;
-        background-color: transparent;
-        color: #FFFFFF;
     }
 
     .az-navbar > .az-navbar-top-content > .az-navbar-branding
     {
         float: left;
-        margin: 3px 3px 0 3px;
+        margin: 10px 3px 0 50px;
+        width: 180px;
     }
 
     .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper
@@ -603,13 +601,14 @@ h6
 
         .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-left
         {
+            margin: 30px 0 0 40px;
         }
 
             .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-left > li > a
             {
                 padding: 16px;
                 font-size: 16px;
-                color: #FFFFFF;
+                color: #000000;
             }
 
                 .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-left > li > a > i
@@ -618,55 +617,85 @@ h6
 
         .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-right
         {
+            margin-top: 30px;
         }
 
             .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-right > li > a
             {
                 padding: 5px;
                 font-size: 31px;
-                color: #FFFFFF;
+                color: #000000;
             }
 
                 .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-right > li > a > i
                 {
                 }
 
-        .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-button:hover,
+    .az-navbar > .az-navbar-top-content > .az-navbar-button:hover
+    {
+        background-color: #000000;
+        color: #FFFFFF;
+    }
+
         .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu > li > a:hover,
         .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu > li > a > i:hover,
         .az-navbar > .az-navbar-bottom-content > .az-navbar-menu > li > a:hover
         {
-            background-color: #FFFFFF;
-            color: #000000;
-        }
-
-/* Navbar Bottom*/
-.az-navbar > .az-navbar-bottom-content
-{
-    background-color: #000000;
-}
-
-    .az-navbar > .az-navbar-bottom-content > .az-navbar-menu > li
-    {
-        width: 25%;
-        text-align: center;
-    }
-
-        .az-navbar > .az-navbar-bottom-content > .az-navbar-menu > li > a
-        {
-            padding: 7px;
+            background-color: #000000;
             color: #FFFFFF;
         }
 
-            .az-navbar > .az-navbar-bottom-content > .az-navbar-menu > li > a > i
+@media (max-width: 991px)
+{
+    .az-navbar.az-navbar-top
+    {
+    }
+
+    .az-navbar > .az-navbar-top-content
+    {
+    }
+
+        .az-navbar > .az-navbar-top-content > .az-navbar-button
+        {
+        }
+
+        .az-navbar > .az-navbar-top-content > .az-navbar-branding
+        {
+            margin: 10px 3px 0 0;
+            width: 180px;
+        }
+
+        .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper
+        {
+        }
+
+            .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-left
             {
-                font-size: 18px;
+                margin: 40px 0 0 0;
             }
 
-            .az-navbar > .az-navbar-bottom-content > .az-navbar-menu > li > a > p
+                .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-left > li > a
+                {
+                    padding: 10px;
+                    font-size: 14px;
+                }
+
+                    .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-left > li > a > i
+                    {
+                    }
+
+            .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-right
             {
-                font-size: 13px;
             }
+
+                .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-right > li > a
+                {
+                }
+
+                    .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-right > li > a > i
+                    {
+                    }
+}
 
 @media (max-width: 767px)
 {
@@ -681,10 +710,33 @@ h6
 
     .az-navbar > .az-navbar-top-content
     {
+        height: auto !important;
+        margin-top: 0 !important;
     }
+
+        .az-navbar > .az-navbar-top-content > .az-navbar-button
+        {
+            display: block;
+            margin: 8px 7px 8px 0;
+            padding: 11px 15px;
+            border: 1px solid #000000;
+            background-color: transparent;
+            color: #000000;
+        }
+
+        .az-navbar > .az-navbar-top-content > .az-navbar-branding
+        {
+            margin: 4px 3px 0 0;
+            width: 110px;
+        }
+
+        .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper
+        {
+        }
 
         .az-navbar > .az-navbar-top-content.mobile > .az-navbar-menu-wrapper > .az-navbar-menu.az-left
         {
+            margin: 0 !important;
             border-top: 1px solid #BBBBBB;
         }
 
@@ -716,16 +768,10 @@ h6
 
 @media (max-width: 767px)
 {
-    /* Navbar Top*/
-    .az-navbar > .az-navbar-top-content > .az-navbar-button
-    {
-        display: block;
-    }
-
-    .az-navbar > .az-navbar-top-content > .az-navbar-branding.mobile-only
-    {
-        display: block;
-    }
+        .az-navbar > .az-navbar-top-content > .az-navbar-branding.mobile-only
+        {
+            display: block;
+        }
 
     .az-navbar > .az-navbar-top-content > .az-navbar-logo.desktop-only
     {
@@ -768,7 +814,6 @@ h6
             width: 100%;
         }
 
-    /* Navbar Bottom*/
     .az-navbar.az-navbar-bottom.mobile-only
     {
         display: block;
@@ -779,6 +824,34 @@ h6
         display: none;
     }
 }
+
+/* Navbar Bottom*/
+.az-navbar > .az-navbar-bottom-content
+{
+    background-color: #000000;
+}
+
+    .az-navbar > .az-navbar-bottom-content > .az-navbar-menu > li
+    {
+        width: 25%;
+        text-align: center;
+    }
+
+        .az-navbar > .az-navbar-bottom-content > .az-navbar-menu > li > a
+        {
+            padding: 7px;
+            color: #FFFFFF;
+        }
+
+            .az-navbar > .az-navbar-bottom-content > .az-navbar-menu > li > a > i
+            {
+                font-size: 18px;
+            }
+
+            .az-navbar > .az-navbar-bottom-content > .az-navbar-menu > li > a > p
+            {
+                font-size: 13px;
+            }
 
 /* Portfolio  ---------*/
 .az-portfolio-menu
