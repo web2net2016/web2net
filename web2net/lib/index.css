@@ -29,7 +29,6 @@
         color: #FFFFFF;
     }
 
-
 #section-slider
 {
     display: none;
@@ -121,6 +120,11 @@
 
 @media (min-width: 768px) /*MD*/
 {
+    .az-slideshow slide > div > h1
+    {
+        font-size: 44px;
+    }
+
     #section-slider
     {
         display: block;
@@ -149,6 +153,11 @@
 
 @media (min-width: 992px) /*LG*/
 {
+    .az-slideshow slide > div > h1
+    {
+        font-size: 54px;
+    }
+
     #section-slider
     {
         display: block;
@@ -177,6 +186,11 @@
 
 @media (min-width: 1200px) /*XL*/
 {
+    .az-slideshow slide > div > h1
+    {
+        font-size: 64px;
+    }
+
     #section-slider
     {
         display: block;

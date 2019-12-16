@@ -28,10 +28,13 @@
         {
             initializePage({}, function ()
             {
-                new initSlideshow(
-                    {
-                        azSlideshowId: "az-slideshow-1"
-                    });
+                if (window.innerWidth > 576)
+                {
+                    new initSlideshow(
+                        {
+                            azSlideshowId: "az-slideshow-1"
+                        });
+                }
 
                 $("#section-container-3-col-1, #section-container-3-col-2, #section-container-3-col-3").matchHeight();
                 $("#cmdWordPress").off("click").on("click", function ()
