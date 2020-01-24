@@ -15,11 +15,6 @@ $(document).ready(function ()
         {
             console.log('Service Worker registration failed: ', err);
         });
-
-        window.addEventListener('appinstalled', function()
-        {
-            console.log('a2hs installed');
-        });
     }
 
     var _azLastScrollTop = 0;
