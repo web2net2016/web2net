@@ -1,11 +1,12 @@
 {
   "name": "web2net AS",
   "short_name": "web2net",
+  "description": "Moderne og effektive nettsider. Fungerer på alle plattformer.",
   "lang": "no",
   "start_url": "/",
   "background_color": "#009688",
   "theme_color": "#009688",
-  "display": "fullscreen",
+  "display": "standalone",
   "orientation": "any",
   "icons": [
     {

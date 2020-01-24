@@ -1,4 +1,12 @@
-﻿
+﻿/* PWA Installed
+@media all and (display-mode: standalone)
+{
+    body
+    {
+        background-color: yellow;
+    }
+}*/
+
 /* Display */
 .az-xs-display-hidden
 {
@@ -11,25 +19,6 @@
 }
 
 .az-xs-none
-{
-    display: none;
-}
-
-.az-slideshow slide > div
-{
-    background-color: #000000;
-    opacity: 0.7;
-    text-align: center;
-}
-
-    .az-slideshow slide > div > h1
-    {
-        padding: 14px;
-        text-transform: none;
-        color: #FFFFFF;
-    }
-
-#section-slider
 {
     display: none;
 }
@@ -92,11 +81,6 @@
         display: block;
     }
 
-    #section-slider
-    {
-        display: block;
-    }
-
     #section-allincluded
     {
         margin-bottom: 30px;
@@ -120,16 +104,6 @@
 
 @media (min-width: 768px) /*MD*/
 {
-    .az-slideshow slide > div > h1
-    {
-        font-size: 44px;
-    }
-
-    #section-slider
-    {
-        display: block;
-    }
-
     #section-allincluded
     {
         margin-bottom: 30px;
@@ -153,16 +127,6 @@
 
 @media (min-width: 992px) /*LG*/
 {
-    .az-slideshow slide > div > h1
-    {
-        font-size: 54px;
-    }
-
-    #section-slider
-    {
-        display: block;
-    }
-
     #section-allincluded
     {
         margin-bottom: 30px;
@@ -186,15 +150,6 @@
 
 @media (min-width: 1200px) /*XL*/
 {
-    .az-slideshow slide > div > h1
-    {
-        font-size: 64px;
-    }
-
-    #section-slider
-    {
-        display: block;
-    }
 
     #section-allincluded
     {
@@ -215,4 +170,166 @@
     {
         padding: 60px 0 60px 0;
     }
+}
+
+
+/* AZ Slideshow */
+.az-slideshow
+{
+    position: relative;
+    width: 100%;
+}
+
+    .az-slideshow .az-slides
+    {
+        position: relative;
+        width: 100%;
+    }
+
+        .az-slideshow .az-slides slide
+        {
+            position: absolute;
+            width: 100%;
+        }
+
+            .az-slideshow .az-slides slide img
+            {
+                width: 100%;
+            }
+
+            .az-slideshow .az-slides slide > div > h1
+            {
+                font-size: 50px;
+            }
+
+            .az-slideshow .az-arrows
+            {
+                z-index: 1;
+                font-size: 50px;
+                color: #FFFFFF;
+                cursor: pointer;
+            }
+
+        .az-slideshow .az-arrows:hover
+        {
+            font-size: 60px;
+        }
+
+    .az-slideshow .az-arrow-left
+    {
+        margin-left: 14px;
+    }
+
+    .az-slideshow .az-arrow-right
+    {
+        margin-right: 14px;
+    }
+
+@media (max-width: 768px)
+{
+    .az-slideshow .az-slides slide > div > h1
+    {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 576px)
+{
+    .az-slideshow .az-slides slide > div > h1
+    {
+        font-size: 20px;
+    }
+
+    .az-slideshow .az-arrows
+    {
+        font-size: 30px;
+    }
+
+        .az-slideshow .az-arrows:hover
+        {
+            font-size: 35px;
+        }
+}
+
+.az-slideshow .az-display-topleft
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.az-slideshow .az-display-topmiddle
+{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    -webkit-transform: translate(-50%,0%);
+    -moz-transform: translate(-50%,0%);
+    -o-transform: translate(-50%,0%);
+    transform: translate(-50%,0%);
+}
+
+.az-slideshow .az-display-topright
+{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.az-slideshow .az-display-left
+{
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    -webkit-transform: translate(0%,-50%);
+    -moz-transform: translate(0%,-50%);
+    -o-transform: translate(0%,-50%);
+    transform: translate(0%,-50%);
+}
+
+.az-slideshow .az-display-middle
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+.az-slideshow .az-display-right
+{
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    -webkit-transform: translate(0%,-50%);
+    -moz-transform: translate(0%,-50%);
+    -o-transform: translate(0%,-50%);
+    transform: translate(0%,-50%);
+}
+
+.az-slideshow .az-display-bottomleft
+{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.az-slideshow .az-display-bottommiddle
+{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    -webkit-transform: translate(-50%,0%);
+    -moz-transform: translate(-50%,0%);
+    -o-transform: translate(-50%,0%);
+    transform: translate(-50%,0%);
+}
+
+.az-slideshow .az-display-bottomright
+{
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
