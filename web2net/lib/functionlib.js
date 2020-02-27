@@ -61,14 +61,16 @@ $(document).ready(function ()
 
     if (window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true)
     {
-        console.log(true);
+        console.log("standalone");
     }
-
-    //$(window).off("beforeinstallprompt").on("beforeinstallprompt", function (e)
-    //{
-    //    deferredPrompt = e.originalEvent;
-    //    $("body").off("click", showInstallPromotion).on("click", showInstallPromotion);
-    //});
+    else
+    {
+        $(window).off("beforeinstallprompt").on("beforeinstallprompt", function (e)
+        {
+            deferredPrompt = e.originalEvent;
+            $("body").off("click", showInstallPromotion).on("click", showInstallPromotion);
+        });
+    }
 });
 
 function showInstallPromotion()
