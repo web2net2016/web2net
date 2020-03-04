@@ -1,5 +1,4 @@
-﻿
-// Site info
+﻿// Site info
 var AppName = "web2net";
 var AppVersion = "1.0.1";
 var ApiVersion = "_1";
@@ -11,10 +10,10 @@ $(document).ready(function ()
     {
         navigator.serviceWorker.register("/service-worker.js").then(function (registration)
         {
-            console.log('Service Worker registration successful with scope: ', registration.scope);
+            //console.log('Service Worker registration successful with scope: ', registration.scope);
         }).catch(function (err)
         {
-            console.log('Service Worker registration failed: ', err);
+            //console.log('Service Worker registration failed: ', err);
         });
     }
 
@@ -59,36 +58,36 @@ $(document).ready(function ()
         e.preventDefault();
     });
 
-    if (window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true)
-    {
-        console.log("standalone");
-    }
-    else
-    {
-        $(window).off("beforeinstallprompt").on("beforeinstallprompt", function (e)
-        {
-            deferredPrompt = e.originalEvent;
-            $("body").off("click", showInstallPromotion).on("click", showInstallPromotion);
-        });
-    }
+    //if (window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true)
+    //{
+    //    console.log("standalone");
+    //}
+    //else
+    //{
+    //    $(window).off("beforeinstallprompt").on("beforeinstallprompt", function (e)
+    //    {
+    //        deferredPrompt = e.originalEvent;
+    //        $("body").off("click", showInstallPromotion).on("click", showInstallPromotion);
+    //    });
+    //}
 });
 
-function showInstallPromotion()
-{
-    deferredPrompt.prompt();
-    deferredPrompt.userChoice.then(function (choiceResult)
-    {
-        if (choiceResult.outcome === "accepted")
-        {
-            console.log('User accepted the A2HS prompt');
-        }
-        else
-        {
-            console.log('User dismissed the A2HS prompt');
-            $("body").off("click", showInstallPromotion);
-        }
-    });
-}
+//function showInstallPromotion()
+//{
+//    deferredPrompt.prompt();
+//    deferredPrompt.userChoice.then(function (choiceResult)
+//    {
+//        if (choiceResult.outcome === "accepted")
+//        {
+//            console.log('User accepted the A2HS prompt');
+//        }
+//        else
+//        {
+//            console.log('User dismissed the A2HS prompt');
+//            $("body").off("click", showInstallPromotion);
+//        }
+//    });
+//}
 
 // All Pages
 function openContactForm()
