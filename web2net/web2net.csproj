@@ -70,6 +70,7 @@
     <Content Include="favicon.ico" />
     <Content Include="lib\az-codecolor.css" />
     <Content Include="lib\az-codecolor.js" />
+    <Content Include="lib\images\google_search_console.png" />
     <Content Include="lib\images\icons\icon-128x128.png" />
     <Content Include="lib\images\icons\icon-144x144.png" />
     <Content Include="lib\images\icons\icon-152x152.png" />
@@ -78,7 +79,7 @@
     <Content Include="lib\images\icons\icon-512x512.png" />
     <Content Include="lib\images\icons\icon-72x72.png" />
     <Content Include="lib\images\icons\icon-96x96.png" />
-    <Content Include="lib\api.css" />
+    <Content Include="lib\smsapi.css" />
     <Content Include="service-worker.js" />
     <Content Include="index.html" />
     <Content Include="kontakt.html" />
@@ -124,7 +125,6 @@
     <Content Include="lib\images\visma_white_logo.png" />
     <Content Include="lib\images\web2net_logo_black.png" />
     <Content Include="lib\images\web2net_logo_white.png" />
-    <Content Include="lib\images\webmastertools.png" />
     <Content Include="lib\images\woo-wp.png" />
     <Content Include="lib\images\woo_wp_white.png" />
     <Content Include="lib\images\wordpress.png" />
@@ -153,7 +153,7 @@
     <Content Include="produkter.html" />
     <Content Include="prosessen.html" />
     <Content Include="kundesider.html" />
-    <Content Include="api.html" />
+    <Content Include="smsapi.html" />
     <Content Include="status.html" />
     <Content Include="referanser.html" />
     <Content Include="sitemap.xml" />

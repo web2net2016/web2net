@@ -43,8 +43,7 @@ h6.az-code-header
     width: auto;
     background-color: #FFFFFF;
     padding: 8px 12px;
-    border-left: 4px solid #009688;
-    border-right: 4px solid #009688;
+    border: none;
     word-wrap: break-word;
     font-family: Consolas, "courier new";
     font-size: 16px;
@@ -112,7 +111,7 @@ h6.az-code-header
     width: auto;
     background-color: #ffffcc;
     padding: 8px 12px;
-    border-left: 4px solid #FFB900;
+    /*border-left: 4px solid #FFB900;*/
     word-wrap: break-word;
     font-family: Consolas, "courier new";
     font-size: 16px;
