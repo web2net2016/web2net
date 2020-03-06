@@ -116,6 +116,26 @@
                             &emsp;&ensp;&emsp;&ensp;}<br />
                             }<br />
                             <br />
+                            <br />
+                            <strong>Optional Properties</strong><br />
+                            <br />
+                            <p>- Title, of the actual SMS job. (Campaign, Offers, Sales, etc.)</p>
+                            <p>- Description, of the actual SMS job. (What was the content, etc.)</p>
+                            <p>- From, to override the default sender.</p>
+                            <br />
+                            {<br />
+                            &emsp;&ensp;&emsp;&ensp;"TransferType": "string",<br />
+                            &emsp;&ensp;&emsp;&ensp;"ClientId": "string",<br />
+                            &emsp;&ensp;&emsp;&ensp;<strong>"Title": "string",</strong>&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;(Max 50 char)<br />
+                            &emsp;&ensp;&emsp;&ensp;<strong>"Description": "string,"</strong>&emsp;&ensp;(Max 255 char)<br />
+                            &emsp;&ensp;&emsp;&ensp;"SMSPayload":<br />
+                            &emsp;&ensp;&emsp;&ensp;{<br />
+                            &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;<strong>"From": "string",</strong>&ensp;&emsp;&ensp;&emsp;&ensp;(Max 11 char)<br />
+                            &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Message": "string",<br />
+                            &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"To": ["string"]<br />
+                            &emsp;&ensp;&emsp;&ensp;}<br />
+                            }<br />
+                            <br />
                         </div>
                         <div class="az-code htmlHigh notranslate">
                             <div class="az-code-property-wrapper">
@@ -155,7 +175,10 @@
                                     </brown>
                                 </type>
                                 <br />
-                                <type><span>400</span> <brown>Missing or invalid clientId - Missing recipients - Missing account coverage</brown></type>
+                                <type><span>400</span> <brown>Missing clientId - Invalid clientId - Missing recipients - Missing account coverage</brown></type>
+                                <br />
+                                &emsp;&ensp;&emsp;&ensp;<strong>If you use the optional properties, Title / Description</strong>
+                                <type><span>400</span> <brown>The request cannot be fulfilled due to error in Title - The request cannot be fulfilled due to error in Description</brown></type>
                                 <br />
                                 <type><span>401</span> <brown>Invalid authorization</brown></type>
                                 <br />
@@ -171,7 +194,7 @@
             <div class="az-row">
                 <div class="az-col xs-12">
                     <div class="az-form-group md">
-                        <h1 class="az-code-header" style="margin: 0;">SMS Jobb</h1>
+                        <h1 class="az-code-header" style="margin: 0;">SMS Job</h1>
                         <div class="az-code jsHigh notranslate">
                             <br />
                             <strong>Request Body</strong>
@@ -218,9 +241,12 @@
                                         &emsp;&ensp;&emsp;&ensp;{<br />
                                         &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSJob":<br />
                                         &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;{<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"DateTime": "string",<br />
+                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Date": "string",<br />
+                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Title": "string",<br />
+                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Description": "string",<br />
                                         &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Message": "string",<br />
                                         &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"From": "string",<br />
+                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSSent": integer,<br />
                                         &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SendtTo":<br />
                                         &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;[{<br />
                                         &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Sendt": boolean,<br />
@@ -232,7 +258,7 @@
                                     </brown>
                                 </type>
                                 <br />
-                                <type><span>400</span> <brown>Missing or invalid jobId</brown></type>
+                                <type><span>400</span> <brown>Missing jobId - Invalid jobId</brown></type>
                                 <br />
                                 <type><span>401</span> <brown>Invalid authorization</brown></type>
                                 <br />
@@ -248,7 +274,7 @@
             <div class="az-row">
                 <div class="az-col xs-12">
                     <div class="az-form-group md">
-                        <h1 class="az-code-header" style="margin: 0;">SMS Rapport</h1>
+                        <h1 class="az-code-header" style="margin: 0;">SMS Report</h1>
                         <div class="az-code jsHigh notranslate">
                             <br />
                             <strong>Request Body</strong>
@@ -297,9 +323,12 @@
                                         &emsp;&ensp;&emsp;&ensp;{<br />
                                         &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSJobs":<br />
                                         &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;[{<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"DateTime": "string",<br />
+                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Date": "string",<br />
+                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Title": "string",<br />
+                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Description": "string",<br />
                                         &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Message": "string",<br />
                                         &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"From": "string",<br />
+                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSSent": integer,<br />
                                         &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SendtTo":<br />
                                         &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;[{<br />
                                         &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Sendt": boolean,<br />
@@ -327,7 +356,7 @@
             <div class="az-row az-margin-b-28">
                 <div class="az-col xs-12">
                     <div class="az-form-group md">
-                        <h1 class="az-code-header" style="margin: 0;">SMS Konto</h1>
+                        <h1 class="az-code-header" style="margin: 0;">SMS Account</h1>
                         <div class="az-code jsHigh notranslate">
                             <br />
                             <strong>Request Body</strong>
@@ -374,15 +403,16 @@
                                         &emsp;&ensp;&emsp;&ensp;{<br />
                                         &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSAccount":<br />
                                         &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;{<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"DateTime": "string",<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSSent": integer,<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSLeft": integer<br />
+                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Date": "string",<br />
+                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Code": "string",<br />
+                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSStock": integer,<br />
+                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSSent": integer<br />
                                         &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;}<br />
                                         &emsp;&ensp;&emsp;&ensp;}<br />
                                     </brown>
                                 </type>
                                 <br />
-                                <type><span>400</span> <brown>Missing or invalid clientId</brown></type>
+                                <type><span>400</span> <brown>Missing clientId - Invalid clientId</brown></type>
                                 <br />
                                 <type><span>401</span> <brown>Invalid authorization</brown></type>
                                 <br />
