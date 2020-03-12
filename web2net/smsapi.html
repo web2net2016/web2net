@@ -1,5 +1,4 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="no">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,37 +10,27 @@
     <meta name="format-detection" content="date=no" />
     <meta name="format-detection" content="address=no" />
     <meta name="format-detection" content="email=no" />
-    <meta name="theme-color" content="#009688">
-    <link rel="apple-touch-icon" sizes="72x72" href="/lib/images/icons/icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="96x96" href="/lib/images/icons/icon-96x96.png">
-    <link rel="apple-touch-icon" sizes="128x128" href="/lib/images/icons/icon-128x128.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/lib/images/icons/icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/lib/images/icons/icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="192x192" href="/lib/images/icons/icon-192x192.png">
-    <link rel="apple-touch-icon" sizes="384x384" href="/lib/images/icons/icon-384x384.png">
-    <link rel="apple-touch-icon" sizes="512x512" href="/lib/images/icons/icon-512x512.png">
-    <meta name="description" content="Her finner du api dokumentasjon på vår SMS tjeneste." />
-    <meta name="keywords" content="web2net, status, server, e-post, dns, api, dokumentasjon, sms" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
     <title>SMS API Dokumentasjon | web2net</title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="//cdn.web2net.no/lib-1.0.0/css/az-1.0.0.min.css" />
-    <script src="//cdn.web2net.no/lib-1.0.0/js/az-1.0.0.min.js"></script>
+    <link rel="stylesheet" href="//cdn.web2net.no/lib-2.0.0/css/az-2.0.0.min.css" />
+    <script src="//cdn.web2net.no/lib-2.0.0/js/az-2.0.0.min.js"></script>
+
     <link rel="stylesheet" href="/lib/standard.css" />
     <link rel="stylesheet" href="/lib/smsapi.css" />
     <script src="/lib/functionlib.js"></script>
     <link rel="stylesheet" href="/lib/az-codecolor.css" />
     <script src="/lib/az-codecolor.js"></script>
-    <script src="//cdn.web2net.no/fingerprint-1.0.0/az-1.0.0.min.js"></script>
-    <link rel="manifest" href="/manifest.json">
     <script>
 
         $(document).ready(function ()
         {
-            initializePage({}, function ()
-            {
-                hideCoverSpin();
-            });
+            new AZAccordion(
+                {
+                    azAccordionId: "az-accordion-1"
+                });
         });
 
         (function (i, s, o, g, r, a, m)
@@ -76,22 +65,24 @@
                         <li><a href="kundesider.html">Kundesider</a></li>
                         <li><a href="javascript:void(0);" onclick="openContactForm();">Kontakt oss</a></li>
                     </ul>
-
-                    <ul class="az-navbar-menu az-right">
-                        <li><a href="https://www.facebook.com/web2net" target="_blank" style="padding: 5px 20px 5px 20px;"><i class="fab fa-facebook-square"></i></a></li>
-                    </ul>
                 </div>
             </div>
         </div>
 
-        <div id="container-1" class="az-container-fluid az-bg-teal">
-            <div class="az-row">
-                <div class="az-col xs-12 az-text-center">
+        <div id="section-slider" class="az-section az-background-teal">
+            <div id="container-1" class="az-container">
 
-                    <div class="az-margin-14 az-white">
-                        <h1 class="az-padding-b-7 az-xs-text-large az-sm-text-xlarge az-md-text-xxlarge az-xl-text-xxxlarge az-text-uppercase">SMS API Dokumentasjon</h1>
+                <div class="az-row">
+                    <div class="az-col xs-12">
+
+                        <div class="az-margin-14 az-white">
+                            <h1 class="az-padding-b-7 az-xs-text-large az-sm-text-xlarge az-md-text-xxlarge az-xl-text-xxxlarge az-text-uppercase">SMS API Documentation</h1>
+                            <p class="az-padding-b-7 az-xs-text-small">Our API is organized around REST, and uses HTTP response codes to indicate API errors. We use built-in HTTP features, like HTTP authentication and HTTP verbs. JSON is returned by all API responses.</p>
+                            <p class="az-padding-b-7 az-xs-text-small">We only use the HTTP verb POST and manage your requests using the <strong>TransferType</strong> property. This allows you to use the same URL regardless of your requests.</p>
+                            <p class="az-xs-text-small">Our API requires you to use Bearer Token-based authentication to access the API.</p>
+                        </div>
+
                     </div>
-
                 </div>
             </div>
         </div>
@@ -99,418 +90,336 @@
         <div id="container-2" class="az-container">
             <div class="az-row">
                 <div class="az-col xs-12">
-                    <div class="az-form-group md">
-                        <h1 class="az-code-header" style="margin: 0;">Send SMS</h1>
-                        <div class="az-code jsHigh notranslate">
-                            <br />
-                            <strong>Request Body</strong>
-                            <br />
-                            <br />
-                            {<br />
-                            &emsp;&ensp;&emsp;&ensp;"TransferType": "string",<br />
-                            &emsp;&ensp;&emsp;&ensp;"ClientId": "string",<br />
-                            &emsp;&ensp;&emsp;&ensp;"SMSPayload":<br />
-                            &emsp;&ensp;&emsp;&ensp;{<br />
-                            &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Message": "string",<br />
-                            &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"To": ["string"]<br />
-                            &emsp;&ensp;&emsp;&ensp;}<br />
-                            }<br />
-                            <br />
-                            <br />
-                            <strong>Optional Properties</strong><br />
-                            <br />
-                            <p>- Title, of the actual SMS job. (Campaign, Offers, Sales, etc.)</p>
-                            <p>- Description, of the actual SMS job. (What was the content, etc.)</p>
-                            <p>- From, to override the default sender.</p>
-                            <br />
-                            {<br />
-                            &emsp;&ensp;&emsp;&ensp;"TransferType": "string",<br />
-                            &emsp;&ensp;&emsp;&ensp;"ClientId": "string",<br />
-                            &emsp;&ensp;&emsp;&ensp;<strong>"Title": "string",</strong>&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;(Max 50 char)<br />
-                            &emsp;&ensp;&emsp;&ensp;<strong>"Description": "string,"</strong>&emsp;&ensp;(Max 255 char)<br />
-                            &emsp;&ensp;&emsp;&ensp;"SMSPayload":<br />
-                            &emsp;&ensp;&emsp;&ensp;{<br />
-                            &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;<strong>"From": "string",</strong>&ensp;&emsp;&ensp;&emsp;&ensp;(Max 11 char)<br />
-                            &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Message": "string",<br />
-                            &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"To": ["string"]<br />
-                            &emsp;&ensp;&emsp;&ensp;}<br />
-                            }<br />
-                            <br />
-                        </div>
-                        <div class="az-code htmlHigh notranslate">
-                            <div class="az-code-property-wrapper">
-                                <property>TransferType</property>
-                                <brown>SendSMS</brown>
-                                <br />
-                            </div>
-                            <div class="az-code-property-wrapper">
-                                <property>Request Method</property>
-                                <brown>POST</brown>
-                                <br />
-                            </div>
-                            <div class="az-code-property-wrapper">
-                                <property>Location</property>
-                                <brown>https://web2netadmin.azurewebsites.net/api/sms/v1</brown>
-                                <br />
-                            </div>
-                            <div class="az-code-property-wrapper">
-                                <property>Authorization</property>
-                                <brown>Bearer *************</brown>
-                                <br />
-                            </div>
-                            <div class="az-code-property-wrapper">
-                                <property>Header</property>
-                                <brown>Content-Type: application/json</brown>
-                                <br />
-                            </div>
-                            <div class="az-code-property-wrapper">
-                                <property>Responses</property>
-                                <type>
-                                    <span>200</span>
-                                    <brown>
+
+                    <div class="az-accordion" id="az-accordion-1">
+                        <div class="az-accordion-card">
+                            <header>
+                                <h1>Send SMS</h1>
+                            </header>
+                            <article>
+                                <div class="az-code jsHigh notranslate">
+                                    <br />
+                                    <strong>Request Body</strong>
+                                    <br />
+                                    <br />
+                                    {<br />
+                                    &emsp;&ensp;&emsp;&ensp;"TransferType": "string",<br />
+                                    &emsp;&ensp;&emsp;&ensp;"ClientId": "string",<br />
+                                    &emsp;&ensp;&emsp;&ensp;"SMSPayload":<br />
+                                    &emsp;&ensp;&emsp;&ensp;{<br />
+                                    &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Message": "string",<br />
+                                    &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"To": ["string"]<br />
+                                    &emsp;&ensp;&emsp;&ensp;}<br />
+                                    }<br />
+                                    <br />
+                                    <br />
+                                    <strong>Optional Properties</strong><br />
+                                    <br />
+                                    <p>- <strong>Title</strong>, of the actual SMS job. (Campaign, Offers, Sales, etc.)</p>
+                                    <p>- <strong>Description</strong>, of the actual SMS job. (What was the content, etc.)</p>
+                                    <p>- <strong>From</strong>, to override the default sender.</p>
+                                    <br />
+                                    {<br />
+                                    &emsp;&ensp;&emsp;&ensp;"TransferType": "string",<br />
+                                    &emsp;&ensp;&emsp;&ensp;"ClientId": "string",<br />
+                                    &emsp;&ensp;&emsp;&ensp;<strong>"Title": "string",</strong>&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;(Max 50 char)<br />
+                                    &emsp;&ensp;&emsp;&ensp;<strong>"Description": "string,"</strong>&emsp;&ensp;(Max 255 char)<br />
+                                    &emsp;&ensp;&emsp;&ensp;"SMSPayload":<br />
+                                    &emsp;&ensp;&emsp;&ensp;{<br />
+                                    &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;<strong>"From": "string",</strong>&ensp;&emsp;&ensp;&emsp;&ensp;(Max 11 char)<br />
+                                    &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Message": "string",<br />
+                                    &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"To": ["string"]<br />
+                                    &emsp;&ensp;&emsp;&ensp;}<br />
+                                    }<br />
+                                    <br />
+                                </div>
+                                <div class="az-code htmlHigh notranslate">
+                                    <div class="az-code-property-wrapper">
+                                        <property>TransferType</property>
+                                        <brown>SendSMS</brown>
                                         <br />
-                                        &emsp;&ensp;&emsp;&ensp;{<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSJobId": "string"<br />
-                                        &emsp;&ensp;&emsp;&ensp;}<br />
-                                    </brown>
-                                </type>
-                                <br />
-                                <type><span>400</span> <brown>Missing clientId - Invalid clientId - Missing recipients - Missing account coverage</brown></type>
-                                <br />
-                                &emsp;&ensp;&emsp;&ensp;<strong>If you use the optional properties, Title / Description</strong>
-                                <type><span>400</span> <brown>The request cannot be fulfilled due to error in Title - The request cannot be fulfilled due to error in Description</brown></type>
-                                <br />
-                                <type><span>401</span> <brown>Invalid authorization</brown></type>
-                                <br />
-                                <type><span>403</span> <brown>Missing authorization</brown></type>
-                                <br />
-                                <type><span>500</span> <brown>Internal server error</brown></type>
-                                <br />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="az-row">
-                <div class="az-col xs-12">
-                    <div class="az-form-group md">
-                        <h1 class="az-code-header" style="margin: 0;">SMS Job</h1>
-                        <div class="az-code jsHigh notranslate">
-                            <br />
-                            <strong>Request Body</strong>
-                            <br />
-                            <br />
-                            {<br />
-                            &emsp;&ensp;&emsp;&ensp;"TransferType": "string",<br />
-                            &emsp;&ensp;&emsp;&ensp;"SMSJobId": "string"<br />
-                            }<br />
-                            <br />
-                        </div>
-                        <div class="az-code htmlHigh notranslate">
-                            <div class="az-code-property-wrapper">
-                                <property>TransferType</property>
-                                <brown>SMSJob</brown>
-                                <br />
-                            </div>
-                            <div class="az-code-property-wrapper">
-                                <property>Request Method</property>
-                                <brown>POST</brown>
-                                <br />
-                            </div>
-                            <div class="az-code-property-wrapper">
-                                <property>Location</property>
-                                <brown>https://web2netadmin.azurewebsites.net/api/sms/v1</brown>
-                                <br />
-                            </div>
-                            <div class="az-code-property-wrapper">
-                                <property>Authorization</property>
-                                <brown>Bearer *************</brown>
-                                <br />
-                            </div>
-                            <div class="az-code-property-wrapper">
-                                <property>Header</property>
-                                <brown>Content-Type: application/json</brown>
-                                <br />
-                            </div>
-                            <div class="az-code-property-wrapper">
-                                <property>Responses</property>
-                                <type>
-                                    <span>200</span>
-                                    <brown>
+                                    </div>
+                                    <div class="az-code-property-wrapper">
+                                        <property>Request Method</property>
+                                        <brown>POST</brown>
                                         <br />
-                                        &emsp;&ensp;&emsp;&ensp;{<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSJob":<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;{<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Date": "string",<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Title": "string",<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Description": "string",<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Message": "string",<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"From": "string",<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSSent": integer,<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SendtTo":<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;[{<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Sendt": boolean,<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"To": "string",<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SID": "string"<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;}]<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;}<br />
-                                        &emsp;&ensp;&emsp;&ensp;}<br />
-                                    </brown>
-                                </type>
-                                <br />
-                                <type><span>400</span> <brown>Missing jobId - Invalid jobId</brown></type>
-                                <br />
-                                <type><span>401</span> <brown>Invalid authorization</brown></type>
-                                <br />
-                                <type><span>403</span> <brown>Missing authorization</brown></type>
-                                <br />
-                                <type><span>500</span> <brown>Internal server error</brown></type>
-                                <br />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="az-row">
-                <div class="az-col xs-12">
-                    <div class="az-form-group md">
-                        <h1 class="az-code-header" style="margin: 0;">SMS Report</h1>
-                        <div class="az-code jsHigh notranslate">
-                            <br />
-                            <strong>Request Body</strong>
-                            <br />
-                            <br />
-                            {<br />
-                            &emsp;&ensp;&emsp;&ensp;"TransferType": "string",<br />
-                            &emsp;&ensp;&emsp;&ensp;"ClientId": "string",<br />
-                            &emsp;&ensp;&emsp;&ensp;"FromDate": "string",<br />
-                            &emsp;&ensp;&emsp;&ensp;"ToDate": "string"<br />
-                            }<br />
-                            <br />
-                        </div>
-                        <div class="az-code htmlHigh notranslate">
-                            <div class="az-code-property-wrapper">
-                                <property>TransferType</property>
-                                <brown>SMSReport</brown>
-                                <br />
-                            </div>
-                            <div class="az-code-property-wrapper">
-                                <property>Request Method</property>
-                                <brown>POST</brown>
-                                <br />
-                            </div>
-                            <div class="az-code-property-wrapper">
-                                <property>Location</property>
-                                <brown>https://web2netadmin.azurewebsites.net/api/sms/v1</brown>
-                                <br />
-                            </div>
-                            <div class="az-code-property-wrapper">
-                                <property>Authorization</property>
-                                <brown>Bearer *************</brown>
-                                <br />
-                            </div>
-                            <div class="az-code-property-wrapper">
-                                <property>Header</property>
-                                <brown>Content-Type: application/json</brown>
-                                <br />
-                            </div>
-                            <div class="az-code-property-wrapper">
-                                <property>Responses</property>
-                                <type>
-                                    <span>200</span>
-                                    <brown>
+                                    </div>
+                                    <div class="az-code-property-wrapper">
+                                        <property>Location</property>
+                                        <brown>https://web2netadmin.azurewebsites.net/api/sms/v1</brown>
                                         <br />
-                                        &emsp;&ensp;&emsp;&ensp;{<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSJobs":<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;[{<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Date": "string",<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Title": "string",<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Description": "string",<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Message": "string",<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"From": "string",<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSSent": integer,<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SendtTo":<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;[{<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Sendt": boolean,<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"To": "string",<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SID": "string"<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;}]<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;}]<br />
-                                        &emsp;&ensp;&emsp;&ensp;}<br />
-                                    </brown>
-                                </type>
-                                <br />
-                                <type><span>400</span> <brown>No reports to display - The request cannot be fulfilled due to bad syntax</brown></type>
-                                <br />
-                                <type><span>401</span> <brown>Invalid authorization</brown></type>
-                                <br />
-                                <type><span>403</span> <brown>Missing authorization</brown></type>
-                                <br />
-                                <type><span>500</span> <brown>Internal server error</brown></type>
-                                <br />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="az-row az-margin-b-28">
-                <div class="az-col xs-12">
-                    <div class="az-form-group md">
-                        <h1 class="az-code-header" style="margin: 0;">SMS Account</h1>
-                        <div class="az-code jsHigh notranslate">
-                            <br />
-                            <strong>Request Body</strong>
-                            <br />
-                            <br />
-                            {<br />
-                            &emsp;&ensp;&emsp;&ensp;"TransferType": "string",<br />
-                            &emsp;&ensp;&emsp;&ensp;"ClientId": "string"<br />
-                            }<br />
-                            <br />
-                        </div>
-                        <div class="az-code htmlHigh notranslate">
-                            <div class="az-code-property-wrapper">
-                                <property>TransferType</property>
-                                <brown>SMSAccount</brown>
-                                <br />
-                            </div>
-                            <div class="az-code-property-wrapper">
-                                <property>Request Method</property>
-                                <brown>POST</brown>
-                                <br />
-                            </div>
-                            <div class="az-code-property-wrapper">
-                                <property>Location</property>
-                                <brown>https://web2netadmin.azurewebsites.net/api/sms/v1</brown>
-                                <br />
-                            </div>
-                            <div class="az-code-property-wrapper">
-                                <property>Authorization</property>
-                                <brown>Bearer *************</brown>
-                                <br />
-                            </div>
-                            <div class="az-code-property-wrapper">
-                                <property>Header</property>
-                                <brown>Content-Type: application/json</brown>
-                                <br />
-                            </div>
-                            <div class="az-code-property-wrapper">
-                                <property>Responses</property>
-                                <type>
-                                    <span>200</span>
-                                    <brown>
+                                    </div>
+                                    <div class="az-code-property-wrapper">
+                                        <property>Authorization</property>
+                                        <brown>Bearer *************</brown>
                                         <br />
-                                        &emsp;&ensp;&emsp;&ensp;{<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSAccount":<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;{<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Date": "string",<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Code": "string",<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSStock": integer,<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSSent": integer<br />
-                                        &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;}<br />
-                                        &emsp;&ensp;&emsp;&ensp;}<br />
-                                    </brown>
-                                </type>
-                                <br />
-                                <type><span>400</span> <brown>Missing clientId - Invalid clientId</brown></type>
-                                <br />
-                                <type><span>401</span> <brown>Invalid authorization</brown></type>
-                                <br />
-                                <type><span>403</span> <brown>Missing authorization</brown></type>
-                                <br />
-                                <type><span>500</span> <brown>Internal server error</brown></type>
-                                <br />
-                            </div>
+                                    </div>
+                                    <div class="az-code-property-wrapper">
+                                        <property>Header</property>
+                                        <brown>Content-Type: application/json</brown>
+                                        <br />
+                                    </div>
+                                    <div class="az-code-property-wrapper">
+                                        <property>Responses</property>
+                                        <type>
+                                            <span>200</span>
+                                            <brown>
+                                                <br />
+                                                &emsp;&ensp;&emsp;&ensp;{<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSJobId": "string"<br />
+                                                &emsp;&ensp;&emsp;&ensp;}<br />
+                                            </brown>
+                                        </type>
+                                        <br />
+                                        <type><span>400</span> <brown>Missing clientId - Invalid clientId - Missing recipients - Missing account coverage</brown></type>
+                                        <br />
+                                        &emsp;&ensp;&emsp;&ensp;<strong>If you use the optional properties, Title / Description</strong>
+                                        <type><span>400</span> <brown>The request cannot be fulfilled due to error in Title - The request cannot be fulfilled due to error in Description</brown></type>
+                                        <br />
+                                        <type><span>401</span> <brown>Invalid authorization</brown></type>
+                                        <br />
+                                        <type><span>403</span> <brown>Missing authorization</brown></type>
+                                        <br />
+                                        <type><span>500</span> <brown>Internal server error</brown></type>
+                                        <br />
+                                    </div>
+                            </article>
+                        </div>
+                        <div class="az-accordion-card">
+                            <header>
+                                <h1>SMS Job</h1>
+                            </header>
+                            <article>
+                                <div class="az-code jsHigh notranslate">
+                                    <br />
+                                    <strong>Request Body</strong>
+                                    <br />
+                                    <br />
+                                    {<br />
+                                    &emsp;&ensp;&emsp;&ensp;"TransferType": "string",<br />
+                                    &emsp;&ensp;&emsp;&ensp;"SMSJobId": "string"<br />
+                                    }<br />
+                                    <br />
+                                </div>
+                                <div class="az-code htmlHigh notranslate">
+                                    <div class="az-code-property-wrapper">
+                                        <property>TransferType</property>
+                                        <brown>SMSJob</brown>
+                                        <br />
+                                    </div>
+                                    <div class="az-code-property-wrapper">
+                                        <property>Request Method</property>
+                                        <brown>POST</brown>
+                                        <br />
+                                    </div>
+                                    <div class="az-code-property-wrapper">
+                                        <property>Location</property>
+                                        <brown>https://web2netadmin.azurewebsites.net/api/sms/v1</brown>
+                                        <br />
+                                    </div>
+                                    <div class="az-code-property-wrapper">
+                                        <property>Authorization</property>
+                                        <brown>Bearer *************</brown>
+                                        <br />
+                                    </div>
+                                    <div class="az-code-property-wrapper">
+                                        <property>Header</property>
+                                        <brown>Content-Type: application/json</brown>
+                                        <br />
+                                    </div>
+                                    <div class="az-code-property-wrapper">
+                                        <property>Responses</property>
+                                        <type>
+                                            <span>200</span>
+                                            <brown>
+                                                <br />
+                                                &emsp;&ensp;&emsp;&ensp;{<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSJob":<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;{<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Date": "string",<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Title": "string",<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Description": "string",<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Message": "string",<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"From": "string",<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSSent": integer,<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SendtTo":<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;[{<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Sendt": boolean,<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"To": "string",<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SID": "string"<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;}]<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;}<br />
+                                                &emsp;&ensp;&emsp;&ensp;}<br />
+                                            </brown>
+                                        </type>
+                                        <br />
+                                        <type><span>400</span> <brown>Missing jobId - Invalid jobId</brown></type>
+                                        <br />
+                                        <type><span>401</span> <brown>Invalid authorization</brown></type>
+                                        <br />
+                                        <type><span>403</span> <brown>Missing authorization</brown></type>
+                                        <br />
+                                        <type><span>500</span> <brown>Internal server error</brown></type>
+                                        <br />
+                                    </div>
+                            </article>
+                        </div>
+                        <div class="az-accordion-card">
+                            <header>
+                                <h1>SMS Report</h1>
+                            </header>
+                            <article>
+                                <div class="az-code jsHigh notranslate">
+                                    <br />
+                                    <strong>Request Body</strong>
+                                    <br />
+                                    <br />
+                                    {<br />
+                                    &emsp;&ensp;&emsp;&ensp;"TransferType": "string",<br />
+                                    &emsp;&ensp;&emsp;&ensp;"ClientId": "string",<br />
+                                    &emsp;&ensp;&emsp;&ensp;"FromDate": "string",<br />
+                                    &emsp;&ensp;&emsp;&ensp;"ToDate": "string"<br />
+                                    }<br />
+                                    <br />
+                                </div>
+                                <div class="az-code htmlHigh notranslate">
+                                    <div class="az-code-property-wrapper">
+                                        <property>TransferType</property>
+                                        <brown>SMSReport</brown>
+                                        <br />
+                                    </div>
+                                    <div class="az-code-property-wrapper">
+                                        <property>Request Method</property>
+                                        <brown>POST</brown>
+                                        <br />
+                                    </div>
+                                    <div class="az-code-property-wrapper">
+                                        <property>Location</property>
+                                        <brown>https://web2netadmin.azurewebsites.net/api/sms/v1</brown>
+                                        <br />
+                                    </div>
+                                    <div class="az-code-property-wrapper">
+                                        <property>Authorization</property>
+                                        <brown>Bearer *************</brown>
+                                        <br />
+                                    </div>
+                                    <div class="az-code-property-wrapper">
+                                        <property>Header</property>
+                                        <brown>Content-Type: application/json</brown>
+                                        <br />
+                                    </div>
+                                    <div class="az-code-property-wrapper">
+                                        <property>Responses</property>
+                                        <type>
+                                            <span>200</span>
+                                            <brown>
+                                                <br />
+                                                &emsp;&ensp;&emsp;&ensp;{<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSJobs":<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;[{<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Date": "string",<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Title": "string",<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Description": "string",<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Message": "string",<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"From": "string",<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSSent": integer,<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SendtTo":<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;[{<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Sendt": boolean,<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"To": "string",<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SID": "string"<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;}]<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;}]<br />
+                                                &emsp;&ensp;&emsp;&ensp;}<br />
+                                            </brown>
+                                        </type>
+                                        <br />
+                                        <type><span>400</span> <brown>No reports to display - The request cannot be fulfilled due to bad syntax</brown></type>
+                                        <br />
+                                        <type><span>401</span> <brown>Invalid authorization</brown></type>
+                                        <br />
+                                        <type><span>403</span> <brown>Missing authorization</brown></type>
+                                        <br />
+                                        <type><span>500</span> <brown>Internal server error</brown></type>
+                                        <br />
+                                    </div>
+                            </article>
+                        </div>
+                        <div class="az-accordion-card">
+                            <header>
+                                <h1>SMS Account</h1>
+                            </header>
+                            <article>
+                                <div class="az-code jsHigh notranslate">
+                                    <br />
+                                    <strong>Request Body</strong>
+                                    <br />
+                                    <br />
+                                    {<br />
+                                    &emsp;&ensp;&emsp;&ensp;"TransferType": "string",<br />
+                                    &emsp;&ensp;&emsp;&ensp;"ClientId": "string"<br />
+                                    }<br />
+                                    <br />
+                                </div>
+                                <div class="az-code htmlHigh notranslate">
+                                    <div class="az-code-property-wrapper">
+                                        <property>TransferType</property>
+                                        <brown>SMSAccount</brown>
+                                        <br />
+                                    </div>
+                                    <div class="az-code-property-wrapper">
+                                        <property>Request Method</property>
+                                        <brown>POST</brown>
+                                        <br />
+                                    </div>
+                                    <div class="az-code-property-wrapper">
+                                        <property>Location</property>
+                                        <brown>https://web2netadmin.azurewebsites.net/api/sms/v1</brown>
+                                        <br />
+                                    </div>
+                                    <div class="az-code-property-wrapper">
+                                        <property>Authorization</property>
+                                        <brown>Bearer *************</brown>
+                                        <br />
+                                    </div>
+                                    <div class="az-code-property-wrapper">
+                                        <property>Header</property>
+                                        <brown>Content-Type: application/json</brown>
+                                        <br />
+                                    </div>
+                                    <div class="az-code-property-wrapper">
+                                        <property>Responses</property>
+                                        <type>
+                                            <span>200</span>
+                                            <brown>
+                                                <br />
+                                                &emsp;&ensp;&emsp;&ensp;{<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSAccount":<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;{<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Date": "string",<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Code": "string",<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSStock": integer,<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSSent": integer<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;}<br />
+                                                &emsp;&ensp;&emsp;&ensp;}<br />
+                                            </brown>
+                                        </type>
+                                        <br />
+                                        <type><span>400</span> <brown>Missing clientId - Invalid clientId</brown></type>
+                                        <br />
+                                        <type><span>401</span> <brown>Invalid authorization</brown></type>
+                                        <br />
+                                        <type><span>403</span> <brown>Missing authorization</brown></type>
+                                        <br />
+                                        <type><span>500</span> <brown>Internal server error</brown></type>
+                                        <br />
+                                    </div>
+                            </article>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div id="container-address" class="az-container-fluid">
-            <div class="az-row">
-                <div class="az-col xs-12 sm-12 md-4">
-                    <table class="az-margin-l-56 az-xs-margin-b-28 az-md-margin-b-0">
-                        <tr>
-                            <td class="az-white az-text-large">web2net AS</td>
-                        </tr>
-                        <tr>
-                            <td class="az-white az-text-medium az-padding-t-14">Steinkjer</td>
-                        </tr>
-                        <tr>
-                            <td class="az-white az-text-small">Jæktskippergata 8</td>
-                        </tr>
-                        <tr>
-                            <td class="az-white az-text-small">7725 Steinkjer</td>
-                        </tr>
-                        <tr>
-                            <td class="az-white az-text-medium az-padding-t-14">Vestfossen</td>
-                        </tr>
-                        <tr>
-                            <td class="az-white az-text-small">Tveveien 6</td>
-                        </tr>
-                        <tr>
-                            <td class="az-white az-text-small">3320 Vestfossen</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="az-col xs-12 sm-6 md-4">
-                    <table class="az-xs-margin-t-0 az-md-margin-t-56 az-xs-margin-l-56 az-md-margin-l-0">
-                        <tr>
-                            <td><i class="fas fa-envelope-square fa-3x fa-fw az-white"></i></td>
-                            <td>&nbsp;</td>
-                            <td><a class="az-white az-text-small az-border-bottom-hover-1-white az-email" href="javascript:void(0)" data-content="post(at)web2net.no">post(at)web2net.no</a></td>
-                        </tr>
-                        <tr>
-                            <td><i class="fas fa-phone-square fa-3x fa-fw az-white"></i></td>
-                            <td>&nbsp;</td>
-                            <td class="az-white az-text-small">920 37 695</td>
-                        </tr>
-                        <tr>
-                            <td><i class="fas fa-phone-square fa-3x fa-fw az-white"></i></td>
-                            <td>&nbsp;</td>
-                            <td class="az-white az-text-small">412 53 455</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="az-col xs-12 sm-6 md-4">
-                    <table class="az-xs-margin-t-0 az-md-margin-t-56 az-xs-margin-l-56 az-md-margin-l-0">
-                        <tr>
-                            <td><a onclick="openContactForm();" href="javascript:void(0);"><i class="fas fa-envelope-square fa-3x fa-fw az-white" style="margin-right: 10px;"></i></a></td>
-                            <td><a onclick="openContactForm();" href="javascript:void(0);" class="az-white az-text-small az-border-bottom-hover-1-white">Kontakt oss</a></td>
-                        </tr>
-                        <tr>
-                            <td><a href="https://www.facebook.com/web2net" target="_blank"><i class="fab fa-facebook-square fa-3x fa-fw az-white" style="margin-right: 10px;"></i></a></td>
-                            <td><a href="https://www.facebook.com/web2net" target="_blank" class="az-white az-text-small az-border-bottom-hover-1-white">Facebook</a></td>
-                        </tr>
-                        <tr>
-                            <td><a href="status.html"><i class="fas fa-cog fa-3x fa-fw az-white" style="margin-right: 10px;"></i></a></td>
-                            <td><a href="status.html" class="az-white az-text-small az-border-bottom-hover-1-white">Status</a></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <div id="container-footer" class="az-container-fluid az-bg-black">
-            <div class="az-row">
-                <div class="az-col xs-12 lg-4 az-xs-margin-t-7 az-lg-margin-t-0">
-                    <p class="az-text-center"><img alt="web2net" class="az-xs-width-40 az-sm-width-25 az-lg-width-45" src="/lib/images/ms-azure.png" /></p>
-                </div>
-                <div class="az-col xs-12 lg-4 az-xs-margin-t-7 az-lg-margin-t-0">
-                    <p class="az-text-center"><img alt="web2net" class="az-xs-width-45 az-sm-width-25 az-lg-width-45" src="/lib/images/ms-office-365.png" /></p>
-                </div>
-                <div class="az-col xs-12 lg-4 az-xs-margin-t-7 az-lg-margin-t-0">
-                    <p class="az-text-center"><img alt="web2net" class="az-xs-width-45 az-sm-width-25 az-lg-width-45" src="/lib/images/visma_white_logo.png" /></p>
-                </div>
-            </div>
-            <div class="az-row">
-                <div class="az-col xs-12 az-xs-margin-t-7">
-                    <p class="az-white az-text-small az-text-center">Copyright &copy; web2net AS 1994 - 2020</p>
-                </div>
-            </div>
-        </div>
-
     </form>
 
 </body>
