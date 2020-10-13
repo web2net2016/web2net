@@ -1,0 +1,214 @@
+﻿/* Navbar --------*/
+/* Navbar Top*/
+.az-navbar.az-navbar-top
+{
+    background-color: #FFFFFF;
+}
+
+.az-navbar > .az-navbar-top-content
+{
+    height: 100px;
+    background-color: #FFFFFF;
+}
+
+    .az-navbar > .az-navbar-top-content.az-navbar-small
+    {
+        height: 60px;
+    }
+
+    .az-navbar > .az-navbar-top-content > .az-navbar-button
+    {
+    }
+
+    .az-navbar > .az-navbar-top-content > .az-navbar-branding
+    {
+        float: left;
+        margin: 10px 3px 0 50px;
+        width: 180px;
+    }
+
+    .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper
+    {
+    }
+
+        .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-display-left
+        {
+            margin: 30px 0 0 40px;
+        }
+
+            .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-display-left > li > a
+            {
+                padding: 16px;
+                font-size: 16px;
+                color: #000000;
+            }
+
+                .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-display-left > li > a > i
+                {
+                }
+
+        .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-display-right
+        {
+            margin-top: 30px;
+        }
+
+            .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-display-right > li > a
+            {
+                padding: 5px;
+                font-size: 31px;
+                color: #000000;
+            }
+
+                .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-display-right > li > a > i
+                {
+                }
+
+    .az-navbar > .az-navbar-top-content > .az-navbar-button:hover
+    {
+        background-color: #000000;
+        color: #FFFFFF;
+    }
+
+    .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu > li > a:hover,
+    .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu > li > a > i:hover,
+    .az-navbar > .az-navbar-bottom-content > .az-navbar-menu > li > a:hover
+    {
+        background-color: #000000;
+        color: #FFFFFF;
+    }
+
+@media (max-width: 992px)
+{
+    /* Navbar Top*/
+    .az-navbar.az-navbar-top
+    {
+        position: fixed;
+        z-index: 5000;
+        top: 0 !important;
+        left: 0 !important;
+        height: auto !important;
+        background-color: transparent !important;
+    }
+
+    .az-navbar > .az-navbar-top-content
+    {
+        height: auto !important;
+        margin-top: 0 !important;
+    }
+
+        .az-navbar > .az-navbar-top-content > .az-navbar-button
+        {
+            display: block;
+            float: right;
+            outline: none;
+            margin: 8px 7px 8px 0;
+            padding: 11px 15px;
+            border: 1px solid #000000;
+            background-color: transparent;
+            color: #000000;
+            cursor: pointer;
+        }
+
+        .az-navbar > .az-navbar-top-content > .az-navbar-branding
+        {
+            margin: 4px 3px 0 0;
+            width: 110px;
+        }
+
+        .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper
+        {
+        }
+
+        .az-navbar > .az-navbar-top-content.mobile > .az-navbar-menu-wrapper > .az-navbar-menu.az-display-left
+        {
+            margin: 0 !important;
+            border-top: 1px solid #BBBBBB;
+        }
+
+            .az-navbar > .az-navbar-top-content.mobile > .az-navbar-menu-wrapper > .az-navbar-menu.az-display-left > li > a
+            {
+                padding: 8px;
+            }
+
+                .az-navbar > .az-navbar-top-content.mobile > .az-navbar-menu-wrapper > .az-navbar-menu.az-display-left > li > a > i
+                {
+                }
+
+        .az-navbar > .az-navbar-top-content.mobile > .az-navbar-menu-wrapper > .az-navbar-menu.az-display-right
+        {
+            display: none;
+        }
+
+            .az-navbar > .az-navbar-top-content.mobile > .az-navbar-menu-wrapper > .az-navbar-menu.az-display-right > li > a
+            {
+                padding: 0;
+                line-height: 38px;
+            }
+
+                .az-navbar > .az-navbar-top-content.mobile > .az-navbar-menu-wrapper > .az-navbar-menu.az-display-right > li > a > i
+                {
+                    padding: 6px;
+                }
+
+
+        .az-navbar > .az-navbar-top-content > .az-navbar-branding.mobile-only
+        {
+            display: block;
+        }
+
+        .az-navbar > .az-navbar-top-content > .az-navbar-branding.desktop-only
+        {
+            display: none;
+        }
+
+        .az-navbar > .az-navbar-top-content > .az-navbar-logo.desktop-only
+        {
+            display: none;
+        }
+
+        .az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu
+        {
+            display: none;
+        }
+
+        .az-navbar > .az-navbar-top-content.mobile > .az-navbar-menu-wrapper > .az-navbar-menu.az-display-left.mobile-only
+        {
+            display: block;
+        }
+
+        .az-navbar > .az-navbar-top-content.mobile > .az-navbar-menu-wrapper > .az-navbar-menu.az-display-right.mobile-only
+        {
+            display: block;
+        }
+
+        .az-navbar > .az-navbar-top-content.mobile > .az-navbar-menu-wrapper > .az-navbar-menu.az-display-left.desktop-only
+        {
+            display: none;
+        }
+
+        .az-navbar > .az-navbar-top-content.mobile > .az-navbar-menu-wrapper > .az-navbar-menu.az-display-right.desktop-only
+        {
+            display: none;
+        }
+
+        .az-navbar > .az-navbar-top-content.mobile > .az-navbar-menu-wrapper > .az-navbar-menu
+        {
+            display: block;
+            width: 100%;
+        }
+
+            .az-navbar > .az-navbar-top-content.mobile > .az-navbar-menu-wrapper > .az-navbar-menu > li
+            {
+                width: 100%;
+            }
+
+    .az-navbar.az-navbar-bottom.mobile-only
+    {
+        display: block;
+    }
+
+    .az-navbar.az-navbar-bottom.desktop-only
+    {
+        display: none;
+    }
+}

@@ -3,7 +3,7 @@
 {
     body
     {
-        background-color: yellow;
+        background-color: yellow;    
     }
 }*/
 
@@ -23,43 +23,58 @@
     display: none;
 }
 
-#section-cms, #section-allincluded
-{
-    background-color: #DEDEDE;
-}
-
-#section-allincluded
+/*#section-allincluded
 {
     margin-bottom: 30px;
+}*/
+
+#container-navbar
+{
 }
 
-#container-tools
+#container-slider
 {
-    padding: 0 0 30px 0;
 }
 
 #container-cms
 {
+    background-color: #EEEEEE;
     padding: 60px 0 30px 0;
-}
-
-#container-ssl-backup, #container-allincluded
-{
-    padding: 30px 0 30px 0;
 }
 
 #container-woocommerce
 {
+    background-color: #EEEEEE;
     padding: 30px 0 0 0;
+}
+
+#container-tools
+{
+    background-color: #EEEEEE;
+    padding: 0 0 30px 0;
+}
+
+#container-ssl-backup
+{
+    background-color: #EEEEEE;
+    padding: 30px 0 30px 0;
+}
+
+#container-allincluded
+{
+    background-color: #EEEEEE;
+    padding: 30px 0 30px 0;
 }
 
 #container-address
 {
-    background-color: #F06649;
+    background-color: #DEDEDE;
+    padding: 30px 0 30px 0;
 }
 
-#container-address, #container-footer
+#container-footer
 {
+    background-color: #EEEEEE;
     padding: 30px 0 30px 0;
 }
 
@@ -81,10 +96,10 @@
         display: block;
     }
 
-    #section-allincluded
+    /*#section-allincluded
     {
         margin-bottom: 30px;
-    }
+    }*/
 
     #container-cms, #container-tools, #container-ssl-backup, #container-allincluded
     {
@@ -104,10 +119,10 @@
 
 @media (min-width: 768px) /*MD*/
 {
-    #section-allincluded
+    /*#section-allincluded
     {
         margin-bottom: 30px;
-    }
+    }*/
 
     #container-cms, #container-tools, #container-ssl-backup, #container-allincluded
     {
@@ -127,10 +142,10 @@
 
 @media (min-width: 992px) /*LG*/
 {
-    #section-allincluded
+    /*#section-allincluded
     {
         margin-bottom: 30px;
-    }
+    }*/
 
     #container-cms, #container-tools, #container-ssl-backup, #container-allincluded
     {
@@ -151,10 +166,10 @@
 @media (min-width: 1200px) /*XL*/
 {
 
-    #section-allincluded
+    /*#section-allincluded
     {
         margin-bottom: 60px;
-    }
+    }*/
 
     #container-cms, #container-tools, #container-ssl-backup, #container-allincluded
     {
