@@ -68,86 +68,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
-    <Content Include="index.html" />
-    <Content Include="lib\az-codecolor.css" />
-    <Content Include="lib\az-codecolor.js" />
     <Content Include="lib\css\az-2.0.0.additionally.css" />
     <Content Include="lib\css\index.css" />
     <Content Include="lib\css\standard.css" />
-    <Content Include="lib\images\google_search_console.png" />
-    <Content Include="lib\images\icons\icon-128x128.png" />
-    <Content Include="lib\images\icons\icon-144x144.png" />
-    <Content Include="lib\images\icons\icon-152x152.png" />
-    <Content Include="lib\images\icons\icon-192x192.png" />
-    <Content Include="lib\images\icons\icon-384x384.png" />
-    <Content Include="lib\images\icons\icon-512x512.png" />
-    <Content Include="lib\images\icons\icon-72x72.png" />
-    <Content Include="lib\images\icons\icon-96x96.png" />
     <Content Include="lib\js\az-2.0.0.additionally.js" />
     <Content Include="lib\js\index.js" />
     <Content Include="lib\js\functionlib.js" />
-    <Content Include="lib\smsapi.css" />
-    <Content Include="service-worker.js" />
-    <Content Include="new_index.html" />
-    <Content Include="kontakt.html" />
-    <Content Include="lib\functionlib.js" />
-    <Content Include="lib\images\referanser\aamnes_camping.jpg" />
-    <Content Include="lib\images\analytics.png" />
-    <Content Include="lib\images\referanser\bakoy.jpg" />
-    <Content Include="lib\images\referanser\billeas.jpg" />
-    <Content Include="lib\images\referanser\bjerkem.jpg" />
-    <Content Include="lib\images\referanser\bygdekontakten.jpg" />
-    <Content Include="lib\images\cloud_backup.png" />
-    <Content Include="lib\images\referanser\ebf.jpg" />
-    <Content Include="lib\images\referanser\fergeli.jpg" />
-    <Content Include="lib\images\referanser\gjorv.jpg" />
-    <Content Include="lib\images\referanser\gunnaroginge.jpg" />
-    <Content Include="lib\images\referanser\innherred_hundepensjonat.jpg" />
-    <Content Include="lib\images\referanser\meiningen.jpg" />
-    <Content Include="lib\images\referanser\mette_henning.jpg" />
-    <Content Include="lib\images\ms-azure.png" />
-    <Content Include="lib\images\ms-office-365.png" />
-    <Content Include="lib\images\referanser\nordicbluecrude.jpg" />
-    <Content Include="lib\images\referanser\oekne.jpg" />
-    <Content Include="lib\images\office365.png" />
-    <Content Include="lib\images\referanser\orion_pizza.jpg" />
-    <Content Include="lib\images\referanser\promidt.jpg" />
-    <Content Include="lib\images\referanser\rana.jpg" />
-    <Content Include="lib\images\referanser\ringom.jpg" />
-    <Content Include="lib\images\side-seksjoner.jpg" />
-    <Content Include="lib\images\referanser\sisselribe.jpg" />
-    <Content Include="lib\images\referanser\smartgridservices.jpg" />
-    <Content Include="lib\images\slider1.jpg" />
-    <Content Include="lib\images\slider2.jpg" />
-    <Content Include="lib\images\slider3.jpg" />
-    <Content Include="lib\images\slider4.jpg" />
-    <Content Include="lib\images\sosial-media-1.png" />
-    <Content Include="lib\images\referanser\sparbuteaterlag.jpg" />
-    <Content Include="lib\images\referanser\spesialrekvisita.jpg" />
-    <Content Include="lib\images\ssl_icon.png" />
-    <Content Include="lib\images\static.png" />
-    <Content Include="lib\images\referanser\steinkjer_seniorforum.jpg" />
-    <Content Include="lib\images\referanser\totaltakst.jpg" />
-    <Content Include="lib\images\referanser\vestfossen_fysikalske.jpg" />
-    <Content Include="lib\images\visma_white_logo.png" />
-    <Content Include="lib\images\web2net_logo_black.png" />
-    <Content Include="lib\images\web2net_logo_white.png" />
-    <Content Include="lib\images\woo-wp.png" />
-    <Content Include="lib\images\woo_wp_white.png" />
-    <Content Include="lib\images\wordpress.png" />
-    <Content Include="lib\images\referanser\ysk1.jpg" />
-    <Content Include="lib\images\referanser\ysteri.jpg" />
-    <Content Include="lib\index.css" />
-    <Content Include="lib\produkter.css" />
-    <Content Include="lib\prosessen.css" />
-    <Content Include="lib\kundesider.css" />
-    <Content Include="lib\status.css" />
-    <Content Include="lib\referanser.css" />
-    <Content Include="lib\standard.css" />
+    <Content Include="index.html" />
     <Content Include="packages.config" />
-    <Content Include="lib\contact-form-lang.json" />
-    <Content Include="lib\contact-form-val.json" />
-    <Content Include="manifest.json" />
+    <Content Include="lib\lang-val\contact-form-lang.json" />
+    <Content Include="lib\lang-val\contact-form-val.json" />
+    <Content Include="lib\lang-val\default-lang.json" />
     <None Include="Properties\PublishProfiles\Web2net.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -157,20 +88,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="produkter.html" />
-    <Content Include="prosessen.html" />
-    <Content Include="kundesider.html" />
-    <Content Include="smsapi.html" />
-    <Content Include="status.html" />
-    <Content Include="referanser.html" />
-    <Content Include="sitemap.xml" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="lib\lang-val\" />
+    <Folder Include="lib\images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

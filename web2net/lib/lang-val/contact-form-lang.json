@@ -21,17 +21,23 @@
   },
   "SingleElements": {
     "en-US": {
-      "CustomerNameSubmitError": "Customer name contains invalid characters.",
-      "ContactSubmitError": "Contact is empty or contains invalid characters.",
-      "EmailSubmitError": "Email is empty or contains invalid characters.",
-      "CommentSubmitError": "Comment contains invalid characters.",
+      "CustomerNameInvalidChar": "Customer name contains invalid characters.",
+      "ContactEmpty": "Contact is empty or contains invalid characters.",
+      "ContactInvalidChar": "Contact is empty or contains invalid characters.",
+      "EmailEmpty": "Email is empty or contains invalid characters.",
+      "EmailEmail": "Email is empty or contains invalid characters.",
+      "EmailInvalidChar": "Email is empty or contains invalid characters.",
+      "CommentInvalidChar": "Comment contains invalid characters.",
       "errorGoogleRecaptcha": "Please check that you are not a robot."
     },
     "nb-NO": {
-      "CustomerNameSubmitError": "Firma inneholder ugyldige tegn.",
-      "ContactSubmitError": "Kontaktperson er tomt eller inneholder ugyldige tegn.",
-      "EmailSubmitError": "E-post er tomt eller inneholder ugyldige tegn.",
-      "CommentSubmitError": "Kommentar inneholder ugyldige tegn.",
+      "CustomerNameInvalidChar": "Firma inneholder ugyldige tegn.",
+      "ContactEmpty": "Kontaktperson er tomt eller inneholder ugyldige tegn.",
+      "ContactInvalidChar": "Kontaktperson er tomt eller inneholder ugyldige tegn.",
+      "EmailEmpty": "E-post er tomt eller inneholder ugyldige tegn.",
+      "EmailEmail": "E-post er tomt eller inneholder ugyldige tegn.",
+      "EmailInvalidChar": "E-post er tomt eller inneholder ugyldige tegn.",
+      "CommentInvalidChar": "Kommentar inneholder ugyldige tegn.",
       "errorGoogleRecaptcha": "Vennligst hak av for at du ikke er en robot."
     }
   }

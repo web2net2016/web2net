@@ -1,6 +1,12 @@
 ﻿
 $(document).ready(function ()
 {
+    adjustStyle();
+    $(window).resize(function ()
+    {
+        adjustStyle();
+    });
+
     if ("serviceWorker" in navigator)
     {
         navigator.serviceWorker.register("/service-worker.js").then(function (registration)
@@ -18,13 +24,46 @@ $(document).ready(function ()
         window.location.href = "mailto:" + _HREF;
         e.preventDefault();
     });
+
+    $.subscribe("functionlib/azWindowScroll", function (e, data)
+    {
+        if (data.azWindowScrollDir == "down" && data.azWindowScrollTop > 400)
+        {
+            if (window.innerWidth > 991)
+            {
+                if (!$(".az-navbar-top-content").hasClass("az-navbar-small"))
+                {
+                    $(".az-navbar-top-content").addClass("az-navbar-small");
+                    $("#container-navbar").removeClass("az-container").addClass("az-container-fluid");
+                    $(".az-navbar-top").addClass("az-navbar-sticky");
+                    $(".az-navbar > .az-navbar-top-content > .az-navbar-branding").css({ "width": "85px", "margin": "12px 0 0 70px" });
+                    $(".az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-display-left").css({ "margin": "4px 0 0 120px" });
+                    $(".az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-display-left > li > a").css({ "font-size": "14px" });
+                    $(".az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-display-right").css({ "margin-top": "4px" });
+                }
+            }
+        }
+        if (data.azWindowScrollDir == "up" && data.azWindowScrollTop < 400)
+        {
+            if ($(".az-navbar-top-content").hasClass("az-navbar-small"))
+            {
+                $(".az-navbar-top-content").removeClass("az-navbar-small");
+                $("#container-navbar").removeClass("az-container-fluid").addClass("az-container");
+                $(".az-navbar-top").removeClass("az-navbar-sticky");
+                $(".az-navbar > .az-navbar-top-content > .az-navbar-branding").removeAttr('style');
+                $(".az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-display-left").removeAttr('style');
+                $(".az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-display-left > li > a").removeAttr('style');
+                $(".az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-display-right").removeAttr('style');
+            }
+        }
+    });
 });
 
 // All Pages
 function openContactForm()
 {
     closeNavbarMobile();
-    new AZModalDialog(
+    AZModalDialogContactForm = new AZModalDialog(
         {
             azModalDialogId: "ContactForm",
             azModalDialogTitle: "Kontakt oss",
@@ -34,6 +73,34 @@ function openContactForm()
             azModalDialogDraggable: false,
             azModalDialogiFrameURL: "kontakt.html"
         });
+}
+
+function closeModalDialog(Options)
+{
+    var _Defaults =
+    {
+        RefreshPage: true,
+        CloseModal: true,
+        RunFunctionName: "",
+        RunFunctionArgs: []
+    };
+    var _Options = $.extend({}, _Defaults, Options || {});
+
+    if (_Options.RefreshPage === true)
+    {
+    }
+    if (_Options.CloseModal === true)
+    {
+        AZModalDialogContactForm.azModalDialogClose();
+        AZModalDialogContactForm = {};
+    }
+    if (_Options.RunFunctionName != "")
+    {
+        window.setTimeout(function ()
+        {
+            window[_Options.RunFunctionName].apply(null, _Options.RunFunctionArgs);
+        }, 200);
+    }
 }
 
 // produkter.html
@@ -121,437 +188,96 @@ function adjustStyle()
     }
 }
 
+// AZ Slideshow
+function AZSlideshow(Options)
+{
+    if (this instanceof AZSlideshow === true)
+    {
+        var _Main = this;
+        var _Defaults =
+        {
+            azSlideshowId: "",
+            azSlideshowArrows: false,
+            azSlideshowTimer: 3000,
+            azSlideshowFadeIn: 1000,
+            azSlideshowFadeOut: 1000
+        };
+        _Main.Options = $.extend({}, _Defaults, Options || {});
 
+        if (_Main.Options.azSlideshowId != "")
+        {
+            _Main.$Slideshow = $("#" + _Main.Options.azSlideshowId);
+            _Main.$Slides = $(".az-slides", _Main.$Slideshow);
+            _Main.SlideShow;
+            _Main.SlideIndex = 0;
 
+            if (_Main.Options.azSlideshowArrows)
+            {
+                _Main.$Slideshow.append('<div class="az-arrows az-arrow-left az-display-left" onclick="plusDivs(-1)">&#10094;</div><div class="az-arrows az-arrow-right az-display-right" onclick="plusDivs(1)">&#10095;</div>');
+                _Main.$Slideshow.off().on("mouseenter", "slide, .az-arrows", function ()
+                {
+                    $.unsubscribe("runSlides");
+                    window.clearTimeout(_Main.SlideShow);
 
+                }).on("mouseleave", function ()
+                {
+                    $.subscribe("runSlides", function (e, data)
+                    {
+                        _Main.SlideShow = window.setTimeout(runSlides, _Main.Options.azSlideshowTimer);
+                    });
+                    _Main.SlideShow = window.setTimeout(runSlides, _Main.Options.azSlideshowTimer);
+                })
+            }
 
+            $.subscribe("functionlib/azWindowResize", function (e, data)
+            {
+                _Main.$Slideshow.height(parseInt($("slide:first", _Main.$Slides).height()) - 3);
+            });
 
+            $.subscribe("runSlides", function (e, data)
+            {
+                _Main.SlideShow = window.setTimeout(runSlides, _Main.Options.azSlideshowTimer);
+            });
 
+            _Main.$Slideshow.height(parseInt($("slide:first", _Main.$Slides).height()) - 3);
+            $("slide:gt(0)", _Main.$Slides).hide();
+            _Main.SlideShow = window.setTimeout(runSlides, _Main.Options.azSlideshowTimer);
 
+            function runSlides()
+            {
+                $("slide", _Main.$Slides).eq(_Main.SlideIndex).fadeOut(_Main.Options.azSlideshowFadeOut);
+                _Main.SlideIndex = (_Main.SlideIndex != $("slide", _Main.$Slides).length - 1) ? _Main.SlideIndex + 1 : 0;
+                $("slide", _Main.$Slides).eq(_Main.SlideIndex).fadeIn(_Main.Options.azSlideshowFadeIn, function ()
+                {
+                    $.publish("runSlides");
+                });
+            }
 
+            plusDivs = function (n)
+            {
+                $.unsubscribe("runSlides");
+                window.clearTimeout(_Main.SlideShow);
+                _Main.SlideIndex += n;
+                showDivs();
+            }
 
-
-
-//function AZAjaxSuccess(Options)
-//{
-//    var _Defaults =
-//    {
-//        Request: "",
-//        Title: ObjPageData.Values.AZPage.ObjLanguage.SingleDefaultElements.informationTitle,
-//        Text: ObjPageData.Values.AZPage.ObjLanguage.SingleDefaultElements.alertTransferError,
-//        WindowModal: true,
-//        WindowModal: true,
-//        WindowAfterOpen: [],
-//        WindowAfterClose: [],
-//        RunFunctionName: "",
-//        RunFunctionArgs: []
-//    };
-//    _Options = $.extend({}, _Defaults, Options || {});
-
-//    var _AZWindow = {};
-//    if (_Options.WindowAfterOpen.length > 0)
-//    {
-//        $.subscribeonce("functionlib/azWindowAfterOpen", function (e, data)
-//        {
-//            $.each(_Options.WindowAfterOpen, function (Index, Value)
-//            {
-//                if (window[Value] != undefined)
-//                {
-//                    window[Value].apply();
-//                }
-//            });
-//        });
-//    }
-//    if (_Options.WindowAfterClose.length > 0)
-//    {
-//        $.subscribeonce("functionlib/azWindowAfterClose", function (e, data)
-//        {
-//            _AZWindow.azWindowClose();
-//            $.each(_Options.WindowAfterClose, function (Index, Value)
-//            {
-//                if (window[Value] != undefined)
-//                {
-//                    window[Value].apply();
-//                }
-//            });
-//        });
-//    }
-//    if (_Options.Request === "AZWindow")
-//    {
-//        new AZWindow(
-//            {
-//                azWindowTitle: _Options.Title,
-//                azWindowText: _Options.Text,
-//                azWindowModal: _Options.WindowModal
-//            });
-//    }
-//    if (_Options.RunFunctionName != "" && window[_Options.RunFunctionName] != undefined)
-//    {
-//        window.setTimeout(function ()
-//        {
-//            window[_Options.RunFunctionName].apply(null, _Options.RunFunctionArgs);
-//        }, 200);
-//    }
-//}
-
-//function AZAjaxError(Options)
-//{
-//    var _Defaults =
-//    {
-//        Request: "AZWindow",
-//        Title: ObjPageData.Values.AZPage.ObjLanguage.SingleDefaultElements.informationTitle,
-//        Text: ObjPageData.Values.AZPage.ObjLanguage.SingleDefaultElements.alertTransferError,
-//        WindowModal: true,
-//        WindowAfterOpen: [],
-//        WindowAfterClose: [],
-//        RunFunctionName: "",
-//        RunFunctionArgs: []
-//    };
-//    _Options = $.extend({}, _Defaults, Options || {});
-
-//    var _AZWindow = {};
-//    if (_Options.WindowAfterOpen.length > 0)
-//    {
-//        $.subscribeonce("functionlib/azWindowAfterOpen", function (e, data)
-//        {
-//            $.each(_Options.WindowAfterOpen, function (Index, Value)
-//            {
-//                if (window[Value] != undefined)
-//                {
-//                    window[Value].apply();
-//                }
-//            });
-//        });
-//    }
-//    if (_Options.WindowAfterClose.length > 0)
-//    {
-//        $.subscribeonce("functionlib/azWindowAfterClose", function (e, data)
-//        {
-//            _AZWindow.azWindowClose();
-//            $.each(_Options.WindowAfterClose, function (Index, Value)
-//            {
-//                if (window[Value] != undefined)
-//                {
-//                    window[Value].apply();
-//                }
-//            });
-//        });
-//    }
-//    if (_Options.Request === "AZWindow")
-//    {
-//        _AZWindow = new AZWindow(
-//            {
-//                azWindowTitle: _Options.Title,
-//                azWindowText: _Options.Text,
-//                azWindowModal: _Options.WindowModal
-//            });
-//    }
-//    if (_Options.Request === "RoleAlert")
-//    {
-//        AZHideCoverSpin();
-//        $('[role="alert"]').text(Options.Text).removeClass('az-alert-info').addClass('az-alert-danger').show();
-//        window.setTimeout(function ()
-//        {
-//            $('[role="alert"]').text(ObjPageData.Values.AZPage.ObjLanguage.SingleElements.DefaultMessage).removeClass('az-alert-danger').addClass('az-alert-info').show();
-//        }, 3000);
-//    }
-//    if (_Options.RunFunctionName != "" && window[_Options.RunFunctionName] != undefined)
-//    {
-//        window.setTimeout(function ()
-//        {
-//            window[_Options.RunFunctionName].apply(null, _Options.RunFunctionArgs);
-//        }, 200);
-//    }
-//}
-
-//function AZSetContentMenu(ContentMenuList)
-//{
-//    $.each(ContentMenuList, function (Index, ContentMenuObj)
-//    {
-//        if (ContentMenuObj.hasOwnProperty("PageName") === true && ContentMenuObj.PageName === ObjPageData.Values.AZPage.PageName)
-//        {
-//            $.each(ContentMenuObj, function (Key, Value)
-//            {
-//                if (Array.isArray(Value) === true)
-//                {
-//                    $.each(Value, function (Index, Value)
-//                    {
-//                        $("#" + Key).find('[value="' + Value + '"]').remove();
-//                    });
-//                }
-//                else
-//                {
-//                    $("." + Key + ", #" + Key).css({ "display": "" + Value + "" });
-//                }
-//            });
-//        }
-//    });
-//}
-
-//function AZCheckLocalSettingsList(LocalSettingsObj, LocalSettingsList)
-//{
-//    var _IsValid = true;
-//    if (LocalSettingsList.length > 0 && IsEmpty(LocalSettingsObj) === false)
-//    {
-//        $.each(LocalSettingsList, function (Index, Value)
-//        {
-//            if (LocalSettingsObj.hasOwnProperty(Value) === true)
-//            {
-//                if (LocalSettingsObj[Value].hasOwnProperty(Value) === false)
-//                {
-//                    _IsValid = false;
-//                    return false;
-//                }
-//            }
-//            else
-//            {
-//                _IsValid = false;
-//                return false;
-//            }
-//        });
-//    }
-//    else
-//    {
-//        _IsValid = false;
-//    }
-//    $.publish("azframework/AZCheckLocalSettingsList", { IsValid: _IsValid });
-//}
-
-//function CheckLocalSettings()
-//{
-//    var _ListLocalSettings = [];
-//    _ListLocalSettings = AZClientStorage("get", "localsettings");
-//    if (_ListLocalSettings != null && _ListLocalSettings != undefined)
-//    {
-//        _ListLocalSettings = $.parseJSON(_ListLocalSettings);
-//        GetLocalSettings();
-//    }
-//    else
-//    {
-//        _ListLocalSettings = [];
-//        GetLocalSettings();
-//    }
-
-//    function GetLocalSettings()
-//    {
-//        var _SetLocalSettings = false;
-//        var _ObjSettingsTypes = {};
-//        $.each(ObjPageData.Values.ObjCustomerInfo.UserSignIn.ListLocalSettings, function (index, ObjLocalSettings)
-//        {
-//            _ObjSettingsTypes[ObjLocalSettings.RelatedType] = VerifyGetSettings(_ListLocalSettings, ObjLocalSettings.RelatedType);
-//            if (_ObjSettingsTypes[ObjLocalSettings.RelatedType] === true)
-//            {
-//                _SetLocalSettings = true;
-//            }
-//        });
-
-//        var _SettingsTransferClass = {};
-//        _SettingsTransferClass.TransferType = "getsettings";
-//        _SettingsTransferClass.Token = ObjPageData.Elements.$Token.val();
-//        _SettingsTransferClass.ObjSettingsTypes = _ObjSettingsTypes;
-
-//        var _azAjaxOptions =
-//        {
-//            azAjaxUrl: "/api/settings/settings" + ObjPageData.Values.AZPage.ApiVersion,
-//            azAjaxObjToSend: _SettingsTransferClass
-//        };
-//        var _AZAjax = new AZAjax(_azAjaxOptions);
-//        _AZAjax.always(function (data, textStatus, jqXHR)
-//        {
-//            if (jqXHR.status === 200 && data.Transfer == "200")
-//            {
-//                ObjPageData.Values.ObjCustomerInfo.Today = data.Today;
-//                AZClientStorage("set", "customerinfo", ObjPageData.Values.ObjCustomerInfo);
-
-//                if (_SetLocalSettings === true)
-//                {
-//                    $.each(ObjPageData.Values.ObjCustomerInfo.UserSignIn.ListLocalSettings, function (index, ObjLocalSettings)
-//                    {
-//                        if (data[ObjLocalSettings.RelatedType][ObjLocalSettings.RelatedType].length > 0)
-//                        {
-//                            _ObjSettingsTypes[ObjLocalSettings.RelatedType] = data[ObjLocalSettings.RelatedType];
-//                        }
-//                        else
-//                        {
-//                            _ObjSettingsTypes[ObjLocalSettings.RelatedType] = _ListLocalSettings[ObjLocalSettings.RelatedType];
-//                        }
-//                    });
-//                    AZClientStorage("set", "localsettings", _ObjSettingsTypes);
-//                }
-//            }
-//            else
-//            {
-
-//            }
-//        });
-//    }
-//}
-
-//function VerifyGetSettings(MainList, SubList)
-//{
-//    var _ObjReturn = {};
-//    if (MainList.hasOwnProperty(SubList) && MainList[SubList].hasOwnProperty(SubList) && MainList[SubList][SubList].length > 0)
-//    {
-//        _ObjReturn = getSelectedObj(ObjPageData.Values.ObjCustomerInfo.UserSignIn.ListLocalSettings, "RelatedType", SubList);
-//        if (_ObjReturn.SettingValue === MainList[SubList].SettingValue)
-//        {
-//            return false;
-//        }
-//        else
-//        {
-//            return true;
-//        }
-//    }
-//    else
-//    {
-//        return true;
-//    }
-//}
-
-//function CheckTimeDiff()
-//{
-//    CheckTimeDiff();
-
-//    var _Local = moment();
-//    var _Server = moment(ObjPageData.Values.ObjCustomerInfo.Today);
-//    if (_Local.diff(_Server, "minutes") > 0)
-//    {
-//        new AZSnackbar(
-//            {
-//                azSnackbarId: "TimeDiff",
-//                azSnackbarText: ObjPageData.Values.AZPage.ObjLanguage.SingleElements.TimeDiff + " " + moment(ObjPageData.Values.ObjCustomerInfo.Today).format("LTS"),
-//                azSnackbarPosition: "right-bottom",
-//                azSnackbarClose: true
-//            });
-//    }
-//}
-
-//function AZGridView(Options)
-//{
-//    if (this instanceof AZGridView === true)
-//    {
-//        var _Main = this;
-
-//        if (IsEmpty(Options) === false && Options.hasOwnProperty("ObjLanguage") && Options.hasOwnProperty("ObjValidation"))
-//        {
-//            if (Options.hasOwnProperty("$Area") && IsEmpty(Options.$Area) === false)
-//            {
-//                _Main.$Area = Options.$Area;
-//            }
-//            else
-//            {
-//                _Main.$Area = "";
-//            }
-
-//            _Main.ObjLanguage = Options.ObjLanguage;
-//            _Main.ObjValidation = Options.ObjValidation;
-
-//            var _$Header = "";
-//            $(".HeaderStyle > th", _Main.$Area).each(function (index) 
-//            {
-//                _$Header = $(this);
-//                if (_Main.ObjValidation.hasOwnProperty($("a", _$Header).text()) && _Main.ObjValidation[$("a", _$Header).text()].sort == true)
-//                {
-//                    $("a", _$Header).text(_Main.ObjLanguage.SingleElements["labelHeader" + $("a", _$Header).text()]);
-//                }
-//                else
-//                {
-//                    _$Header.text(_Main.ObjLanguage.SingleElements["labelHeader" + $("a", _$Header).text()]);
-//                }
-//            });
-
-//            var _ObjJsonReturn = {};
-//            var _ObjSpanCheckBox = {};
-//            var _ObjCheckBox = {};
-//            $(".RowStyle > td, .AlternatingRowStyle > td", _Main.$Area).each(function (index)
-//            {
-//                _ObjJsonReturn = getSelectedObj(_Main.ObjValidation, "tabindex", $(this).index());
-//                if (_ObjJsonReturn.datatype === "date")
-//                {
-//                    $(this).text(moment($(this).text()).format('L'));
-//                }
-//                else if (_ObjJsonReturn.datatype === "datetime")
-//                {
-//                    $(this).text(moment($(this).text()).format('L') + " - " + moment($(this).text()).format('LT'));
-//                }
-//                else if (_ObjJsonReturn.datatype === "time")
-//                {
-//                    $(this).text(moment('01/01/1900 ' + $(this).text()).format('LT'));
-//                }
-//                else if (_ObjJsonReturn.datatype === "militarytime")
-//                {
-//                    $(this).text(moment('01/01/1900 ' + $(this).text()).format('HH:mm'));
-//                }
-//                else if (_ObjJsonReturn.datatype === "decimal")
-//                {
-//                    $(this).text(numeral($(this).text()).format('0.00'));
-//                }
-//                else if (_ObjJsonReturn.datatype === "bytes")
-//                {
-//                    $(this).text(bytesToSize($(this).text()));
-//                }
-//                else if (_ObjJsonReturn.datatype === "int")
-//                {
-//                    $(this).text(_Main.ObjLanguage.SingleElements["labelRow" + $(this).text()]);
-//                }
-//                if ($(this).children().is("span") === true)
-//                {
-//                    _ObjSpanCheckBox = $(this).children();
-//                    _ObjCheckBox = _ObjSpanCheckBox.find(":input");
-//                    if (_ObjCheckBox.is(":input") === true)
-//                    {
-//                        _ObjCheckBox.attr("id", _ObjSpanCheckBox.attr("data-id"));
-//                        _ObjCheckBox.addClass("az-checkbox");
-//                    }
-//                }
-//            });
-//            $(window).one("beforeunload", function (e) { AZShowCoverSpin() });
-//            $.publish("functionlib/AZGridView");
-//        }
-//        else
-//        {
-//            consoleLog({ consoleType: "error", consoleText: "AZGridView - Options is empty or missing some properties" });
-//        }
-//    }
-//    else
-//    {
-//        return new AZGridView(Options);
-//    }
-//}
-
-//function setCheckbox()
-//{
-//    var $chkboxes = $('.az-checkbox');
-//    var lastChecked = null;
-//    $chkboxes.click(function (e) 
-//    {
-//        if (!lastChecked) 
-//        {
-//            lastChecked = this;
-//            return;
-//        }
-//        if (e.shiftKey)
-//        {
-//            var start = $chkboxes.index(this);
-//            var end = $chkboxes.index(lastChecked);
-//            $chkboxes.slice(Math.min(start, end), Math.max(start, end) + 1).prop('checked', lastChecked.checked);
-//        }
-//        lastChecked = this;
-//    });
-//}
-
-//function getSounds(SelectedSound)
-//{
-//    var _Sounds =
-//    {
-//        "sms3": "/lib/images/sms-alert-3.wav",
-//        "sms4": "/lib/images/sms-alert-4.wav"
-//    }
-//    return _Sounds[SelectedSound];
-//}
-
-//function PlaySound(SelectedSound)
-//{
-//    var _Sound = new Audio(getSounds(SelectedSound));
-//    _Sound.play();
-//}
+            showDivs = function ()
+            {
+                if (_Main.SlideIndex > $("slide", _Main.$Slides).length - 1)
+                {
+                    _Main.SlideIndex = 0;
+                }
+                if (_Main.SlideIndex < 0)
+                {
+                    _Main.SlideIndex = $("slide", _Main.$Slides).length - 1;
+                };
+                $("slide", _Main.$Slides).fadeOut(100);
+                $("slide", _Main.$Slides).eq(_Main.SlideIndex).fadeIn(100);
+            }
+        }
+    }
+    else
+    {
+        return new AZSlideshow(Options);
+    }
+}
