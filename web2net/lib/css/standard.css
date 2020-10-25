@@ -23,7 +23,7 @@
     .az-navbar > .az-navbar-top-content > .az-navbar-branding
     {
         float: left;
-        margin: 10px 3px 0 50px;
+        margin: 30px 3px 0 50px;
         width: 180px;
     }
 
@@ -111,7 +111,7 @@
 
         .az-navbar > .az-navbar-top-content > .az-navbar-branding
         {
-            margin: 4px 3px 0 0;
+            margin: 7px 0 0 7px;
             width: 110px;
         }
 

@@ -7,17 +7,6 @@ $(document).ready(function ()
         adjustStyle();
     });
 
-    if ("serviceWorker" in navigator)
-    {
-        navigator.serviceWorker.register("/service-worker.js").then(function (registration)
-        {
-            //console.log('Service Worker registration successful with scope: ', registration.scope);
-        }).catch(function (err)
-        {
-            //console.log('Service Worker registration failed: ', err);
-        });
-    }
-
     $(".az-email").off("click").on("click", function (e)
     {
         var _HREF = $(this).attr("data-content").toLowerCase().replace('(at)', '@');
@@ -102,6 +91,8 @@ function closeModalDialog(Options)
         }, 200);
     }
 }
+
+
 
 var _WindowWidth = 0;
 function adjustStyle()

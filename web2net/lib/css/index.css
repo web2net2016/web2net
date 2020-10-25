@@ -18,7 +18,8 @@
     padding: 100px 0 34px 0;
 }
 
-    #container-1 .az-card
+    #container-1 .az-card,
+    #container-1 img
     {
         border-radius: 7px;
         -webkit-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
@@ -91,32 +92,12 @@
     {
     }
 
-    #section-slider
-    {
-        display: block;
-    }
-
-    #container-slider .az-slideshow .az-slides slide > div
-    {
-        font-size: 30px;
-    }
-
-    #container-cms
+    #container-1
     {
         padding: 60px 0 60px 0;
     }
 
-    #container-woocommerce
-    {
-        padding: 60px 0 60px 0;
-    }
-
-    #container-tools
-    {
-        padding: 60px 0 60px 0;
-    }
-
-    #container-allincluded
+    #container-2
     {
         padding: 60px 0 60px 0;
     }
@@ -128,42 +109,14 @@
     {
     }
 
-    #section-slider
-    {
-        display: block;
-    }
-
-    #container-slider .az-slideshow .az-slides slide > div
-    {
-        font-size: 30px;
-    }
-
-    #container-cms
+    #container-1
     {
         padding: 60px 0 60px 0;
     }
 
-    #container-woocommerce
+    #container-2
     {
         padding: 60px 0 60px 0;
-    }
-
-    #container-tools
-    {
-        padding: 60px 0 60px 0;
-    }
-
-    #container-allincluded
-    {
-        padding: 60px 0 120px 0;
-    }
-
-    #container-cms,
-    #container-woocommerce,
-    #container-tools,
-    #container-allincluded
-    {
-        font-size: 14px;
     }
 }
 
@@ -173,32 +126,12 @@
     {
     }
 
-    #section-slider
-    {
-        display: block;
-    }
-
-    #container-slider .az-slideshow .az-slides slide > div
-    {
-        font-size: 50px;
-    }
-
-    #container-cms
-    {
-        padding: 120px 0 34px 0;
-    }
-
-        #container-cms > div > div:nth-child(1) > div
-        {
-            margin-top: 120px;
-        }
-
-    #container-woocommerce
+    #container-1
     {
         padding: 120px 0 120px 0;
     }
 
-    #container-tools
+    #container-2
     {
         padding: 120px 0 120px 0;
     }
@@ -212,14 +145,6 @@
         {
             margin-top: 120px;
         }
-
-    #container-cms,
-    #container-woocommerce,
-    #container-tools,
-    #container-allincluded
-    {
-        font-size: 15px;
-    }
 }
 
 @media (min-width: 1200px)
@@ -228,32 +153,12 @@
     {
     }
 
-    #section-slider
-    {
-        display: block;
-    }
-
-    #container-slider .az-slideshow .az-slides slide > div
-    {
-        font-size: 50px;
-    }
-
-    #container-cms
-    {
-        padding: 120px 0 34px 0;
-    }
-
-        #container-cms > div > div:nth-child(1) > div
-        {
-            margin-top: 120px;
-        }
-
-    #container-woocommerce
+    #container-1
     {
         padding: 120px 0 120px 0;
     }
 
-    #container-tools
+    #container-2
     {
         padding: 120px 0 120px 0;
     }
@@ -268,12 +173,4 @@
         {
             margin-top: 120px;
         }
-
-    #container-cms,
-    #container-woocommerce,
-    #container-tools,
-    #container-allincluded
-    {
-        font-size: 15px;
-    }
 }
