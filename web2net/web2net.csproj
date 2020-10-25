@@ -71,6 +71,8 @@
     <Content Include="lib\css\az-2.0.0.additionally.css" />
     <Content Include="lib\css\index.css" />
     <Content Include="lib\css\standard.css" />
+    <Content Include="lib\images\bidrone_logoelement.png" />
+    <Content Include="lib\images\biodrone_logo.png" />
     <Content Include="lib\js\az-2.0.0.additionally.js" />
     <Content Include="lib\js\index.js" />
     <Content Include="lib\js\functionlib.js" />
@@ -93,9 +95,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="lib\images\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

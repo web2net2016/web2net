@@ -8,40 +8,17 @@
 {
 }
 
-#section-slider
-{
-    display: none;
-}
-
-#container-slider .az-slideshow .az-slides slide > div
-{
-    padding: 14px;
-    font-size: 30px;
-    border-radius: 7px;
-    background-color: #EEEEEE;
-    -webkit-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    -moz-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
-
-#container-slider .az-slideshow
-{
-    -webkit-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    -moz-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
-
-#section-cms
+#section-1
 {
     background-color: #FFFFFF;
 }
 
-#container-cms
+#container-1
 {
     padding: 100px 0 34px 0;
 }
 
-    #container-cms .az-card
+    #container-1 .az-card
     {
         border-radius: 7px;
         -webkit-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
@@ -49,78 +26,17 @@
         box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     }
 
-    #container-cms #cmdWordPress, #cmdStatiskWeb
-    {
-        background-color: #DEB406;
-        border-radius: 7px;
-    }
-
-#section-woocommerce
-{
-    background-color: #EEEEEE;
-}
-
-#container-woocommerce
-{
-    left: -2000px;
-    opacity: 0;
-    padding: 0 0 60px 0;
-}
-
-.container-woocommerce-left
-{
-}
-
-#container-woocommerce .az-card
-{
-    border-radius: 7px;
-    -webkit-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    -moz-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
-
-#container-woocommerce #cmdWooCommerce
-{
-    background-color: #DEB406;
-    border-radius: 7px;
-}
-
-#section-tools
-{
-    background-color: #EEEEEE;
-}
-
-#container-tools
-{
-    padding: 60px 0 60px 0;
-}
-
-    #container-tools .az-card
-    {
-        border-radius: 7px;
-        -webkit-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-        -moz-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    }
-
-    #container-tools #cmdWebmasterTools, #cmdGoogleAnalytics, #cmdSosialeMedier
-    {
-        background-color: #DEB406;
-        border-radius: 7px;
-    }
-
-
-#section-allincluded
+#section-2
 {
     background-color: #FFFFFF;
 }
 
-#container-allincluded
+#container-2
 {
     padding: 0 0 60px 0;
 }
 
-    #container-allincluded .az-card
+    #container-2 .az-card
     {
         border-radius: 7px;
         -webkit-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
@@ -128,15 +44,9 @@
         box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     }
 
-    #container-allincluded #cmdAltInkludert, #cmdServiceavtale
-    {
-        background-color: #DEB406;
-        border-radius: 7px;
-    }
-
 #section-address
 {
-    background-color: #222F46;
+    background-color: rgba(18,116,59,0.16);
 }
 
 #container-address
@@ -147,17 +57,17 @@
     #container-address table td
     {
         padding: 7px;
-        color: #FFFFFF;
+        color: #000000;
     }
 
     #container-address table i
     {
-        color: #DEB406;
+        color: #12743b;
     }
 
     #container-address table a
     {
-        color: #FFFFFF;
+        color: #000000;
     }
 
 #section-footer

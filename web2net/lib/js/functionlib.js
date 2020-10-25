@@ -103,60 +103,6 @@ function closeModalDialog(Options)
     }
 }
 
-// produkter.html
-function openContentInfo()
-{
-    closeNavbarMobile();
-    initializeModalDialog(
-        {
-            dialogModal: false,
-            dialogNoParentScroll: true,
-            dialogDraggable: false,
-            dialogTitle: "Seksjoner",
-            dialogWidth: 700,
-            dialogHeight: 750,
-            dialogText: $("#ContentInfo").html()
-        });
-}
-
-function openDesign()
-{
-    closeNavbarMobile();
-    $('html, body').stop().animate(
-        {
-            scrollTop: $("#accordion-2").offset().top
-        },
-        {
-            easing: 'easeInOutExpo',
-            duration: 1500
-        });
-    setAccordion(2);
-}
-
-function openSocialMedia(SelectedId)
-{
-    closeNavbarMobile();
-    initializeModalDialog(
-        {
-            dialogModal: false,
-            dialogNoParentScroll: true,
-            dialogDraggable: false,
-            dialogTitle: SelectedId,
-            dialogWidth: 450,
-            dialogHeight: 280,
-            dialogText: $("#" + SelectedId).html()
-        });
-}
-
-function closeNavbarMobile()
-{
-    var _$NavbarTopContent = $(".az-navbar-top-content");
-    if (_$NavbarTopContent.hasClass("mobile"))
-    {
-        _$NavbarTopContent.removeClass("mobile");
-    }
-}
-
 var _WindowWidth = 0;
 function adjustStyle()
 {
