@@ -1,11 +1,11 @@
 ﻿
 $(document).ready(function ()
 {
-    adjustStyle();
-    $(window).resize(function ()
-    {
-        adjustStyle();
-    });
+    //adjustStyle();
+    //$(window).resize(function ()
+    //{
+    //    adjustStyle();
+    //});
 
     $(".az-email").off("click").on("click", function (e)
     {
@@ -16,20 +16,17 @@ $(document).ready(function ()
 
     $.subscribe("functionlib/azWindowScroll", function (e, data)
     {
-        if (data.azWindowScrollDir == "down" && data.azWindowScrollTop > 400)
+        if (window.innerWidth > 991 && data.azWindowScrollDir == "down" && data.azWindowScrollTop > 400)
         {
-            if (window.innerWidth > 991)
+            if (!$(".az-navbar-top-content").hasClass("az-navbar-small"))
             {
-                if (!$(".az-navbar-top-content").hasClass("az-navbar-small"))
-                {
-                    $(".az-navbar-top-content").addClass("az-navbar-small");
-                    $("#container-navbar").removeClass("az-container").addClass("az-container-fluid");
-                    $(".az-navbar-top").addClass("az-navbar-sticky");
-                    $(".az-navbar > .az-navbar-top-content > .az-navbar-branding").css({ "width": "85px", "margin": "12px 0 0 70px" });
-                    $(".az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-display-left").css({ "margin": "4px 0 0 120px" });
-                    $(".az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-display-left > li > a").css({ "font-size": "14px" });
-                    $(".az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-display-right").css({ "margin-top": "4px" });
-                }
+                $(".az-navbar-top-content").addClass("az-navbar-small");
+                $("#container-navbar").removeClass("az-container").addClass("az-container-fluid");
+                $(".az-navbar-top").addClass("az-navbar-sticky");
+                $(".az-navbar > .az-navbar-top-content > .az-navbar-branding").css({ "width": "85px", "margin": "18px 0 0 70px" });
+                $(".az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-display-left").css({ "margin": "4px 0 0 120px" });
+                $(".az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-display-left > li > a").css({ "font-size": "14px" });
+                $(".az-navbar > .az-navbar-top-content > .az-navbar-menu-wrapper > .az-navbar-menu.az-display-right").css({ "margin-top": "4px" });
             }
         }
         if (data.azWindowScrollDir == "up" && data.azWindowScrollTop < 400)
@@ -92,7 +89,14 @@ function closeModalDialog(Options)
     }
 }
 
-
+function closeNavbarMobile()
+{
+    var _$NavbarTopContent = $(".az-navbar-top-content");
+    if (_$NavbarTopContent.hasClass("mobile"))
+    {
+        _$NavbarTopContent.removeClass("mobile");
+    }
+}
 
 var _WindowWidth = 0;
 function adjustStyle()

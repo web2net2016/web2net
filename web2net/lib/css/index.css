@@ -1,43 +1,53 @@
 ﻿
+
+
 #section-navbar
 {
     background-color: #FFFFFF;
 }
 
-#container-navbar
-{
-}
-
 #section-1
 {
+    padding: 120px 0 0 0;
     background-color: #FFFFFF;
 }
 
-#container-1
-{
-    padding: 100px 0 34px 0;
-}
-
-    #container-1 .az-card,
-    #container-1 img
+    #section-1 #container-1 .az-card
     {
         border-radius: 7px;
         -webkit-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
         -moz-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
         box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+
+    #section-1 #container-1 blockquote
+    {
+        margin: 0;
+        padding: 0;
+        border-left: none;
+    } 
+
+    #section-1 #container-1 table
+    {
+        font-family: "Segoe UI", Arial, sans-serif;
+        font-weight: 200;
+        font-size: 15px;
+    }
+
+    #section-1 #container-1 .az-image
+    {
+        -webkit-box-shadow: 12px 12px 5px -2px rgba(0,0,0,0.25), 10px 10px 5px -2px rgba(0,0,0,0.22);
+        -moz-box-shadow: 12px 12px 5px -2px rgba(0,0,0,0.25), 10px 10px 5px -2px rgba(0,0,0,0.22);
+        box-shadow: 12px 12px 5px -2px rgba(0,0,0,0.25), 10px 10px 5px -2px rgba(0,0,0,0.22);
     }
 
 #section-2
 {
+    padding: 0 0 120px 0;
     background-color: #FFFFFF;
 }
 
-#container-2
-{
-    padding: 0 0 60px 0;
-}
-
-    #container-2 .az-card
+    #section-2 #container-2 .az-card
     {
         border-radius: 7px;
         -webkit-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
@@ -45,132 +55,189 @@
         box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     }
 
+    #section-2 #container-2 table
+    {
+        font-family: "Segoe UI", Arial, sans-serif;
+        font-weight: 200;
+        font-size: 15px;
+    }
+
+    #section-2 #container-2 table i
+    {
+        color: #12743b;
+    }
+
 #section-address
 {
+    padding: 60px 0 60px 0;
     background-color: rgba(18,116,59,0.16);
 }
 
-#container-address
-{
-    padding: 60px 0 60px 0;
-}
-
-    #container-address table td
+    #section-address #container-address table td
     {
         padding: 7px;
         color: #000000;
     }
 
-    #container-address table i
+    #section-address #container-address table i
     {
         color: #12743b;
     }
 
-    #container-address table a
+    #section-address #container-address table a
     {
         color: #000000;
     }
 
 #section-footer
 {
+    padding: 60px 0 60px 0;
     background-color: #333333;
 }
 
-#container-footer
-{
-    padding: 60px 0 60px 0;
-}
-
-    #container-footer .copyright
+    #section-footer #container-footer .copyright
     {
         color: #FFFFFF;
     }
 
 @media (min-width: 576px)
 {
-    #container-navbar
+    #section-1 #container-1 blockquote
     {
+        margin: 0;
+        padding: 0;
+        border-left: none;
+    } 
+
+    #section-1
+    {
+        padding: 120px 0 0 0;
     }
 
-    #container-1
-    {
-        padding: 60px 0 60px 0;
-    }
-
-    #container-2
-    {
-        padding: 60px 0 60px 0;
-    }
-}
-
-@media (min-width: 768px)
-{
-    #container-navbar
-    {
-    }
-
-    #container-1
-    {
-        padding: 60px 0 60px 0;
-    }
-
-    #container-2
-    {
-        padding: 60px 0 60px 0;
-    }
-}
-
-@media (min-width: 992px)
-{
-    #container-navbar
-    {
-    }
-
-    #container-1
-    {
-        padding: 120px 0 120px 0;
-    }
-
-    #container-2
-    {
-        padding: 120px 0 120px 0;
-    }
-
-    #container-allincluded
+    #section-2
     {
         padding: 0 0 120px 0;
     }
 
-        #container-allincluded > div > div:nth-child(2) > div
+        #section-1 #container-1 table
         {
-            margin-top: 120px;
+            font-size: 18px;
+        }
+
+        #section-2 #container-2 table
+        {
+            font-size: 16px;
+        }
+}
+
+@media (min-width: 768px)
+{
+    #section-1 #container-1 blockquote
+    {
+        margin: 0;
+        padding: 0;
+        border-left: none;
+    } 
+
+    #section-1
+    {
+        padding: 120px 0 120px 0;
+    }
+
+    #section-2
+    {
+        padding: 0 0 120px 0;
+    }
+
+        #section-1 #container-1 table
+        {
+            font-size: 18px;
+        }
+
+        #section-2 #container-2 table
+        {
+            font-size: 16px;
+        }
+}
+
+@media (min-width: 992px)
+{
+    #section-1 #container-1 .az-card
+    {
+        border-radius: 0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+
+        #section-1 #container-1 .az-card article
+        {
+            padding: 0 !important;
+        }
+
+    #section-1 #container-1 blockquote
+    {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 50px;
+        padding-left: 15px;
+        border-left: 5px solid #12743b;
+    }
+
+    #section-1,
+    #section-2
+    {
+        padding: 120px 0 120px 0;
+    }
+
+        #section-1 #container-1 table
+        {
+            font-size: 22px;
+        }
+
+        #section-2 #container-2 table
+        {
+            font-size: 16px;
         }
 }
 
 @media (min-width: 1200px)
 {
-    #container-navbar
+    #section-1 #container-1 .az-card
     {
+        border-radius: 0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
     }
 
-    #container-1
-    {
-        padding: 120px 0 120px 0;
-    }
-
-    #container-2
-    {
-        padding: 120px 0 120px 0;
-    }
-
-    #container-allincluded
-    {
-        padding: 0 0 120px 0;
-        font-size: 16px;
-    }
-
-        #container-allincluded > div > div:nth-child(2) > div
+        #section-1 #container-1 .az-card article
         {
-            margin-top: 120px;
+            padding: 0 !important;
+        }
+
+    #section-1 #container-1 blockquote
+    {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 50px;
+        padding-left: 15px;
+        border-left: 5px solid #12743b;
+    }
+
+    #section-1,
+    #section-2
+    {
+        padding: 120px 0 120px 0;
+    }
+
+        #section-1 #container-1 table
+        {
+            font-size: 22px;
+        }
+
+        #section-2 #container-2 table
+        {
+            font-size: 16px;
         }
 }
