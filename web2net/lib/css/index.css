@@ -1,6 +1,4 @@
 ﻿
-
-
 #section-navbar
 {
     background-color: #FFFFFF;
@@ -177,11 +175,9 @@
 
     #section-1 #container-1 blockquote
     {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        margin-left: 50px;
-        padding-left: 15px;
+        padding: 0 15px 0 15px;
         border-left: 5px solid #12743b;
+        text-align: justify;
     }
 
     #section-1,
@@ -218,11 +214,9 @@
 
     #section-1 #container-1 blockquote
     {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        margin-left: 50px;
-        padding-left: 15px;
+        padding: 0 25px 0 15px;
         border-left: 5px solid #12743b;
+        text-align: justify;
     }
 
     #section-1,
@@ -233,7 +227,7 @@
 
         #section-1 #container-1 table
         {
-            font-size: 22px;
+            font-size: 26px;
         }
 
         #section-2 #container-2 table
