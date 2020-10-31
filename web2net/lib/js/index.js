@@ -2,7 +2,6 @@
 $(document).ready(function ()
 {
     $("#section-container-1-col1, #section-container-1-col2").matchHeight();
-    $("#section-container-2-col1, #section-container-2-col2, #section-container-2-col3, #section-container-2-col4, #section-container-2-col5, #section-container-2-col6").matchHeight();
 
     //new AZSlideshow(
     //    {

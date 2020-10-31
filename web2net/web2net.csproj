@@ -72,6 +72,7 @@
     <Content Include="lib\css\index.css" />
     <Content Include="lib\css\standard.css" />
     <Content Include="lib\images\bidrone_logoelement.png" />
+    <Content Include="lib\images\biodrone_addresse.png" />
     <Content Include="lib\images\biodrone_drone.jpg" />
     <Content Include="lib\images\biodrone_logo.png" />
     <Content Include="lib\js\az-2.0.0.additionally.js" />
