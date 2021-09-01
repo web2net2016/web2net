@@ -1,295 +1,41 @@
 ﻿
-.flip-card
+html, body
 {
-    background-color: transparent;
-    height: 280px;
-    margin: 0 21px 0 21px;
-    perspective: 1000px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.flip-card-inner
+body
 {
-    position: relative;
+    font-size: 10px;
     width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-    border-radius: 7px;
-    -webkit-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    -moz-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    min-height: 100vh;
 }
 
-.flip-card:hover .flip-card-inner
+.container
 {
-    transform: rotateY(180deg);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
 }
 
-.flip-card-front, .flip-card-back
+.box
 {
-    position: absolute;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+    font-size: 4em;
+    width: 300px;
+    height: 300px;
+    background-color: red;
+    transition: all 500ms ease-in-out;
 }
 
-.flip-card-front
-{
-    margin: 14px;
-}
-
-.flip-card-back
-{
-    transform: rotateY(180deg);
-    width: 100%;
-    height: 100%;
-}
-
-    .flip-card-back > img
+    .box:hover
     {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%,-50%);
-        -moz-transform: translate(-50%,-50%);
-        -o-transform: translate(-50%,-50%);
-        transform: translate(-50%,-50%);
+        width: 500px;
+        height: 500px;
+        background-color: blue;
+        transform: rotate(180deg);
+        border-radius: 50%;
     }
-
-
-#section-navbar
-{
-    background-color: #FFFFFF;
-}
-
-#section-1
-{
-    padding: 120px 0 0 0;
-    background-color: #FFFFFF;
-}
-
-    #section-1 #container-1 .az-card
-    {
-        border-radius: 7px;
-        -webkit-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-        -moz-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    }
-
-    #section-1 #container-1 blockquote
-    {
-        margin: 0;
-        padding: 0;
-        border-left: none;
-    }
-
-    #section-1 #container-1 table
-    {
-        font-family: "Segoe UI", Arial, sans-serif;
-        font-weight: 200;
-        font-size: 15px;
-    }
-
-    #section-1 #container-1 .az-image
-    {
-        -webkit-box-shadow: 12px 12px 5px -2px rgba(0,0,0,0.25), 10px 10px 5px -2px rgba(0,0,0,0.22);
-        -moz-box-shadow: 12px 12px 5px -2px rgba(0,0,0,0.25), 10px 10px 5px -2px rgba(0,0,0,0.22);
-        box-shadow: 12px 12px 5px -2px rgba(0,0,0,0.25), 10px 10px 5px -2px rgba(0,0,0,0.22);
-    }
-
-#section-2
-{
-    padding: 0 0 120px 0;
-    background-color: #FFFFFF;
-}
-
-    #section-2 #container-2 .az-card
-    {
-        border-radius: 7px;
-        -webkit-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-        -moz-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    }
-
-    #section-2 #container-2 table
-    {
-        font-family: "Segoe UI", Arial, sans-serif;
-        font-weight: 200;
-        font-size: 15px;
-    }
-
-        #section-2 #container-2 table i
-        {
-            color: #12743b;
-        }
-
-#section-address
-{
-    padding: 60px 0 60px 0;
-    background-color: rgba(18,116,59,0.16);
-}
-
-    #section-address #container-address table td
-    {
-        padding: 7px;
-        color: #000000;
-    }
-
-    #section-address #container-address table i
-    {
-        color: #12743b;
-    }
-
-    #section-address #container-address table a
-    {
-        color: #000000;
-    }
-
-#section-footer
-{
-    padding: 60px 0 60px 0;
-    background-color: #333333;
-}
-
-    #section-footer #container-footer .copyright
-    {
-        color: #FFFFFF;
-    }
-
-@media (min-width: 576px)
-{
-    #section-1 #container-1 blockquote
-    {
-        margin: 0;
-        padding: 0;
-        border-left: none;
-    }
-
-    #section-1
-    {
-        padding: 120px 0 0 0;
-    }
-
-    #section-2
-    {
-        padding: 0 0 120px 0;
-    }
-
-    #section-1 #container-1 table
-    {
-        font-size: 18px;
-    }
-
-    #section-2 #container-2 table
-    {
-        font-size: 16px;
-    }
-}
-
-@media (min-width: 768px)
-{
-    #section-1 #container-1 blockquote
-    {
-        margin: 0;
-        padding: 0;
-        border-left: none;
-    }
-
-    #section-1
-    {
-        padding: 120px 0 120px 0;
-    }
-
-    #section-2
-    {
-        padding: 0 0 120px 0;
-    }
-
-    #section-1 #container-1 table
-    {
-        font-size: 18px;
-    }
-
-    #section-2 #container-2 table
-    {
-        font-size: 16px;
-    }
-}
-
-@media (min-width: 992px)
-{
-    #section-1 #container-1 .az-card
-    {
-        border-radius: 0;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: none;
-    }
-
-        #section-1 #container-1 .az-card article
-        {
-            padding: 0 !important;
-        }
-
-    #section-1 #container-1 blockquote
-    {
-        padding: 0 15px 0 15px;
-        border-left: 5px solid #12743b;
-        text-align: justify;
-    }
-
-    #section-1,
-    #section-2
-    {
-        padding: 120px 0 120px 0;
-    }
-
-        #section-1 #container-1 table
-        {
-            font-size: 22px;
-        }
-
-        #section-2 #container-2 table
-        {
-            font-size: 16px;
-        }
-}
-
-@media (min-width: 1200px)
-{
-    #section-1 #container-1 .az-card
-    {
-        border-radius: 0;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: none;
-    }
-
-        #section-1 #container-1 .az-card article
-        {
-            padding: 0 !important;
-        }
-
-    #section-1 #container-1 blockquote
-    {
-        padding: 0 25px 0 15px;
-        border-left: 5px solid #12743b;
-        text-align: justify;
-    }
-
-    #section-1,
-    #section-2
-    {
-        padding: 120px 0 120px 0;
-    }
-
-        #section-1 #container-1 table
-        {
-            font-size: 26px;
-        }
-
-        #section-2 #container-2 table
-        {
-            font-size: 16px;
-        }
-}
