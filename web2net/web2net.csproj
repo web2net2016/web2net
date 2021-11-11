@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <Content Include="index - Copy.html" />
     <Content Include="index.html" />
     <Content Include="lib\az-codecolor.css" />
     <Content Include="lib\az-codecolor.js" />

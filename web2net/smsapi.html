@@ -37,9 +37,9 @@
         {
             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function ()
             {
-                (i[r].q = i[r].q || []).push(arguments)
+                (i[r].q = i[r].q || []).push(arguments);
             }, i[r].l = 1 * new Date(); a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
         })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
         ga('create', 'UA-27385410-1', 'auto');
         ga('send', 'pageview');
@@ -50,7 +50,7 @@
 
     <form id="frmReg">
 
-        <div class="az-navbar az-navbar-top az-navbar-sticky">
+        <!--<div class="az-navbar az-navbar-top az-navbar-sticky">
             <div class="az-navbar-top-content">
 
                 <button type="button" class="az-navbar-button">&#9776;</button>
@@ -67,9 +67,9 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </div>-->
 
-        <div id="section-slider" class="az-section az-background-teal">
+        <div class="az-section az-background-teal">
             <div id="container-1" class="az-container">
 
                 <div class="az-row">
@@ -105,38 +105,22 @@
                                     {<br />
                                     &emsp;&ensp;&emsp;&ensp;"TransferType": "string",<br />
                                     &emsp;&ensp;&emsp;&ensp;"ClientId": "string",<br />
-                                    &emsp;&ensp;&emsp;&ensp;"SMSPayload":<br />
-                                    &emsp;&ensp;&emsp;&ensp;{<br />
-                                    &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Message": "string",<br />
-                                    &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"To": ["string"]<br />
-                                    &emsp;&ensp;&emsp;&ensp;}<br />
+                                    &emsp;&ensp;&emsp;&ensp;"Message": "string",<br />
+                                    &emsp;&ensp;&emsp;&ensp;"To": ["string"]<br />
                                     }<br />
                                     <br />
                                     <br />
                                     <strong>Optional Properties</strong><br />
                                     <br />
-                                    <p>- <strong>Title</strong>, of the actual SMS job. (Campaign, Offers, Sales, etc.)</p>
-                                    <p>- <strong>Description</strong>, of the actual SMS job. (What was the content, etc.)</p>
-                                    <p>- <strong>From</strong>, to override the default sender.</p>
+                                    <p>- <strong>Title</strong>, of the actual SMS job. (Campaign, Offers, Sales, etc.) - (Max 50 char)</p>
+                                    <p>- <strong>Description</strong>, of the actual SMS job. (What was the content, etc.) - (Max 255 char)</p>
                                     <br />
-                                    {<br />
-                                    &emsp;&ensp;&emsp;&ensp;"TransferType": "string",<br />
-                                    &emsp;&ensp;&emsp;&ensp;"ClientId": "string",<br />
-                                    &emsp;&ensp;&emsp;&ensp;<strong>"Title": "string",</strong>&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;(Max 50 char)<br />
-                                    &emsp;&ensp;&emsp;&ensp;<strong>"Description": "string,"</strong>&emsp;&ensp;(Max 255 char)<br />
-                                    &emsp;&ensp;&emsp;&ensp;"SMSPayload":<br />
-                                    &emsp;&ensp;&emsp;&ensp;{<br />
-                                    &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;<strong>"From": "string",</strong>&ensp;&emsp;&ensp;&emsp;&ensp;(Max 11 char)<br />
-                                    &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Message": "string",<br />
-                                    &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"To": ["string"]<br />
-                                    &emsp;&ensp;&emsp;&ensp;}<br />
-                                    }<br />
                                     <br />
                                 </div>
                                 <div class="az-code htmlHigh notranslate">
                                     <div class="az-code-property-wrapper">
                                         <property>TransferType</property>
-                                        <brown>SendSMS</brown>
+                                        <brown>sendsms</brown>
                                         <br />
                                     </div>
                                     <div class="az-code-property-wrapper">
@@ -146,7 +130,7 @@
                                     </div>
                                     <div class="az-code-property-wrapper">
                                         <property>Location</property>
-                                        <brown>https://web2netadmin.azurewebsites.net/api/sms/v1</brown>
+                                        <brown>https://hub.web2net.no/api/sms</brown>
                                         <br />
                                     </div>
                                     <div class="az-code-property-wrapper">
@@ -171,10 +155,15 @@
                                             </brown>
                                         </type>
                                         <br />
-                                        <type><span>400</span> <brown>Missing clientId - Invalid clientId - Missing recipients - Missing account coverage</brown></type>
+                                        <type><span>400</span> <brown>Missing ClientId</brown></type>
                                         <br />
-                                        &emsp;&ensp;&emsp;&ensp;<strong>If you use the optional properties, Title / Description</strong>
-                                        <type><span>400</span> <brown>The request cannot be fulfilled due to error in Title - The request cannot be fulfilled due to error in Description</brown></type>
+                                        <type><span>400</span> <brown>Missing recipients</brown></type>
+                                        <br />
+                                        <type><span>400</span> <brown>Missing account coverage</brown></type>
+                                        <br />
+                                        <type><span>400</span> <brown>Error sending SMS</brown></type>
+                                        <br />
+                                        <type><span>400</span> <brown>The request cannot be fulfilled due to bad syntax</brown></type>
                                         <br />
                                         <type><span>401</span> <brown>Invalid authorization</brown></type>
                                         <br />
@@ -183,6 +172,7 @@
                                         <type><span>500</span> <brown>Internal server error</brown></type>
                                         <br />
                                     </div>
+                                </div>
                             </article>
                         </div>
                         <div class="az-accordion-card">
@@ -204,7 +194,7 @@
                                 <div class="az-code htmlHigh notranslate">
                                     <div class="az-code-property-wrapper">
                                         <property>TransferType</property>
-                                        <brown>SMSJob</brown>
+                                        <brown>smsjob</brown>
                                         <br />
                                     </div>
                                     <div class="az-code-property-wrapper">
@@ -214,7 +204,7 @@
                                     </div>
                                     <div class="az-code-property-wrapper">
                                         <property>Location</property>
-                                        <brown>https://web2netadmin.azurewebsites.net/api/sms/v1</brown>
+                                        <brown>https://hub.web2net.no/api/sms</brown>
                                         <br />
                                     </div>
                                     <div class="az-code-property-wrapper">
@@ -234,26 +224,30 @@
                                             <brown>
                                                 <br />
                                                 &emsp;&ensp;&emsp;&ensp;{<br />
-                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSJob":<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSJobAndPayloadObj":<br />
                                                 &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;{<br />
-                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Date": "string",<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"RegDate": "string",<br />
                                                 &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Title": "string",<br />
                                                 &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Description": "string",<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Code": "string",<br />
                                                 &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Message": "string",<br />
-                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"From": "string",<br />
-                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSSent": integer,<br />
-                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SendtTo":<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSPayloadList":<br />
                                                 &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;[{<br />
-                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Sendt": boolean,<br />
-                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"To": "string",<br />
-                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SID": "string"<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"RegDateTime": "string",<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SentTo": "string",<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SID": "string",<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Status": "string"<br />
                                                 &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;}]<br />
                                                 &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;}<br />
                                                 &emsp;&ensp;&emsp;&ensp;}<br />
                                             </brown>
                                         </type>
                                         <br />
-                                        <type><span>400</span> <brown>Missing jobId - Invalid jobId</brown></type>
+                                        <type><span>400</span> <brown>Missing SMSJobId</brown></type>
+                                        <br />
+                                        <type><span>400</span> <brown>Invalid SMSJobId</brown></type>
+                                        <br />
+                                        <type><span>400</span> <brown>The request cannot be fulfilled due to bad syntax</brown></type>
                                         <br />
                                         <type><span>401</span> <brown>Invalid authorization</brown></type>
                                         <br />
@@ -262,6 +256,7 @@
                                         <type><span>500</span> <brown>Internal server error</brown></type>
                                         <br />
                                     </div>
+                                </div>
                             </article>
                         </div>
                         <div class="az-accordion-card">
@@ -281,11 +276,17 @@
                                     &emsp;&ensp;&emsp;&ensp;"ToDate": "string"<br />
                                     }<br />
                                     <br />
+                                    <br />
+                                    <strong>FromDate and ToDate format</strong><br />
+                                    <br />
+                                    <p>&emsp;&ensp;<strong>MM/DD/YYYY</strong></p>
+                                    <br />
+                                    <br />
                                 </div>
                                 <div class="az-code htmlHigh notranslate">
                                     <div class="az-code-property-wrapper">
                                         <property>TransferType</property>
-                                        <brown>SMSReport</brown>
+                                        <brown>smsreport</brown>
                                         <br />
                                     </div>
                                     <div class="az-code-property-wrapper">
@@ -295,7 +296,7 @@
                                     </div>
                                     <div class="az-code-property-wrapper">
                                         <property>Location</property>
-                                        <brown>https://web2netadmin.azurewebsites.net/api/sms/v1</brown>
+                                        <brown>https://hub.web2net.no/api/sms</brown>
                                         <br />
                                     </div>
                                     <div class="az-code-property-wrapper">
@@ -315,26 +316,30 @@
                                             <brown>
                                                 <br />
                                                 &emsp;&ensp;&emsp;&ensp;{<br />
-                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSJobs":<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSJobAndPayloadList":<br />
                                                 &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;[{<br />
-                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Date": "string",<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"RegDate": "string",<br />
                                                 &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Title": "string",<br />
                                                 &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Description": "string",<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Code": "string",<br />
                                                 &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Message": "string",<br />
-                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"From": "string",<br />
-                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSSent": integer,<br />
-                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SendtTo":<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSPayloadList":<br />
                                                 &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;[{<br />
-                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Sendt": boolean,<br />
-                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"To": "string",<br />
-                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SID": "string"<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"RegDateTime": "string",<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SentTo": "string",<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SID": "string",<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Status": "string"<br />
                                                 &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;}]<br />
                                                 &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;}]<br />
                                                 &emsp;&ensp;&emsp;&ensp;}<br />
                                             </brown>
                                         </type>
                                         <br />
-                                        <type><span>400</span> <brown>No reports to display - The request cannot be fulfilled due to bad syntax</brown></type>
+                                        <type><span>400</span> <brown>Missing ClientId or From/To- Date</brown></type>
+                                        <br />
+                                        <type><span>400</span> <brown>No reports to display</brown></type>
+                                        <br />
+                                        <type><span>400</span> <brown>The request cannot be fulfilled due to bad syntax</brown></type>
                                         <br />
                                         <type><span>401</span> <brown>Invalid authorization</brown></type>
                                         <br />
@@ -343,6 +348,7 @@
                                         <type><span>500</span> <brown>Internal server error</brown></type>
                                         <br />
                                     </div>
+                                </div>
                             </article>
                         </div>
                         <div class="az-accordion-card">
@@ -364,7 +370,7 @@
                                 <div class="az-code htmlHigh notranslate">
                                     <div class="az-code-property-wrapper">
                                         <property>TransferType</property>
-                                        <brown>SMSAccount</brown>
+                                        <brown>smsaccount</brown>
                                         <br />
                                     </div>
                                     <div class="az-code-property-wrapper">
@@ -374,7 +380,7 @@
                                     </div>
                                     <div class="az-code-property-wrapper">
                                         <property>Location</property>
-                                        <brown>https://web2netadmin.azurewebsites.net/api/sms/v1</brown>
+                                        <brown>https://hub.web2net.no/api/sms</brown>
                                         <br />
                                     </div>
                                     <div class="az-code-property-wrapper">
@@ -394,9 +400,8 @@
                                             <brown>
                                                 <br />
                                                 &emsp;&ensp;&emsp;&ensp;{<br />
-                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSAccount":<br />
+                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSAccountObj":<br />
                                                 &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;{<br />
-                                                &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Date": "string",<br />
                                                 &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"Code": "string",<br />
                                                 &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSStock": integer,<br />
                                                 &emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;"SMSSent": integer<br />
@@ -405,7 +410,11 @@
                                             </brown>
                                         </type>
                                         <br />
-                                        <type><span>400</span> <brown>Missing clientId - Invalid clientId</brown></type>
+                                        <type><span>400</span> <brown>Missing ClientId</brown></type>
+                                        <br />
+                                        <type><span>400</span> <brown>Invalid ClientId</brown></type>
+                                        <br />
+                                        <type><span>400</span> <brown>The request cannot be fulfilled due to bad syntax</brown></type>
                                         <br />
                                         <type><span>401</span> <brown>Invalid authorization</brown></type>
                                         <br />
@@ -414,6 +423,7 @@
                                         <type><span>500</span> <brown>Internal server error</brown></type>
                                         <br />
                                     </div>
+                                </div>
                             </article>
                         </div>
                     </div>

@@ -1,0 +1,428 @@
+﻿
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="date=no" />
+    <meta name="format-detection" content="address=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="theme-color" content="#009688">
+    <link rel="apple-touch-icon" sizes="72x72" href="/lib/images/icons/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="96x96" href="/lib/images/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="128x128" href="/lib/images/icons/icon-128x128.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/lib/images/icons/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/lib/images/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/lib/images/icons/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="384x384" href="/lib/images/icons/icon-384x384.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="/lib/images/icons/icon-512x512.png">
+    <meta name="description" content="Moderne og effektive nettsider. Fungerer på alle plattformer. Med over 70 mill nettsteder verden over er WordPress det desidert mest utbredte publiseringsverktøyet. Med statiske sider står man fritt i forhold til design og innhold. Statiske sider gir stor frihet." />
+    <meta name="keywords" content="web2net, hjemmesider, produkter, wordpress, statiske sider, statiske, sider, woocommerce, klarna, vipps, e-handel, netthandel, checkout, hurtigkasse, mobil, mobilvennlig, søkevennlig, rimelig, rimelige løsninger, webmaster tools, google analytics, sosiale medier, alt er inkludert, serviceavtale" />
+    <title>Hjem | web2net</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="//cdn.web2net.no/lib-1.0.0/css/az-1.0.0.min.css" />
+    <script src="//cdn.web2net.no/lib-1.0.0/js/az-1.0.0.min.js"></script>
+    <link rel="stylesheet" href="/lib/standard.css" />
+    <link rel="stylesheet" href="/lib/index.css" />
+    <script src="/lib/functionlib.js"></script>
+    <script src="//cdn.web2net.no/fingerprint-1.0.0/az-1.0.0.min.js"></script>
+    <link rel="manifest" href="/manifest.json">
+    <script>
+
+        $(document).ready(function ()
+        {
+            initializePage({}, function ()
+            {
+                new AZSlideshow(
+                    {
+                        azSlideshowId: "az-slideshow-1",
+                        azSlideshowArrows: true
+                    });
+                
+
+                $("#section-container-woocommerce-col1, #section-container-woocommerce-col2").matchHeight();
+                $("#section-container-tools-col1, #section-container-tools-col2, #section-container-tools-col3").matchHeight();
+
+                $("#cmdWordPress").off("click").on("click", function ()
+                {
+                    navigateTo("produkter.html?ScrollTo=container-2");
+                });
+                $("#cmdStatiskWeb").off("click").on("click", function ()
+                {
+                    navigateTo("produkter.html?ScrollTo=container-4");
+                });
+                $("#cmdWooCommerce").off("click").on("click", function ()
+                {
+                    navigateTo("produkter.html?ScrollTo=container-woocommerce");
+                });
+                $("#cmdWebmasterTools").off("click").on("click", function ()
+                {
+                    navigateTo("produkter.html?ScrollTo=container-6&Accordion=3");
+                });
+                $("#cmdGoogleAnalytics").off("click").on("click", function ()
+                {
+                    navigateTo("produkter.html?ScrollTo=container-6&Accordion=4");
+                });
+                $("#cmdSosialeMedier").off("click").on("click", function ()
+                {
+                    navigateTo("produkter.html?ScrollTo=container-6&Accordion=5");
+                });
+                $("#cmdAltInkludert").off("click").on("click", function ()
+                {
+                    navigateTo("produkter.html?ScrollTo=container-6&Accordion=0");
+                });
+                $("#cmdServiceavtale").off("click").on("click", function ()
+                {
+                    navigateTo("produkter.html?ScrollTo=container-6&Accordion=1");
+                });
+                hideCoverSpin();
+            });
+        });
+
+        (function (i, s, o, g, r, a, m)
+        {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function ()
+            {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-27385410-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</head>
+<body>
+
+    <form id="frmReg">
+
+        <div id="section-navbar" class="az-section">
+            <div id="container-navbar" class="az-container">
+                <div class="az-navbar az-navbar-top">
+                    <div class="az-navbar-top-content">
+
+                        <button type="button" class="az-navbar-button">&#9776;</button>
+                        <img class="az-navbar-branding" alt="web2net" src="/lib/images/web2net_logo_black.png" />
+
+                        <div class="az-navbar-menu-wrapper">
+                            <ul class="az-navbar-menu az-left">
+                                <li><a href="javascript:void(0);">Hjem</a></li>
+                                <li><a href="prosessen.html">Prosessen</a></li>
+                                <li><a href="produkter.html">Produkter</a></li>
+                                <li><a href="referanser.html">Referanser</a></li>
+                                <li><a href="kundesider.html">Kundesider</a></li>
+                                <li><a href="javascript:void(0);" onclick="openContactForm();">Kontakt oss</a></li>
+                            </ul>
+
+                            <ul class="az-navbar-menu az-right">
+                                <li><a href="https://www.facebook.com/web2net" target="_blank" style="padding: 5px 20px 5px 20px;"><i class="fab fa-facebook-square"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="section-slider" class="az-section">
+            <div id="container-slider" class="az-container">
+                <div class="az-row">
+                    <div class="az-col xs-12">
+
+                        <div id="az-slideshow-1" class="az-slideshow">
+                            <div class="az-slides">
+                                <slide>
+                                    <img src="/lib/images/slider1.jpg">
+                                    <div class="az-display-bottomright az-margin-14">
+                                        <h1>WORDPRESS - har alle typer nettsider</h1>
+                                    </div>
+                                </slide>
+                                <slide>
+                                    <img src="/lib/images/slider2.jpg">
+                                    <div class="az-display-bottomleft az-margin-14">
+                                        <h1>STATISKE SIDER - gir stor frihet</h1>
+                                    </div>
+                                </slide>
+                                <slide>
+                                    <img src="/lib/images/slider3.jpg">
+                                    <div class="az-display-bottomright az-margin-14">
+                                        <h1>SSL - gir økt sikkerhet</h1>
+                                    </div>
+                                </slide>
+                                <slide>
+                                    <img src="/lib/images/slider4.jpg">
+                                    <div class="az-display-bottomleft az-margin-14">
+                                        <h1>BACKUP - trygger dine data</h1>
+                                    </div>
+                                </slide>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="section-cms" class="az-section">
+            <div id="container-cms" class="az-container">
+                <div class="az-row">
+                    <div class="az-col xs-12 lg-6">
+
+                        <div class="az-margin-14">
+                            <h1 class="az-xs-text-xxlarge az-sm-text-xxxlarge az-md-text-xxxxlarge az-xl-text-xxxxxlarge az-text-uppercase">Wordpress <span class="az-badge az-bg-blue az-text-xlarge" style="border-radius: 50%; padding: 8px 6px;">WP</span></h1>
+                            <h1 class="az-xs-text-large az-padding-b-7">En profesjonell nettside som gjenspeiler bedriftens personlighet.</h1>
+                            <p class="az-padding-b-14">Med over 70 mill nettsteder verden over er WordPress det desidert mest utbredte publiseringsverktøyet.</p>
+                            <p class="az-padding-b-7">- Enkel administrasjon</p>
+                            <p class="az-padding-b-7">- Mobilvennlig</p>
+                            <p class="az-padding-b-28">- Søkevennlig</p>
+                            <span class="az-xs-text-large az-sm-text-xlarge">349,-/mnd</span>
+                            <div class="az-form-group az-text-center">
+                                <button type="button" id="cmdWordPress" class="az-button az-shadow-1 az-shadow-hover-2 az-white" style="background-color: #009688;">Les mer</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="az-col xs-12 lg-6">
+
+                        <div class="az-margin-14 az-xs-margin-t-28 az-lg-margin-t-14">
+                            <h1 class="az-xs-text-xxlarge az-sm-text-xxxlarge az-md-text-xxxxlarge az-xl-text-xxxxxlarge az-text-uppercase">Statiske sider <span class="az-badge az-bg-selective-yellow az-text-xlarge" style="border-radius: 50%; padding: 8px 19px;">S</span></h1>
+                            <h1 class="az-xs-text-large az-padding-b-7">Moderne og effektive nettsider som fungerer på alle plattformer.</h1>
+                            <p class="az-padding-b-14">Med statiske sider står man fritt i forhold til design og innhold. Statiske sider gir stor frihet</p>
+                            <p class="az-padding-b-7">- Rimelige løsninger</p>
+                            <p class="az-padding-b-7">- Mobilvennlig</p>
+                            <p class="az-padding-b-14">- Søkevennlig</p>
+                            <span class="az-xs-text-large az-sm-text-xlarge">199,-/mnd</span>
+                            <div class="az-form-group az-text-center">
+                                <button type="button" id="cmdStatiskWeb" class="az-button az-shadow-1 az-shadow-hover-2 az-white" style="background-color: #009688;">Les mer</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="section-woocommerce" class="az-section">
+            <div id="container-woocommerce" class="az-container">
+                <div class="az-row">
+                    <div class="az-col xs-12 lg-5">
+
+                        <div id="section-container-woocommerce-col1" class="az-white az-xs-margin-0 az-lg-margin-l-14 az-lg-margin-r-14 az-padding-14" style="background-color: rgba(0,0,0,0.7);">
+                            <h1 class="az-xs-text-xlarge az-sm-text-xxlarge az-text-uppercase az-text-center az-padding-7">WooCommerce <span class="az-badge az-bg-purple az-text-xlarge" style="border-radius: 50%; padding: 8px 14px;">W</span></h1>
+                            <p class="az-center az-padding-14">WooCommerce er nå den mest populære e-handelsplattformen på nettet, slik at du kan være trygg på at du er i godt selskap. WooCommerce er bygget for å integrere sømløst med WordPress, som er det desidert mest utbredte publiseringsverktøyet i verden.</p>
+                            <div class="az-form-group az-text-center">
+                                <button type="button" id="cmdWooCommerce" class="az-button az-shadow-1 az-shadow-hover-2 az-margin-b-14 az-white" style="background-color: #009688;">Les mer</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="az-col xs-12 lg-7">
+
+                        <div id="section-container-woocommerce-col2" class="az-xs-margin-0 az-lg-margin-r-14 az-padding-14" style="background-color: rgba(0,0,0,0.7);">
+                            <img class="az-xs-width-90" alt="WooCommerse" src="/lib/images/woo_wp_white.png" />
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="section-tools" class="az-section">
+            <div id="container-tools" class="az-container">
+                <div class="az-row">
+                    <div class="az-col xs-12 lg-4">
+
+                        <div id="section-container-tools-col1" class="az-white az-xs-margin-0 az-lg-margin-l-14 az-lg-margin-r-14" style="background-color: rgba(0,0,0,0.7);">
+                            <h1 class="az-xs-text-xlarge az-sm-text-xxlarge az-text-uppercase az-text-center az-padding-7">Google Console</h1>
+                            <p class="az-text-center"><img alt="Google search console" class="az-xs-width-40 az-sm-width-30 az-lg-width-40" src="/lib/images/google_search_console.png" /></p>
+                            <p class="az-center az-padding-14">Google Search Console, er et verktøy Google har laget for å gi deg en generell oversikt over helsestatusen til dine nettsider. Dette er et kraftig verktøy som oppdateres jevnlig med ny funksjonalitet for å gi deg en bedre oversikt.</p>
+                            <div class="az-form-group az-text-center" style="margin: 0;">
+                                <button type="button" id="cmdWebmasterTools" class="az-button az-shadow-1 az-shadow-hover-2 az-margin-b-14 az-white" style="background-color: #009688;">Les mer</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="az-col xs-12 lg-4">
+
+                        <div id="section-container-tools-col2" class="az-white az-xs-margin-0 az-lg-margin-r-14" style="background-color: rgba(0,0,0,0.7);">
+                            <h1 class="az-xs-text-xlarge az-sm-text-xxlarge az-text-uppercase az-text-center az-padding-7">Google Analytics</h1>
+                            <p class="az-text-center"><img alt="Google analytics" class="az-xs-width-40 az-sm-width-30 az-lg-width-40" src="/lib/images/analytics.png" /></p>
+                            <p class="az-center az-padding-14">Google Analytics utfører flere typer analyser av dine nettsider og gir deg statistikk og grunnleggende informasjon for markedsføring og søkemotoroptimalisering (SEO).</p>
+                            <div class="az-form-group az-text-center" style="margin: 0;">
+                                <button type="button" id="cmdGoogleAnalytics" class="az-button az-shadow-1 az-shadow-hover-2 az-margin-b-14 az-white" style="background-color: #009688;">Les mer</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="az-col xs-12 lg-4">
+
+                        <div id="section-container-tools-col3" class="az-white az-lg-margin-r-14" style="background-color: rgba(0,0,0,0.7);">
+                            <h1 class="az-xs-text-xlarge az-sm-text-xxlarge az-text-uppercase az-text-center az-padding-7">Sosiale Medier</h1>
+                            <p class="az-text-center"><img alt="Sosiale medier" class="az-xs-width-40 az-sm-width-30 az-lg-width-40" src="/lib/images/sosial-media-1.png" /></p>
+                            <p class="az-center az-padding-14">Sosiale medier er et verktøy for å nå ut til dine eksisterende og nye kunder. Med enkle grep kan vi gjøre dine nettsider langt mer tilpasset den sosiale verden enn de kanskje er i dag.</p>
+                            <div class="az-form-group az-text-center" style="margin: 0;">
+                                <button type="button" id="cmdSosialeMedier" class="az-button az-shadow-1 az-shadow-hover-2 az-margin-b-14 az-white" style="background-color: #009688;">Les mer</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="section-ssl-backup" class="az-section">
+            <div id="container-ssl-backup" class="az-container">
+                <div class="az-row">
+                    <div class="az-col xs-12">
+
+                        <div class="az-margin-14">
+                            <img alt="web2net" class="az-left az-xs-width-15 az-xl-width-10 az-xs-none az-sm-block az-md-margin-b-56 az-lg-margin-b-0 az-xs-margin-r-0 az-sm-margin-r-28" src="/lib/images/ssl_icon.png" />
+                            <h1 class="az-xs-text-xxlarge az-padding-b-7">Har du fortsatt ikke SSL på nettstedet ditt?</h1>
+                            <p>Vil tilbyr <strong>gratis</strong> SSL sertifikat til alle våre kunder SSL står for Secure Sockets Layer og krypterer dataene som sendes mellom dine besøkende og nettstedet ditt.</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="az-row">
+                    <div class="az-col xs-12">
+
+                        <div class="az-margin-14">
+                            <img alt="web2net" class="az-left az-xs-width-15 az-xl-width-10 az-xs-none az-sm-block az-md-margin-b-56 az-lg-margin-b-0 az-xs-margin-r-0 az-sm-margin-r-28" src="/lib/images/cloud_backup.png" />
+                            <h1 class="az-xs-text-xxlarge az-padding-b-7">Daglig backup av ditt nettsted!</h1>
+                            <p>For på best mulig måte å ivareta våre kunders data, kopieres daglig hele nettstedet ditt ut i Microsoft Azures skybaserte løsning. Her fordeles informasjonen på 3 forskjellige dataservere lokalisert i Nord Irland.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="section-allincluded" class="az-section">
+            <div id="container-allincluded" class="az-container">
+                <div class="az-row">
+                    <div class="az-col xs-12 lg-6">
+
+                        <div class="az-margin-14">
+                            <h1 ></h1>
+                            <p class="az-center az-padding-b-14">
+                            </p>
+                            <div class="az-form-group az-text-center">
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="az-col xs-12 lg-6">
+
+                        <div class="az-margin-14">
+
+                            <p class="az-center az-padding-b-14">
+                                Alle kunder, uavhengig av våre pakkeløsninger, kan opprette en serviceavtale med oss slik at det er vi som ivaretar dine nettsiders innhold som tekst, bilder, m.m.<br /><br />
+                                Avtalen omfatter at vi webtilpasser dine bilder, sørger for at teksten du senders oss alltid holder den utformingen du har valgt, (størrelse/skrifttype), gjør at viktige ord og overskrifter blir optimalisert i forhold til søkemotorer og ellers at innholdet holder seg innenfor de rammer du har bestemt i forhold til størrelser, farger, m.m.
+                            </p>
+                            <div class="az-form-group az-text-center">
+                                <button type="button" id="cmdServiceavtale" class="az-white az-button az-shadow-1 az-shadow-hover-2" style="background-color: #009688 ;">Les mer</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="section-address" class="az-section">
+            <div id="container-address" class="az-container">
+                <div class="az-row">
+                    <div class="az-col xs-12 sm-12 md-4">
+                        <table class="az-margin-l-56 az-xs-margin-b-28 az-md-margin-b-0">
+                            <tr>
+                                <td class="az-text-large">web2net AS</td>
+                            </tr>
+                            <tr>
+                                <td class="az-text-medium az-padding-t-14">Steinkjer</td>
+                            </tr>
+                            <tr>
+                                <td class="az-text-small">Jæktskippergata 8</td>
+                            </tr>
+                            <tr>
+                                <td class="az-text-small">7725 Steinkjer</td>
+                            </tr>
+                            <tr>
+                                <td class="az-text-medium az-padding-t-14">Vestfossen</td>
+                            </tr>
+                            <tr>
+                                <td class="az-text-small">Tveveien 6</td>
+                            </tr>
+                            <tr>
+                                <td class="az-text-small">3320 Vestfossen</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="az-col xs-12 sm-6 md-4">
+                        <table class="az-xs-margin-t-0 az-md-margin-t-56 az-xs-margin-l-56 az-md-margin-l-0">
+                            <tr>
+                                <td><i class="fas fa-envelope-square fa-3x fa-fw" style="color: #4d4d4d"></i></td>
+                                <td>&nbsp;</td>
+                                <td><a class="az-text-small az-border-bottom-hover-1-white az-email az-black" href="javascript:void(0)" data-content="post(at)web2net.no">post(at)web2net.no</a></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-phone-square fa-3x fa-fw" style="color: #4d4d4d"></i></td>
+                                <td>&nbsp;</td>
+                                <td class="az-text-small">920 37 695</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-phone-square fa-3x fa-fw" style="color: #4d4d4d"></i></td>
+                                <td>&nbsp;</td>
+                                <td class="az-text-small">412 53 455</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="az-col xs-12 sm-6 md-4">
+                        <table class="az-xs-margin-t-0 az-md-margin-t-56 az-xs-margin-l-56 az-md-margin-l-0">
+                            <tr>
+                                <td><a onclick="openContactForm();" href="javascript:void(0);"><i class="fas fa-envelope-square fa-3x fa-fw" style="margin-right: 10px; color: #4d4d4d"></i></a></td>
+                                <td><a onclick="openContactForm();" href="javascript:void(0);" class="az-text-small az-border-bottom-hover-1-white">Kontakt oss</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://www.facebook.com/web2net" target="_blank"><i class="fab fa-facebook-square fa-3x fa-fw" style="margin-right: 10px; color: #4d4d4d"></i></a></td>
+                                <td><a href="https://www.facebook.com/web2net" target="_blank" class="az-text-small az-border-bottom-hover-1-white">Facebook</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="status.html"><i class="fas fa-cog fa-3x fa-fw" style="margin-right: 10px; color: #4d4d4d"></i></a></td>
+                                <td><a href="status.html" class="az-text-small az-border-bottom-hover-1-white">Status</a></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="section-footer" class="az-section">
+            <div id="container-footer" class="az-container">
+                <div class="az-row">
+                    <div class="az-col xs-12 lg-4 az-xs-margin-t-7 az-lg-margin-t-0">
+                        <p class="az-text-center"><img alt="web2net" class="az-xs-width-40 az-sm-width-25 az-lg-width-45" src="/lib/images/ms-azure.png" /></p>
+                    </div>
+                    <div class="az-col xs-12 lg-4 az-xs-margin-t-7 az-lg-margin-t-0">
+                        <p class="az-text-center"><img alt="web2net" class="az-xs-width-45 az-sm-width-25 az-lg-width-45" src="/lib/images/ms-office-365.png" /></p>
+                    </div>
+                    <div class="az-col xs-12 lg-4 az-xs-margin-t-7 az-lg-margin-t-0">
+                        <p class="az-text-center"><img alt="web2net" class="az-xs-width-45 az-sm-width-25 az-lg-width-45" src="/lib/images/visma_white_logo.png" /></p>
+                    </div>
+                </div>
+                <div class="az-row">
+                    <div class="az-col xs-12 az-xs-margin-t-7">
+                        <p class="az-text-small az-text-center">Copyright &copy; web2net AS 1994 - 2020</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+</body>
+</html>
